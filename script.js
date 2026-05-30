@@ -21,6 +21,7 @@ const examples = [
 let currentPuzzle = null;
 let currentRequestedTotal = 0;
 let activeSaveId = null;
+let activeDirection = 'H';
 
 function normalizeWord(word) {
   return word
@@ -268,6 +269,202 @@ function collectPlayerState() {
   return state;
 }
 
+function wordId(item) {
+  return `${item.number}-${item.orientation}`;
+}
+
+function getPlayableCells(item) {
+  const dr = item.orientation === 'V' ? 1 : 0;
+  const dc = item.orientation === 'H' ? 1 : 0;
+  const cells = [];
+
+  for (let index = 0; index < item.word.length; index++) {
+    if (isSpaceChar(item.word[index])) continue;
+    cells.push(key(item.row + dr * index, item.col + dc * index));
+  }
+
+  return cells;
+}
+
+function buildWordLookup(placed) {
+  const byWord = new Map();
+  const byCell = new Map();
+
+  placed.forEach((item) => {
+    const id = wordId(item);
+    const cells = getPlayableCells(item);
+    const entry = {
+      id,
+      number: item.number,
+      orientation: item.orientation,
+      label: `${item.number} ${item.orientation === 'H' ? 'horizontal' : 'vertical'}`,
+      word: item.word,
+      cells
+    };
+
+    byWord.set(id, entry);
+    cells.forEach((cellKey, index) => {
+      const current = byCell.get(cellKey) || [];
+      current.push({ id, orientation: item.orientation, index, total: cells.length });
+      byCell.set(cellKey, current);
+    });
+  });
+
+  return { byWord, byCell };
+}
+
+function getInputByCell(cellKey) {
+  return resultBox.querySelector(`.play-input[data-cell="${CSS.escape(cellKey)}"]`);
+}
+
+function getActiveWordForInput(input) {
+  if (!input) return null;
+  const memberships = (input.dataset.words || '').split('|').filter(Boolean);
+  if (!memberships.length) return null;
+
+  return memberships.find((id) => id.endsWith(`-${activeDirection}`)) || memberships[0];
+}
+
+function focusNextCell(input) {
+  const wordKey = getActiveWordForInput(input);
+  if (!wordKey || !currentPuzzle) return;
+
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  const word = lookup.byWord.get(wordKey);
+  if (!word) return;
+
+  const currentIndex = word.cells.indexOf(input.dataset.cell);
+  const nextCell = word.cells.slice(currentIndex + 1).find((cellKey) => {
+    const nextInput = getInputByCell(cellKey);
+    return nextInput && !nextInput.disabled;
+  });
+
+  if (nextCell) getInputByCell(nextCell)?.focus();
+}
+
+function clearTransientWordState() {
+  resultBox.querySelectorAll('.play-input.is-pending, .play-input.is-wrong').forEach((input) => {
+    input.classList.remove('is-pending', 'is-wrong');
+  });
+  resultBox.querySelectorAll('.cell.is-current, .cell.is-word-wrong').forEach((cell) => {
+    cell.classList.remove('is-current', 'is-word-wrong');
+  });
+}
+
+function markActiveWord(input) {
+  resultBox.querySelectorAll('.cell.is-current').forEach((cell) => cell.classList.remove('is-current'));
+  const wordKey = getActiveWordForInput(input);
+  if (!wordKey || !currentPuzzle) return;
+
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  const word = lookup.byWord.get(wordKey);
+  if (!word) return;
+
+  word.cells.forEach((cellKey) => getInputByCell(cellKey)?.closest('.cell')?.classList.add('is-current'));
+  setGameStatus(`Mot ${word.label} : complète toutes les cases, la validation se fait à la dernière lettre.`);
+}
+
+function isWordSolved(word) {
+  return word.cells.every((cellKey) => {
+    const input = getInputByCell(cellKey);
+    return input && input.value === input.dataset.answer;
+  });
+}
+
+function refreshSolvedWords() {
+  if (!currentPuzzle || !hideLettersInput.checked) return { solved: 0, total: 0 };
+
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  let solved = 0;
+
+  resultBox.querySelectorAll('.play-input').forEach((input) => {
+    input.classList.remove('is-correct');
+    input.disabled = false;
+  });
+  resultBox.querySelectorAll('.cell.is-solved').forEach((cell) => cell.classList.remove('is-solved'));
+
+  lookup.byWord.forEach((word) => {
+    if (!isWordSolved(word)) return;
+    solved += 1;
+    word.cells.forEach((cellKey) => {
+      const input = getInputByCell(cellKey);
+      if (input) {
+        input.classList.add('is-correct');
+        input.disabled = true;
+      }
+      input?.closest('.cell')?.classList.add('is-solved');
+    });
+  });
+
+  updateProgress(solved, lookup.byWord.size);
+  return { solved, total: lookup.byWord.size };
+}
+
+function updateProgress(solved, total) {
+  const progress = resultBox.querySelector('.game-progress');
+  if (!progress || !total) return;
+  const percent = Math.round((solved / total) * 100);
+  progress.style.setProperty('--progress', `${percent}%`);
+  progress.querySelector('strong').textContent = `${solved}/${total}`;
+}
+
+function setGameStatus(message) {
+  const gameStatus = resultBox.querySelector('.game-status');
+  if (gameStatus) gameStatus.textContent = message;
+}
+
+function validateWordFromInput(input) {
+  const wordKey = getActiveWordForInput(input);
+  if (!wordKey || !currentPuzzle) return;
+
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  const word = lookup.byWord.get(wordKey);
+  if (!word) return;
+
+  const inputs = word.cells.map(getInputByCell).filter(Boolean);
+  const isComplete = inputs.every((item) => item.value.length === 1);
+
+  inputs.forEach((item) => item.classList.toggle('is-pending', item.value.length === 1 && !item.classList.contains('is-correct')));
+  if (!isComplete) {
+    refreshSolvedWords();
+    return;
+  }
+
+  const isCorrect = inputs.every((item) => item.value === item.dataset.answer);
+  if (isCorrect) {
+    inputs.forEach((item) => item.classList.remove('is-pending', 'is-wrong'));
+    const { solved, total } = refreshSolvedWords();
+    setGameStatus(solved === total ? 'Bravo, tous les mots sont validés !' : `Mot ${word.label} validé. Continue la quête !`);
+    return;
+  }
+
+  inputs.forEach((item) => {
+    item.classList.remove('is-pending');
+    item.classList.add('is-wrong');
+    item.closest('.cell')?.classList.add('is-word-wrong');
+  });
+  setGameStatus(`Mot ${word.label} incorrect : il est effacé, réessaie.`);
+
+  window.setTimeout(() => {
+    inputs.forEach((item) => {
+      const otherSolvedWord = (item.dataset.words || '')
+        .split('|')
+        .filter((id) => id && id !== wordKey)
+        .some((id) => {
+          const otherWord = lookup.byWord.get(id);
+          return otherWord && isWordSolved(otherWord);
+        });
+
+      if (!otherSolvedWord) item.value = '';
+      item.classList.remove('is-wrong', 'is-pending');
+      item.closest('.cell')?.classList.remove('is-word-wrong');
+    });
+    refreshSolvedWords();
+    savePlayerState();
+    inputs[0]?.focus();
+  }, 420);
+}
+
 function savePlayerState() {
   if (!activeSaveId) return;
   const saves = getSavedGames();
@@ -294,6 +491,7 @@ function render(result, requestedTotal, playerState = {}) {
   const rows = bounds.maxRow - bounds.minRow + 1;
   const cols = bounds.maxCol - bounds.minCol + 1;
   const starts = new Map(placed.map((item) => [key(item.row, item.col), item.number]));
+  const wordLookup = buildWordLookup(placed);
   const hideLetters = hideLettersInput.checked;
   const hiddenClass = hideLetters ? ' hidden-letter' : '';
 
@@ -314,10 +512,13 @@ function render(result, requestedTotal, playerState = {}) {
       }
       const safeLetter = escapeHtml(cell.letter);
       const playerValue = escapeHtml(playerState[cellKey] || '');
+      const memberships = wordLookup.byCell.get(cellKey) || [];
+      const wordIds = memberships.map((item) => item.id).join('|');
+      const orientations = memberships.map((item) => item.orientation).join('');
       const content = hideLetters
-        ? `<input class="play-input" maxlength="1" data-cell="${cellKey}" data-answer="${safeLetter}" value="${playerValue}" aria-label="Lettre à deviner" />`
+        ? `<input class="play-input" maxlength="1" data-cell="${cellKey}" data-answer="${safeLetter}" data-words="${escapeHtml(wordIds)}" data-orientations="${orientations}" value="${playerValue}" aria-label="Lettre à deviner" />`
         : `<span class="letter">${safeLetter}</span>`;
-      cells += `<div class="cell${hiddenClass}">${numberHtml}${content}</div>`;
+      cells += `<div class="cell${hiddenClass}" data-cell="${cellKey}">${numberHtml}${content}</div>`;
     }
   }
 
@@ -333,10 +534,16 @@ function render(result, requestedTotal, playerState = {}) {
       <span class="pill">${rows} × ${cols} cases</span>
       <span class="pill">Espaces gris inclus</span>
     </div>
+    ${hideLetters ? `
+      <section class="play-panel" aria-label="Progression du mode jeu">
+        <div class="game-status">Tape un mot en entier : il devient vert seulement s’il est juste, sinon il s’efface.</div>
+        <div class="game-progress" style="--progress: 0%"><span></span><strong>0/${placed.length}</strong></div>
+      </section>
+    ` : ''}
     <div class="board-wrap">
       <div class="crossword" style="grid-template-columns: repeat(${cols}, var(--cell-size));">${cells}</div>
     </div>
-    ${hideLetters ? '<p class="play-hint">Mode jeu : clique dans les cases blanches, tape tes réponses, puis sauvegarde pour reprendre plus tard.</p>' : ''}
+    ${hideLetters ? '<p class="play-hint">Mode jeu : la saisie avance toute seule dans le mot. Double-clique une intersection pour changer de direction.</p>' : ''}
     <div class="word-lists">
       <article class="word-card"><h2>Horizontaux</h2><ol>${horizontal.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
       <article class="word-card"><h2>Verticaux</h2><ol>${vertical.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
@@ -350,6 +557,8 @@ function render(result, requestedTotal, playerState = {}) {
       : 'Grille prête ! Tu peux masquer les lettres sans régénérer le plateau.',
     missing.length ? 'error' : 'success'
   );
+
+  refreshSolvedWords();
 }
 
 function rerenderCurrent(playerState = collectPlayerState()) {
@@ -487,12 +696,51 @@ savedList.addEventListener('click', (event) => {
   if (loadButton) loadSavedGrid(loadButton.dataset.id);
   if (deleteButton) deleteSavedGrid(deleteButton.dataset.id);
 });
+resultBox.addEventListener('focusin', (event) => {
+  if (!event.target.matches('.play-input')) return;
+  if (!event.target.dataset.orientations.includes(activeDirection)) {
+    activeDirection = event.target.dataset.orientations[0] || 'H';
+  }
+  markActiveWord(event.target);
+});
+
+resultBox.addEventListener('dblclick', (event) => {
+  const input = event.target.closest('.play-input');
+  if (!input || input.dataset.orientations.length < 2) return;
+  activeDirection = activeDirection === 'H' ? 'V' : 'H';
+  markActiveWord(input);
+});
+
+resultBox.addEventListener('keydown', (event) => {
+  if (!event.target.matches('.play-input')) return;
+
+  if (event.key === 'ArrowRight') activeDirection = 'H';
+  if (event.key === 'ArrowDown') activeDirection = 'V';
+  if (['ArrowRight', 'ArrowDown'].includes(event.key)) markActiveWord(event.target);
+
+  if (event.key === 'Backspace' && !event.target.value) {
+    const wordKey = getActiveWordForInput(event.target);
+    const lookup = currentPuzzle ? buildWordLookup(currentPuzzle.placed) : null;
+    const word = lookup?.byWord.get(wordKey);
+    const currentIndex = word?.cells.indexOf(event.target.dataset.cell) ?? -1;
+    const previous = currentIndex > 0 ? getInputByCell(word.cells[currentIndex - 1]) : null;
+    if (previous) {
+      event.preventDefault();
+      previous.value = '';
+      previous.focus();
+      validateWordFromInput(previous);
+      savePlayerState();
+    }
+  }
+});
+
 resultBox.addEventListener('input', (event) => {
   if (!event.target.matches('.play-input')) return;
+  clearTransientWordState();
   event.target.value = normalizeWord(event.target.value).slice(0, 1);
-  const isCorrect = event.target.value && event.target.value === event.target.dataset.answer;
-  event.target.classList.toggle('is-correct', isCorrect);
-  event.target.classList.toggle('is-wrong', Boolean(event.target.value) && !isCorrect);
+  markActiveWord(event.target);
+  validateWordFromInput(event.target);
+  if (event.target.value) focusNextCell(event.target);
   savePlayerState();
 });
 
