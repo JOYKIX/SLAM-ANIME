@@ -15,13 +15,13 @@
     <header class="hero">
       <div class="hero__content">
         <div class="badge">🌸 Manga Grid Quest</div>
-        <h1>Des grilles anime plus fluides : tape, valide, reprends ta quête</h1>
-        <p>Direction artistique néon shōnen, saisie automatique case par case, validation seulement au mot complet et sauvegarde locale dans ton navigateur.</p>
+        <h1>Crée des grilles anime prêtes à jouer et à imprimer</h1>
+        <p>Un dojo de mots croisés manga avec génération instantanée, mode quiz sans lettres, progression sauvegardée et export papier pour lancer une quête en classe ou entre fans.</p>
       </div>
       <div class="hero__stats" aria-label="Points forts">
-        <span>Saisie automatique</span>
-        <span>Validation mot complet</span>
-        <span>Sauvegardes locales</span>
+        <span>⚡ Génération instantanée</span>
+        <span>🎮 Mode quiz assisté</span>
+        <span>🖨️ Impression propre</span>
       </div>
     </header>
 
@@ -45,7 +45,7 @@ COSPLAY
 STUDIO GHIBLI
 HERO
 SHONEN</textarea>
-        <p class="hint">Un mot par ligne, ou séparés par des virgules. Les accents sont simplifiés. Les espaces sont conservés, affichés en cases grises, et la validation attend le mot complet.</p>
+        <p class="hint">Un mot par ligne, ou séparés par des virgules. Les accents sont simplifiés, les doublons supprimés, les espaces conservés en cases grises et la validation attend le mot complet.</p>
 
         <div class="grid-inputs">
           <div>
@@ -69,6 +69,15 @@ SHONEN</textarea>
           <button class="secondary" id="printBtn">Imprimer</button>
           <button class="secondary" id="exampleBtn">Exemple</button>
         </div>
+
+        <aside class="quest-card" aria-label="Astuces de jeu">
+          <strong>Combo de maître</strong>
+          <ul>
+            <li>Active le mode auto pour transformer la grille en quiz.</li>
+            <li>Double-clique une intersection pour changer de direction.</li>
+            <li>Sauve la partie pour reprendre les réponses plus tard.</li>
+          </ul>
+        </aside>
 
         <section class="saves" aria-label="Grilles sauvegardées">
           <div class="saves__heading">
