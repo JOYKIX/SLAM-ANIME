@@ -3,105 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manga Grid Quest · Générateur de grilles anime</title>
+  <title>SLAM ANIME · Grilles</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <div class="site-shell">
-    <header class="hero">
-      <div class="hero__content">
-        <div class="badge">🌸 Manga Grid Quest</div>
-        <h1>Crée des grilles anime prêtes à jouer et à imprimer</h1>
-        <p>Un dojo de mots croisés manga avec génération instantanée, mode quiz sans lettres, progression sauvegardée et export papier pour lancer une quête en classe ou entre fans.</p>
-      </div>
-      <div class="hero__stats" aria-label="Points forts">
-        <span>⚡ Génération instantanée</span>
-        <span>🎮 Mode quiz assisté</span>
-        <span>🖨️ Impression propre</span>
-      </div>
+    <header class="topbar" aria-label="Navigation principale">
+      <a class="brand" href="#create" aria-label="SLAM ANIME accueil">
+        <span class="brand__mark">S</span>
+        <span>SLAM ANIME</span>
+      </a>
+      <nav class="quick-nav">
+        <a class="nav-link is-active" href="#create" data-page-link="create">Créer</a>
+        <a class="nav-link" href="#saved" data-page-link="saved">Grilles</a>
+        <a class="nav-link" href="#play" data-page-link="play">Jouer</a>
+      </nav>
     </header>
 
-    <main class="app-layout">
-      <section class="panel controls" aria-label="Paramètres de génération">
-        <div class="panel__heading">
-          <span class="eyebrow">Dojo de création</span>
-          <h2>Compose ta quête</h2>
+    <main class="pages">
+      <section class="page is-active" id="page-create" data-page="create" aria-labelledby="create-title">
+        <div class="page-head">
+          <span class="eyebrow">Création</span>
+          <h1 id="create-title">Grille sombre. Rapide. Jouable.</h1>
         </div>
 
-        <label for="words">Mots à placer</label>
-        <textarea id="words" spellcheck="false">ONE PIECE
-DEMON SLAYER
-NARUTO
-SAKURA
-DRAGON BALL
-TITAN
-KAWAII
-OTAKU
-COSPLAY
-STUDIO GHIBLI
-HERO
-SHONEN</textarea>
-        <p class="hint">Un mot par ligne, ou séparés par des virgules. Les accents sont simplifiés, les doublons supprimés, les espaces conservés en cases grises et la validation attend le mot complet.</p>
-
-        <div class="grid-inputs">
-          <div>
-            <label for="horizontalCount">Horizontaux</label>
-            <input id="horizontalCount" type="number" min="0" max="50" value="5" />
-          </div>
-          <div>
-            <label for="verticalCount">Verticaux</label>
-            <input id="verticalCount" type="number" min="0" max="50" value="5" />
-          </div>
-        </div>
-
-        <div class="switches">
-          <label class="checkline"><input id="hideLetters" type="checkbox" /> Masquer les lettres et jouer en mode auto</label>
-          <label class="checkline"><input id="randomize" type="checkbox" checked /> Mélanger les mots à chaque génération</label>
-        </div>
-
-        <div class="actions">
-          <button class="primary" id="generateBtn">Générer</button>
-          <button class="secondary" id="saveBtn">Sauver</button>
-          <button class="secondary" id="printBtn">Imprimer</button>
-          <button class="secondary" id="exampleBtn">Exemple</button>
-        </div>
-
-        <aside class="quest-card" aria-label="Astuces de jeu">
-          <strong>Combo de maître</strong>
-          <ul>
-            <li>Active le mode auto pour transformer la grille en quiz.</li>
-            <li>Double-clique une intersection pour changer de direction.</li>
-            <li>Sauve la partie pour reprendre les réponses plus tard.</li>
-          </ul>
-        </aside>
-
-        <section class="saves" aria-label="Grilles sauvegardées">
-          <div class="saves__heading">
-            <div>
-              <span class="eyebrow">Bibliothèque</span>
-              <h2>Grilles sauvées</h2>
+        <div class="creator-grid">
+          <section class="panel word-builder" aria-label="Ajouter des mots">
+            <div class="panel__heading">
+              <h2>Mots + indices</h2>
             </div>
-            <button class="tiny" id="clearSavesBtn" type="button">Vider</button>
-          </div>
-          <div id="savedList" class="saved-list"></div>
-        </section>
+
+            <form class="add-word" id="wordForm">
+              <div>
+                <label for="wordName">Mot</label>
+                <input id="wordName" type="text" autocomplete="off" placeholder="Naruto" />
+              </div>
+              <div>
+                <label for="wordDescription">Description</label>
+                <input id="wordDescription" type="text" autocomplete="off" placeholder="Ninja de Konoha" />
+              </div>
+              <button class="primary" type="submit">Ajouter</button>
+            </form>
+
+            <div id="wordBank" class="word-bank" aria-live="polite"></div>
+            <textarea id="words" class="raw-words" spellcheck="false" aria-label="Source des mots">ONE PIECE | Équipage au chapeau de paille
+DEMON SLAYER | Pourfendeurs de démons
+NARUTO | Ninja de Konoha
+SAKURA | Fleur rose japonaise
+DRAGON BALL | Boules de cristal
+TITAN | Géant d'attaque
+KAWAII | Mignon au Japon
+OTAKU | Fan très investi
+COSPLAY | Costume de personnage
+STUDIO GHIBLI | Studio de Miyazaki
+HERO | Personnage principal
+SHONEN | Manga pour jeunes lecteurs</textarea>
+          </section>
+
+          <section class="panel settings" aria-label="Paramètres de grille">
+            <div class="panel__heading">
+              <h2>Réglages</h2>
+            </div>
+
+            <div class="grid-inputs">
+              <div>
+                <label for="horizontalCount">Horizontaux</label>
+                <input id="horizontalCount" type="number" min="0" max="50" value="5" />
+              </div>
+              <div>
+                <label for="verticalCount">Verticaux</label>
+                <input id="verticalCount" type="number" min="0" max="50" value="5" />
+              </div>
+            </div>
+
+            <div class="switches">
+              <label class="checkline"><input id="hideLetters" type="checkbox" checked /> Mode jeu</label>
+              <label class="checkline"><input id="randomize" type="checkbox" checked /> Mélanger</label>
+            </div>
+
+            <div class="actions">
+              <button class="primary" id="generateBtn" type="button">Générer</button>
+              <button class="secondary" id="saveBtn" type="button">Sauver</button>
+              <button class="secondary" id="exampleBtn" type="button">Exemple</button>
+              <button class="secondary" id="printBtn" type="button">Imprimer</button>
+            </div>
+          </section>
+        </div>
       </section>
 
-      <section class="panel output" aria-live="polite">
-        <div class="output__topline">
+      <section class="page" id="page-saved" data-page="saved" aria-labelledby="saved-title">
+        <div class="page-head page-head--inline">
           <div>
-            <span class="eyebrow">Arène</span>
-            <h2>Plateau de jeu</h2>
+            <span class="eyebrow">Bibliothèque</span>
+            <h1 id="saved-title">Grilles sauvegardées</h1>
           </div>
-          <div class="status" id="status">
-            <div class="message">La grille générée apparaîtra ici.</div>
-          </div>
+          <button class="tiny danger" id="clearSavesBtn" type="button">Vider</button>
         </div>
-        <div id="result"></div>
+        <div id="savedList" class="saved-list saved-list--page"></div>
+      </section>
+
+      <section class="page" id="page-play" data-page="play" aria-labelledby="play-title">
+        <section class="panel output" aria-live="polite">
+          <div class="output__topline">
+            <div>
+              <span class="eyebrow">Jeu</span>
+              <h1 id="play-title">Plateau</h1>
+            </div>
+            <div class="status" id="status">
+              <div class="message">Prêt.</div>
+            </div>
+          </div>
+          <div id="result"></div>
+        </section>
       </section>
     </main>
   </div>
