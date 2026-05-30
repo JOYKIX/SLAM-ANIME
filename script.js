@@ -4,6 +4,10 @@ const escapeSelectorValue = (value) => {
   return String(value).replace(/[^a-zA-Z0-9_-]/g, '\\$&');
 };
 const wordsInput = $('#words');
+const wordForm = $('#wordForm');
+const wordNameInput = $('#wordName');
+const wordDescriptionInput = $('#wordDescription');
+const wordBank = $('#wordBank');
 const horizontalInput = $('#horizontalCount');
 const verticalInput = $('#verticalCount');
 const hideLettersInput = $('#hideLetters');
@@ -17,15 +21,56 @@ const clearSavesBtn = $('#clearSavesBtn');
 const STORAGE_KEY = 'manga-grid-quest:saves:v1';
 
 const examples = [
-  ['ONE PIECE', 'DEMON SLAYER', 'NARUTO', 'SAKURA', 'DRAGON BALL', 'TITAN', 'KAWAII', 'OTAKU', 'COSPLAY', 'STUDIO GHIBLI', 'HERO', 'SHONEN'],
-  ['MY HERO ACADEMIA', 'JUJUTSU KAISEN', 'CHAINSAW MAN', 'SPY FAMILY', 'BLEACH', 'HUNTER HUNTER', 'SAILOR MOON', 'AKIRA', 'MANGAKA', 'SENSEI', 'KATANA', 'MECHA'],
-  ['ANIME', 'MANGA', 'SEINEN', 'SHOJO', 'SHONEN', 'KODOMO', 'ISEKAI', 'TSUNDERE', 'OPENING', 'ENDING', 'DOUJINSHI', 'FAN ART']
+  [
+    ['ONE PIECE', 'Équipage au chapeau de paille'],
+    ['DEMON SLAYER', 'Pourfendeurs de démons'],
+    ['NARUTO', 'Ninja de Konoha'],
+    ['SAKURA', 'Fleur rose japonaise'],
+    ['DRAGON BALL', 'Boules de cristal'],
+    ['TITAN', 'Géant d’attaque'],
+    ['KAWAII', 'Mignon au Japon'],
+    ['OTAKU', 'Fan très investi'],
+    ['COSPLAY', 'Costume de personnage'],
+    ['STUDIO GHIBLI', 'Studio de Miyazaki'],
+    ['HERO', 'Personnage principal'],
+    ['SHONEN', 'Manga pour jeunes lecteurs']
+  ],
+  [
+    ['MY HERO ACADEMIA', 'Académie de super-héros'],
+    ['JUJUTSU KAISEN', 'Exorcistes et fléaux'],
+    ['CHAINSAW MAN', 'Démon tronçonneuse'],
+    ['SPY FAMILY', 'Famille secrète'],
+    ['BLEACH', 'Shinigami remplaçant'],
+    ['HUNTER HUNTER', 'Permis de hunter'],
+    ['SAILOR MOON', 'Guerrière lunaire'],
+    ['AKIRA', 'Classique cyberpunk'],
+    ['MANGAKA', 'Auteur de manga'],
+    ['SENSEI', 'Maître ou professeur'],
+    ['KATANA', 'Sabre japonais'],
+    ['MECHA', 'Robot géant']
+  ],
+  [
+    ['ANIME', 'Animation japonaise'],
+    ['MANGA', 'BD japonaise'],
+    ['SEINEN', 'Manga adulte'],
+    ['SHOJO', 'Manga romance'],
+    ['SHONEN', 'Manga d’action'],
+    ['KODOMO', 'Manga enfant'],
+    ['ISEKAI', 'Autre monde'],
+    ['TSUNDERE', 'Froid puis tendre'],
+    ['OPENING', 'Générique de début'],
+    ['ENDING', 'Générique de fin'],
+    ['DOUJINSHI', 'Fan manga'],
+    ['FAN ART', 'Dessin de fan']
+  ]
 ];
 
 let currentPuzzle = null;
 let currentRequestedTotal = 0;
 let activeSaveId = null;
 let activeDirection = 'H';
+let activePage = 'create';
+let currentEntries = [];
 
 function normalizeWord(word) {
   return word
@@ -37,18 +82,41 @@ function normalizeWord(word) {
     .toUpperCase();
 }
 
-function parseWords(raw) {
+function splitWordEntry(entry) {
+  const [name, ...descriptionParts] = entry.split(/\s(?:\||—|–|:)\s/);
+  return {
+    word: normalizeWord(name || entry),
+    description: descriptionParts.join(' ').trim()
+  };
+}
+
+function parseWordEntries(raw) {
   const seen = new Set();
   return raw
-    .split(/[\n,;]+/)
-    .map((entry) => normalizeWord(entry))
-    .filter((word) => word.replace(/\s/g, '').length >= 2)
-    .filter((word) => {
-      if (seen.has(word)) return false;
-      seen.add(word);
+    .split(/[\n;]+/)
+    .map((entry) => splitWordEntry(entry.trim()))
+    .filter((entry) => entry.word.replace(/\s/g, '').length >= 2)
+    .filter((entry) => {
+      if (seen.has(entry.word)) return false;
+      seen.add(entry.word);
       return true;
     })
-    .sort((a, b) => b.length - a.length);
+    .sort((a, b) => b.word.length - a.word.length);
+}
+
+function parseWords(raw) {
+  currentEntries = parseWordEntries(raw);
+  return currentEntries.map((entry) => entry.word);
+}
+
+function serializeWordEntries(entries) {
+  return entries
+    .map((entry) => `${entry.word}${entry.description ? ` | ${entry.description}` : ''}`)
+    .join('\n');
+}
+
+function getDescriptionForWord(word) {
+  return currentEntries.find((entry) => entry.word === word)?.description || '';
 }
 
 function escapeHtml(value) {
@@ -558,7 +626,11 @@ function render(result, requestedTotal, playerState = {}) {
 
   const horizontal = placed.filter((item) => item.orientation === 'H');
   const vertical = placed.filter((item) => item.orientation === 'V');
-  const listItem = (item) => `<li><strong>${item.number}.</strong> ${escapeHtml(item.word)}</li>`;
+  const listItem = (item) => {
+    const description = getDescriptionForWord(item.word);
+    const label = hideLetters ? (description || 'Mot à trouver') : `${item.word}${description ? ` — ${description}` : ''}`;
+    return `<li><strong>${item.number}.</strong> ${escapeHtml(label)}</li>`;
+  };
 
   resultBox.innerHTML = `
     <div class="meta">
@@ -584,7 +656,7 @@ function render(result, requestedTotal, playerState = {}) {
     <div class="word-lists">
       <article class="word-card"><h2>Horizontaux</h2><ol>${horizontal.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
       <article class="word-card"><h2>Verticaux</h2><ol>${vertical.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
-      ${missing.length ? `<article class="word-card"><h2>Mots non placés</h2><ul>${missing.map((item) => `<li>${escapeHtml(item.word)} (${item.orientation === 'H' ? 'horizontal' : 'vertical'})</li>`).join('')}</ul></article>` : ''}
+      ${missing.length ? `<article class="word-card"><h2>Non placés</h2><ul>${missing.map((item) => `<li>${escapeHtml(getDescriptionForWord(item.word) || item.word)} (${item.orientation === 'H' ? 'H' : 'V'})</li>`).join('')}</ul></article>` : ''}
     </div>
   `;
 
@@ -636,6 +708,7 @@ function handleGenerate() {
   const result = generateCrossword(words, horizontalCount, verticalCount, randomizeInput.checked);
   render(result, requestedTotal);
   renderSavedList();
+  showPage('play');
 }
 
 function saveCurrentGrid() {
@@ -653,6 +726,7 @@ function saveCurrentGrid() {
     createdAt: activeSaveId ? saves.find((item) => item.id === activeSaveId)?.createdAt || now : now,
     updatedAt: now,
     words: wordsInput.value,
+    entries: currentEntries,
     horizontalCount: Number(horizontalInput.value),
     verticalCount: Number(verticalInput.value),
     hideLetters: hideLettersInput.checked,
@@ -665,7 +739,7 @@ function saveCurrentGrid() {
   activeSaveId = save.id;
   if (!setSavedGames(nextSaves)) return;
   renderSavedList();
-  setStatus('Grille sauvegardée dans ce navigateur. Tu peux la rouvrir et continuer à jouer dessus.', 'success');
+  setStatus('Grille sauvegardée.', 'success');
 }
 
 function loadSavedGrid(id) {
@@ -673,14 +747,17 @@ function loadSavedGrid(id) {
   if (!save) return;
   const puzzle = deserializePuzzle(save.puzzle);
   activeSaveId = save.id;
-  wordsInput.value = save.words || '';
+  wordsInput.value = save.words || serializeWordEntries(save.entries || []);
+  currentEntries = parseWordEntries(wordsInput.value);
+  renderWordBank();
   horizontalInput.value = save.horizontalCount ?? 0;
   verticalInput.value = save.verticalCount ?? 0;
   hideLettersInput.checked = Boolean(save.hideLetters);
   randomizeInput.checked = Boolean(save.randomize);
   render(puzzle, puzzle.requestedTotal, save.player || {});
   renderSavedList();
-  setStatus('Sauvegarde chargée : la grille est identique, sans nouvelle génération.', 'success');
+  showPage('play');
+  setStatus('Sauvegarde chargée.', 'success');
 }
 
 function deleteSavedGrid(id) {
@@ -710,18 +787,90 @@ function renderSavedList() {
         <span>${formatDate(save.updatedAt)}</span>
       </div>
       <div class="save-actions">
-        <button class="tiny load-save" data-id="${save.id}">Ouvrir</button>
+        <button class="tiny load-save" data-id="${save.id}">Jouer</button>
         <button class="tiny danger delete-save" data-id="${save.id}" aria-label="Supprimer ${escapeHtml(save.name)}">×</button>
       </div>
     </article>
   `).join('');
 }
 
+
+function showPage(page) {
+  activePage = page;
+  document.querySelectorAll('[data-page]').forEach((section) => {
+    section.classList.toggle('is-active', section.dataset.page === page);
+  });
+  document.querySelectorAll('[data-page-link]').forEach((link) => {
+    link.classList.toggle('is-active', link.dataset.pageLink === page);
+  });
+  if (window.location.hash !== `#${page}`) window.history.replaceState(null, '', `#${page}`);
+}
+
+function renderWordBank() {
+  currentEntries = parseWordEntries(wordsInput.value);
+  wordsInput.value = serializeWordEntries(currentEntries);
+
+  if (!currentEntries.length) {
+    wordBank.innerHTML = '<p class="empty-save">Aucun mot.</p>';
+    return;
+  }
+
+  wordBank.innerHTML = currentEntries.map((entry) => `
+    <article class="word-chip">
+      <div>
+        <strong>${escapeHtml(entry.word)}</strong>
+        <span>${escapeHtml(entry.description || 'Sans description')}</span>
+      </div>
+      <button class="tiny danger remove-word" type="button" data-word="${escapeHtml(entry.word)}" aria-label="Supprimer ${escapeHtml(entry.word)}">×</button>
+    </article>
+  `).join('');
+}
+
+function addWordEntry(word, description) {
+  const normalized = normalizeWord(word);
+  if (normalized.replace(/\s/g, '').length < 2) {
+    setStatus('Mot invalide.', 'error');
+    return;
+  }
+
+  const entries = parseWordEntries(wordsInput.value).filter((entry) => entry.word !== normalized);
+  entries.push({ word: normalized, description: description.trim() });
+  wordsInput.value = serializeWordEntries(entries);
+  renderWordBank();
+  wordNameInput.value = '';
+  wordDescriptionInput.value = '';
+  wordNameInput.focus();
+}
+
+function removeWordEntry(word) {
+  const entries = parseWordEntries(wordsInput.value).filter((entry) => entry.word !== word);
+  wordsInput.value = serializeWordEntries(entries);
+  renderWordBank();
+}
+
+document.querySelectorAll('[data-page-link]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    showPage(link.dataset.pageLink);
+  });
+});
+
+wordForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  addWordEntry(wordNameInput.value, wordDescriptionInput.value);
+});
+
+wordBank.addEventListener('click', (event) => {
+  const removeButton = event.target.closest('.remove-word');
+  if (removeButton) removeWordEntry(removeButton.dataset.word);
+});
+
 $('#generateBtn').addEventListener('click', handleGenerate);
 $('#printBtn').addEventListener('click', () => window.print());
 $('#exampleBtn').addEventListener('click', () => {
   const example = examples[Math.floor(Math.random() * examples.length)];
-  wordsInput.value = example.join('\n');
+  wordsInput.value = serializeWordEntries(example.map(([word, description]) => ({ word, description })));
+  renderWordBank();
   horizontalInput.value = 5;
   verticalInput.value = 5;
   handleGenerate();
@@ -795,5 +944,7 @@ resultBox.addEventListener('input', (event) => {
   savePlayerState();
 });
 
+renderWordBank();
 renderSavedList();
 handleGenerate();
+showPage((window.location.hash || '#create').replace('#', '') || 'create');
