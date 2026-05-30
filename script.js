@@ -1,4 +1,8 @@
 const $ = (selector) => document.querySelector(selector);
+const escapeSelectorValue = (value) => {
+  if (window.CSS && typeof CSS.escape === 'function') return CSS.escape(value);
+  return String(value).replace(/[^a-zA-Z0-9_-]/g, '\\$&');
+};
 const wordsInput = $('#words');
 const horizontalInput = $('#horizontalCount');
 const verticalInput = $('#verticalCount');
@@ -250,7 +254,8 @@ function deserializePuzzle(snapshot) {
 
 function getSavedGames() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    return Array.isArray(parsed) ? parsed : [];
   } catch (error) {
     console.warn('Impossible de lire les sauvegardes locales.', error);
     return [];
@@ -258,7 +263,14 @@ function getSavedGames() {
 }
 
 function setSavedGames(saves) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(saves));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(saves));
+    return true;
+  } catch (error) {
+    console.warn('Impossible de sauvegarder localement.', error);
+    setStatus('Le navigateur refuse la sauvegarde locale. La grille reste jouable, mais elle ne sera pas conservée.', 'error');
+    return false;
+  }
 }
 
 function collectPlayerState() {
@@ -314,7 +326,7 @@ function buildWordLookup(placed) {
 }
 
 function getInputByCell(cellKey) {
-  return resultBox.querySelector(`.play-input[data-cell="${CSS.escape(cellKey)}"]`);
+  return resultBox.querySelector(`.play-input[data-cell="${escapeSelectorValue(cellKey)}"]`);
 }
 
 function getActiveWordForInput(input) {
@@ -325,7 +337,7 @@ function getActiveWordForInput(input) {
   return memberships.find((id) => id.endsWith(`-${activeDirection}`)) || memberships[0];
 }
 
-function focusNextCell(input) {
+function focusAdjacentCell(input, direction = 1) {
   const wordKey = getActiveWordForInput(input);
   if (!wordKey || !currentPuzzle) return;
 
@@ -334,12 +346,32 @@ function focusNextCell(input) {
   if (!word) return;
 
   const currentIndex = word.cells.indexOf(input.dataset.cell);
-  const nextCell = word.cells.slice(currentIndex + 1).find((cellKey) => {
+  const candidates = direction > 0 ? word.cells.slice(currentIndex + 1) : word.cells.slice(0, currentIndex).reverse();
+  const nextCell = candidates.find((cellKey) => {
     const nextInput = getInputByCell(cellKey);
     return nextInput && !nextInput.disabled;
   });
 
   if (nextCell) getInputByCell(nextCell)?.focus();
+}
+
+function focusNextCell(input) {
+  focusAdjacentCell(input, 1);
+}
+
+function clearGameAnswers() {
+  resultBox.querySelectorAll('.play-input').forEach((input) => {
+    input.value = '';
+    input.disabled = false;
+    input.classList.remove('is-pending', 'is-correct', 'is-wrong');
+  });
+  resultBox.querySelectorAll('.cell.is-current, .cell.is-solved, .cell.is-word-wrong').forEach((cell) => {
+    cell.classList.remove('is-current', 'is-solved', 'is-word-wrong');
+  });
+  updateProgress(0, currentPuzzle?.placed.length || 0);
+  setGameStatus('Réponses effacées : la quête repart de zéro.');
+  savePlayerState();
+  resultBox.querySelector('.play-input')?.focus();
 }
 
 function clearTransientWordState() {
@@ -472,12 +504,14 @@ function savePlayerState() {
   if (!save) return;
   save.player = collectPlayerState();
   save.updatedAt = new Date().toISOString();
-  setSavedGames(saves);
+  if (!setSavedGames(saves)) return;
   renderSavedList();
 }
 
 function render(result, requestedTotal, playerState = {}) {
   if (!result || !result.placed.length) {
+    currentPuzzle = null;
+    currentRequestedTotal = 0;
     resultBox.innerHTML = '';
     setStatus('Impossible de créer une grille avec ces mots. Ajoute des mots qui partagent plus de lettres.', 'error');
     return;
@@ -536,7 +570,10 @@ function render(result, requestedTotal, playerState = {}) {
     </div>
     ${hideLetters ? `
       <section class="play-panel" aria-label="Progression du mode jeu">
-        <div class="game-status">Tape un mot en entier : il devient vert seulement s’il est juste, sinon il s’efface.</div>
+        <div>
+          <div class="game-status">Tape un mot en entier : il devient vert seulement s’il est juste, sinon il s’efface.</div>
+          <button class="tiny reset-game" type="button">Effacer les réponses</button>
+        </div>
         <div class="game-progress" style="--progress: 0%"><span></span><strong>0/${placed.length}</strong></div>
       </section>
     ` : ''}
@@ -567,7 +604,7 @@ function rerenderCurrent(playerState = collectPlayerState()) {
 }
 
 function setStatus(message, type = '') {
-  statusBox.innerHTML = `<div class="message ${type}">${message}</div>`;
+  statusBox.innerHTML = `<div class="message ${type}">${escapeHtml(message)}</div>`;
 }
 
 function handleGenerate() {
@@ -577,14 +614,20 @@ function handleGenerate() {
   const requestedTotal = horizontalCount + verticalCount;
 
   if (!Number.isInteger(horizontalCount) || !Number.isInteger(verticalCount) || horizontalCount < 0 || verticalCount < 0) {
+    currentPuzzle = null;
+    resultBox.innerHTML = '';
     setStatus('Choisis un nombre horizontal et vertical valide.', 'error');
     return;
   }
   if (requestedTotal === 0) {
+    currentPuzzle = null;
+    resultBox.innerHTML = '';
     setStatus('Demande au moins un mot horizontal ou vertical.', 'error');
     return;
   }
   if (words.length < requestedTotal) {
+    currentPuzzle = null;
+    resultBox.innerHTML = '';
     setStatus(`Il faut ${requestedTotal} mots différents, mais seulement ${words.length} sont valides.`, 'error');
     return;
   }
@@ -620,7 +663,7 @@ function saveCurrentGrid() {
 
   const nextSaves = [save, ...saves.filter((item) => item.id !== save.id)].slice(0, 20);
   activeSaveId = save.id;
-  setSavedGames(nextSaves);
+  if (!setSavedGames(nextSaves)) return;
   renderSavedList();
   setStatus('Grille sauvegardée dans ce navigateur. Tu peux la rouvrir et continuer à jouer dessus.', 'success');
 }
@@ -643,7 +686,7 @@ function loadSavedGrid(id) {
 function deleteSavedGrid(id) {
   const nextSaves = getSavedGames().filter((item) => item.id !== id);
   if (activeSaveId === id) activeSaveId = null;
-  setSavedGames(nextSaves);
+  if (!setSavedGames(nextSaves)) return;
   renderSavedList();
 }
 
@@ -686,10 +729,14 @@ $('#exampleBtn').addEventListener('click', () => {
 hideLettersInput.addEventListener('change', () => rerenderCurrent());
 saveBtn.addEventListener('click', saveCurrentGrid);
 clearSavesBtn.addEventListener('click', () => {
-  setSavedGames([]);
+  if (!setSavedGames([])) return;
   activeSaveId = null;
   renderSavedList();
 });
+resultBox.addEventListener('click', (event) => {
+  if (event.target.closest('.reset-game')) clearGameAnswers();
+});
+
 savedList.addEventListener('click', (event) => {
   const loadButton = event.target.closest('.load-save');
   const deleteButton = event.target.closest('.delete-save');
@@ -714,9 +761,13 @@ resultBox.addEventListener('dblclick', (event) => {
 resultBox.addEventListener('keydown', (event) => {
   if (!event.target.matches('.play-input')) return;
 
-  if (event.key === 'ArrowRight') activeDirection = 'H';
-  if (event.key === 'ArrowDown') activeDirection = 'V';
-  if (['ArrowRight', 'ArrowDown'].includes(event.key)) markActiveWord(event.target);
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') activeDirection = 'H';
+  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') activeDirection = 'V';
+  if (['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp'].includes(event.key)) {
+    event.preventDefault();
+    markActiveWord(event.target);
+    focusAdjacentCell(event.target, ['ArrowLeft', 'ArrowUp'].includes(event.key) ? -1 : 1);
+  }
 
   if (event.key === 'Backspace' && !event.target.value) {
     const wordKey = getActiveWordForInput(event.target);
