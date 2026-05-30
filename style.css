@@ -1,19 +1,20 @@
 :root {
   color-scheme: light;
-  --bg: #eef2ff;
-  --bg-deep: #dfe7ff;
+  --bg: #180824;
+  --bg-deep: #2d0f48;
   --card: rgba(255, 255, 255, 0.9);
   --card-solid: #ffffff;
-  --ink: #11182f;
-  --muted: #65708a;
-  --accent: #5d5fef;
-  --accent-dark: #3638bd;
-  --accent-2: #00b894;
-  --danger: #d63031;
-  --line: #d8deec;
-  --square: #fbfcff;
-  --square-border: #27314f;
-  --shadow: 0 24px 70px rgba(30, 39, 80, 0.16);
+  --ink: #171129;
+  --muted: #6f6680;
+  --accent: #ff4fd8;
+  --accent-dark: #6a35ff;
+  --accent-2: #00e5ff;
+  --danger: #ff3864;
+  --line: #eadcf7;
+  --square: #fff9ff;
+  --square-border: #2a153f;
+  --space: #a7a2b4;
+  --shadow: 0 24px 70px rgba(28, 7, 46, 0.28);
 }
 
 * {
@@ -25,10 +26,23 @@ body {
   min-height: 100vh;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(93, 95, 239, 0.22), transparent 34rem),
-    radial-gradient(circle at 88% 18%, rgba(0, 184, 148, 0.18), transparent 26rem),
+    radial-gradient(circle at 16% 12%, rgba(255, 79, 216, 0.34), transparent 28rem),
+    radial-gradient(circle at 88% 18%, rgba(0, 229, 255, 0.22), transparent 26rem),
+    radial-gradient(circle at 78% 82%, rgba(255, 193, 7, 0.18), transparent 24rem),
     linear-gradient(135deg, var(--bg), var(--bg-deep));
   color: var(--ink);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(115deg, transparent 0 46%, rgba(255, 255, 255, 0.09) 46% 47%, transparent 47% 100%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.045) 0 2px, transparent 2px 18px);
+  mask-image: linear-gradient(to bottom, black, transparent 88%);
 }
 
 button,
@@ -52,6 +66,7 @@ textarea {
 
 .hero__content {
   max-width: 840px;
+  color: #fff;
 }
 
 .badge,
@@ -87,6 +102,7 @@ h2 {
 
 h1 {
   max-width: 880px;
+  font-family: "Zen Maru Gothic", Inter, sans-serif;
   font-size: clamp(2.35rem, 6vw, 5.5rem);
   letter-spacing: -0.07em;
 }
@@ -100,7 +116,7 @@ h2 {
 .hero p {
   margin: 18px 0 0;
   max-width: 720px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -113,11 +129,11 @@ h2 {
 
 .hero__stats span {
   padding: 12px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.13);
   box-shadow: 0 10px 30px rgba(30, 39, 80, 0.08);
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.82);
   font-size: 0.92rem;
   font-weight: 900;
 }
@@ -219,7 +235,7 @@ input[type="number"] {
 
 .actions {
   display: grid;
-  grid-template-columns: 1fr 0.72fr 0.72fr;
+  grid-template-columns: 1fr 0.78fr 0.78fr 0.78fr;
   gap: 10px;
   margin-top: 18px;
 }
@@ -242,13 +258,13 @@ button:active {
 }
 
 .primary {
-  background: linear-gradient(135deg, var(--accent), #9d4edd);
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: #fff;
   box-shadow: 0 13px 28px rgba(93, 95, 239, 0.3);
 }
 
 .secondary {
-  background: #eef1f8;
+  background: #f5ecff;
   color: var(--ink);
 }
 
@@ -275,7 +291,7 @@ button:active {
   width: min(100%, 560px);
   padding: 14px 16px;
   border-radius: 18px;
-  background: #f0f3fb;
+  background: #f7efff;
   color: var(--muted);
   font-weight: 800;
   line-height: 1.45;
@@ -287,8 +303,8 @@ button:active {
 }
 
 .message.success {
-  background: rgba(0, 184, 148, 0.12);
-  color: #067a63;
+  background: rgba(0, 229, 255, 0.13);
+  color: #08758a;
 }
 
 .meta {
@@ -302,7 +318,7 @@ button:active {
   padding: 8px 12px;
   border: 1px solid rgba(93, 95, 239, 0.12);
   border-radius: 999px;
-  background: #eef1f8;
+  background: #f5ecff;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 900;
@@ -316,7 +332,8 @@ button:active {
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.42) 1px, transparent 1px) 0 0 / 22px 22px,
     linear-gradient(0deg, rgba(255, 255, 255, 0.42) 1px, transparent 1px) 0 0 / 22px 22px,
-    linear-gradient(135deg, #f8f9fe, #e8eefc);
+    radial-gradient(circle at top left, rgba(255, 79, 216, 0.14), transparent 18rem),
+    linear-gradient(135deg, #fff8ff, #efe8ff);
 }
 
 .crossword {
@@ -347,6 +364,50 @@ button:active {
   text-transform: uppercase;
 }
 
+.cell.space-cell {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent),
+    var(--space);
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.cell.space-cell .letter {
+  opacity: 0.75;
+}
+
+.play-input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: center;
+  font: inherit;
+  font-weight: 950;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.play-input:focus {
+  box-shadow: inset 0 0 0 4px rgba(255, 79, 216, 0.24);
+}
+
+.play-input.is-correct {
+  color: #00836f;
+}
+
+.play-input.is-wrong {
+  color: var(--danger);
+}
+
+.play-hint {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
 .cell.empty {
   background: #20283b;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
@@ -364,6 +425,91 @@ button:active {
 
 .cell.hidden-letter .letter {
   opacity: 0;
+}
+
+.saves {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.saves__heading {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.saves__heading h2 {
+  font-size: 1.15rem;
+}
+
+.saved-list {
+  display: grid;
+  gap: 10px;
+}
+
+.empty-save {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.save-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.save-card.is-active {
+  border-color: rgba(255, 79, 216, 0.48);
+  box-shadow: 0 0 0 4px rgba(255, 79, 216, 0.1);
+}
+
+.save-card strong,
+.save-card span {
+  display: block;
+}
+
+.save-card strong {
+  font-size: 0.9rem;
+}
+
+.save-card span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.save-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.tiny {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: #f5ecff;
+  color: var(--ink);
+  font-size: 0.78rem;
+}
+
+.tiny:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.tiny.danger {
+  background: rgba(255, 56, 100, 0.12);
+  color: var(--danger);
 }
 
 .word-lists {
@@ -424,7 +570,8 @@ ul {
 
   .grid-inputs,
   .actions,
-  .word-lists {
+  .word-lists,
+  .save-card {
     grid-template-columns: 1fr;
   }
 
@@ -446,7 +593,9 @@ ul {
   .hero,
   .controls,
   .actions,
-  .output__topline {
+  .saves,
+  .output__topline,
+  .play-hint {
     display: none;
   }
 
