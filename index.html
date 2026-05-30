@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Générateur de grille façon Slam</title>
+  <title>Manga Grid Quest · Générateur de grilles anime</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
@@ -14,38 +14,38 @@
   <div class="site-shell">
     <header class="hero">
       <div class="hero__content">
-        <div class="badge">✨ Générateur Slam</div>
-        <h1>Crée une grille propre, carrée et prête à imprimer</h1>
-        <p>Entre une liste de mots, choisis combien doivent être horizontaux et verticaux, puis laisse l’algorithme chercher les croisements possibles.</p>
+        <div class="badge">🌸 Manga Grid Quest</div>
+        <h1>Des grilles façon anime pour jouer, imprimer et reprendre plus tard</h1>
+        <p>Direction artistique néon shōnen : mots composés, espaces gris, plateau généré une seule fois puis mode jeu avec sauvegarde locale dans ton navigateur.</p>
       </div>
       <div class="hero__stats" aria-label="Points forts">
-        <span>Grille automatique</span>
-        <span>Mode impression</span>
-        <span>Exemples rapides</span>
+        <span>Espaces de mots visibles</span>
+        <span>Mode jeu sans régénération</span>
+        <span>Sauvegardes locales</span>
       </div>
     </header>
 
     <main class="app-layout">
       <section class="panel controls" aria-label="Paramètres de génération">
         <div class="panel__heading">
-          <span class="eyebrow">Configuration</span>
-          <h2>Compose ta grille</h2>
+          <span class="eyebrow">Dojo de création</span>
+          <h2>Compose ta quête</h2>
         </div>
 
         <label for="words">Mots à placer</label>
-        <textarea id="words" spellcheck="false">ANIME
-MANGA
+        <textarea id="words" spellcheck="false">ONE PIECE
+DEMON SLAYER
 NARUTO
 SAKURA
-DRAGON
-ONEPIECE
+DRAGON BALL
 TITAN
 KAWAII
 OTAKU
 COSPLAY
-STUDIO
-HERO</textarea>
-        <p class="hint">Un mot par ligne, ou séparés par des virgules. Les accents et espaces sont acceptés, ils seront simplifiés dans la grille.</p>
+STUDIO GHIBLI
+HERO
+SHONEN</textarea>
+        <p class="hint">Un mot par ligne, ou séparés par des virgules. Les accents sont simplifiés, mais les espaces dans les mots sont conservés et deviennent des cases grises.</p>
 
         <div class="grid-inputs">
           <div>
@@ -59,21 +59,33 @@ HERO</textarea>
         </div>
 
         <div class="switches">
-          <label class="checkline"><input id="hideLetters" type="checkbox" /> Masquer les lettres pour imprimer</label>
-          <label class="checkline"><input id="randomize" type="checkbox" checked /> Mélanger les mots à chaque essai</label>
+          <label class="checkline"><input id="hideLetters" type="checkbox" /> Masquer les lettres et jouer</label>
+          <label class="checkline"><input id="randomize" type="checkbox" checked /> Mélanger les mots à chaque génération</label>
         </div>
 
         <div class="actions">
-          <button class="primary" id="generateBtn">Générer la grille</button>
+          <button class="primary" id="generateBtn">Générer</button>
+          <button class="secondary" id="saveBtn">Sauver</button>
           <button class="secondary" id="printBtn">Imprimer</button>
           <button class="secondary" id="exampleBtn">Exemple</button>
         </div>
+
+        <section class="saves" aria-label="Grilles sauvegardées">
+          <div class="saves__heading">
+            <div>
+              <span class="eyebrow">Bibliothèque</span>
+              <h2>Grilles sauvées</h2>
+            </div>
+            <button class="tiny" id="clearSavesBtn" type="button">Vider</button>
+          </div>
+          <div id="savedList" class="saved-list"></div>
+        </section>
       </section>
 
       <section class="panel output" aria-live="polite">
         <div class="output__topline">
           <div>
-            <span class="eyebrow">Résultat</span>
+            <span class="eyebrow">Arène</span>
             <h2>Plateau de jeu</h2>
           </div>
           <div class="status" id="status">
