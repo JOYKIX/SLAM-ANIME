@@ -842,3 +842,126 @@ ul {
     border-radius: 24px;
   }
 }
+
+.play-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bonus-panel {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 16px;
+  padding: 16px;
+  border: 1px solid rgba(6, 182, 212, 0.24);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.14), transparent 16rem),
+    rgba(255, 255, 255, 0.055);
+}
+
+.bonus-head {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.bonus-head h2 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+}
+
+.bonus-head p,
+.score-line,
+.missed-line {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.bonus-head > strong {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.88), rgba(6, 182, 212, 0.74));
+  color: #fff;
+  font-weight: 950;
+}
+
+.missions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mission {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.48);
+}
+
+.mission > span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent-2);
+  font-size: 0.82rem;
+  font-weight: 950;
+}
+
+.mission strong,
+.mission small {
+  display: block;
+}
+
+.mission small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.mission.is-done {
+  border-color: rgba(52, 211, 153, 0.34);
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.bonus-actions {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto auto;
+  gap: 10px;
+}
+
+.bonus-word {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 9px 10px;
+  background: rgba(2, 6, 23, 0.74);
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.cell.is-revealed {
+  background: #e0f2fe;
+  box-shadow: inset 0 0 0 3px rgba(6, 182, 212, 0.28);
+}
+
+@media (max-width: 680px) {
+  .bonus-head,
+  .bonus-actions { grid-template-columns: 1fr; }
+  .bonus-head { display: grid; }
+  .missions { grid-template-columns: 1fr; }
+}

@@ -24,6 +24,9 @@ const savedList = $('#savedList');
 const clearSavesBtn = $('#clearSavesBtn');
 
 const STORAGE_KEY = 'manga-grid-quest:saves:v1';
+const PROFILE_KEY = 'manga-grid-quest:profile:v1';
+const BASE_ELO = 1000;
+
 
 
 const THEME_INDEX_URL = 'data/themes/index.json';
@@ -83,6 +86,15 @@ let activeSaveId = null;
 let activeDirection = 'H';
 let activePage = 'create';
 let currentEntries = [];
+
+const MISSION_POOL = [
+  { id: 'first-wave', target: 2, title: 'Échauffement', text: 'Trouve 2 mots', reward: 1 },
+  { id: 'combo', target: 3, title: 'Combo propre', text: 'Trouve 3 mots', reward: 1 },
+  { id: 'half-grid', target: 5, title: 'Œil de sensei', text: 'Trouve 5 mots', reward: 1 },
+  { id: 'hunter', target: 7, title: 'Chasseur de cases', text: 'Trouve 7 mots', reward: 2 },
+  { id: 'finisher', target: 9, title: 'Arc final', text: 'Trouve 9 mots', reward: 2 }
+];
+
 
 function normalizeWord(word) {
   return word
@@ -319,7 +331,8 @@ function serializePuzzle(result, requestedTotal) {
     board: [...result.board.entries()].map(([cellKey, cell]) => [cellKey, { letter: cell.letter, orientations: [...cell.orientations] }]),
     placed: result.placed,
     missing: result.missing,
-    requestedTotal
+    requestedTotal,
+    game: result.game || null
   };
 }
 
@@ -328,7 +341,8 @@ function deserializePuzzle(snapshot) {
     board: new Map(snapshot.board.map(([cellKey, cell]) => [cellKey, { letter: cell.letter, orientations: new Set(cell.orientations) }])),
     placed: snapshot.placed || [],
     missing: snapshot.missing || [],
-    requestedTotal: snapshot.requestedTotal || (snapshot.placed?.length ?? 0)
+    requestedTotal: snapshot.requestedTotal || (snapshot.placed?.length ?? 0),
+    game: snapshot.game || null
   };
 }
 
@@ -351,6 +365,208 @@ function setSavedGames(saves) {
     setStatus('Le navigateur refuse la sauvegarde locale. La grille reste jouable, mais elle ne sera pas conservée.', 'error');
     return false;
   }
+}
+
+
+function getPlayerProfile() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(PROFILE_KEY)) || {};
+    return {
+      elo: Number.isFinite(parsed.elo) ? parsed.elo : BASE_ELO,
+      points: Number.isFinite(parsed.points) ? parsed.points : 0,
+      games: Number.isFinite(parsed.games) ? parsed.games : 0,
+      wins: Number.isFinite(parsed.wins) ? parsed.wins : 0
+    };
+  } catch (error) {
+    console.warn('Impossible de lire le profil joueur.', error);
+    return { elo: BASE_ELO, points: 0, games: 0, wins: 0 };
+  }
+}
+
+function setPlayerProfile(profile) {
+  try {
+    localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+  } catch (error) {
+    console.warn('Impossible de sauvegarder le profil joueur.', error);
+  }
+}
+
+function chooseGameMissions(totalWords) {
+  const candidates = MISSION_POOL
+    .filter((mission) => mission.target <= totalWords)
+    .sort((a, b) => a.target - b.target);
+  const fallback = MISSION_POOL.slice(0, 3);
+  const source = candidates.length >= 3 ? candidates : fallback;
+
+  return source.slice(0, 3).map((mission) => ({
+    ...mission,
+    target: Math.min(mission.target, totalWords),
+    claimed: false
+  }));
+}
+
+function getGameState() {
+  if (!currentPuzzle) return null;
+  if (!currentPuzzle.game) {
+    currentPuzzle.game = {
+      missions: chooseGameMissions(currentPuzzle.placed.length),
+      hintTokens: 0,
+      mistakes: 0,
+      abandoned: false,
+      completed: false,
+      awarded: false,
+      score: null
+    };
+  }
+  return currentPuzzle.game;
+}
+
+function getUnsolvedWords() {
+  if (!currentPuzzle) return [];
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  return [...lookup.byWord.values()].filter((word) => !isWordSolved(word));
+}
+
+function updateMissionRewards(solved) {
+  const game = getGameState();
+  if (!game || game.abandoned || game.completed) return;
+
+  game.missions.forEach((mission) => {
+    if (mission.claimed || solved < mission.target) return;
+    mission.claimed = true;
+    game.hintTokens += mission.reward;
+    setGameStatus(`Mission réussie : ${mission.title}. +${mission.reward} bonus lettre !`);
+  });
+}
+
+function renderBonusPanel(solved, total) {
+  const panel = resultBox.querySelector('.bonus-panel');
+  if (!panel || !currentPuzzle) return;
+  const game = getGameState();
+  const unsolvedWords = getUnsolvedWords();
+  const options = unsolvedWords.map((word) => `<option value="${escapeHtml(word.id)}">${escapeHtml(word.label)} · ${escapeHtml(getDescriptionForWord(word.word) || 'Mot à trouver')}</option>`).join('');
+  const disabled = game.hintTokens <= 0 || !unsolvedWords.length || game.abandoned || game.completed ? 'disabled' : '';
+
+  const missed = game.score?.missedWords?.length
+    ? `<p class="missed-line">Mots révélés après abandon : ${game.score.missedWords.map((word) => escapeHtml(word)).join(', ')}</p>`
+    : '';
+
+  panel.innerHTML = `
+    <div class="bonus-head">
+      <div>
+        <h2>Bonus de quête</h2>
+        <p>3 missions par partie. Chaque mission donne des révélations de lettre à utiliser sur le mot de ton choix.</p>
+      </div>
+      <strong>${game.hintTokens} bonus</strong>
+    </div>
+    <div class="missions">
+      ${game.missions.map((mission) => `
+        <article class="mission${mission.claimed ? ' is-done' : ''}">
+          <span>${mission.claimed ? '✓' : `${Math.min(solved, mission.target)}/${mission.target}`}</span>
+          <div><strong>${escapeHtml(mission.title)}</strong><small>${escapeHtml(mission.text)} · +${mission.reward} lettre${mission.reward > 1 ? 's' : ''}</small></div>
+        </article>
+      `).join('')}
+    </div>
+    <div class="bonus-actions">
+      <select class="bonus-word" ${disabled} aria-label="Mot à aider">${options || '<option>Aucun mot disponible</option>'}</select>
+      <button class="tiny use-bonus" type="button" ${disabled}>Révéler une lettre</button>
+      <button class="tiny danger surrender-game" type="button" ${game.abandoned || game.completed ? 'disabled' : ''}>Abandonner</button>
+    </div>
+    ${game.score ? `<p class="score-line">Score : ${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo} (${game.score.delta >= 0 ? '+' : ''}${game.score.delta})</p>` : ''}
+    ${missed}
+  `;
+}
+
+function revealLetterInWord(wordId) {
+  if (!currentPuzzle) return;
+  const game = getGameState();
+  if (!game || game.hintTokens <= 0 || game.abandoned || game.completed) return;
+
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  const word = lookup.byWord.get(wordId);
+  if (!word) return;
+  const hiddenCells = word.cells.filter((cellKey) => {
+    const input = getInputByCell(cellKey);
+    return input && !input.disabled && input.value !== input.dataset.answer;
+  });
+  if (!hiddenCells.length) {
+    setGameStatus('Ce mot est déjà complet : choisis un autre mot pour utiliser le bonus.');
+    return;
+  }
+
+  const cellKey = hiddenCells[Math.floor(Math.random() * hiddenCells.length)];
+  const input = getInputByCell(cellKey);
+  input.value = input.dataset.answer;
+  input.classList.remove('is-pending', 'is-wrong');
+  game.hintTokens -= 1;
+  setGameStatus(`Bonus utilisé sur le mot ${word.label} : une lettre est révélée.`);
+  refreshSolvedWords();
+  savePlayerState();
+}
+
+function awardEndGame(abandoned = false) {
+  const game = getGameState();
+  if (!game || game.awarded || !currentPuzzle) return;
+
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  const words = [...lookup.byWord.values()];
+  const solved = words.filter(isWordSolved).length;
+  const missedWords = words.filter((word) => !isWordSolved(word)).map((word) => word.word);
+  const total = lookup.byWord.size || 1;
+  const completion = solved / total;
+  const basePoints = Math.round(solved * 100 + completion * 300 - game.mistakes * 12 - (abandoned ? 150 : 0));
+  const points = Math.max(0, basePoints);
+  const expected = 0.5;
+  const resultScore = abandoned ? Math.min(0.45, completion * 0.65) : completion;
+  const delta = Math.round(32 * (resultScore - expected));
+  const profile = getPlayerProfile();
+  const oldElo = profile.elo;
+  const newElo = Math.max(100, oldElo + delta);
+
+  profile.elo = newElo;
+  profile.points += points;
+  profile.games += 1;
+  if (!abandoned && solved === total) profile.wins += 1;
+  setPlayerProfile(profile);
+
+  game.awarded = true;
+  game.completed = !abandoned && solved === total;
+  game.abandoned = abandoned;
+  game.score = { points, oldElo, newElo, delta, totalPoints: profile.points, games: profile.games, wins: profile.wins, missedWords };
+  savePlayerState();
+}
+
+function finishGameIfNeeded(solved, total) {
+  if (!total || solved !== total) return;
+  const game = getGameState();
+  if (!game || game.abandoned || game.completed) return;
+  awardEndGame(false);
+  setGameStatus(`Partie terminée ! +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`);
+}
+
+function surrenderGame() {
+  if (!currentPuzzle) return;
+  const game = getGameState();
+  if (!game || game.abandoned || game.completed) return;
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  awardEndGame(true);
+
+  lookup.byWord.forEach((word) => {
+    const solvedBeforeReveal = isWordSolved(word);
+    word.cells.forEach((cellKey) => {
+      const input = getInputByCell(cellKey);
+      if (!input) return;
+      input.value = input.dataset.answer;
+      input.disabled = true;
+      input.classList.add('is-correct');
+      input.closest('.cell')?.classList.add(solvedBeforeReveal ? 'is-solved' : 'is-revealed');
+    });
+  });
+
+  updateProgress(lookup.byWord.size, lookup.byWord.size);
+  savePlayerState();
+  renderBonusPanel(lookup.byWord.size, lookup.byWord.size);
+  setGameStatus(`Abandon : la grille est révélée. +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`);
 }
 
 function collectPlayerState() {
@@ -440,6 +656,16 @@ function focusNextCell(input) {
 }
 
 function clearGameAnswers() {
+  const game = getGameState();
+  if (game) {
+    game.hintTokens = 0;
+    game.mistakes = 0;
+    game.abandoned = false;
+    game.completed = false;
+    game.awarded = false;
+    game.score = null;
+    game.missions = chooseGameMissions(currentPuzzle?.placed.length || 0);
+  }
   resultBox.querySelectorAll('.play-input').forEach((input) => {
     input.value = '';
     input.disabled = false;
@@ -449,6 +675,7 @@ function clearGameAnswers() {
     cell.classList.remove('is-current', 'is-solved', 'is-word-wrong');
   });
   updateProgress(0, currentPuzzle?.placed.length || 0);
+  renderBonusPanel(0, currentPuzzle?.placed.length || 0);
   setGameStatus('Réponses effacées : la quête repart de zéro.');
   savePlayerState();
   resultBox.querySelector('.play-input')?.focus();
@@ -509,6 +736,9 @@ function refreshSolvedWords() {
   });
 
   updateProgress(solved, lookup.byWord.size);
+  updateMissionRewards(solved);
+  finishGameIfNeeded(solved, lookup.byWord.size);
+  renderBonusPanel(solved, lookup.byWord.size);
   return { solved, total: lookup.byWord.size };
 }
 
@@ -546,9 +776,15 @@ function validateWordFromInput(input) {
   if (isCorrect) {
     inputs.forEach((item) => item.classList.remove('is-pending', 'is-wrong'));
     const { solved, total } = refreshSolvedWords();
-    setGameStatus(solved === total ? 'Bravo, tous les mots sont validés !' : `Mot ${word.label} validé. Continue la quête !`);
+    const game = getGameState();
+    setGameStatus(solved === total && game?.score
+      ? `Bravo, tous les mots sont validés ! +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`
+      : `Mot ${word.label} validé. Continue la quête !`);
     return;
   }
+
+  const game = getGameState();
+  if (game && !game.abandoned && !game.completed) game.mistakes += 1;
 
   inputs.forEach((item) => {
     item.classList.remove('is-pending');
@@ -599,6 +835,7 @@ function render(result, requestedTotal, playerState = {}) {
 
   currentPuzzle = result;
   currentRequestedTotal = requestedTotal;
+  getGameState();
 
   const { board, placed, missing } = result;
   const bounds = boundsFromBoard(board);
@@ -656,11 +893,14 @@ function render(result, requestedTotal, playerState = {}) {
       <section class="play-panel" aria-label="Progression du mode jeu">
         <div>
           <div class="game-status">Tape un mot en entier : il devient vert seulement s’il est juste, sinon il s’efface.</div>
-          <button class="tiny reset-game" type="button">Effacer les réponses</button>
+          <div class="play-actions">
+            <button class="tiny reset-game" type="button">Effacer les réponses</button>
+          </div>
         </div>
         <div class="game-progress" style="--progress: 0%"><span></span><strong>0/${placed.length}</strong></div>
       </section>
     ` : ''}
+    ${hideLetters ? '<section class="bonus-panel" aria-label="Missions et bonus"></section>' : ''}
     <div class="board-wrap">
       <div class="crossword" style="grid-template-columns: repeat(${cols}, var(--cell-size));">${cells}</div>
     </div>
@@ -718,6 +958,17 @@ function handleGenerate() {
 
   activeSaveId = null;
   const result = generateCrossword(words, horizontalCount, verticalCount, randomizeInput.checked);
+  if (result) {
+    result.game = {
+      missions: chooseGameMissions(result.placed.length),
+      hintTokens: 0,
+      mistakes: 0,
+      abandoned: false,
+      completed: false,
+      awarded: false,
+      score: null
+    };
+  }
   render(result, requestedTotal);
   renderSavedList();
   showPage('play');
@@ -1048,6 +1299,11 @@ clearSavesBtn.addEventListener('click', () => {
 });
 resultBox.addEventListener('click', (event) => {
   if (event.target.closest('.reset-game')) clearGameAnswers();
+  if (event.target.closest('.use-bonus')) {
+    const selectedWord = resultBox.querySelector('.bonus-word')?.value;
+    if (selectedWord) revealLetterInWord(selectedWord);
+  }
+  if (event.target.closest('.surrender-game')) surrenderGame();
 });
 
 savedList.addEventListener('click', (event) => {
