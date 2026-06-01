@@ -668,6 +668,106 @@ function getActiveWordForInput(input) {
   return memberships.find((id) => id.endsWith(`-${activeDirection}`)) || memberships[0];
 }
 
+function getSolvedWordIds() {
+  if (!currentPuzzle) return new Set();
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  const solved = new Set();
+
+  lookup.byWord.forEach((word, id) => {
+    if (isWordSolved(word)) solved.add(id);
+  });
+
+  return solved;
+}
+
+function getProtectedWordIdsForInput(input) {
+  if (!input) return [];
+  const solved = getSolvedWordIds();
+  return (input.dataset.words || '').split('|').filter((id) => solved.has(id));
+}
+
+function isInputProtected(input) {
+  return Boolean(input?.closest('.cell')?.classList.contains('is-solved')) || getProtectedWordIdsForInput(input).length > 0;
+}
+
+function getDirectionLabel(orientation) {
+  return orientation === 'H' ? 'Horizontal' : 'Vertical';
+}
+
+function renderActiveHint(word) {
+  const crossword = resultBox.querySelector('.crossword');
+  if (!crossword || !word) return;
+
+  const previousHint = crossword.querySelector('.word-hint-bubble');
+  previousHint?.remove();
+
+  const anchorInput = getInputByCell(word.cells[0]);
+  const anchorCell = anchorInput?.closest('.cell') || resultBox.querySelector(`.cell[data-cell="${escapeSelectorValue(word.cells[0])}"]`);
+  if (!anchorCell) return;
+
+  const description = getDescriptionForWord(word.word) || 'Mot à trouver';
+  const bubble = document.createElement('aside');
+  bubble.className = 'word-hint-bubble';
+  bubble.setAttribute('aria-live', 'polite');
+  bubble.innerHTML = `
+    <strong>${escapeHtml(word.number)} ${getDirectionLabel(word.orientation)}</strong>
+    <span>${escapeHtml(description)}</span>
+    <small>${word.cells.length} lettre${word.cells.length > 1 ? 's' : ''}</small>
+  `;
+  crossword.appendChild(bubble);
+
+  const left = anchorCell.offsetLeft;
+  const top = anchorCell.offsetTop;
+  const preferAbove = top > bubble.offsetHeight + 16;
+  bubble.classList.toggle('is-below', !preferAbove);
+  bubble.style.left = `${left}px`;
+  bubble.style.top = preferAbove ? `${top - bubble.offsetHeight - 12}px` : `${top + anchorCell.offsetHeight + 12}px`;
+}
+
+function clearActiveHint() {
+  resultBox.querySelector('.word-hint-bubble')?.remove();
+}
+
+function handleLetterEntry(input, rawValue) {
+  const letter = normalizeWord(rawValue).slice(0, 1);
+  if (!letter) return;
+
+  clearTransientWordState();
+  const existing = input.value.toUpperCase();
+  const protectedCell = isInputProtected(input);
+
+  let accepted = true;
+  if (!existing) {
+    input.value = letter;
+  } else if (existing === letter) {
+    input.value = existing;
+  } else if (!protectedCell) {
+    input.value = letter;
+  } else {
+    accepted = false;
+  }
+
+  markActiveWord(input);
+  validateWordFromInput(input);
+  if (accepted) focusNextCell(input);
+  else setGameStatus('Lettre protégée : elle appartient déjà à un mot validé.');
+  savePlayerState();
+}
+
+function clearInputIfAllowed(input) {
+  if (!input) return false;
+  if (isInputProtected(input)) {
+    setGameStatus('Lettre protégée : impossible de supprimer une lettre d’un mot validé.');
+    return false;
+  }
+
+  input.value = '';
+  input.classList.remove('is-pending', 'is-wrong');
+  validateWordFromInput(input);
+  savePlayerState();
+  return true;
+}
+
 function focusAdjacentCell(input, direction = 1) {
   const wordKey = getActiveWordForInput(input);
   if (!wordKey || !currentPuzzle) return;
@@ -678,10 +778,7 @@ function focusAdjacentCell(input, direction = 1) {
 
   const currentIndex = word.cells.indexOf(input.dataset.cell);
   const candidates = direction > 0 ? word.cells.slice(currentIndex + 1) : word.cells.slice(0, currentIndex).reverse();
-  const nextCell = candidates.find((cellKey) => {
-    const nextInput = getInputByCell(cellKey);
-    return nextInput && !nextInput.disabled;
-  });
+  const nextCell = candidates.find((cellKey) => Boolean(getInputByCell(cellKey)));
 
   if (nextCell) getInputByCell(nextCell)?.focus();
 }
@@ -735,6 +832,7 @@ function markActiveWord(input) {
   if (!word) return;
 
   word.cells.forEach((cellKey) => getInputByCell(cellKey)?.closest('.cell')?.classList.add('is-current'));
+  renderActiveHint(word);
   setGameStatus(`Mot ${word.label} : complète toutes les cases, la validation se fait à la dernière lettre.`);
 }
 
@@ -754,6 +852,7 @@ function refreshSolvedWords() {
   resultBox.querySelectorAll('.play-input').forEach((input) => {
     input.classList.remove('is-correct');
     input.disabled = false;
+    input.readOnly = false;
   });
   resultBox.querySelectorAll('.cell.is-solved').forEach((cell) => cell.classList.remove('is-solved'));
 
@@ -764,7 +863,8 @@ function refreshSolvedWords() {
       const input = getInputByCell(cellKey);
       if (input) {
         input.classList.add('is-correct');
-        input.disabled = true;
+        input.disabled = false;
+        input.readOnly = false;
       }
       input?.closest('.cell')?.classList.add('is-solved');
     });
@@ -904,7 +1004,7 @@ function render(result, requestedTotal, playerState = {}) {
       const content = hideLetters
         ? `<input class="play-input" maxlength="1" data-cell="${cellKey}" data-answer="${safeLetter}" data-words="${escapeHtml(wordIds)}" data-orientations="${orientations}" value="${playerValue}" aria-label="Lettre à deviner" />`
         : `<span class="letter">${safeLetter}</span>`;
-      cells += `<div class="cell${hiddenClass}" data-cell="${cellKey}">${numberHtml}${content}</div>`;
+      cells += `<div class="cell${hiddenClass}" data-cell="${cellKey}" data-words="${escapeHtml(wordIds)}" data-orientations="${orientations}">${numberHtml}${content}</div>`;
     }
   }
 
@@ -1344,6 +1444,26 @@ resultBox.addEventListener('click', (event) => {
     if (selectedWord) revealLetterInWord(selectedWord);
   }
   if (event.target.closest('.surrender-game')) surrenderGame();
+
+  const cell = event.target.closest('.cell[data-cell][data-words]');
+  if (!cell || !currentPuzzle) return;
+  const memberships = (cell.dataset.words || '').split('|').filter(Boolean);
+  if (!memberships.length) return;
+  if (!cell.dataset.orientations.includes(activeDirection)) activeDirection = cell.dataset.orientations[0] || 'H';
+  const input = cell.querySelector('.play-input');
+  if (input) {
+    input.focus();
+    return;
+  }
+
+  const lookup = buildWordLookup(currentPuzzle.placed);
+  const wordKey = memberships.find((id) => id.endsWith(`-${activeDirection}`)) || memberships[0];
+  const word = lookup.byWord.get(wordKey);
+  if (word) {
+    clearTransientWordState();
+    word.cells.forEach((cellKey) => resultBox.querySelector(`.cell[data-cell="${escapeSelectorValue(cellKey)}"]`)?.classList.add('is-current'));
+    renderActiveHint(word);
+  }
 });
 
 savedList.addEventListener('click', (event) => {
@@ -1376,32 +1496,63 @@ resultBox.addEventListener('keydown', (event) => {
     event.preventDefault();
     markActiveWord(event.target);
     focusAdjacentCell(event.target, ['ArrowLeft', 'ArrowUp'].includes(event.key) ? -1 : 1);
+    return;
   }
 
-  if (event.key === 'Backspace' && !event.target.value) {
+  if (event.key.length === 1 && normalizeWord(event.key)) {
+    event.preventDefault();
+    handleLetterEntry(event.target, event.key);
+    return;
+  }
+
+  if (event.key === 'Backspace') {
+    event.preventDefault();
+    if (event.target.value) {
+      clearInputIfAllowed(event.target);
+      markActiveWord(event.target);
+      return;
+    }
+
     const wordKey = getActiveWordForInput(event.target);
     const lookup = currentPuzzle ? buildWordLookup(currentPuzzle.placed) : null;
     const word = lookup?.byWord.get(wordKey);
     const currentIndex = word?.cells.indexOf(event.target.dataset.cell) ?? -1;
     const previous = currentIndex > 0 ? getInputByCell(word.cells[currentIndex - 1]) : null;
     if (previous) {
-      event.preventDefault();
-      previous.value = '';
       previous.focus();
-      validateWordFromInput(previous);
-      savePlayerState();
+      clearInputIfAllowed(previous);
+      markActiveWord(previous);
     }
+  }
+
+  if (event.key === 'Delete') {
+    event.preventDefault();
+    clearInputIfAllowed(event.target);
+    markActiveWord(event.target);
+  }
+});
+
+resultBox.addEventListener('beforeinput', (event) => {
+  if (!event.target.matches('.play-input')) return;
+
+  if (event.inputType === 'insertText' && event.data) {
+    event.preventDefault();
+    handleLetterEntry(event.target, event.data);
+  }
+
+  if (event.inputType === 'deleteContentBackward' || event.inputType === 'deleteContentForward') {
+    event.preventDefault();
+    clearInputIfAllowed(event.target);
+    markActiveWord(event.target);
   }
 });
 
 resultBox.addEventListener('input', (event) => {
   if (!event.target.matches('.play-input')) return;
-  clearTransientWordState();
-  event.target.value = normalizeWord(event.target.value).slice(0, 1);
-  markActiveWord(event.target);
-  validateWordFromInput(event.target);
-  if (event.target.value) focusNextCell(event.target);
-  savePlayerState();
+  const typed = normalizeWord(event.target.value).slice(-1);
+  event.target.value = '';
+  if (typed) handleLetterEntry(event.target, typed);
+  else if (isInputProtected(event.target)) event.target.value = event.target.dataset.answer;
 });
 
 async function initializeApp() {
