@@ -3,67 +3,99 @@
   "words": [
     {
       "word": "CHIHIRO",
-      "description": "Héroïne du Voyage de Chihiro."
+      "description": "Héroïne du Voyage de Chihiro.",
+      "theme": "Film",
+      "difficulty": "Chunin"
     },
     {
       "word": "GHIBLI",
-      "description": "Studio japonais fondé notamment par Miyazaki et Takahata."
+      "description": "Studio japonais fondé notamment par Miyazaki et Takahata.",
+      "theme": "Film",
+      "difficulty": "Chunin"
     },
     {
       "word": "MONONOKE",
-      "description": "Princesse élevée par les loups dans un film Ghibli."
+      "description": "Princesse élevée par les loups dans un film Ghibli.",
+      "theme": "Film",
+      "difficulty": "Chunin"
     },
     {
       "word": "PONYO",
-      "description": "Petite fille-poisson magique de Ghibli."
+      "description": "Petite fille-poisson magique de Ghibli.",
+      "theme": "Film",
+      "difficulty": "Genin"
     },
     {
       "word": "SUZUME",
-      "description": "Film de Shinkai avec portes mystérieuses et ver géant."
+      "description": "Film de Shinkai avec portes mystérieuses et ver géant.",
+      "theme": "Film",
+      "difficulty": "Chunin"
     },
     {
       "word": "TOTORO",
-      "description": "Esprit de la forêt doux et iconique de Ghibli."
+      "description": "Esprit de la forêt doux et iconique de Ghibli.",
+      "theme": "Film",
+      "difficulty": "Genin"
     },
     {
       "word": "YOUR NAME",
-      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin."
+      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin.",
+      "theme": "Film",
+      "difficulty": "Jonin"
     },
     {
       "word": "AKIRA",
-      "description": "Film cyberpunk majeur réalisé par Katsuhiro Otomo."
+      "description": "Film cyberpunk majeur réalisé par Katsuhiro Otomo.",
+      "theme": "Film",
+      "difficulty": "Genin"
     },
     {
       "word": "PAPRIKA",
-      "description": "Film de Satoshi Kon sur les rêves partagés."
+      "description": "Film de Satoshi Kon sur les rêves partagés.",
+      "theme": "Film",
+      "difficulty": "Sensei"
     },
     {
       "word": "PERFECT BLUE",
-      "description": "Film psychologique autour de célébrité et d’identité."
+      "description": "Film psychologique autour de célébrité et d’identité.",
+      "theme": "Film",
+      "difficulty": "Sensei"
     },
     {
       "word": "WEATHERING WITH YOU",
-      "description": "Romance urbaine liée à une fille qui contrôle la pluie."
+      "description": "Romance urbaine liée à une fille qui contrôle la pluie.",
+      "theme": "Film",
+      "difficulty": "Jonin"
     },
     {
       "word": "BELLE",
-      "description": "Conte numérique entre musique et monde virtuel."
+      "description": "Conte numérique entre musique et monde virtuel.",
+      "theme": "Film",
+      "difficulty": "Genin"
     },
     {
       "word": "REDLINE",
-      "description": "Course automobile explosive au style visuel intense."
+      "description": "Course automobile explosive au style visuel intense.",
+      "theme": "Film",
+      "difficulty": "Chunin"
     },
     {
       "word": "PROMARE",
-      "description": "Pompiers futuristes face à des flammes mutantes."
+      "description": "Pompiers futuristes face à des flammes mutantes.",
+      "theme": "Film",
+      "difficulty": "Chunin"
     },
     {
       "word": "LE CHATEAU AMBULANT",
-      "description": "Film Ghibli avec Sophie, Hauru et un château mobile."
+      "description": "Film Ghibli avec Sophie, Hauru et un château mobile.",
+      "theme": "Film",
+      "difficulty": "Jonin"
     },
     {
       "word": "LE TOMBEAU DES LUCIOLES",
-      "description": "Drame animé sur deux enfants pendant la guerre."
+      "description": "Drame animé sur deux enfants pendant la guerre.",
+      "theme": "Film",
+      "difficulty": "Jonin"
     }
   ]
 }

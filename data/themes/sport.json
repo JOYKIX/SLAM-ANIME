@@ -3,67 +3,99 @@
   "words": [
     {
       "word": "BLUE LOCK",
-      "description": "Programme extrême pour créer un attaquant egoïste."
+      "description": "Programme extrême pour créer un attaquant egoïste.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     },
     {
       "word": "DOJO",
-      "description": "Lieu d’entraînement aux arts martiaux."
+      "description": "Lieu d’entraînement aux arts martiaux.",
+      "theme": "Sport",
+      "difficulty": "Genin"
     },
     {
       "word": "HAIKYU",
-      "description": "Manga de volley-ball centré sur Karasuno."
+      "description": "Manga de volley-ball centré sur Karasuno.",
+      "theme": "Sport",
+      "difficulty": "Chunin"
     },
     {
       "word": "HINATA",
-      "description": "Petit attaquant explosif de Haikyu."
+      "description": "Petit attaquant explosif de Haikyu.",
+      "theme": "Sport",
+      "difficulty": "Chunin"
     },
     {
       "word": "ISAGI",
-      "description": "Attaquant qui analyse l’espace dans Blue Lock."
+      "description": "Attaquant qui analyse l’espace dans Blue Lock.",
+      "theme": "Sport",
+      "difficulty": "Genin"
     },
     {
       "word": "KUROKO",
-      "description": "Joueur fantôme du basket japonais."
+      "description": "Joueur fantôme du basket japonais.",
+      "theme": "Sport",
+      "difficulty": "Chunin"
     },
     {
       "word": "SLAM DUNK",
-      "description": "Classique du basket lycéen."
+      "description": "Classique du basket lycéen.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     },
     {
       "word": "KUROKO NO BASKET",
-      "description": "Basket aux techniques spectaculaires."
+      "description": "Basket aux techniques spectaculaires.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     },
     {
       "word": "YURI ON ICE",
-      "description": "Patinage artistique et rivalités internationales."
+      "description": "Patinage artistique et rivalités internationales.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     },
     {
       "word": "FREE",
-      "description": "Club de natation lycéen."
+      "description": "Club de natation lycéen.",
+      "theme": "Sport",
+      "difficulty": "Genin"
     },
     {
       "word": "PRINCE OF TENNIS",
-      "description": "Tennis scolaire aux coups surhumains."
+      "description": "Tennis scolaire aux coups surhumains.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     },
     {
       "word": "EYESHIELD",
-      "description": "Football américain avec un coureur masqué."
+      "description": "Football américain avec un coureur masqué.",
+      "theme": "Sport",
+      "difficulty": "Chunin"
     },
     {
       "word": "RUN WITH THE WIND",
-      "description": "Étudiants visant une grande course de relais."
+      "description": "Étudiants visant une grande course de relais.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     },
     {
       "word": "MEGALOBX",
-      "description": "Boxe futuriste avec exosquelettes."
+      "description": "Boxe futuriste avec exosquelettes.",
+      "theme": "Sport",
+      "difficulty": "Chunin"
     },
     {
       "word": "PING PONG",
-      "description": "Duel de pongistes au style graphique unique."
+      "description": "Duel de pongistes au style graphique unique.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     },
     {
       "word": "CAPTAIN TSUBASA",
-      "description": "Football culte et tirs légendaires."
+      "description": "Football culte et tirs légendaires.",
+      "theme": "Sport",
+      "difficulty": "Jonin"
     }
   ]
 }

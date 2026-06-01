@@ -3,79 +3,117 @@
   "words": [
     {
       "word": "ANYA",
-      "description": "Petite télépathe qui adore les cacahuètes."
+      "description": "Petite télépathe qui adore les cacahuètes.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "CHIBI",
-      "description": "Style super-déformé avec petite taille et grosse tête."
+      "description": "Style super-déformé avec petite taille et grosse tête.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "KAWAII",
-      "description": "Mot japonais pour dire mignon."
+      "description": "Mot japonais pour dire mignon.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "LOID",
-      "description": "Espion connu sous le nom de Twilight."
+      "description": "Espion connu sous le nom de Twilight.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "OKABE",
-      "description": "Scientifique autoproclamé fou de Steins Gate."
+      "description": "Scientifique autoproclamé fou de Steins Gate.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "OURAN",
-      "description": "Club d’hôtes comique dans un lycée prestigieux."
+      "description": "Club d’hôtes comique dans un lycée prestigieux.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "SPY FAMILY",
-      "description": "Famille factice entre espion, tueuse et télépathe."
+      "description": "Famille factice entre espion, tueuse et télépathe.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "TSUNDERE",
-      "description": "Personnage dur au départ puis tendre avec le temps."
+      "description": "Personnage dur au départ puis tendre avec le temps.",
+      "theme": "Comedie",
+      "difficulty": "Chunin"
     },
     {
       "word": "YOR",
-      "description": "Tueuse professionnelle surnommée Princesse Ibara."
+      "description": "Tueuse professionnelle surnommée Princesse Ibara.",
+      "theme": "Comedie",
+      "difficulty": "Genin"
     },
     {
       "word": "GINTAMA",
-      "description": "Comédie d’action parodique dans un Edo envahi par des aliens."
+      "description": "Comédie d’action parodique dans un Edo envahi par des aliens.",
+      "theme": "Comedie",
+      "difficulty": "Chunin"
     },
     {
       "word": "KONOSUBA",
-      "description": "Isekai comique avec une équipe de héros catastrophique."
+      "description": "Isekai comique avec une équipe de héros catastrophique.",
+      "theme": "Comedie",
+      "difficulty": "Chunin"
     },
     {
       "word": "SAIKI KUSUO",
-      "description": "Lycéen surpuissant qui veut éviter les ennuis."
+      "description": "Lycéen surpuissant qui veut éviter les ennuis.",
+      "theme": "Comedie",
+      "difficulty": "Jonin"
     },
     {
       "word": "AZUMANGA DAIOH",
-      "description": "Chroniques absurdes de lycéennes attachantes."
+      "description": "Chroniques absurdes de lycéennes attachantes.",
+      "theme": "Comedie",
+      "difficulty": "Jonin"
     },
     {
       "word": "NICHIJOU",
-      "description": "Quotidien scolaire poussé dans l’absurde."
+      "description": "Quotidien scolaire poussé dans l’absurde.",
+      "theme": "Comedie",
+      "difficulty": "Chunin"
     },
     {
       "word": "GRAND BLUE",
-      "description": "Comédie universitaire autour de plongée et de fêtes."
+      "description": "Comédie universitaire autour de plongée et de fêtes.",
+      "theme": "Comedie",
+      "difficulty": "Jonin"
     },
     {
       "word": "BEELZEBUB",
-      "description": "Délinquant chargé d’élever un bébé démon."
+      "description": "Délinquant chargé d’élever un bébé démon.",
+      "theme": "Comedie",
+      "difficulty": "Chunin"
     },
     {
       "word": "SKET DANCE",
-      "description": "Club scolaire qui aide les élèves avec humour."
+      "description": "Club scolaire qui aide les élèves avec humour.",
+      "theme": "Comedie",
+      "difficulty": "Jonin"
     },
     {
       "word": "HINAMATSURI",
-      "description": "Yakuza forcé de s’occuper d’une fille télékinésiste."
+      "description": "Yakuza forcé de s’occuper d’une fille télékinésiste.",
+      "theme": "Comedie",
+      "difficulty": "Chunin"
     },
     {
       "word": "BOCCHI",
-      "description": "Guitariste anxieuse qui rejoint un groupe de rock."
+      "description": "Guitariste anxieuse qui rejoint un groupe de rock.",
+      "theme": "Comedie",
+      "difficulty": "Chunin"
     }
   ]
 }

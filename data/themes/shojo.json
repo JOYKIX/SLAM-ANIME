@@ -3,83 +3,123 @@
   "words": [
     {
       "word": "CARD CAPTOR SAKURA",
-      "description": "Sakura capture des cartes magiques échappées."
+      "description": "Sakura capture des cartes magiques échappées.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "FRUITS BASKET",
-      "description": "Romance et malédiction autour des signes du zodiaque."
+      "description": "Romance et malédiction autour des signes du zodiaque.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "KIMI NI TODOKE",
-      "description": "Romance scolaire portée par une héroïne timide."
+      "description": "Romance scolaire portée par une héroïne timide.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "NANA",
-      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo."
+      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo.",
+      "theme": "Shojo",
+      "difficulty": "Genin"
     },
     {
       "word": "OURAN",
-      "description": "Club d’hôtes comique dans un lycée prestigieux."
+      "description": "Club d’hôtes comique dans un lycée prestigieux.",
+      "theme": "Shojo",
+      "difficulty": "Genin"
     },
     {
       "word": "SAILOR MOON",
-      "description": "Guerrière lunaire emblématique du magical girl."
+      "description": "Guerrière lunaire emblématique du magical girl.",
+      "theme": "Shojo",
+      "difficulty": "Genin"
     },
     {
       "word": "SAWAKO",
-      "description": "Héroïne réservée de Kimi ni Todoke."
+      "description": "Héroïne réservée de Kimi ni Todoke.",
+      "theme": "Shojo",
+      "difficulty": "Chunin"
     },
     {
       "word": "SHOJO",
-      "description": "Catégorie souvent associée aux émotions, à la romance et au relationnel."
+      "description": "Catégorie souvent associée aux émotions, à la romance et au relationnel.",
+      "theme": "Shojo",
+      "difficulty": "Genin"
     },
     {
       "word": "TOHRU",
-      "description": "Héroïne douce de Fruits Basket."
+      "description": "Héroïne douce de Fruits Basket.",
+      "theme": "Shojo",
+      "difficulty": "Genin"
     },
     {
       "word": "USAGI",
-      "description": "Collégienne maladroite devenue Sailor Moon."
+      "description": "Collégienne maladroite devenue Sailor Moon.",
+      "theme": "Shojo",
+      "difficulty": "Genin"
     },
     {
       "word": "OURAN HIGH SCHOOL HOST CLUB",
-      "description": "Comédie romantique dans un club d’hôtes scolaire."
+      "description": "Comédie romantique dans un club d’hôtes scolaire.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "VAMPIRE KNIGHT",
-      "description": "Romance gothique dans une académie de vampires."
+      "description": "Romance gothique dans une académie de vampires.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "KAMISAMA KISS",
-      "description": "Lycéenne devenue divinité d’un sanctuaire."
+      "description": "Lycéenne devenue divinité d’un sanctuaire.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "SKIP BEAT",
-      "description": "Héroïne cherchant sa revanche dans le show-business."
+      "description": "Héroïne cherchant sa revanche dans le show-business.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "AO HARU RIDE",
-      "description": "Romance adolescente autour de retrouvailles."
+      "description": "Romance adolescente autour de retrouvailles.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "LOVELY COMPLEX",
-      "description": "Romance comique entre grande fille et petit garçon."
+      "description": "Romance comique entre grande fille et petit garçon.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "BANANA FISH",
-      "description": "Thriller dramatique publié dans un magazine shojo."
+      "description": "Thriller dramatique publié dans un magazine shojo.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "GLASS MASK",
-      "description": "Rivalité théâtrale de deux actrices."
+      "description": "Rivalité théâtrale de deux actrices.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "MARMALADE BOY",
-      "description": "Comédie sentimentale familiale des années quatre-vingt-dix."
+      "description": "Comédie sentimentale familiale des années quatre-vingt-dix.",
+      "theme": "Shojo",
+      "difficulty": "Jonin"
     },
     {
       "word": "NATSUME",
-      "description": "Garçon capable de voir les esprits yokai."
+      "description": "Garçon capable de voir les esprits yokai.",
+      "theme": "Shojo",
+      "difficulty": "Chunin"
     }
   ]
 }

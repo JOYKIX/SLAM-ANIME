@@ -3,87 +3,129 @@
   "words": [
     {
       "word": "ALPHONSE",
-      "description": "Âme liée à une armure après une transmutation ratée."
+      "description": "Âme liée à une armure après une transmutation ratée.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "COWBOY BEBOP",
-      "description": "Chasseurs de primes dans l’espace sur fond de jazz."
+      "description": "Chasseurs de primes dans l’espace sur fond de jazz.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "EDWARD",
-      "description": "Alchimiste d’État au bras mécanique."
+      "description": "Alchimiste d’État au bras mécanique.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "FULLMETAL ALCHEMIST",
-      "description": "Deux frères alchimistes cherchent la pierre philosophale."
+      "description": "Deux frères alchimistes cherchent la pierre philosophale.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "GON",
-      "description": "Jeune Hunter parti retrouver son père."
+      "description": "Jeune Hunter parti retrouver son père.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "HUNTER HUNTER",
-      "description": "Aventure autour du permis de Hunter et du Nen."
+      "description": "Aventure autour du permis de Hunter et du Nen.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "ISEKAI",
-      "description": "Genre où un personnage arrive dans un autre monde."
+      "description": "Genre où un personnage arrive dans un autre monde.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "KILLUA",
-      "description": "Ami de Gon issu d’une famille d’assassins."
+      "description": "Ami de Gon issu d’une famille d’assassins.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "LUFFY",
-      "description": "Capitaine au chapeau de paille et au corps élastique."
+      "description": "Capitaine au chapeau de paille et au corps élastique.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "NAMI",
-      "description": "Navigatrice experte et voleuse au grand cœur."
+      "description": "Navigatrice experte et voleuse au grand cœur.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "ONE PIECE",
-      "description": "Équipage de pirates qui cherche le plus grand trésor des mers."
+      "description": "Équipage de pirates qui cherche le plus grand trésor des mers.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "SPIKE",
-      "description": "Chasseur de primes décontracté du Bebop."
+      "description": "Chasseur de primes décontracté du Bebop.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "MADE IN ABYSS",
-      "description": "Exploration dangereuse d’un gouffre mystérieux."
+      "description": "Exploration dangereuse d’un gouffre mystérieux.",
+      "theme": "Aventure",
+      "difficulty": "Jonin"
     },
     {
       "word": "GOLDEN KAMUY",
-      "description": "Chasse au trésor dans le nord du Japon."
+      "description": "Chasse au trésor dans le nord du Japon.",
+      "theme": "Aventure",
+      "difficulty": "Jonin"
     },
     {
       "word": "MAGI",
-      "description": "Aventure inspirée des contes des Mille et Une Nuits."
+      "description": "Aventure inspirée des contes des Mille et Une Nuits.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "TORIKO",
-      "description": "Chasseur gourmet en quête d’ingrédients légendaires."
+      "description": "Chasseur gourmet en quête d’ingrédients légendaires.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "DRAGON QUEST",
-      "description": "Aventure fantasy adaptée de la célèbre saga de RPG."
+      "description": "Aventure fantasy adaptée de la célèbre saga de RPG.",
+      "theme": "Aventure",
+      "difficulty": "Jonin"
     },
     {
       "word": "YONA",
-      "description": "Princesse en fuite qui rassemble des guerriers dragons."
+      "description": "Princesse en fuite qui rassemble des guerriers dragons.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "NADIA",
-      "description": "Jeune aventurière liée au Secret de l’Eau Bleue."
+      "description": "Jeune aventurière liée au Secret de l’Eau Bleue.",
+      "theme": "Aventure",
+      "difficulty": "Genin"
     },
     {
       "word": "DORORO",
-      "description": "Guerrier amputé qui affronte des démons pour récupérer son corps."
+      "description": "Guerrier amputé qui affronte des démons pour récupérer son corps.",
+      "theme": "Aventure",
+      "difficulty": "Chunin"
     },
     {
       "word": "MUSHOKU TENSEI",
-      "description": "Nouvelle vie fantasy remplie de voyages et de magie."
+      "description": "Nouvelle vie fantasy remplie de voyages et de magie.",
+      "theme": "Aventure",
+      "difficulty": "Jonin"
     }
   ]
 }

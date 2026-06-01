@@ -17,6 +17,7 @@ const horizontalInput = $('#horizontalCount');
 const verticalInput = $('#verticalCount');
 const hideLettersInput = $('#hideLetters');
 const randomizeInput = $('#randomize');
+const gridDifficultyInput = $('#gridDifficulty');
 const statusBox = $('#status');
 const resultBox = $('#result');
 const saveBtn = $('#saveBtn');
@@ -44,6 +45,13 @@ const MYSTERY_WORDS = ['NARUTO', 'GOJO', 'LUFFY', 'BANKAI', 'TITAN', 'SENSEI', '
 const DAILY_TARGET_TIME_SECONDS = 60;
 const DAILY_SOFT_LIMIT_SECONDS = 600;
 const DAILY_HARD_LIMIT_SECONDS = 1800;
+const DIFFICULTIES = ['Genin', 'Chunin', 'Jonin', 'Sensei'];
+const DEFAULT_DIFFICULTY = 'Chunin';
+const GRID_DIFFICULTY_PROFILES = {
+  easy: { Genin: 6, Chunin: 3, Jonin: 1, Sensei: 0 },
+  medium: { Genin: 4, Chunin: 4, Jonin: 2, Sensei: 0 },
+  hard: { Genin: 2, Chunin: 4, Jonin: 3, Sensei: 1 }
+};
 
 const THEME_INDEX_URL = 'data/themes/index.json';
 const FIREBASE_DATABASE_URL = 'https://otakross-default-rtdb.europe-west1.firebasedatabase.app/';
@@ -143,11 +151,23 @@ function normalizeWord(word) {
     .toUpperCase();
 }
 
+function normalizeDifficulty(value) {
+  const candidate = String(value || '').trim().toLowerCase();
+  return DIFFICULTIES.find((difficulty) => difficulty.toLowerCase() === candidate) || DEFAULT_DIFFICULTY;
+}
+
 function splitWordEntry(entry) {
-  const [name, ...descriptionParts] = entry.split(/\s(?:\||—|–|:)\s/);
+  const parts = entry.split(/\s(?:\||—|–|:)\s/).map((part) => part.trim()).filter(Boolean);
+  const name = parts.shift() || entry;
+  const possibleDifficulty = parts.at(-1);
+  const difficulty = DIFFICULTIES.some((level) => level.toLowerCase() === String(possibleDifficulty || '').toLowerCase())
+    ? normalizeDifficulty(parts.pop())
+    : DEFAULT_DIFFICULTY;
+
   return {
     word: normalizeWord(name || entry),
-    description: descriptionParts.join(' ').trim()
+    description: parts.join(' | ').trim(),
+    difficulty
   };
 }
 
@@ -172,12 +192,73 @@ function parseWords(raw) {
 
 function serializeWordEntries(entries) {
   return entries
-    .map((entry) => `${entry.word}${entry.description ? ` | ${entry.description}` : ''}`)
+    .map((entry) => {
+      const difficulty = normalizeDifficulty(entry.difficulty);
+      return `${entry.word}${entry.description ? ` | ${entry.description}` : ''} | ${difficulty}`;
+    })
     .join('\n');
 }
 
 function getDescriptionForWord(word) {
   return currentEntries.find((entry) => entry.word === word)?.description || '';
+}
+
+function getDifficultyForWord(word) {
+  return normalizeDifficulty(currentEntries.find((entry) => entry.word === word)?.difficulty);
+}
+
+function expandDifficultyProfile(profile, total) {
+  const template = GRID_DIFFICULTY_PROFILES[profile];
+  if (!template || total <= 0) return null;
+
+  const baseTotal = Object.values(template).reduce((sum, count) => sum + count, 0);
+  const expanded = Object.fromEntries(DIFFICULTIES.map((difficulty) => [difficulty, 0]));
+  let assigned = 0;
+
+  DIFFICULTIES.forEach((difficulty) => {
+    expanded[difficulty] = Math.floor((template[difficulty] || 0) * total / baseTotal);
+    assigned += expanded[difficulty];
+  });
+
+  const priority = [...DIFFICULTIES].sort((a, b) => (template[b] || 0) - (template[a] || 0));
+  for (let index = 0; assigned < total; index++, assigned++) {
+    expanded[priority[index % priority.length]] += 1;
+  }
+
+  return expanded;
+}
+
+function selectEntriesByDifficulty(entries, total, profile, randomize) {
+  const profileCounts = expandDifficultyProfile(profile, total);
+  if (!profileCounts) return randomize ? shuffled(entries).slice(0, total) : entries.slice(0, total);
+
+  const pools = new Map(DIFFICULTIES.map((difficulty) => [difficulty, []]));
+  entries.forEach((entry) => pools.get(normalizeDifficulty(entry.difficulty)).push(entry));
+  pools.forEach((pool, difficulty) => pools.set(difficulty, randomize ? shuffled(pool) : [...pool]));
+
+  const selected = [];
+  const used = new Set();
+  DIFFICULTIES.forEach((difficulty) => {
+    const pool = pools.get(difficulty) || [];
+    const count = profileCounts[difficulty] || 0;
+    while (pool.length && selected.filter((entry) => normalizeDifficulty(entry.difficulty) === difficulty).length < count) {
+      const entry = pool.shift();
+      if (used.has(entry.word)) continue;
+      selected.push(entry);
+      used.add(entry.word);
+    }
+  });
+
+  const fallback = (randomize ? shuffled(entries) : entries).filter((entry) => !used.has(entry.word));
+  return [...selected, ...fallback].slice(0, total);
+}
+
+function summarizeDifficulties(entries) {
+  const counts = Object.fromEntries(DIFFICULTIES.map((difficulty) => [difficulty, 0]));
+  entries.forEach((entry) => counts[normalizeDifficulty(entry.difficulty)] += 1);
+  return DIFFICULTIES.filter((difficulty) => counts[difficulty] > 0)
+    .map((difficulty) => `${counts[difficulty]} ${difficulty}`)
+    .join(' · ');
 }
 
 function materialIcon(name) {
@@ -832,10 +913,11 @@ function buildDailyEntries(seed = dateSeed()) {
   const allEntries = themeEntries
     .map((entry) => ({
       word: entry.word,
-      description: `${entry.description || 'Mot à trouver'} [${entry.themes.join(', ')}]`
+      description: `${entry.description || 'Mot à trouver'} [${entry.themes.join(', ')}]`,
+      difficulty: entry.difficulty
     }))
     .filter((entry) => entry.word && !seen.has(entry.word) && seen.add(entry.word));
-  return seededShuffle(allEntries, `daily-${seed}`).slice(0, DAILY_WORD_COUNT);
+  return selectEntriesByDifficulty(seededShuffle(allEntries, `daily-${seed}`), DAILY_WORD_COUNT, 'medium', true);
 }
 
 function generateDailyGrid() {
@@ -1776,6 +1858,9 @@ function setStatus(message, type = '') {
 }
 
 function handleGenerate() {
+  const parsedEntries = parseWordEntries(wordsInput.value);
+  currentEntries = parsedEntries;
+  const profile = gridDifficultyInput?.value || 'custom';
   const words = parseWords(wordsInput.value);
   const horizontalCount = Number(horizontalInput.value);
   const verticalCount = Number(verticalInput.value);
@@ -1800,8 +1885,11 @@ function handleGenerate() {
     return;
   }
 
+  const selectedEntries = selectEntriesByDifficulty(parsedEntries, requestedTotal, profile, randomizeInput.checked);
+  const selectedWords = selectedEntries.map((entry) => entry.word);
+
   activeSaveId = null;
-  const result = generateCrossword(words, horizontalCount, verticalCount, randomizeInput.checked);
+  const result = generateCrossword(selectedWords, horizontalCount, verticalCount, randomizeInput.checked);
   if (result) {
     result.game = {
       missions: chooseGameMissions(result.placed.length),
@@ -1950,9 +2038,11 @@ async function loadThemeEntries() {
         const existing = byWord.get(normalized) || {
           word: normalized,
           description: entry.description || '',
+          difficulty: normalizeDifficulty(entry.difficulty),
           themes: []
         };
         if (!existing.description && entry.description) existing.description = entry.description;
+        if (!existing.difficulty || existing.difficulty === DEFAULT_DIFFICULTY) existing.difficulty = normalizeDifficulty(entry.difficulty);
         if (!existing.themes.includes(theme)) existing.themes.push(theme);
         byWord.set(normalized, existing);
       });
@@ -1983,7 +2073,8 @@ function getEntriesForThemes(themes) {
 
     byWord.set(normalized, {
       word: normalized,
-      description: previous ? previous.description : description
+      description: previous ? previous.description : description,
+      difficulty: previous?.difficulty || entry.difficulty
     });
   });
 
@@ -1998,7 +2089,8 @@ function mergeWordEntries(existingEntries, incomingEntries) {
     const existing = byWord.get(normalized);
     byWord.set(normalized, {
       word: normalized,
-      description: existing?.description || entry.description
+      description: existing?.description || entry.description,
+      difficulty: existing?.difficulty || entry.difficulty
     });
   });
 
@@ -2009,7 +2101,8 @@ function updateThemeSummary() {
   const entries = getEntriesForThemes(selectedThemes);
   const themeLabel = selectedThemes.size > 1 ? 'thèmes' : 'thème';
   const wordLabel = entries.length > 1 ? 'mots uniques' : 'mot unique';
-  themeSummary.textContent = `${selectedThemes.size} ${themeLabel} · ${entries.length} ${wordLabel}`;
+  const difficultySummary = summarizeDifficulties(entries);
+  themeSummary.textContent = `${selectedThemes.size} ${themeLabel} · ${entries.length} ${wordLabel}${difficultySummary ? ` · ${difficultySummary}` : ''}`;
   addThemesBtn.disabled = selectedThemes.size === 0 || themeEntries.length === 0;
   replaceThemesBtn.disabled = selectedThemes.size === 0 || themeEntries.length === 0;
   clearThemesBtn.disabled = selectedThemes.size === 0;
@@ -2024,14 +2117,16 @@ function renderThemeLibrary() {
   }
 
   themeLibrary.innerHTML = names.map((theme) => {
-    const count = themeEntries.filter((entry) => entry.themes.includes(theme)).length;
+    const themeWords = themeEntries.filter((entry) => entry.themes.includes(theme));
+    const count = themeWords.length;
+    const difficultySummary = summarizeDifficulties(themeWords);
     const checked = selectedThemes.has(theme) ? ' checked' : '';
     return `
       <label class="theme-card">
         <input type="checkbox" value="${escapeHtml(theme)}"${checked} />
         <span>
           <strong>${escapeHtml(theme)}</strong>
-          <small>${count} mot${count > 1 ? 's' : ''}</small>
+          <small>${count} mot${count > 1 ? 's' : ''}${difficultySummary ? ` · ${difficultySummary}` : ''}</small>
         </span>
       </label>
     `;
@@ -2066,6 +2161,7 @@ function renderWordBank() {
       <div>
         <strong>${escapeHtml(entry.word)}</strong>
         <span>${escapeHtml(entry.description || 'Sans description')}</span>
+        <em class="difficulty-badge difficulty-badge--${escapeHtml(normalizeDifficulty(entry.difficulty).toLowerCase())}">${escapeHtml(normalizeDifficulty(entry.difficulty))}</em>
       </div>
       <button class="tiny danger remove-word" type="button" data-word="${escapeHtml(entry.word)}" aria-label="Supprimer ${escapeHtml(entry.word)}">×</button>
     </article>
@@ -2080,7 +2176,7 @@ function addWordEntry(word, description) {
   }
 
   const entries = parseWordEntries(wordsInput.value).filter((entry) => entry.word !== normalized);
-  entries.push({ word: normalized, description: description.trim() });
+  entries.push({ word: normalized, description: description.trim(), difficulty: DEFAULT_DIFFICULTY });
   wordsInput.value = serializeWordEntries(entries);
   renderWordBank();
   wordNameInput.value = '';

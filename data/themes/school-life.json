@@ -3,51 +3,75 @@
   "words": [
     {
       "word": "KOUHAI",
-      "description": "Cadet ou personne moins expérimentée."
+      "description": "Cadet ou personne moins expérimentée.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "SENPAI",
-      "description": "Aîné ou personne plus expérimentée."
+      "description": "Aîné ou personne plus expérimentée.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "CLASSROOM",
-      "description": "Salle de classe au cœur de nombreuses histoires scolaires."
+      "description": "Salle de classe au cœur de nombreuses histoires scolaires.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "BUNKASAI",
-      "description": "Festival culturel organisé par les élèves."
+      "description": "Festival culturel organisé par les élèves.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "SEITOKAI",
-      "description": "Conseil des élèves dans les séries scolaires."
+      "description": "Conseil des élèves dans les séries scolaires.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "CLUB",
-      "description": "Activité extrascolaire centrale dans beaucoup d’anime."
+      "description": "Activité extrascolaire centrale dans beaucoup d’anime.",
+      "theme": "School Life",
+      "difficulty": "Genin"
     },
     {
       "word": "UNIFORME",
-      "description": "Tenue scolaire emblématique."
+      "description": "Tenue scolaire emblématique.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "TRANSFER STUDENT",
-      "description": "Nouvel élève souvent moteur de l’intrigue."
+      "description": "Nouvel élève souvent moteur de l’intrigue.",
+      "theme": "School Life",
+      "difficulty": "Jonin"
     },
     {
       "word": "KOKUHAKU",
-      "description": "Déclaration amoureuse très fréquente en milieu scolaire."
+      "description": "Déclaration amoureuse très fréquente en milieu scolaire.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "BENTO",
-      "description": "Repas préparé souvent partagé à l’école."
+      "description": "Repas préparé souvent partagé à l’école.",
+      "theme": "School Life",
+      "difficulty": "Genin"
     },
     {
       "word": "HOMEROOM",
-      "description": "Moment de vie de classe avec le professeur principal."
+      "description": "Moment de vie de classe avec le professeur principal.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     },
     {
       "word": "EXAMEN",
-      "description": "Épreuve scolaire source de tension ou de gag."
+      "description": "Épreuve scolaire source de tension ou de gag.",
+      "theme": "School Life",
+      "difficulty": "Chunin"
     }
   ]
 }

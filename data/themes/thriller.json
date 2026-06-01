@@ -3,55 +3,81 @@
   "words": [
     {
       "word": "MONSTER",
-      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur."
+      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur.",
+      "theme": "Thriller",
+      "difficulty": "Chunin"
     },
     {
       "word": "STEINS GATE",
-      "description": "Voyage temporel et messages vers le passé."
+      "description": "Voyage temporel et messages vers le passé.",
+      "theme": "Thriller",
+      "difficulty": "Sensei"
     },
     {
       "word": "YANDERE",
-      "description": "Personnage amoureux jusqu’à l’obsession dangereuse."
+      "description": "Personnage amoureux jusqu’à l’obsession dangereuse.",
+      "theme": "Thriller",
+      "difficulty": "Chunin"
     },
     {
       "word": "DEATH NOTE",
-      "description": "Duel mental entre Light et L."
+      "description": "Duel mental entre Light et L.",
+      "theme": "Thriller",
+      "difficulty": "Genin"
     },
     {
       "word": "ERASED",
-      "description": "Retour temporel pour empêcher meurtres et enlèvements."
+      "description": "Retour temporel pour empêcher meurtres et enlèvements.",
+      "theme": "Thriller",
+      "difficulty": "Chunin"
     },
     {
       "word": "PARANOIA AGENT",
-      "description": "Série de Satoshi Kon autour d’agressions mystérieuses."
+      "description": "Série de Satoshi Kon autour d’agressions mystérieuses.",
+      "theme": "Thriller",
+      "difficulty": "Jonin"
     },
     {
       "word": "TERROR IN RESONANCE",
-      "description": "Deux adolescents terroristes lancent des énigmes à Tokyo."
+      "description": "Deux adolescents terroristes lancent des énigmes à Tokyo.",
+      "theme": "Thriller",
+      "difficulty": "Jonin"
     },
     {
       "word": "ID INVADED",
-      "description": "Enquête dans des mondes mentaux de criminels."
+      "description": "Enquête dans des mondes mentaux de criminels.",
+      "theme": "Thriller",
+      "difficulty": "Jonin"
     },
     {
       "word": "ODD TAXI",
-      "description": "Mystère urbain autour d’un chauffeur de taxi."
+      "description": "Mystère urbain autour d’un chauffeur de taxi.",
+      "theme": "Thriller",
+      "difficulty": "Jonin"
     },
     {
       "word": "PERFECT BLUE",
-      "description": "Perte d’identité et menace obsessionnelle."
+      "description": "Perte d’identité et menace obsessionnelle.",
+      "theme": "Thriller",
+      "difficulty": "Sensei"
     },
     {
       "word": "PROMISED NEVERLAND",
-      "description": "Orphelinat cachant une terrible vérité."
+      "description": "Orphelinat cachant une terrible vérité.",
+      "theme": "Thriller",
+      "difficulty": "Jonin"
     },
     {
       "word": "BTOOOM",
-      "description": "Jeu de survie explosif sur une île."
+      "description": "Jeu de survie explosif sur une île.",
+      "theme": "Thriller",
+      "difficulty": "Chunin"
     },
     {
       "word": "KAIJI",
-      "description": "Jeux d’argent à très haut risque."
+      "description": "Jeux d’argent à très haut risque.",
+      "theme": "Thriller",
+      "difficulty": "Genin"
     }
   ]
 }

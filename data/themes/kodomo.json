@@ -3,47 +3,69 @@
   "words": [
     {
       "word": "KODOMO",
-      "description": "Manga ou anime pensé pour les enfants."
+      "description": "Manga ou anime pensé pour les enfants.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     },
     {
       "word": "DORAEMON",
-      "description": "Robot-chat venu du futur pour aider Nobita."
+      "description": "Robot-chat venu du futur pour aider Nobita.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     },
     {
       "word": "POKEMON",
-      "description": "Dresseurs capturant des créatures pour les combats."
+      "description": "Dresseurs capturant des créatures pour les combats.",
+      "theme": "Kodomo",
+      "difficulty": "Genin"
     },
     {
       "word": "DIGIMON",
-      "description": "Enfants liés à des monstres numériques."
+      "description": "Enfants liés à des monstres numériques.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     },
     {
       "word": "HAMTARO",
-      "description": "Petit hamster vivant de grandes aventures."
+      "description": "Petit hamster vivant de grandes aventures.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     },
     {
       "word": "ANPANMAN",
-      "description": "Super-héros à tête de pain fourré."
+      "description": "Super-héros à tête de pain fourré.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     },
     {
       "word": "YO KAI WATCH",
-      "description": "Montre permettant de voir les yokai."
+      "description": "Montre permettant de voir les yokai.",
+      "theme": "Kodomo",
+      "difficulty": "Jonin"
     },
     {
       "word": "BEYBLADE",
-      "description": "Combats de toupies personnalisées."
+      "description": "Combats de toupies personnalisées.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     },
     {
       "word": "INAZUMA ELEVEN",
-      "description": "Football enfantin avec techniques spectaculaires."
+      "description": "Football enfantin avec techniques spectaculaires.",
+      "theme": "Kodomo",
+      "difficulty": "Jonin"
     },
     {
       "word": "TAMAGOTCHI",
-      "description": "Créatures virtuelles adaptées en anime pour enfants."
+      "description": "Créatures virtuelles adaptées en anime pour enfants.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     },
     {
       "word": "KERORO",
-      "description": "Grenouille extraterrestre qui veut envahir la Terre."
+      "description": "Grenouille extraterrestre qui veut envahir la Terre.",
+      "theme": "Kodomo",
+      "difficulty": "Chunin"
     }
   ]
 }

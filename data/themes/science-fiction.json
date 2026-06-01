@@ -3,99 +3,147 @@
   "words": [
     {
       "word": "AKIRA",
-      "description": "Classique cyberpunk de Katsuhiro Otomo."
+      "description": "Classique cyberpunk de Katsuhiro Otomo.",
+      "theme": "Science Fiction",
+      "difficulty": "Genin"
     },
     {
       "word": "ASUKA",
-      "description": "Pilote énergique de l’Eva 02."
+      "description": "Pilote énergique de l’Eva 02.",
+      "theme": "Science Fiction",
+      "difficulty": "Genin"
     },
     {
       "word": "COWBOY BEBOP",
-      "description": "Chasseurs de primes dans l’espace sur fond de jazz."
+      "description": "Chasseurs de primes dans l’espace sur fond de jazz.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "EVANGELION",
-      "description": "Mechas, anges et introspection psychologique."
+      "description": "Mechas, anges et introspection psychologique.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "GHOST IN THE SHELL",
-      "description": "Cyberpunk sur cyborgs, IA et identité."
+      "description": "Cyberpunk sur cyborgs, IA et identité.",
+      "theme": "Science Fiction",
+      "difficulty": "Jonin"
     },
     {
       "word": "GUNDAM",
-      "description": "Franchise culte de robots de guerre."
+      "description": "Franchise culte de robots de guerre.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "KANEDA",
-      "description": "Chef de gang à moto dans Akira."
+      "description": "Chef de gang à moto dans Akira.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "MOBILE SUIT",
-      "description": "Armure robotique pilotée dans Gundam."
+      "description": "Armure robotique pilotée dans Gundam.",
+      "theme": "Science Fiction",
+      "difficulty": "Jonin"
     },
     {
       "word": "MOTOKO",
-      "description": "Major cyborg de la Section 9."
+      "description": "Major cyborg de la Section 9.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "OKABE",
-      "description": "Scientifique autoproclamé fou de Steins Gate."
+      "description": "Scientifique autoproclamé fou de Steins Gate.",
+      "theme": "Science Fiction",
+      "difficulty": "Genin"
     },
     {
       "word": "PLUTO",
-      "description": "Relecture seinen d’Astro Boy en enquête robotique."
+      "description": "Relecture seinen d’Astro Boy en enquête robotique.",
+      "theme": "Science Fiction",
+      "difficulty": "Genin"
     },
     {
       "word": "SHINJI",
-      "description": "Pilote de l’Eva 01."
+      "description": "Pilote de l’Eva 01.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "SPIKE",
-      "description": "Chasseur de primes décontracté du Bebop."
+      "description": "Chasseur de primes décontracté du Bebop.",
+      "theme": "Science Fiction",
+      "difficulty": "Genin"
     },
     {
       "word": "STEINS GATE",
-      "description": "Voyage temporel et messages vers le passé."
+      "description": "Voyage temporel et messages vers le passé.",
+      "theme": "Science Fiction",
+      "difficulty": "Sensei"
     },
     {
       "word": "PSYCHO PASS",
-      "description": "Police futuriste guidée par un système de jugement mental."
+      "description": "Police futuriste guidée par un système de jugement mental.",
+      "theme": "Science Fiction",
+      "difficulty": "Jonin"
     },
     {
       "word": "PLANETES",
-      "description": "Éboueurs de l’espace en orbite terrestre."
+      "description": "Éboueurs de l’espace en orbite terrestre.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "SPACE DANDY",
-      "description": "Chasseur d’aliens dans une comédie spatiale."
+      "description": "Chasseur d’aliens dans une comédie spatiale.",
+      "theme": "Science Fiction",
+      "difficulty": "Jonin"
     },
     {
       "word": "BLAME",
-      "description": "Mégastructure cybernétique et errance silencieuse."
+      "description": "Mégastructure cybernétique et errance silencieuse.",
+      "theme": "Science Fiction",
+      "difficulty": "Genin"
     },
     {
       "word": "TEXHNOLYZE",
-      "description": "Ville souterraine et membres cybernétiques."
+      "description": "Ville souterraine et membres cybernétiques.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     },
     {
       "word": "ARISE",
-      "description": "Préquelle cyberpunk de Ghost in the Shell."
+      "description": "Préquelle cyberpunk de Ghost in the Shell.",
+      "theme": "Science Fiction",
+      "difficulty": "Genin"
     },
     {
       "word": "KNIGHTS OF SIDONIA",
-      "description": "Humanité survivant dans un vaisseau géant."
+      "description": "Humanité survivant dans un vaisseau géant.",
+      "theme": "Science Fiction",
+      "difficulty": "Jonin"
     },
     {
       "word": "ASTRA LOST IN SPACE",
-      "description": "Adolescents perdus dans l’espace."
+      "description": "Adolescents perdus dans l’espace.",
+      "theme": "Science Fiction",
+      "difficulty": "Jonin"
     },
     {
       "word": "TIME LEAP",
-      "description": "Saut temporel au cœur de plusieurs récits SF."
+      "description": "Saut temporel au cœur de plusieurs récits SF.",
+      "theme": "Science Fiction",
+      "difficulty": "Jonin"
     },
     {
       "word": "CYBERPUNK",
-      "description": "Univers futuriste mêlant haute technologie et société sombre."
+      "description": "Univers futuriste mêlant haute technologie et société sombre.",
+      "theme": "Science Fiction",
+      "difficulty": "Chunin"
     }
   ]
 }

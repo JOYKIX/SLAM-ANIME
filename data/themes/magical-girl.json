@@ -3,59 +3,87 @@
   "words": [
     {
       "word": "CARD CAPTOR SAKURA",
-      "description": "Sakura capture des cartes magiques échappées."
+      "description": "Sakura capture des cartes magiques échappées.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "MADOKA",
-      "description": "Héroïne de magical girl au destin bouleversant."
+      "description": "Héroïne de magical girl au destin bouleversant.",
+      "theme": "Magical Girl",
+      "difficulty": "Chunin"
     },
     {
       "word": "SAILOR MOON",
-      "description": "Guerrière lunaire emblématique du magical girl."
+      "description": "Guerrière lunaire emblématique du magical girl.",
+      "theme": "Magical Girl",
+      "difficulty": "Genin"
     },
     {
       "word": "USAGI",
-      "description": "Collégienne maladroite devenue Sailor Moon."
+      "description": "Collégienne maladroite devenue Sailor Moon.",
+      "theme": "Magical Girl",
+      "difficulty": "Genin"
     },
     {
       "word": "PRECURE",
-      "description": "Franchise de guerrières magiques très colorées."
+      "description": "Franchise de guerrières magiques très colorées.",
+      "theme": "Magical Girl",
+      "difficulty": "Chunin"
     },
     {
       "word": "TOKYO MEW MEW",
-      "description": "Héroïnes aux pouvoirs inspirés d’animaux rares."
+      "description": "Héroïnes aux pouvoirs inspirés d’animaux rares.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "MAGIC KNIGHT RAYEARTH",
-      "description": "Collégiennes invoquées comme chevalières magiques."
+      "description": "Collégiennes invoquées comme chevalières magiques.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "SHUGO CHARA",
-      "description": "Œufs du cœur révélant des personnalités cachées."
+      "description": "Œufs du cœur révélant des personnalités cachées.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "MERMAID MELODY",
-      "description": "Sirènes idoles utilisant le chant comme pouvoir."
+      "description": "Sirènes idoles utilisant le chant comme pouvoir.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "CREAMY MAMI",
-      "description": "Idol magique emblématique des années quatre-vingt."
+      "description": "Idol magique emblématique des années quatre-vingt.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "KAMIKAZE KAITO JEANNE",
-      "description": "Voleuse magique inspirée de Jeanne d’Arc."
+      "description": "Voleuse magique inspirée de Jeanne d’Arc.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "LITTLE WITCH ACADEMIA",
-      "description": "Jeune sorcière dans une école de magie."
+      "description": "Jeune sorcière dans une école de magie.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "FLYING WITCH",
-      "description": "Vie douce d’une apprentie sorcière."
+      "description": "Vie douce d’une apprentie sorcière.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     },
     {
       "word": "YUKI YUNA",
-      "description": "Club de héros aux pouvoirs magiques et au lourd destin."
+      "description": "Club de héros aux pouvoirs magiques et au lourd destin.",
+      "theme": "Magical Girl",
+      "difficulty": "Jonin"
     }
   ]
 }

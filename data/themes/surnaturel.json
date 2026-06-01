@@ -3,119 +3,177 @@
   "words": [
     {
       "word": "BANKAI",
-      "description": "Libération ultime d’un zanpakuto."
+      "description": "Libération ultime d’un zanpakuto.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "BLEACH",
-      "description": "Shinigami, hollows et sabres spirituels."
+      "description": "Shinigami, hollows et sabres spirituels.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "CHAINSAW MAN",
-      "description": "Chasseur de démons lié au démon-tronçonneuse."
+      "description": "Chasseur de démons lié au démon-tronçonneuse.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "DEMON SLAYER",
-      "description": "Pourfendeurs qui combattent des démons la nuit."
+      "description": "Pourfendeurs qui combattent des démons la nuit.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "DENJI",
-      "description": "Anti-héros pauvre fusionné avec Pochita."
+      "description": "Anti-héros pauvre fusionné avec Pochita.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "FRUITS BASKET",
-      "description": "Romance et malédiction autour des signes du zodiaque."
+      "description": "Romance et malédiction autour des signes du zodiaque.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "GOJO",
-      "description": "Professeur exorciste aux yeux bandés et au pouvoir immense."
+      "description": "Professeur exorciste aux yeux bandés et au pouvoir immense.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "HASHIRA",
-      "description": "Pilier d’élite chez les pourfendeurs de démons."
+      "description": "Pilier d’élite chez les pourfendeurs de démons.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "ICHIGO",
-      "description": "Lycéen devenu shinigami remplaçant."
+      "description": "Lycéen devenu shinigami remplaçant.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "JUJUTSU KAISEN",
-      "description": "Exorcistes modernes face aux fléaux."
+      "description": "Exorcistes modernes face aux fléaux.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "KITSUNE",
-      "description": "Renard mythique souvent doté de pouvoirs."
+      "description": "Renard mythique souvent doté de pouvoirs.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "MADOKA",
-      "description": "Héroïne de magical girl au destin bouleversant."
+      "description": "Héroïne de magical girl au destin bouleversant.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "MAKIMA",
-      "description": "Manipulatrice mystérieuse de Public Safety."
+      "description": "Manipulatrice mystérieuse de Public Safety.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "NEZUKO",
-      "description": "Sœur de Tanjiro transformée en démon."
+      "description": "Sœur de Tanjiro transformée en démon.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "ONI",
-      "description": "Démon ou ogre du folklore japonais."
+      "description": "Démon ou ogre du folklore japonais.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "SUKUNA",
-      "description": "Roi des fléaux dans Jujutsu Kaisen."
+      "description": "Roi des fléaux dans Jujutsu Kaisen.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "SUZUME",
-      "description": "Film de Shinkai avec portes mystérieuses et ver géant."
+      "description": "Film de Shinkai avec portes mystérieuses et ver géant.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "TANJIRO",
-      "description": "Pourfendeur bienveillant au souffle de l’eau."
+      "description": "Pourfendeur bienveillant au souffle de l’eau.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "YOKAI",
-      "description": "Créature surnaturelle du folklore japonais."
+      "description": "Créature surnaturelle du folklore japonais.",
+      "theme": "Surnaturel",
+      "difficulty": "Genin"
     },
     {
       "word": "NORAGAMI",
-      "description": "Dieu mineur cherchant des fidèles et des missions."
+      "description": "Dieu mineur cherchant des fidèles et des missions.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "BLUE EXORCIST",
-      "description": "Fils de Satan voulant devenir exorciste."
+      "description": "Fils de Satan voulant devenir exorciste.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "MUSHISHI",
-      "description": "Voyageur étudiant des êtres spirituels appelés mushi."
+      "description": "Voyageur étudiant des êtres spirituels appelés mushi.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "NATSUME",
-      "description": "Garçon rendant leurs noms aux esprits."
+      "description": "Garçon rendant leurs noms aux esprits.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "HELL GIRL",
-      "description": "Site mystérieux permettant d’envoyer quelqu’un en enfer."
+      "description": "Site mystérieux permettant d’envoyer quelqu’un en enfer.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "D GRAY MAN",
-      "description": "Exorcistes combattant les akuma."
+      "description": "Exorcistes combattant les akuma.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "MONONOKE",
-      "description": "Apothicaire chassant des esprits vengeurs."
+      "description": "Apothicaire chassant des esprits vengeurs.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "INUYASHA",
-      "description": "Démons et voyage dans le Japon féodal."
+      "description": "Démons et voyage dans le Japon féodal.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     },
     {
       "word": "GEGEGE NO KITARO",
-      "description": "Garçon yokai protégeant humains et esprits."
+      "description": "Garçon yokai protégeant humains et esprits.",
+      "theme": "Surnaturel",
+      "difficulty": "Jonin"
     },
     {
       "word": "AYAKASHI",
-      "description": "Terme désignant des apparitions ou esprits surnaturels."
+      "description": "Terme désignant des apparitions ou esprits surnaturels.",
+      "theme": "Surnaturel",
+      "difficulty": "Chunin"
     }
   ]
 }

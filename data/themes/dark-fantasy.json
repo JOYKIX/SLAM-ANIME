@@ -3,55 +3,81 @@
   "words": [
     {
       "word": "BERSERK",
-      "description": "Dark fantasy violente autour de Guts et Griffith."
+      "description": "Dark fantasy violente autour de Guts et Griffith.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Chunin"
     },
     {
       "word": "GRIFFITH",
-      "description": "Chef charismatique de la Troupe du Faucon."
+      "description": "Chef charismatique de la Troupe du Faucon.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Chunin"
     },
     {
       "word": "GUTS",
-      "description": "Guerrier solitaire à l’immense épée."
+      "description": "Guerrier solitaire à l’immense épée.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Genin"
     },
     {
       "word": "CLAYMORE",
-      "description": "Guerrières hybrides traquant des monstres mangeurs d’humains."
+      "description": "Guerrières hybrides traquant des monstres mangeurs d’humains.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Chunin"
     },
     {
       "word": "DEVILMAN",
-      "description": "Héros fusionné avec un démon dans une histoire apocalyptique."
+      "description": "Héros fusionné avec un démon dans une histoire apocalyptique.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Chunin"
     },
     {
       "word": "HELLSING",
-      "description": "Organisation qui combat vampires et créatures occultes."
+      "description": "Organisation qui combat vampires et créatures occultes.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Chunin"
     },
     {
       "word": "DOROHEDORO",
-      "description": "Ville crasseuse, magie violente et tête de lézard."
+      "description": "Ville crasseuse, magie violente et tête de lézard.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Chunin"
     },
     {
       "word": "GOBLIN SLAYER",
-      "description": "Aventurier obsédé par l’élimination des gobelins."
+      "description": "Aventurier obsédé par l’élimination des gobelins.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Jonin"
     },
     {
       "word": "MADE IN ABYSS",
-      "description": "Univers merveilleux qui cache une violence terrible."
+      "description": "Univers merveilleux qui cache une violence terrible.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Jonin"
     },
     {
       "word": "CASTLEVANIA",
-      "description": "Chasseurs de vampires face à Dracula et ses armées."
+      "description": "Chasseurs de vampires face à Dracula et ses armées.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Chunin"
     },
     {
       "word": "SHINSEKAI YORI",
-      "description": "Société psychique futuriste aux secrets sombres."
+      "description": "Société psychique futuriste aux secrets sombres.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Jonin"
     },
     {
       "word": "TOKYO GHOUL",
-      "description": "Étudiant transformé en goule à moitié humaine."
+      "description": "Étudiant transformé en goule à moitié humaine.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Genin"
     },
     {
       "word": "JUJUTSU KAISEN",
-      "description": "Exorcistes affrontant des fléaux nés des émotions négatives."
+      "description": "Exorcistes affrontant des fléaux nés des émotions négatives.",
+      "theme": "Dark Fantasy",
+      "difficulty": "Genin"
     }
   ]
 }
