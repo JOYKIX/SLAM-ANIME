@@ -1,0 +1,29 @@
+{
+  "theme": "Ninja",
+  "words": [
+    {
+      "word": "HOKAGE",
+      "description": "Titre du chef du village caché de Konoha."
+    },
+    {
+      "word": "KAKASHI",
+      "description": "Sensei masqué connu pour son Sharingan."
+    },
+    {
+      "word": "NARUTO",
+      "description": "Ninja de Konoha qui rêve de devenir Hokage."
+    },
+    {
+      "word": "SAKURA",
+      "description": "Ninja médicale de l’équipe 7."
+    },
+    {
+      "word": "SASUKE",
+      "description": "Dernier héritier important du clan Uchiha."
+    },
+    {
+      "word": "SHARINGAN",
+      "description": "Technique oculaire du clan Uchiha."
+    }
+  ]
+}

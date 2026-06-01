@@ -1,0 +1,33 @@
+{
+  "theme": "Sport",
+  "words": [
+    {
+      "word": "BLUE LOCK",
+      "description": "Programme extrême pour créer un attaquant egoïste."
+    },
+    {
+      "word": "DOJO",
+      "description": "Lieu d’entraînement aux arts martiaux."
+    },
+    {
+      "word": "HAIKYU",
+      "description": "Manga de volley-ball centré sur Karasuno."
+    },
+    {
+      "word": "HINATA",
+      "description": "Petit attaquant explosif de Haikyu."
+    },
+    {
+      "word": "ISAGI",
+      "description": "Attaquant qui analyse l’espace dans Blue Lock."
+    },
+    {
+      "word": "KUROKO",
+      "description": "Joueur fantôme du basket japonais."
+    },
+    {
+      "word": "SLAM DUNK",
+      "description": "Classique du basket lycéen."
+    }
+  ]
+}

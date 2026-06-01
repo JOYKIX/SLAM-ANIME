@@ -1,0 +1,61 @@
+{
+  "theme": "Science Fiction",
+  "words": [
+    {
+      "word": "AKIRA",
+      "description": "Classique cyberpunk de Katsuhiro Otomo."
+    },
+    {
+      "word": "ASUKA",
+      "description": "Pilote énergique de l’Eva 02."
+    },
+    {
+      "word": "COWBOY BEBOP",
+      "description": "Chasseurs de primes dans l’espace sur fond de jazz."
+    },
+    {
+      "word": "EVANGELION",
+      "description": "Mechas, anges et introspection psychologique."
+    },
+    {
+      "word": "GHOST IN THE SHELL",
+      "description": "Cyberpunk sur cyborgs, IA et identité."
+    },
+    {
+      "word": "GUNDAM",
+      "description": "Franchise culte de robots de guerre."
+    },
+    {
+      "word": "KANEDA",
+      "description": "Chef de gang à moto dans Akira."
+    },
+    {
+      "word": "MOBILE SUIT",
+      "description": "Armure robotique pilotée dans Gundam."
+    },
+    {
+      "word": "MOTOKO",
+      "description": "Major cyborg de la Section 9."
+    },
+    {
+      "word": "OKABE",
+      "description": "Scientifique autoproclamé fou de Steins Gate."
+    },
+    {
+      "word": "PLUTO",
+      "description": "Relecture seinen d’Astro Boy en enquête robotique."
+    },
+    {
+      "word": "SHINJI",
+      "description": "Pilote de l’Eva 01."
+    },
+    {
+      "word": "SPIKE",
+      "description": "Chasseur de primes décontracté du Bebop."
+    },
+    {
+      "word": "STEINS GATE",
+      "description": "Voyage temporel et messages vers le passé."
+    }
+  ]
+}

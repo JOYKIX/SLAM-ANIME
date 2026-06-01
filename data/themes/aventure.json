@@ -1,0 +1,53 @@
+{
+  "theme": "Aventure",
+  "words": [
+    {
+      "word": "ALPHONSE",
+      "description": "Âme liée à une armure après une transmutation ratée."
+    },
+    {
+      "word": "COWBOY BEBOP",
+      "description": "Chasseurs de primes dans l’espace sur fond de jazz."
+    },
+    {
+      "word": "EDWARD",
+      "description": "Alchimiste d’État au bras mécanique."
+    },
+    {
+      "word": "FULLMETAL ALCHEMIST",
+      "description": "Deux frères alchimistes cherchent la pierre philosophale."
+    },
+    {
+      "word": "GON",
+      "description": "Jeune Hunter parti retrouver son père."
+    },
+    {
+      "word": "HUNTER HUNTER",
+      "description": "Aventure autour du permis de Hunter et du Nen."
+    },
+    {
+      "word": "ISEKAI",
+      "description": "Genre où un personnage arrive dans un autre monde."
+    },
+    {
+      "word": "KILLUA",
+      "description": "Ami de Gon issu d’une famille d’assassins."
+    },
+    {
+      "word": "LUFFY",
+      "description": "Capitaine au chapeau de paille et au corps élastique."
+    },
+    {
+      "word": "NAMI",
+      "description": "Navigatrice experte et voleuse au grand cœur."
+    },
+    {
+      "word": "ONE PIECE",
+      "description": "Équipage de pirates qui cherche le plus grand trésor des mers."
+    },
+    {
+      "word": "SPIKE",
+      "description": "Chasseur de primes décontracté du Bebop."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "theme": "Mecha",
+  "words": [
+    {
+      "word": "ASUKA",
+      "description": "Pilote énergique de l’Eva 02."
+    },
+    {
+      "word": "EVANGELION",
+      "description": "Mechas, anges et introspection psychologique."
+    },
+    {
+      "word": "GUNDAM",
+      "description": "Franchise culte de robots de guerre."
+    },
+    {
+      "word": "MECHA",
+      "description": "Genre centré sur des robots géants."
+    },
+    {
+      "word": "MOBILE SUIT",
+      "description": "Armure robotique pilotée dans Gundam."
+    },
+    {
+      "word": "SHINJI",
+      "description": "Pilote de l’Eva 01."
+    }
+  ]
+}

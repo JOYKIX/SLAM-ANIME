@@ -1,0 +1,45 @@
+{
+  "theme": "Shojo",
+  "words": [
+    {
+      "word": "CARD CAPTOR SAKURA",
+      "description": "Sakura capture des cartes magiques échappées."
+    },
+    {
+      "word": "FRUITS BASKET",
+      "description": "Romance et malédiction autour des signes du zodiaque."
+    },
+    {
+      "word": "KIMI NI TODOKE",
+      "description": "Romance scolaire portée par une héroïne timide."
+    },
+    {
+      "word": "NANA",
+      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo."
+    },
+    {
+      "word": "OURAN",
+      "description": "Club d’hôtes comique dans un lycée prestigieux."
+    },
+    {
+      "word": "SAILOR MOON",
+      "description": "Guerrière lunaire emblématique du magical girl."
+    },
+    {
+      "word": "SAWAKO",
+      "description": "Héroïne réservée de Kimi ni Todoke."
+    },
+    {
+      "word": "SHOJO",
+      "description": "Catégorie souvent associée aux émotions, à la romance et au relationnel."
+    },
+    {
+      "word": "TOHRU",
+      "description": "Héroïne douce de Fruits Basket."
+    },
+    {
+      "word": "USAGI",
+      "description": "Collégienne maladroite devenue Sailor Moon."
+    }
+  ]
+}

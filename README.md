@@ -11,13 +11,21 @@ Manga Grid Quest est une application statique (HTML/CSS/JavaScript) pour génér
 
 ## Développement local
 
-Aucun build n'est nécessaire : ouvre `index.html` dans un navigateur ou lance un petit serveur statique.
+Aucun build n'est nécessaire. Lance un petit serveur statique pour que le navigateur puisse charger les fichiers JSON de thèmes depuis `data/themes/`.
 
 ```bash
 python3 -m http.server 4173
 ```
 
 Puis va sur <http://localhost:4173>.
+
+
+## Données de thèmes
+
+La bibliothèque de thèmes est rangée dans `data/themes/` :
+
+- `index.json` liste les thèmes disponibles et le fichier JSON associé.
+- Chaque fichier de thème contient un objet `{ "theme": "...", "words": [...] }` avec les mots et leurs descriptions.
 
 ## Déploiement GitHub Pages
 

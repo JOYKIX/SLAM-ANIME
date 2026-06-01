@@ -1,0 +1,121 @@
+{
+  "theme": "Manga",
+  "words": [
+    {
+      "word": "AKIRA",
+      "description": "Classique cyberpunk de Katsuhiro Otomo."
+    },
+    {
+      "word": "BERSERK",
+      "description": "Dark fantasy violente autour de Guts et Griffith."
+    },
+    {
+      "word": "BLEACH",
+      "description": "Shinigami, hollows et sabres spirituels."
+    },
+    {
+      "word": "BLUE LOCK",
+      "description": "Programme extrême pour créer un attaquant egoïste."
+    },
+    {
+      "word": "CARD CAPTOR SAKURA",
+      "description": "Sakura capture des cartes magiques échappées."
+    },
+    {
+      "word": "CHAINSAW MAN",
+      "description": "Chasseur de démons lié au démon-tronçonneuse."
+    },
+    {
+      "word": "DEMON SLAYER",
+      "description": "Pourfendeurs qui combattent des démons la nuit."
+    },
+    {
+      "word": "DOUJINSHI",
+      "description": "Manga amateur ou fan-made, souvent vendu en convention."
+    },
+    {
+      "word": "DRAGON BALL",
+      "description": "Saga de combats et de boules de cristal."
+    },
+    {
+      "word": "FRUITS BASKET",
+      "description": "Romance et malédiction autour des signes du zodiaque."
+    },
+    {
+      "word": "FULLMETAL ALCHEMIST",
+      "description": "Deux frères alchimistes cherchent la pierre philosophale."
+    },
+    {
+      "word": "GHOST IN THE SHELL",
+      "description": "Cyberpunk sur cyborgs, IA et identité."
+    },
+    {
+      "word": "HAIKYU",
+      "description": "Manga de volley-ball centré sur Karasuno."
+    },
+    {
+      "word": "HUNTER HUNTER",
+      "description": "Aventure autour du permis de Hunter et du Nen."
+    },
+    {
+      "word": "JUJUTSU KAISEN",
+      "description": "Exorcistes modernes face aux fléaux."
+    },
+    {
+      "word": "KIMI NI TODOKE",
+      "description": "Romance scolaire portée par une héroïne timide."
+    },
+    {
+      "word": "MANGA",
+      "description": "Bande dessinée japonaise."
+    },
+    {
+      "word": "MANGAKA",
+      "description": "Auteur ou autrice qui dessine et écrit des mangas."
+    },
+    {
+      "word": "MONSTER",
+      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur."
+    },
+    {
+      "word": "MY HERO ACADEMIA",
+      "description": "Académie formant des super-héros."
+    },
+    {
+      "word": "NANA",
+      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo."
+    },
+    {
+      "word": "NARUTO",
+      "description": "Ninja de Konoha qui rêve de devenir Hokage."
+    },
+    {
+      "word": "ONE PIECE",
+      "description": "Équipage de pirates qui cherche le plus grand trésor des mers."
+    },
+    {
+      "word": "OURAN",
+      "description": "Club d’hôtes comique dans un lycée prestigieux."
+    },
+    {
+      "word": "PLUTO",
+      "description": "Relecture seinen d’Astro Boy en enquête robotique."
+    },
+    {
+      "word": "SAILOR MOON",
+      "description": "Guerrière lunaire emblématique du magical girl."
+    },
+    {
+      "word": "SLAM DUNK",
+      "description": "Classique du basket lycéen."
+    },
+    {
+      "word": "SPY FAMILY",
+      "description": "Famille factice entre espion, tueuse et télépathe."
+    },
+    {
+      "word": "VINLAND SAGA",
+      "description": "Épopée viking entre vengeance et pacifisme."
+    }
+  ]
+}
