@@ -1,0 +1,101 @@
+{
+  "theme": "One Piece",
+  "words": [
+    {
+      "word": "LUFFY",
+      "description": "Capitaine au chapeau de paille.",
+      "theme": "One Piece",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ZORO",
+      "description": "Bretteur aux trois sabres.",
+      "theme": "One Piece",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "NAMI",
+      "description": "Navigatrice de l’équipage.",
+      "theme": "One Piece",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SANJI",
+      "description": "Cuisinier combattant aux jambes puissantes.",
+      "theme": "One Piece",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "CHOPPER",
+      "description": "Médecin renne ayant mangé un fruit.",
+      "theme": "One Piece",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ROBIN",
+      "description": "Archéologue qui lit les ponéglyphes.",
+      "theme": "One Piece",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "FRANKY",
+      "description": "Charpentier cyborg du Thousand Sunny.",
+      "theme": "One Piece",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BROOK",
+      "description": "Musicien squelette revenu à la vie.",
+      "theme": "One Piece",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "JINBE",
+      "description": "Homme poisson et timonier.",
+      "theme": "One Piece",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "GRAND LINE",
+      "description": "Mer la plus dangereuse de l’aventure.",
+      "theme": "One Piece",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "PONÉGLYPHE",
+      "description": "Pierre ancienne contenant une histoire interdite.",
+      "theme": "One Piece",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "HITO HITO",
+      "description": "Fruit mythique au cœur d’un grand secret.",
+      "theme": "One Piece",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KAIDO",
+      "description": "Empereur lié à Wano.",
+      "theme": "One Piece",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "IMU",
+      "description": "Figure mystérieuse au sommet du monde.",
+      "theme": "One Piece",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "JOY BOY",
+      "description": "Nom légendaire associé au siècle oublié.",
+      "theme": "One Piece",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "GEAR FIVE",
+      "description": "Transformation cartoonesque et libératrice.",
+      "theme": "One Piece",
+      "difficulty": "Sensei"
+    }
+  ]
+}

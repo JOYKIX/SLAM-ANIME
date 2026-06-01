@@ -1,0 +1,101 @@
+{
+  "theme": "Naruto",
+  "words": [
+    {
+      "word": "NARUTO",
+      "description": "Ninja blond de Konoha porteur de Kurama.",
+      "theme": "Naruto",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SASUKE",
+      "description": "Dernier héritier majeur du clan Uchiha.",
+      "theme": "Naruto",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SAKURA",
+      "description": "Ninja médecin à la force monstrueuse.",
+      "theme": "Naruto",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KAKASHI",
+      "description": "Sensei copieur de la Team 7.",
+      "theme": "Naruto",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "HOKAGE",
+      "description": "Titre du chef du village de Konoha.",
+      "theme": "Naruto",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "RASENGAN",
+      "description": "Orbe tourbillonnant appris par Naruto.",
+      "theme": "Naruto",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "CHIDORI",
+      "description": "Technique de foudre emblématique de Sasuke.",
+      "theme": "Naruto",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "AKATSUKI",
+      "description": "Organisation de ninjas déserteurs aux nuages rouges.",
+      "theme": "Naruto",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "SHARINGAN",
+      "description": "Dojutsu rouge du clan Uchiha.",
+      "theme": "Naruto",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BYAKUGAN",
+      "description": "Dojutsu du clan Hyuga.",
+      "theme": "Naruto",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "KURAMA",
+      "description": "Démon renard à neuf queues.",
+      "theme": "Naruto",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "OROCHIMARU",
+      "description": "Sannin obsédé par l’immortalité.",
+      "theme": "Naruto",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "JIRAIYA",
+      "description": "Sannin écrivain et mentor de Naruto.",
+      "theme": "Naruto",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "TSUNADE",
+      "description": "Sannin et grande ninja médecin.",
+      "theme": "Naruto",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "MADARA",
+      "description": "Uchiha légendaire lié aux grandes guerres ninjas.",
+      "theme": "Naruto",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "KAGUYA",
+      "description": "Origine divine du chakra dans la saga.",
+      "theme": "Naruto",
+      "difficulty": "Sensei"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "theme": "Dragon Ball",
+  "words": [
+    {
+      "word": "GOKU",
+      "description": "Saiyan élevé sur Terre.",
+      "theme": "Dragon Ball",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "VEGETA",
+      "description": "Prince des Saiyans.",
+      "theme": "Dragon Ball",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "GOHAN",
+      "description": "Fils de Goku au potentiel immense.",
+      "theme": "Dragon Ball",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "BULMA",
+      "description": "Génie scientifique des capsules.",
+      "theme": "Dragon Ball",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KAMEHAMEHA",
+      "description": "Rayon d’énergie iconique.",
+      "theme": "Dragon Ball",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SUPER SAIYAN",
+      "description": "Transformation aux cheveux dorés.",
+      "theme": "Dragon Ball",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "FREEZER",
+      "description": "Empereur galactique cruel.",
+      "theme": "Dragon Ball",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "CELL",
+      "description": "Bio-guerrier parfait.",
+      "theme": "Dragon Ball",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MAJIN BUU",
+      "description": "Créature rose aux formes multiples.",
+      "theme": "Dragon Ball",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "SENZU",
+      "description": "Haricot qui restaure les forces.",
+      "theme": "Dragon Ball",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "NAMEK",
+      "description": "Planète liée aux dragons et à Piccolo.",
+      "theme": "Dragon Ball",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KAIOKEN",
+      "description": "Technique qui multiplie la puissance.",
+      "theme": "Dragon Ball",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ULTRA INSTINCT",
+      "description": "État où le corps réagit seul.",
+      "theme": "Dragon Ball",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "POTARA",
+      "description": "Boucles permettant la fusion.",
+      "theme": "Dragon Ball",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ZEN OH",
+      "description": "Roi de tous les univers.",
+      "theme": "Dragon Ball",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "HAKAI",
+      "description": "Destruction divine utilisée par les dieux.",
+      "theme": "Dragon Ball",
+      "difficulty": "Sensei"
+    }
+  ]
+}

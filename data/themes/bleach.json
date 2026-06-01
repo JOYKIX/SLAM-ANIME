@@ -1,0 +1,89 @@
+{
+  "theme": "Bleach",
+  "words": [
+    {
+      "word": "ICHIGO",
+      "description": "Shinigami remplaçant aux cheveux orange.",
+      "theme": "Bleach",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "RUKIA",
+      "description": "Shinigami qui donne ses pouvoirs à Ichigo.",
+      "theme": "Bleach",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "BANKAI",
+      "description": "Libération ultime du zanpakuto.",
+      "theme": "Bleach",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ZANPAKUTO",
+      "description": "Sabre spirituel des shinigami.",
+      "theme": "Bleach",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "SOUL SOCIETY",
+      "description": "Monde organisé des âmes.",
+      "theme": "Bleach",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "HOLLOW",
+      "description": "Âme corrompue masquée.",
+      "theme": "Bleach",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "AIZEN",
+      "description": "Capitaine manipulateur.",
+      "theme": "Bleach",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BYAKUYA",
+      "description": "Capitaine noble aux pétales tranchants.",
+      "theme": "Bleach",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KENPACHI",
+      "description": "Capitaine obsédé par le combat.",
+      "theme": "Bleach",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "HUECO MUNDO",
+      "description": "Royaume désertique des hollows.",
+      "theme": "Bleach",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ARRANCAR",
+      "description": "Hollow ayant acquis des pouvoirs de shinigami.",
+      "theme": "Bleach",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ESPADA",
+      "description": "Élite des arrancars numérotés.",
+      "theme": "Bleach",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "QUINCY",
+      "description": "Clan d’archers spirituels.",
+      "theme": "Bleach",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "YHWACH",
+      "description": "Empereur quincy.",
+      "theme": "Bleach",
+      "difficulty": "Sensei"
+    }
+  ]
+}

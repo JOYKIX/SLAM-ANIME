@@ -1,0 +1,95 @@
+{
+  "theme": "Attack on Titan",
+  "words": [
+    {
+      "word": "EREN",
+      "description": "Héritier du Titan assaillant.",
+      "theme": "Attack on Titan",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "MIKASA",
+      "description": "Soldate protectrice au foulard rouge.",
+      "theme": "Attack on Titan",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ARMIN",
+      "description": "Stratège devenu détenteur colossal.",
+      "theme": "Attack on Titan",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "LEVI",
+      "description": "Caporal réputé imbattable.",
+      "theme": "Attack on Titan",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "TITAN",
+      "description": "Géant mangeur d’humains.",
+      "theme": "Attack on Titan",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "MUR MARIA",
+      "description": "Mur extérieur de Paradis.",
+      "theme": "Attack on Titan",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BATAILLON",
+      "description": "Corps d’exploration hors des murs.",
+      "theme": "Attack on Titan",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MANŒUVRE",
+      "description": "Équipement tridimensionnel des soldats.",
+      "theme": "Attack on Titan",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "REINER",
+      "description": "Guerrier détenteur du cuirassé.",
+      "theme": "Attack on Titan",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "ANNIE",
+      "description": "Détentrice du féminin.",
+      "theme": "Attack on Titan",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BESTIAL",
+      "description": "Titan lanceur contrôlé par Sieg.",
+      "theme": "Attack on Titan",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "PARADIS",
+      "description": "Île au cœur du conflit.",
+      "theme": "Attack on Titan",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "MÄHR",
+      "description": "Nation ennemie au-delà de la mer.",
+      "theme": "Attack on Titan",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "GRAND TERRASSEMENT",
+      "description": "Marche apocalyptique des titans colossaux.",
+      "theme": "Attack on Titan",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "YMIR FRITZ",
+      "description": "Figure fondatrice de la malédiction.",
+      "theme": "Attack on Titan",
+      "difficulty": "Sensei"
+    }
+  ]
+}

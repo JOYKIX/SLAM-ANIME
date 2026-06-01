@@ -1,0 +1,89 @@
+{
+  "theme": "Pouvoirs Avancés",
+  "words": [
+    {
+      "word": "HAKI",
+      "description": "Volonté utilisée dans One Piece.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "NEN",
+      "description": "Aura structurée de Hunter x Hunter.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "CHAKRA",
+      "description": "Énergie des ninjas de Naruto.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KI",
+      "description": "Énergie vitale de Dragon Ball.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "STAND",
+      "description": "Manifestation d’esprit dans JoJo.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BANKAI",
+      "description": "Libération ultime de Bleach.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "DOMAINE",
+      "description": "Technique suprême de Jujutsu Kaisen.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ALCHIMIE",
+      "description": "Transmutation de matière.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ALTER",
+      "description": "Pouvoir génétique de My Hero Academia.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "GEASS",
+      "description": "Pouvoir oculaire d’ordre absolu.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "PSYCHOKINÉSIE",
+      "description": "Déplacement d’objets par l’esprit.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "RESPIRATION",
+      "description": "Style de combat contre les démons.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "FRUIT DU DÉMON",
+      "description": "Fruit donnant un pouvoir au prix de la nage.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MANGEKYO",
+      "description": "Forme avancée du Sharingan.",
+      "theme": "Pouvoirs Avancés",
+      "difficulty": "Sensei"
+    }
+  ]
+}

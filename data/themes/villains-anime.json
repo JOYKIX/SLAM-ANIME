@@ -1,0 +1,89 @@
+{
+  "theme": "Villains Anime",
+  "words": [
+    {
+      "word": "DIO",
+      "description": "Vampire charismatique de JoJo.",
+      "theme": "Villains Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "AIZEN",
+      "description": "Manipulateur majeur de Bleach.",
+      "theme": "Villains Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MERUEM",
+      "description": "Roi fourmi de Hunter x Hunter.",
+      "theme": "Villains Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "FREEZER",
+      "description": "Tyran galactique de Dragon Ball.",
+      "theme": "Villains Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SUKUNA",
+      "description": "Roi des fléaux.",
+      "theme": "Villains Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "MADARA",
+      "description": "Légende Uchiha.",
+      "theme": "Villains Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MUZAN",
+      "description": "Origine des démons.",
+      "theme": "Villains Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SHIGARAKI",
+      "description": "Vilain désintégrateur.",
+      "theme": "Villains Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MAKIMA",
+      "description": "Figure de contrôle dans Chainsaw Man.",
+      "theme": "Villains Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "GRIFFITH",
+      "description": "Faucon blanc de Berserk.",
+      "theme": "Villains Anime",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "JOHAN",
+      "description": "Antagoniste humain de Monster.",
+      "theme": "Villains Anime",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "KIRA",
+      "description": "Tueur discret de JoJo.",
+      "theme": "Villains Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "LIGHT",
+      "description": "Possesseur du Death Note.",
+      "theme": "Villains Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "ENEL",
+      "description": "Dieu autoproclamé de Skypiea.",
+      "theme": "Villains Anime",
+      "difficulty": "Jonin"
+    }
+  ]
+}

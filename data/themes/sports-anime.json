@@ -1,0 +1,77 @@
+{
+  "theme": "Sports Anime",
+  "words": [
+    {
+      "word": "HAIKYUU",
+      "description": "Volley lycéen autour de Karasuno.",
+      "theme": "Sports Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KUROKO",
+      "description": "Basket avec la génération miracle.",
+      "theme": "Sports Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "BLUE LOCK",
+      "description": "Projet radical pour créer un attaquant.",
+      "theme": "Sports Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SLAM DUNK",
+      "description": "Basket culte avec Sakuragi.",
+      "theme": "Sports Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "YURI ON ICE",
+      "description": "Patinage artistique et coaching.",
+      "theme": "Sports Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "ACE OF DIAMOND",
+      "description": "Baseball lycéen compétitif.",
+      "theme": "Sports Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "HAJIME NO IPPO",
+      "description": "Boxe et progression acharnée.",
+      "theme": "Sports Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "FREE",
+      "description": "Natation et rivalités adolescentes.",
+      "theme": "Sports Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "EYESHIELD",
+      "description": "Football américain masqué.",
+      "theme": "Sports Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "PING PONG",
+      "description": "Tennis de table très stylisé.",
+      "theme": "Sports Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "RUN WITH THE WIND",
+      "description": "Course longue distance universitaire.",
+      "theme": "Sports Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "CHIHAYAFURU",
+      "description": "Karuta compétitif et poésie.",
+      "theme": "Sports Anime",
+      "difficulty": "Sensei"
+    }
+  ]
+}

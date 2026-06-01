@@ -555,12 +555,47 @@ textarea:focus {
 
 .theme-library {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(154px, 1fr));
-  gap: 10px;
-  max-height: 310px;
+  gap: 14px;
+  max-height: 420px;
   overflow: auto;
   padding-right: 4px;
   scrollbar-color: var(--accent) transparent;
+}
+
+.theme-category {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--paper) 46%, transparent);
+}
+
+.theme-category__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: start;
+}
+
+.theme-category__head strong,
+.theme-category__head small { display: block; }
+.theme-category__head strong { color: var(--ink-strong); font-size: 0.95rem; }
+.theme-category__head small { margin-top: 3px; color: var(--muted); font-size: 0.78rem; font-weight: 800; line-height: 1.35; }
+.theme-category__head span {
+  padding: 5px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--accent) 82%, var(--ink));
+  font-size: 0.72rem;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.theme-category__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(154px, 1fr));
+  gap: 10px;
 }
 
 .theme-card {

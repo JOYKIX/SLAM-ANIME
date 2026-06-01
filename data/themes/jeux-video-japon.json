@@ -1,0 +1,89 @@
+{
+  "theme": "Jeux Vidéo Japon",
+  "words": [
+    {
+      "word": "FINAL FANTASY",
+      "description": "Saga RPG de Square Enix.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "DRAGON QUEST",
+      "description": "RPG japonais très classique.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "PERSONA",
+      "description": "RPG mêlant lycée et donjons mentaux.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "POKÉMON",
+      "description": "Monstres à capturer et entraîner.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ZELDA",
+      "description": "Aventure de Link et Hyrule.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "MARIO",
+      "description": "Plombier emblématique de Nintendo.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KIRBY",
+      "description": "Boule rose qui aspire ses ennemis.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "METROID",
+      "description": "Exploration avec Samus Aran.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "DARK SOULS",
+      "description": "Action RPG exigeant de FromSoftware.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "ELDEN RING",
+      "description": "Open world dark fantasy exigeant.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "YAKUZA",
+      "description": "Saga criminelle et mini-jeux décalés.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "NIER",
+      "description": "Action RPG philosophique et mélancolique.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "MONSTER HUNTER",
+      "description": "Chasse coopérative de créatures géantes.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "VISUAL NOVEL",
+      "description": "Jeu narratif à embranchements.",
+      "theme": "Jeux Vidéo Japon",
+      "difficulty": "Sensei"
+    }
+  ]
+}

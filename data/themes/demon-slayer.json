@@ -1,0 +1,89 @@
+{
+  "theme": "Demon Slayer",
+  "words": [
+    {
+      "word": "TANJIRO",
+      "description": "Pourfendeur au haori à carreaux.",
+      "theme": "Demon Slayer",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "NEZUKO",
+      "description": "Sœur démon gardant son humanité.",
+      "theme": "Demon Slayer",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ZENITSU",
+      "description": "Pourfendeur foudroyant quand il dort.",
+      "theme": "Demon Slayer",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "INOSUKE",
+      "description": "Combattant au masque de sanglier.",
+      "theme": "Demon Slayer",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "NICHIRIN",
+      "description": "Sabre capable de tuer les démons.",
+      "theme": "Demon Slayer",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "PILIER",
+      "description": "Rang d’élite des pourfendeurs.",
+      "theme": "Demon Slayer",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MUZAN",
+      "description": "Premier démon et grand antagoniste.",
+      "theme": "Demon Slayer",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "GIYU",
+      "description": "Pilier de l’eau.",
+      "theme": "Demon Slayer",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "RENGOKU",
+      "description": "Pilier de la flamme.",
+      "theme": "Demon Slayer",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "TENGEN",
+      "description": "Pilier du son flamboyant.",
+      "theme": "Demon Slayer",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "AKAZA",
+      "description": "Lune supérieure adepte du combat.",
+      "theme": "Demon Slayer",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KOKUSHIBO",
+      "description": "Lune supérieure à plusieurs yeux.",
+      "theme": "Demon Slayer",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "HINOKAMI",
+      "description": "Danse du dieu du feu.",
+      "theme": "Demon Slayer",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "YORIICHI",
+      "description": "Bretteur légendaire de la respiration solaire.",
+      "theme": "Demon Slayer",
+      "difficulty": "Sensei"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "theme": "My Hero Academia",
+  "words": [
+    {
+      "word": "DEKU",
+      "description": "Héros en formation sans alter au départ.",
+      "theme": "My Hero Academia",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "BAKUGO",
+      "description": "Rival explosif de Deku.",
+      "theme": "My Hero Academia",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "TODOROKI",
+      "description": "Élève mi-glace mi-feu.",
+      "theme": "My Hero Academia",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ALL MIGHT",
+      "description": "Symbole de la paix.",
+      "theme": "My Hero Academia",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ALTER",
+      "description": "Pouvoir individuel dans cet univers.",
+      "theme": "My Hero Academia",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "UA",
+      "description": "Académie des apprentis héros.",
+      "theme": "My Hero Academia",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "URARAKA",
+      "description": "Élève capable d’annuler la gravité.",
+      "theme": "My Hero Academia",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "IIDA",
+      "description": "Délégué aux moteurs dans les jambes.",
+      "theme": "My Hero Academia",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "AIZAWA",
+      "description": "Professeur effaçant les alters.",
+      "theme": "My Hero Academia",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "SHIGARAKI",
+      "description": "Chef de l’alliance des vilains.",
+      "theme": "My Hero Academia",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ONE FOR ALL",
+      "description": "Pouvoir transmis de héros en héros.",
+      "theme": "My Hero Academia",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ALL FOR ONE",
+      "description": "Pouvoir de vol et stockage d’alters.",
+      "theme": "My Hero Academia",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ENDEAVOR",
+      "description": "Héros numéro un après All Might.",
+      "theme": "My Hero Academia",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "DABI",
+      "description": "Vilain aux flammes bleues.",
+      "theme": "My Hero Academia",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "ERASER HEAD",
+      "description": "Nom de héros d’Aizawa.",
+      "theme": "My Hero Academia",
+      "difficulty": "Sensei"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "theme": "Jujutsu Kaisen",
+  "words": [
+    {
+      "word": "YUJI",
+      "description": "Lycéen devenu réceptacle de Sukuna.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "MEGUMI",
+      "description": "Exorciste utilisant des ombres.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "NOBARA",
+      "description": "Exorciste au marteau et aux clous.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "GOJO",
+      "description": "Professeur aux Six Yeux.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SUKUNA",
+      "description": "Roi des fléaux.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "FLÉAU",
+      "description": "Créature née des émotions négatives.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "DOMAINE",
+      "description": "Territoire magique à effet garanti.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MAHITO",
+      "description": "Fléau qui transforme les âmes.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "NANAMI",
+      "description": "Ex-salarié devenu exorciste.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "TOGE",
+      "description": "Utilisateur de la parole maudite.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MAKI",
+      "description": "Combattante sans énergie occulte classique.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "TODO",
+      "description": "Exorciste qui adore les questions de goût.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "GETO",
+      "description": "Ancien camarade de Gojo.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "RIKA",
+      "description": "Reine des fléaux liée à Yuta.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "MAHORAGA",
+      "description": "Shikigami capable de s’adapter.",
+      "theme": "Jujutsu Kaisen",
+      "difficulty": "Sensei"
+    }
+  ]
+}

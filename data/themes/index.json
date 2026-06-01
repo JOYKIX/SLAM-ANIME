@@ -1,108 +1,451 @@
 {
+  "version": "1.0.4",
+  "categories": [
+    {
+      "name": "Anime précis",
+      "description": "Séries, films et franchises à sélectionner séparément",
+      "themes": [
+        {
+          "name": "Naruto",
+          "file": "naruto.json"
+        },
+        {
+          "name": "One Piece",
+          "file": "one-piece.json"
+        },
+        {
+          "name": "Dragon Ball",
+          "file": "dragon-ball.json"
+        },
+        {
+          "name": "Jujutsu Kaisen",
+          "file": "jujutsu-kaisen.json"
+        },
+        {
+          "name": "Demon Slayer",
+          "file": "demon-slayer.json"
+        },
+        {
+          "name": "Attack on Titan",
+          "file": "attack-on-titan.json"
+        },
+        {
+          "name": "My Hero Academia",
+          "file": "my-hero-academia.json"
+        },
+        {
+          "name": "Bleach",
+          "file": "bleach.json"
+        },
+        {
+          "name": "Hunter x Hunter",
+          "file": "hunter-x-hunter.json"
+        },
+        {
+          "name": "Chainsaw Man",
+          "file": "chainsaw-man.json"
+        },
+        {
+          "name": "Fullmetal Alchemist",
+          "file": "fullmetal-alchemist.json"
+        },
+        {
+          "name": "Ghibli",
+          "file": "ghibli.json"
+        },
+        {
+          "name": "Films Anime",
+          "file": "films-anime.json"
+        },
+        {
+          "name": "Sports Anime",
+          "file": "sports-anime.json"
+        }
+      ]
+    },
+    {
+      "name": "Genres et ambiances",
+      "description": "Grands genres pour composer des grilles thématiques",
+      "themes": [
+        {
+          "name": "Shonen",
+          "file": "shonen.json"
+        },
+        {
+          "name": "Shojo",
+          "file": "shojo.json"
+        },
+        {
+          "name": "Seinen",
+          "file": "seinen.json"
+        },
+        {
+          "name": "Josei",
+          "file": "josei.json"
+        },
+        {
+          "name": "Kodomo",
+          "file": "kodomo.json"
+        },
+        {
+          "name": "Isekai",
+          "file": "isekai.json"
+        },
+        {
+          "name": "Mecha",
+          "file": "mecha.json"
+        },
+        {
+          "name": "Magical Girl",
+          "file": "magical-girl.json"
+        },
+        {
+          "name": "Dark Fantasy",
+          "file": "dark-fantasy.json"
+        },
+        {
+          "name": "Science Fiction",
+          "file": "science-fiction.json"
+        },
+        {
+          "name": "Surnaturel",
+          "file": "surnaturel.json"
+        },
+        {
+          "name": "Romance",
+          "file": "romance.json"
+        },
+        {
+          "name": "Aventure",
+          "file": "aventure.json"
+        },
+        {
+          "name": "Comedie",
+          "file": "comedie.json"
+        },
+        {
+          "name": "Thriller",
+          "file": "thriller.json"
+        },
+        {
+          "name": "Historique",
+          "file": "historique.json"
+        },
+        {
+          "name": "School Life",
+          "file": "school-life.json"
+        },
+        {
+          "name": "Sport",
+          "file": "sport.json"
+        },
+        {
+          "name": "Film",
+          "file": "film.json"
+        }
+      ]
+    },
+    {
+      "name": "Personnages et combat",
+      "description": "Rôles, pouvoirs et archétypes de personnages",
+      "themes": [
+        {
+          "name": "Personnage",
+          "file": "personnage.json"
+        },
+        {
+          "name": "Pouvoirs",
+          "file": "pouvoirs.json"
+        },
+        {
+          "name": "Pouvoirs Avancés",
+          "file": "pouvoirs-avances.json"
+        },
+        {
+          "name": "Ninja",
+          "file": "ninja.json"
+        },
+        {
+          "name": "Villains Anime",
+          "file": "villains-anime.json"
+        },
+        {
+          "name": "Tropes Anime",
+          "file": "tropes-anime.json"
+        }
+      ]
+    },
+    {
+      "name": "Culture manga anime",
+      "description": "Vocabulaire, studios et codes de fans",
+      "themes": [
+        {
+          "name": "Anime",
+          "file": "anime.json"
+        },
+        {
+          "name": "Manga",
+          "file": "manga.json"
+        },
+        {
+          "name": "Vocabulaire",
+          "file": "vocabulaire.json"
+        },
+        {
+          "name": "Studio",
+          "file": "studio.json"
+        }
+      ]
+    },
+    {
+      "name": "Japon et pop culture",
+      "description": "Autres thèmes japonais ou proches de la culture otaku",
+      "themes": [
+        {
+          "name": "Cuisine Japon",
+          "file": "cuisine-japon.json"
+        },
+        {
+          "name": "Japon Traditionnel",
+          "file": "japon-traditionnel.json"
+        },
+        {
+          "name": "Jeux Vidéo Japon",
+          "file": "jeux-video-japon.json"
+        }
+      ]
+    }
+  ],
   "themes": [
     {
-      "name": "Anime",
-      "file": "anime.json"
+      "name": "Naruto",
+      "file": "naruto.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Aventure",
-      "file": "aventure.json"
+      "name": "One Piece",
+      "file": "one-piece.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Comedie",
-      "file": "comedie.json"
+      "name": "Dragon Ball",
+      "file": "dragon-ball.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Dark Fantasy",
-      "file": "dark-fantasy.json"
+      "name": "Jujutsu Kaisen",
+      "file": "jujutsu-kaisen.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Film",
-      "file": "film.json"
+      "name": "Demon Slayer",
+      "file": "demon-slayer.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Historique",
-      "file": "historique.json"
+      "name": "Attack on Titan",
+      "file": "attack-on-titan.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Isekai",
-      "file": "isekai.json"
+      "name": "My Hero Academia",
+      "file": "my-hero-academia.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Josei",
-      "file": "josei.json"
+      "name": "Bleach",
+      "file": "bleach.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Kodomo",
-      "file": "kodomo.json"
+      "name": "Hunter x Hunter",
+      "file": "hunter-x-hunter.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Magical Girl",
-      "file": "magical-girl.json"
+      "name": "Chainsaw Man",
+      "file": "chainsaw-man.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Manga",
-      "file": "manga.json"
+      "name": "Fullmetal Alchemist",
+      "file": "fullmetal-alchemist.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Mecha",
-      "file": "mecha.json"
+      "name": "Ghibli",
+      "file": "ghibli.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Ninja",
-      "file": "ninja.json"
+      "name": "Films Anime",
+      "file": "films-anime.json",
+      "category": "Anime précis"
     },
     {
-      "name": "Personnage",
-      "file": "personnage.json"
-    },
-    {
-      "name": "Pouvoirs",
-      "file": "pouvoirs.json"
-    },
-    {
-      "name": "Romance",
-      "file": "romance.json"
-    },
-    {
-      "name": "School Life",
-      "file": "school-life.json"
-    },
-    {
-      "name": "Science Fiction",
-      "file": "science-fiction.json"
-    },
-    {
-      "name": "Seinen",
-      "file": "seinen.json"
-    },
-    {
-      "name": "Shojo",
-      "file": "shojo.json"
+      "name": "Sports Anime",
+      "file": "sports-anime.json",
+      "category": "Anime précis"
     },
     {
       "name": "Shonen",
-      "file": "shonen.json"
+      "file": "shonen.json",
+      "category": "Genres et ambiances"
     },
     {
-      "name": "Sport",
-      "file": "sport.json"
+      "name": "Shojo",
+      "file": "shojo.json",
+      "category": "Genres et ambiances"
     },
     {
-      "name": "Studio",
-      "file": "studio.json"
+      "name": "Seinen",
+      "file": "seinen.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Josei",
+      "file": "josei.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Kodomo",
+      "file": "kodomo.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Isekai",
+      "file": "isekai.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Mecha",
+      "file": "mecha.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Magical Girl",
+      "file": "magical-girl.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Dark Fantasy",
+      "file": "dark-fantasy.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Science Fiction",
+      "file": "science-fiction.json",
+      "category": "Genres et ambiances"
     },
     {
       "name": "Surnaturel",
-      "file": "surnaturel.json"
+      "file": "surnaturel.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Romance",
+      "file": "romance.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Aventure",
+      "file": "aventure.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Comedie",
+      "file": "comedie.json",
+      "category": "Genres et ambiances"
     },
     {
       "name": "Thriller",
-      "file": "thriller.json"
+      "file": "thriller.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Historique",
+      "file": "historique.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "School Life",
+      "file": "school-life.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Sport",
+      "file": "sport.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Film",
+      "file": "film.json",
+      "category": "Genres et ambiances"
+    },
+    {
+      "name": "Personnage",
+      "file": "personnage.json",
+      "category": "Personnages et combat"
+    },
+    {
+      "name": "Pouvoirs",
+      "file": "pouvoirs.json",
+      "category": "Personnages et combat"
+    },
+    {
+      "name": "Pouvoirs Avancés",
+      "file": "pouvoirs-avances.json",
+      "category": "Personnages et combat"
+    },
+    {
+      "name": "Ninja",
+      "file": "ninja.json",
+      "category": "Personnages et combat"
+    },
+    {
+      "name": "Villains Anime",
+      "file": "villains-anime.json",
+      "category": "Personnages et combat"
+    },
+    {
+      "name": "Tropes Anime",
+      "file": "tropes-anime.json",
+      "category": "Personnages et combat"
+    },
+    {
+      "name": "Anime",
+      "file": "anime.json",
+      "category": "Culture manga anime"
+    },
+    {
+      "name": "Manga",
+      "file": "manga.json",
+      "category": "Culture manga anime"
     },
     {
       "name": "Vocabulaire",
-      "file": "vocabulaire.json"
+      "file": "vocabulaire.json",
+      "category": "Culture manga anime"
+    },
+    {
+      "name": "Studio",
+      "file": "studio.json",
+      "category": "Culture manga anime"
+    },
+    {
+      "name": "Cuisine Japon",
+      "file": "cuisine-japon.json",
+      "category": "Japon et pop culture"
+    },
+    {
+      "name": "Japon Traditionnel",
+      "file": "japon-traditionnel.json",
+      "category": "Japon et pop culture"
+    },
+    {
+      "name": "Jeux Vidéo Japon",
+      "file": "jeux-video-japon.json",
+      "category": "Japon et pop culture"
     }
   ]
 }
