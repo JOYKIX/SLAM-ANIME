@@ -44,6 +44,42 @@
     {
       "word": "VEGETA",
       "description": "Prince des Saiyans et rival de Goku."
+    },
+    {
+      "word": "KI",
+      "description": "Énergie de combat dans Dragon Ball."
+    },
+    {
+      "word": "HAKI",
+      "description": "Fluide spirituel appelé Haki dans One Piece."
+    },
+    {
+      "word": "GEASS",
+      "description": "Pouvoir surnaturel donné dans Code Geass."
+    },
+    {
+      "word": "STAND",
+      "description": "Manifestation d’âme dans JoJo."
+    },
+    {
+      "word": "ALCHIMIE",
+      "description": "Science de transmutation dans Fullmetal Alchemist."
+    },
+    {
+      "word": "RESPIRATION",
+      "description": "Techniques de sabre utilisées contre les démons."
+    },
+    {
+      "word": "DOMAIN EXPANSION",
+      "description": "Technique ultime créant un territoire maudit."
+    },
+    {
+      "word": "QUINCY",
+      "description": "Pouvoir spirituel d’archers anti-hollows."
+    },
+    {
+      "word": "BYAKUGAN",
+      "description": "Dojutsu du clan Hyuga."
     }
   ]
 }

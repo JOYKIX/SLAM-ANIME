@@ -64,6 +64,46 @@
     {
       "word": "YOUR NAME",
       "description": "Film de Makoto Shinkai sur l’échange de corps et le destin."
+    },
+    {
+      "word": "FULLMETAL ALCHEMIST",
+      "description": "Deux frères alchimistes cherchent la pierre philosophale."
+    },
+    {
+      "word": "DEATH NOTE",
+      "description": "Un carnet surnaturel permet de tuer en écrivant un nom."
+    },
+    {
+      "word": "MOB PSYCHO",
+      "description": "Collégien doté de pouvoirs psychiques immenses."
+    },
+    {
+      "word": "VINLAND SAGA",
+      "description": "Épopée viking entre vengeance et quête de paix."
+    },
+    {
+      "word": "TRIGUN",
+      "description": "Vash traverse un désert futuriste avec une prime colossale."
+    },
+    {
+      "word": "SAMURAI CHAMPLOO",
+      "description": "Voyage de samouraïs porté par une ambiance hip-hop."
+    },
+    {
+      "word": "PAPRIKA",
+      "description": "Film où les rêves et la réalité se mélangent."
+    },
+    {
+      "word": "PERFECT BLUE",
+      "description": "Thriller psychologique sur une idol devenue actrice."
+    },
+    {
+      "word": "ERASED",
+      "description": "Retour dans le passé pour empêcher une tragédie."
+    },
+    {
+      "word": "VIOLET EVERGARDEN",
+      "description": "Ancienne soldate qui écrit des lettres pour comprendre les émotions."
     }
   ]
 }

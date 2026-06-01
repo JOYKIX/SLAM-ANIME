@@ -12,6 +12,46 @@
     {
       "word": "GUTS",
       "description": "Guerrier solitaire à l’immense épée."
+    },
+    {
+      "word": "CLAYMORE",
+      "description": "Guerrières hybrides traquant des monstres mangeurs d’humains."
+    },
+    {
+      "word": "DEVILMAN",
+      "description": "Héros fusionné avec un démon dans une histoire apocalyptique."
+    },
+    {
+      "word": "HELLSING",
+      "description": "Organisation qui combat vampires et créatures occultes."
+    },
+    {
+      "word": "DOROHEDORO",
+      "description": "Ville crasseuse, magie violente et tête de lézard."
+    },
+    {
+      "word": "GOBLIN SLAYER",
+      "description": "Aventurier obsédé par l’élimination des gobelins."
+    },
+    {
+      "word": "MADE IN ABYSS",
+      "description": "Univers merveilleux qui cache une violence terrible."
+    },
+    {
+      "word": "CASTLEVANIA",
+      "description": "Chasseurs de vampires face à Dracula et ses armées."
+    },
+    {
+      "word": "SHINSEKAI YORI",
+      "description": "Société psychique futuriste aux secrets sombres."
+    },
+    {
+      "word": "TOKYO GHOUL",
+      "description": "Étudiant transformé en goule à moitié humaine."
+    },
+    {
+      "word": "JUJUTSU KAISEN",
+      "description": "Exorcistes affrontant des fléaux nés des émotions négatives."
     }
   ]
 }

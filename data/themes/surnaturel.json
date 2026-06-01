@@ -76,6 +76,46 @@
     {
       "word": "YOKAI",
       "description": "Créature surnaturelle du folklore japonais."
+    },
+    {
+      "word": "NORAGAMI",
+      "description": "Dieu mineur cherchant des fidèles et des missions."
+    },
+    {
+      "word": "BLUE EXORCIST",
+      "description": "Fils de Satan voulant devenir exorciste."
+    },
+    {
+      "word": "MUSHISHI",
+      "description": "Voyageur étudiant des êtres spirituels appelés mushi."
+    },
+    {
+      "word": "NATSUME",
+      "description": "Garçon rendant leurs noms aux esprits."
+    },
+    {
+      "word": "HELL GIRL",
+      "description": "Site mystérieux permettant d’envoyer quelqu’un en enfer."
+    },
+    {
+      "word": "D GRAY MAN",
+      "description": "Exorcistes combattant les akuma."
+    },
+    {
+      "word": "MONONOKE",
+      "description": "Apothicaire chassant des esprits vengeurs."
+    },
+    {
+      "word": "INUYASHA",
+      "description": "Démons et voyage dans le Japon féodal."
+    },
+    {
+      "word": "GEGEGE NO KITARO",
+      "description": "Garçon yokai protégeant humains et esprits."
+    },
+    {
+      "word": "AYAKASHI",
+      "description": "Terme désignant des apparitions ou esprits surnaturels."
     }
   ]
 }

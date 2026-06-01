@@ -128,6 +128,18 @@
     {
       "word": "YOKAI",
       "description": "Créature surnaturelle du folklore japonais."
+    },
+    {
+      "word": "KUUDERE",
+      "description": "Personnage calme et distant cachant ses émotions."
+    },
+    {
+      "word": "MOE",
+      "description": "Attirance attendrie pour un personnage mignon."
+    },
+    {
+      "word": "COUR",
+      "description": "Bloc de diffusion d’environ trois mois."
     }
   ]
 }

@@ -56,6 +56,46 @@
     {
       "word": "STEINS GATE",
       "description": "Voyage temporel et messages vers le passé."
+    },
+    {
+      "word": "PSYCHO PASS",
+      "description": "Police futuriste guidée par un système de jugement mental."
+    },
+    {
+      "word": "PLANETES",
+      "description": "Éboueurs de l’espace en orbite terrestre."
+    },
+    {
+      "word": "SPACE DANDY",
+      "description": "Chasseur d’aliens dans une comédie spatiale."
+    },
+    {
+      "word": "BLAME",
+      "description": "Mégastructure cybernétique et errance silencieuse."
+    },
+    {
+      "word": "TEXHNOLYZE",
+      "description": "Ville souterraine et membres cybernétiques."
+    },
+    {
+      "word": "ARISE",
+      "description": "Préquelle cyberpunk de Ghost in the Shell."
+    },
+    {
+      "word": "KNIGHTS OF SIDONIA",
+      "description": "Humanité survivant dans un vaisseau géant."
+    },
+    {
+      "word": "ASTRA LOST IN SPACE",
+      "description": "Adolescents perdus dans l’espace."
+    },
+    {
+      "word": "TIME LEAP",
+      "description": "Saut temporel au cœur de plusieurs récits SF."
+    },
+    {
+      "word": "CYBERPUNK",
+      "description": "Univers futuriste mêlant haute technologie et société sombre."
     }
   ]
 }

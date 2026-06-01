@@ -4,6 +4,46 @@
     {
       "word": "GHIBLI",
       "description": "Studio japonais fondé notamment par Miyazaki et Takahata."
+    },
+    {
+      "word": "TOEI",
+      "description": "Studio historique de Dragon Ball, One Piece et Precure."
+    },
+    {
+      "word": "MADHOUSE",
+      "description": "Studio connu pour Death Note, Hunter x Hunter et Paprika."
+    },
+    {
+      "word": "MAPPA",
+      "description": "Studio de Jujutsu Kaisen, Chainsaw Man et Vinland Saga."
+    },
+    {
+      "word": "BONES",
+      "description": "Studio de Fullmetal Alchemist et My Hero Academia."
+    },
+    {
+      "word": "KYOTO ANIMATION",
+      "description": "Studio réputé pour ses animations sensibles et détaillées."
+    },
+    {
+      "word": "TRIGGER",
+      "description": "Studio au style énergique fondé par d’anciens créateurs de Gainax."
+    },
+    {
+      "word": "SUNRISE",
+      "description": "Studio majeur derrière Gundam et Cowboy Bebop."
+    },
+    {
+      "word": "UFO TABLE",
+      "description": "Studio célèbre pour Demon Slayer."
+    },
+    {
+      "word": "WIT STUDIO",
+      "description": "Studio des premières saisons de L’Attaque des Titans."
+    },
+    {
+      "word": "CLOVERWORKS",
+      "description": "Studio de Spy Family, Bocchi et Horimiya."
     }
   ]
 }
