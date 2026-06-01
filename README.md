@@ -7,7 +7,9 @@ Otakross est une application statique (HTML/CSS/JavaScript) pour générer des m
 - Génération de grilles horizontales et verticales depuis une liste de mots.
 - Mode jeu avec lettres masquées, saisie automatique, validation du mot complet et progression.
 - Création de compte, connexion, profil et synchronisation Firebase Realtime Database.
-- Grille journalière de 10 mots (5 horizontaux / 5 verticaux) avec ELO réservé à ce mode.
+- Grille journalière de 10 mots (5 horizontaux / 5 verticaux) avec ELO réservé à ce mode, scoring dépendant du temps et tentative classée unique.
+- Mot mystère quotidien avec lettres rouges, bonus score/ELO et classement daily Top 10.
+- Profil joueur enrichi : avatar, date d’inscription, rang, grilles complétées, réussite, meilleur temps et streak.
 - Sauvegardes locales et synchronisées dans le navigateur pour reprendre une partie.
 - Mise en page imprimable pour utiliser la grille hors ligne.
 

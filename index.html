@@ -45,9 +45,9 @@
       <section class="page is-active" id="page-daily" data-page="daily" aria-labelledby="daily-title">
         <div class="hero-card hero-card--daily">
           <div class="hero-card__content">
-            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>Grille journalière v1.0.0</span>
+            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>Grille journalière v1.0.1</span>
             <h1 id="daily-title">Le duel quotidien Otakross.</h1>
-            <p>Chaque jour, une grille de 10 mots est tirée parmi tous les thèmes : 5 horizontaux, 5 verticaux. C’est le seul mode qui fait évoluer ton ELO.</p>
+            <p>Chaque jour, une grille officielle de 10 mots est tirée parmi tous les thèmes : 5 horizontaux, 5 verticaux. Une seule tentative classée impacte ton ELO, avec un mot mystère bonus à déduire grâce aux lettres rouges.</p>
             <div class="daily-actions">
               <button class="primary" id="dailyGenerateBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">today</span>Jouer la grille du jour</button>
               <span id="dailySummary" class="theme-summary">Daily non chargée</span>
@@ -67,6 +67,21 @@
             </div>
           </div>
           <p>Les grilles personnalisées restent jouables et sauvegardables, mais ne donnent plus d’ELO. Connecte-toi pour synchroniser ton profil dans Firebase.</p>
+          <ul class="daily-rules">
+            <li>Score basé sur mots trouvés, temps, erreurs, indices utilisés et mot mystère.</li>
+            <li>10/10 très rapide rapporte beaucoup ; 10/10 lent rapporte peu.</li>
+            <li>Le classement affiche le Top 10 du jour et ta position si tu es connecté.</li>
+          </ul>
+        </section>
+        <section class="panel daily-leaderboard" aria-label="Classement quotidien">
+          <div class="panel__heading">
+            <span class="panel__icon material-symbols-rounded" aria-hidden="true">emoji_events</span>
+            <div>
+              <span class="eyebrow">Daily leaderboard</span>
+              <h2>Top 10 du jour</h2>
+            </div>
+          </div>
+          <div id="dailyLeaderboard" class="leaderboard"><p class="empty-save">Classement non chargé.</p></div>
         </section>
       </section>
 
@@ -270,20 +285,20 @@ ENDING | Générique de fin d'un anime</textarea>
           <h1 id="patch-notes-title">Patch notes Otakross</h1>
         </div>
 
-        <section class="panel patch-notes" aria-label="Patch notes de la version 1.0.0">
+        <section class="panel patch-notes" aria-label="Patch notes de la version 1.0.1">
           <div class="patch-hero">
             <div>
-              <p class="patch-version">v1.0.0 · Release</p>
-              <h2>Otakross arrive avec comptes, Firebase et daily ELO.</h2>
-              <p>Release courte : nouveau nom, profils connectés, sauvegardes liées au compte et une vraie grille journalière compétitive.</p>
+              <p class="patch-version">v1.0.1 · Daily compétitif</p>
+              <h2>La daily devient le cœur compétitif d’Otakross.</h2>
+              <p>Cette mise à jour ajoute scoring au temps, tentative classée unique, mot mystère, profil enrichi et classement quotidien.</p>
             </div>
-            <div class="patch-badge">1.0.0</div>
+            <div class="patch-badge">1.0.1</div>
           </div>
 
           <div class="patch-stats" aria-label="Résumé chiffré">
             <article class="patch-stat">
-              <strong>v1.0.0</strong>
-              <span>release</span>
+              <strong>v1.0.1</strong>
+              <span>daily mode</span>
             </article>
             <article class="patch-stat">
               <strong>10</strong>
@@ -303,15 +318,15 @@ ENDING | Générique de fin d'un anime</textarea>
             <article>
               <h3><span class="material-symbols-rounded" aria-hidden="true">rocket_launch</span> Release</h3>
               <ul>
-                <li>Le site devient Otakross.</li>
-                <li>Ajout de la création de compte, connexion, profil et synchro Firebase.</li>
+                <li>Profil enrichi : avatar, date d’inscription, rang, réussite, meilleur temps et streak.</li>
+                <li>Classement daily avec Top 10, position personnelle et score synchronisable Firebase.</li>
               </ul>
             </article>
             <article>
               <h3><span class="material-symbols-rounded" aria-hidden="true">today</span> Daily ELO</h3>
               <ul>
-                <li>Une grille journalière aléatoire de 10 mots : 5 horizontaux et 5 verticaux.</li>
-                <li>L’ELO ne bouge plus sur les grilles personnalisées.</li>
+                <li>Une grille officielle par jour : 10 mots, 5 horizontaux et 5 verticaux, identique pour tous.</li>
+                <li>ELO calculé uniquement sur la daily avec poids fort du temps, indices, erreurs et mot mystère.</li>
               </ul>
             </article>
           </div>
