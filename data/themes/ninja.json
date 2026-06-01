@@ -3,63 +3,123 @@
   "words": [
     {
       "word": "HOKAGE",
-      "description": "Titre du chef du village caché de Konoha."
+      "description": "Titre du chef du village caché de Konoha.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "KAKASHI",
-      "description": "Sensei masqué connu pour son Sharingan."
+      "description": "Sensei masqué connu pour son Sharingan.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "NARUTO",
-      "description": "Ninja de Konoha qui rêve de devenir Hokage."
+      "description": "Ninja de Konoha qui rêve de devenir Hokage.",
+      "theme": "Ninja",
+      "difficulty": "Genin"
     },
     {
       "word": "SAKURA",
-      "description": "Ninja médicale de l’équipe 7."
+      "description": "Ninja médicale de l’équipe 7.",
+      "theme": "Ninja",
+      "difficulty": "Genin"
     },
     {
       "word": "SASUKE",
-      "description": "Dernier héritier important du clan Uchiha."
+      "description": "Dernier héritier important du clan Uchiha.",
+      "theme": "Ninja",
+      "difficulty": "Genin"
     },
     {
       "word": "SHARINGAN",
-      "description": "Technique oculaire du clan Uchiha."
+      "description": "Technique oculaire du clan Uchiha.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "ITACHI",
-      "description": "Ninja prodige au destin tragique."
+      "description": "Ninja prodige au destin tragique.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "JIRAIYA",
-      "description": "Sannin écrivain et mentor de Naruto."
+      "description": "Sannin écrivain et mentor de Naruto.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "TSUNADE",
-      "description": "Sannin médecin devenue Hokage."
+      "description": "Sannin médecin devenue Hokage.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "GAARA",
-      "description": "Ninja du sable portant un démon en lui."
+      "description": "Ninja du sable portant un démon en lui.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "SHIKAMARU",
-      "description": "Stratège paresseux mais brillant de Konoha."
+      "description": "Stratège paresseux mais brillant de Konoha.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "HINATA",
-      "description": "Héritière Hyuga au Byakugan."
+      "description": "Héritière Hyuga au Byakugan.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "ROCK LEE",
-      "description": "Ninja spécialisé dans le taijutsu."
+      "description": "Ninja spécialisé dans le taijutsu.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "OROCHIMARU",
-      "description": "Sannin obsédé par l’immortalité."
+      "description": "Sannin obsédé par l’immortalité.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
     },
     {
       "word": "KURAMA",
-      "description": "Renard à neuf queues scellé dans Naruto."
+      "description": "Renard à neuf queues scellé dans Naruto.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "AKATSUKI",
+      "description": "Organisation criminelle qui rassemble des ninjas renégats.",
+      "theme": "Ninja",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "RASENGAN",
+      "description": "Technique tourbillonnante emblématique de Naruto.",
+      "theme": "Ninja",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "CHIDORI",
+      "description": "Technique de foudre associée à Sasuke et Kakashi.",
+      "theme": "Ninja",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "SUSANOO",
+      "description": "Avatar protecteur des utilisateurs du Mangekyo Sharingan.",
+      "theme": "Ninja",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KAMUI",
+      "description": "Ninjutsu spatio-temporel lié à Obito et Kakashi.",
+      "theme": "Ninja",
+      "difficulty": "Sensei"
     }
   ]
 }

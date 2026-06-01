@@ -3,143 +3,231 @@
   "words": [
     {
       "word": "ANIME",
-      "description": "Animation japonaise, en série ou en film."
+      "description": "Animation japonaise, en série ou en film.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "CHIBI",
-      "description": "Style super-déformé avec petite taille et grosse tête."
+      "description": "Style super-déformé avec petite taille et grosse tête.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "COSPLAY",
-      "description": "Costume pour incarner un personnage."
+      "description": "Costume pour incarner un personnage.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "DOJO",
-      "description": "Lieu d’entraînement aux arts martiaux."
+      "description": "Lieu d’entraînement aux arts martiaux.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "DOUJINSHI",
-      "description": "Manga amateur ou fan-made, souvent vendu en convention."
+      "description": "Manga amateur ou fan-made, souvent vendu en convention.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "ENDING",
-      "description": "Générique de fin d’un anime."
+      "description": "Générique de fin d’un anime.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "FILLER",
-      "description": "Épisode ajouté qui n’avance pas toujours l’histoire principale."
+      "description": "Épisode ajouté qui n’avance pas toujours l’histoire principale.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "ISEKAI",
-      "description": "Genre où un personnage arrive dans un autre monde."
+      "description": "Genre où un personnage arrive dans un autre monde.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "JOSEI",
-      "description": "Catégorie visant souvent un public féminin adulte."
+      "description": "Catégorie visant souvent un public féminin adulte.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "KATANA",
-      "description": "Sabre japonais à lame courbe."
+      "description": "Sabre japonais à lame courbe.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "KAWAII",
-      "description": "Mot japonais pour dire mignon."
+      "description": "Mot japonais pour dire mignon.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "KITSUNE",
-      "description": "Renard mythique souvent doté de pouvoirs."
+      "description": "Renard mythique souvent doté de pouvoirs.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "KODOMO",
-      "description": "Manga ou anime pensé pour les enfants."
+      "description": "Manga ou anime pensé pour les enfants.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "KOUHAI",
-      "description": "Cadet ou personne moins expérimentée."
+      "description": "Cadet ou personne moins expérimentée.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "LIGHT NOVEL",
-      "description": "Roman illustré japonais souvent adapté en anime."
+      "description": "Roman illustré japonais souvent adapté en anime.",
+      "theme": "Vocabulaire",
+      "difficulty": "Jonin"
     },
     {
       "word": "MANGA",
-      "description": "Bande dessinée japonaise."
+      "description": "Bande dessinée japonaise.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "MANGAKA",
-      "description": "Auteur ou autrice qui dessine et écrit des mangas."
+      "description": "Auteur ou autrice qui dessine et écrit des mangas.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "MECHA",
-      "description": "Genre centré sur des robots géants."
+      "description": "Genre centré sur des robots géants.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "ONI",
-      "description": "Démon ou ogre du folklore japonais."
+      "description": "Démon ou ogre du folklore japonais.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "OPENING",
-      "description": "Générique d’ouverture d’un anime."
+      "description": "Générique d’ouverture d’un anime.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "OTAKU",
-      "description": "Fan très investi de manga, anime ou pop culture."
+      "description": "Fan très investi de manga, anime ou pop culture.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "OVA",
-      "description": "Épisode ou mini-série sortie hors diffusion TV classique."
+      "description": "Épisode ou mini-série sortie hors diffusion TV classique.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "RONIN",
-      "description": "Samouraï sans maître."
+      "description": "Samouraï sans maître.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "SAMURAI",
-      "description": "Guerrier japonais associé au sabre et à l’honneur."
+      "description": "Guerrier japonais associé au sabre et à l’honneur.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "SEINEN",
-      "description": "Catégorie visant généralement un public adulte ou jeune adulte."
+      "description": "Catégorie visant généralement un public adulte ou jeune adulte.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "SENPAI",
-      "description": "Aîné ou personne plus expérimentée."
+      "description": "Aîné ou personne plus expérimentée.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "SENSEI",
-      "description": "Professeur, maître ou créateur respecté."
+      "description": "Professeur, maître ou créateur respecté.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "SHOJO",
-      "description": "Catégorie souvent associée aux émotions, à la romance et au relationnel."
+      "description": "Catégorie souvent associée aux émotions, à la romance et au relationnel.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "SHONEN",
-      "description": "Catégorie souvent associée à l’action et aux jeunes lecteurs."
+      "description": "Catégorie souvent associée à l’action et aux jeunes lecteurs.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "TSUNDERE",
-      "description": "Personnage dur au départ puis tendre avec le temps."
+      "description": "Personnage dur au départ puis tendre avec le temps.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "YANDERE",
-      "description": "Personnage amoureux jusqu’à l’obsession dangereuse."
+      "description": "Personnage amoureux jusqu’à l’obsession dangereuse.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "YOKAI",
-      "description": "Créature surnaturelle du folklore japonais."
+      "description": "Créature surnaturelle du folklore japonais.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "KUUDERE",
-      "description": "Personnage calme et distant cachant ses émotions."
+      "description": "Personnage calme et distant cachant ses émotions.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
     },
     {
       "word": "MOE",
-      "description": "Attirance attendrie pour un personnage mignon."
+      "description": "Attirance attendrie pour un personnage mignon.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     },
     {
       "word": "COUR",
-      "description": "Bloc de diffusion d’environ trois mois."
+      "description": "Bloc de diffusion d’environ trois mois.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "GENIN",
+      "description": "Rang ninja débutant, utilisé ici pour les mots les plus accessibles.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "CHUNIN",
+      "description": "Rang intermédiaire, utilisé ici pour les mots connus des fans réguliers.",
+      "theme": "Vocabulaire",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "JONIN",
+      "description": "Rang supérieur, utilisé ici pour les mots plus spécialisés.",
+      "theme": "Vocabulaire",
+      "difficulty": "Genin"
     }
   ]
 }

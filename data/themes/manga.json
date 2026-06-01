@@ -3,155 +3,231 @@
   "words": [
     {
       "word": "AKIRA",
-      "description": "Classique cyberpunk de Katsuhiro Otomo."
+      "description": "Classique cyberpunk de Katsuhiro Otomo.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "BERSERK",
-      "description": "Dark fantasy violente autour de Guts et Griffith."
+      "description": "Dark fantasy violente autour de Guts et Griffith.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "BLEACH",
-      "description": "Shinigami, hollows et sabres spirituels."
+      "description": "Shinigami, hollows et sabres spirituels.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "BLUE LOCK",
-      "description": "Programme extrême pour créer un attaquant egoïste."
+      "description": "Programme extrême pour créer un attaquant egoïste.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "CARD CAPTOR SAKURA",
-      "description": "Sakura capture des cartes magiques échappées."
+      "description": "Sakura capture des cartes magiques échappées.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "CHAINSAW MAN",
-      "description": "Chasseur de démons lié au démon-tronçonneuse."
+      "description": "Chasseur de démons lié au démon-tronçonneuse.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "DEMON SLAYER",
-      "description": "Pourfendeurs qui combattent des démons la nuit."
+      "description": "Pourfendeurs qui combattent des démons la nuit.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "DOUJINSHI",
-      "description": "Manga amateur ou fan-made, souvent vendu en convention."
+      "description": "Manga amateur ou fan-made, souvent vendu en convention.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "DRAGON BALL",
-      "description": "Saga de combats et de boules de cristal."
+      "description": "Saga de combats et de boules de cristal.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "FRUITS BASKET",
-      "description": "Romance et malédiction autour des signes du zodiaque."
+      "description": "Romance et malédiction autour des signes du zodiaque.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "FULLMETAL ALCHEMIST",
-      "description": "Deux frères alchimistes cherchent la pierre philosophale."
+      "description": "Deux frères alchimistes cherchent la pierre philosophale.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "GHOST IN THE SHELL",
-      "description": "Cyberpunk sur cyborgs, IA et identité."
+      "description": "Cyberpunk sur cyborgs, IA et identité.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "HAIKYU",
-      "description": "Manga de volley-ball centré sur Karasuno."
+      "description": "Manga de volley-ball centré sur Karasuno.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "HUNTER HUNTER",
-      "description": "Aventure autour du permis de Hunter et du Nen."
+      "description": "Aventure autour du permis de Hunter et du Nen.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "JUJUTSU KAISEN",
-      "description": "Exorcistes modernes face aux fléaux."
+      "description": "Exorcistes modernes face aux fléaux.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "KIMI NI TODOKE",
-      "description": "Romance scolaire portée par une héroïne timide."
+      "description": "Romance scolaire portée par une héroïne timide.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "MANGA",
-      "description": "Bande dessinée japonaise."
+      "description": "Bande dessinée japonaise.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "MANGAKA",
-      "description": "Auteur ou autrice qui dessine et écrit des mangas."
+      "description": "Auteur ou autrice qui dessine et écrit des mangas.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "MONSTER",
-      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur."
+      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "MY HERO ACADEMIA",
-      "description": "Académie formant des super-héros."
+      "description": "Académie formant des super-héros.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "NANA",
-      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo."
+      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "NARUTO",
-      "description": "Ninja de Konoha qui rêve de devenir Hokage."
+      "description": "Ninja de Konoha qui rêve de devenir Hokage.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "ONE PIECE",
-      "description": "Équipage de pirates qui cherche le plus grand trésor des mers."
+      "description": "Équipage de pirates qui cherche le plus grand trésor des mers.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "OURAN",
-      "description": "Club d’hôtes comique dans un lycée prestigieux."
+      "description": "Club d’hôtes comique dans un lycée prestigieux.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "PLUTO",
-      "description": "Relecture seinen d’Astro Boy en enquête robotique."
+      "description": "Relecture seinen d’Astro Boy en enquête robotique.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "SAILOR MOON",
-      "description": "Guerrière lunaire emblématique du magical girl."
+      "description": "Guerrière lunaire emblématique du magical girl.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "SLAM DUNK",
-      "description": "Classique du basket lycéen."
+      "description": "Classique du basket lycéen.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "SPY FAMILY",
-      "description": "Famille factice entre espion, tueuse et télépathe."
+      "description": "Famille factice entre espion, tueuse et télépathe.",
+      "theme": "Manga",
+      "difficulty": "Genin"
     },
     {
       "word": "VINLAND SAGA",
-      "description": "Épopée viking entre vengeance et pacifisme."
+      "description": "Épopée viking entre vengeance et pacifisme.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "VAGABOND",
-      "description": "Manga de samouraï inspiré de Miyamoto Musashi."
+      "description": "Manga de samouraï inspiré de Miyamoto Musashi.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "KINGDOM",
-      "description": "Manga historique sur l’unification de la Chine."
+      "description": "Manga historique sur l’unification de la Chine.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "GOODNIGHT PUNPUN",
-      "description": "Drame intime au style graphique singulier."
+      "description": "Drame intime au style graphique singulier.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
-      "word": "20TH CENTURY BOYS",
-      "description": "Mystère autour d’une secte et d’un symbole d’enfance."
+      "word": "TH CENTURY BOYS",
+      "description": "Mystère autour d’une secte et d’un symbole d’enfance.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "DOROHEDORO",
-      "description": "Manga de fantasy urbaine sombre et déjantée."
+      "description": "Manga de fantasy urbaine sombre et déjantée.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "KAGUYA SAMA",
-      "description": "Romance comique faite de duels psychologiques."
+      "description": "Romance comique faite de duels psychologiques.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "BLUE PERIOD",
-      "description": "Étudiant découvrant la passion de la peinture."
+      "description": "Étudiant découvrant la passion de la peinture.",
+      "theme": "Manga",
+      "difficulty": "Jonin"
     },
     {
       "word": "OISHINBO",
-      "description": "Manga culinaire sur la gastronomie japonaise."
+      "description": "Manga culinaire sur la gastronomie japonaise.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     },
     {
       "word": "YOTSUBA",
-      "description": "Quotidien drôle et innocent d’une petite fille curieuse."
+      "description": "Quotidien drôle et innocent d’une petite fille curieuse.",
+      "theme": "Manga",
+      "difficulty": "Chunin"
     }
   ]
 }

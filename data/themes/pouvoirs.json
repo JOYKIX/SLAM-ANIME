@@ -3,83 +3,135 @@
   "words": [
     {
       "word": "ALL MIGHT",
-      "description": "Symbole de la paix dans My Hero Academia."
+      "description": "Symbole de la paix dans My Hero Academia.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "ALTER",
-      "description": "Pouvoir individuel dans My Hero Academia."
+      "description": "Pouvoir individuel dans My Hero Academia.",
+      "theme": "Pouvoirs",
+      "difficulty": "Genin"
     },
     {
       "word": "BANKAI",
-      "description": "Libération ultime d’un zanpakuto."
+      "description": "Libération ultime d’un zanpakuto.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "DEKU",
-      "description": "Héros en formation héritier du One For All."
+      "description": "Héros en formation héritier du One For All.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "DRAGON BALL",
-      "description": "Saga de combats et de boules de cristal."
+      "description": "Saga de combats et de boules de cristal.",
+      "theme": "Pouvoirs",
+      "difficulty": "Genin"
     },
     {
       "word": "GOKU",
-      "description": "Saiyan optimiste obsédé par l’entraînement."
+      "description": "Saiyan optimiste obsédé par l’entraînement.",
+      "theme": "Pouvoirs",
+      "difficulty": "Genin"
     },
     {
       "word": "KAMEHAMEHA",
-      "description": "Vague d’énergie iconique de Dragon Ball."
+      "description": "Vague d’énergie iconique de Dragon Ball.",
+      "theme": "Pouvoirs",
+      "difficulty": "Jonin"
     },
     {
       "word": "MY HERO ACADEMIA",
-      "description": "Académie formant des super-héros."
+      "description": "Académie formant des super-héros.",
+      "theme": "Pouvoirs",
+      "difficulty": "Genin"
     },
     {
       "word": "NEN",
-      "description": "Énergie vitale maîtrisée par les Hunters."
+      "description": "Énergie vitale maîtrisée par les Hunters.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "SHARINGAN",
-      "description": "Technique oculaire du clan Uchiha."
+      "description": "Technique oculaire du clan Uchiha.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "VEGETA",
-      "description": "Prince des Saiyans et rival de Goku."
+      "description": "Prince des Saiyans et rival de Goku.",
+      "theme": "Pouvoirs",
+      "difficulty": "Genin"
     },
     {
       "word": "KI",
-      "description": "Énergie de combat dans Dragon Ball."
+      "description": "Énergie de combat dans Dragon Ball.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "HAKI",
-      "description": "Fluide spirituel appelé Haki dans One Piece."
+      "description": "Fluide spirituel appelé Haki dans One Piece.",
+      "theme": "Pouvoirs",
+      "difficulty": "Genin"
     },
     {
       "word": "GEASS",
-      "description": "Pouvoir surnaturel donné dans Code Geass."
+      "description": "Pouvoir surnaturel donné dans Code Geass.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "STAND",
-      "description": "Manifestation d’âme dans JoJo."
+      "description": "Manifestation d’âme dans JoJo.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "ALCHIMIE",
-      "description": "Science de transmutation dans Fullmetal Alchemist."
+      "description": "Science de transmutation dans Fullmetal Alchemist.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "RESPIRATION",
-      "description": "Techniques de sabre utilisées contre les démons."
+      "description": "Techniques de sabre utilisées contre les démons.",
+      "theme": "Pouvoirs",
+      "difficulty": "Chunin"
     },
     {
       "word": "DOMAIN EXPANSION",
-      "description": "Technique ultime créant un territoire maudit."
+      "description": "Technique ultime créant un territoire maudit.",
+      "theme": "Pouvoirs",
+      "difficulty": "Jonin"
     },
     {
       "word": "QUINCY",
-      "description": "Pouvoir spirituel d’archers anti-hollows."
+      "description": "Pouvoir spirituel d’archers anti-hollows.",
+      "theme": "Pouvoirs",
+      "difficulty": "Sensei"
     },
     {
       "word": "BYAKUGAN",
-      "description": "Dojutsu du clan Hyuga."
+      "description": "Dojutsu du clan Hyuga.",
+      "theme": "Pouvoirs",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KYOKA SUIGETSU",
+      "description": "Zanpakuto d’Aizen capable de plonger ses cibles dans l’hypnose parfaite.",
+      "theme": "Pouvoirs",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "HYORINMARU",
+      "description": "Zanpakuto de glace manié par Toshiro Hitsugaya.",
+      "theme": "Pouvoirs",
+      "difficulty": "Sensei"
     }
   ]
 }

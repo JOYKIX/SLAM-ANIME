@@ -3,67 +3,99 @@
   "words": [
     {
       "word": "FRUITS BASKET",
-      "description": "Romance et malédiction autour des signes du zodiaque."
+      "description": "Romance et malédiction autour des signes du zodiaque.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "KIMI NI TODOKE",
-      "description": "Romance scolaire portée par une héroïne timide."
+      "description": "Romance scolaire portée par une héroïne timide.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "NANA",
-      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo."
+      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo.",
+      "theme": "Romance",
+      "difficulty": "Genin"
     },
     {
       "word": "SAWAKO",
-      "description": "Héroïne réservée de Kimi ni Todoke."
+      "description": "Héroïne réservée de Kimi ni Todoke.",
+      "theme": "Romance",
+      "difficulty": "Chunin"
     },
     {
       "word": "TOHRU",
-      "description": "Héroïne douce de Fruits Basket."
+      "description": "Héroïne douce de Fruits Basket.",
+      "theme": "Romance",
+      "difficulty": "Genin"
     },
     {
       "word": "YOUR NAME",
-      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin."
+      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "YOUR LIE IN APRIL",
-      "description": "Romance musicale entre piano et violon."
+      "description": "Romance musicale entre piano et violon.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "HORIMIYA",
-      "description": "Romance scolaire entre deux élèves aux faces cachées."
+      "description": "Romance scolaire entre deux élèves aux faces cachées.",
+      "theme": "Romance",
+      "difficulty": "Chunin"
     },
     {
       "word": "TORADORA",
-      "description": "Comédie romantique avec une héroïne explosive."
+      "description": "Comédie romantique avec une héroïne explosive.",
+      "theme": "Romance",
+      "difficulty": "Chunin"
     },
     {
       "word": "CLANNAD",
-      "description": "Drame romantique autour de la famille et de l’école."
+      "description": "Drame romantique autour de la famille et de l’école.",
+      "theme": "Romance",
+      "difficulty": "Chunin"
     },
     {
       "word": "GOLDEN TIME",
-      "description": "Romance universitaire et perte de mémoire."
+      "description": "Romance universitaire et perte de mémoire.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "LOVELY COMPLEX",
-      "description": "Duo comique complexé par leur différence de taille."
+      "description": "Duo comique complexé par leur différence de taille.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "AO HARU RIDE",
-      "description": "Retrouvailles adolescentes et sentiments non dits."
+      "description": "Retrouvailles adolescentes et sentiments non dits.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "ORANGE",
-      "description": "Lettres du futur pour sauver un camarade."
+      "description": "Lettres du futur pour sauver un camarade.",
+      "theme": "Romance",
+      "difficulty": "Chunin"
     },
     {
       "word": "TSUKI GA KIREI",
-      "description": "Premiers amours au collège."
+      "description": "Premiers amours au collège.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     },
     {
       "word": "MY LOVE STORY",
-      "description": "Romance tendre avec un héros très costaud."
+      "description": "Romance tendre avec un héros très costaud.",
+      "theme": "Romance",
+      "difficulty": "Jonin"
     }
   ]
 }

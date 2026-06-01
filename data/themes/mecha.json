@@ -3,67 +3,99 @@
   "words": [
     {
       "word": "ASUKA",
-      "description": "Pilote énergique de l’Eva 02."
+      "description": "Pilote énergique de l’Eva 02.",
+      "theme": "Mecha",
+      "difficulty": "Genin"
     },
     {
       "word": "EVANGELION",
-      "description": "Mechas, anges et introspection psychologique."
+      "description": "Mechas, anges et introspection psychologique.",
+      "theme": "Mecha",
+      "difficulty": "Chunin"
     },
     {
       "word": "GUNDAM",
-      "description": "Franchise culte de robots de guerre."
+      "description": "Franchise culte de robots de guerre.",
+      "theme": "Mecha",
+      "difficulty": "Chunin"
     },
     {
       "word": "MECHA",
-      "description": "Genre centré sur des robots géants."
+      "description": "Genre centré sur des robots géants.",
+      "theme": "Mecha",
+      "difficulty": "Genin"
     },
     {
       "word": "MOBILE SUIT",
-      "description": "Armure robotique pilotée dans Gundam."
+      "description": "Armure robotique pilotée dans Gundam.",
+      "theme": "Mecha",
+      "difficulty": "Jonin"
     },
     {
       "word": "SHINJI",
-      "description": "Pilote de l’Eva 01."
+      "description": "Pilote de l’Eva 01.",
+      "theme": "Mecha",
+      "difficulty": "Chunin"
     },
     {
       "word": "MACROSS",
-      "description": "Robots transformables, musique et guerre spatiale."
+      "description": "Robots transformables, musique et guerre spatiale.",
+      "theme": "Mecha",
+      "difficulty": "Chunin"
     },
     {
       "word": "CODE GEASS",
-      "description": "Rébellion menée avec des Knightmare Frames."
+      "description": "Rébellion menée avec des Knightmare Frames.",
+      "theme": "Mecha",
+      "difficulty": "Jonin"
     },
     {
       "word": "PATLABOR",
-      "description": "Police utilisant des robots de travail géants."
+      "description": "Police utilisant des robots de travail géants.",
+      "theme": "Mecha",
+      "difficulty": "Chunin"
     },
     {
       "word": "EUREKA SEVEN",
-      "description": "Mechas surfant dans le ciel et romance adolescente."
+      "description": "Mechas surfant dans le ciel et romance adolescente.",
+      "theme": "Mecha",
+      "difficulty": "Jonin"
     },
     {
       "word": "RAHXEPHON",
-      "description": "Robot mystique lié à la musique et aux dimensions."
+      "description": "Robot mystique lié à la musique et aux dimensions.",
+      "theme": "Mecha",
+      "difficulty": "Chunin"
     },
     {
       "word": "GURREN LAGANN",
-      "description": "Mecha survolté qui perce les cieux."
+      "description": "Mecha survolté qui perce les cieux.",
+      "theme": "Mecha",
+      "difficulty": "Jonin"
     },
     {
       "word": "ARMORED TROOPER VOTOMS",
-      "description": "Mechas militaires réalistes appelés Armored Troopers."
+      "description": "Mechas militaires réalistes appelés Armored Troopers.",
+      "theme": "Mecha",
+      "difficulty": "Jonin"
     },
     {
       "word": "DARLING IN THE FRANXX",
-      "description": "Adolescents pilotant des mechas contre des monstres."
+      "description": "Adolescents pilotant des mechas contre des monstres.",
+      "theme": "Mecha",
+      "difficulty": "Jonin"
     },
     {
       "word": "GRIDMAN",
-      "description": "Héros géant numérique face à des kaiju."
+      "description": "Héros géant numérique face à des kaiju.",
+      "theme": "Mecha",
+      "difficulty": "Chunin"
     },
     {
       "word": "MAZINGER Z",
-      "description": "Robot géant pionnier piloté depuis sa tête."
+      "description": "Robot géant pionnier piloté depuis sa tête.",
+      "theme": "Mecha",
+      "difficulty": "Jonin"
     }
   ]
 }

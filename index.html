@@ -45,9 +45,9 @@
       <section class="page is-active" id="page-daily" data-page="daily" aria-labelledby="daily-title">
         <div class="hero-card hero-card--daily">
           <div class="hero-card__content">
-            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>Grille journalière v1.0.1</span>
+            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>Grille journalière v1.0.2</span>
             <h1 id="daily-title">Le duel quotidien Otakross.</h1>
-            <p>Chaque jour, une grille officielle de 10 mots est tirée parmi tous les thèmes : 5 horizontaux, 5 verticaux. Une seule tentative classée impacte ton ELO, avec un mot mystère bonus à déduire grâce aux lettres rouges.</p>
+            <p>Chaque jour, une grille officielle équilibrée de 10 mots est tirée parmi tous les thèmes : 5 horizontaux, 5 verticaux. Une seule tentative classée impacte ton ELO, avec un mot mystère bonus à déduire grâce aux lettres rouges.</p>
             <div class="daily-actions">
               <button class="primary" id="dailyGenerateBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">today</span>Jouer la grille du jour</button>
               <span id="dailySummary" class="theme-summary">Daily non chargée</span>
@@ -88,7 +88,7 @@
       <section class="page" id="page-create" data-page="create" aria-labelledby="create-title">
         <div class="hero-card">
           <div class="hero-card__content">
-            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Création v1.0.0</span>
+            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Création v1.0.2</span>
             <h1 id="create-title">Forge ta grille manga comme un vrai arc de tournoi.</h1>
             <p>Crée tes grilles perso avec les thèmes anime, sauvegarde-les sur ton compte et joue-les sans impact sur ton ELO daily.</p>
           </div>
@@ -179,6 +179,16 @@ ENDING | Générique de fin d'un anime</textarea>
                 <input id="verticalCount" type="number" min="0" max="50" value="5" />
               </div>
             </div>
+
+            <label class="selectline" for="gridDifficulty">
+              <span>Difficulté de grille</span>
+              <select id="gridDifficulty">
+                <option value="easy">Facile · 6 Genin / 3 Chunin / 1 Jonin</option>
+                <option value="medium" selected>Moyenne · 4 Genin / 4 Chunin / 2 Jonin</option>
+                <option value="hard">Difficile · 2 Genin / 4 Chunin / 3 Jonin / 1 Sensei</option>
+                <option value="custom">Libre · ordre de la liste</option>
+              </select>
+            </label>
 
             <div class="switches">
               <label class="checkline"><input id="hideLetters" type="checkbox" checked /><span>Mode jeu</span></label>
@@ -285,48 +295,48 @@ ENDING | Générique de fin d'un anime</textarea>
           <h1 id="patch-notes-title">Patch notes Otakross</h1>
         </div>
 
-        <section class="panel patch-notes" aria-label="Patch notes de la version 1.0.1">
+        <section class="panel patch-notes" aria-label="Patch notes de la version 1.0.2">
           <div class="patch-hero">
             <div>
-              <p class="patch-version">v1.0.1 · Daily compétitif</p>
-              <h2>La daily devient le cœur compétitif d’Otakross.</h2>
-              <p>Cette mise à jour ajoute scoring au temps, tentative classée unique, mot mystère, profil enrichi et classement quotidien.</p>
+              <p class="patch-version">v1.0.2 · Difficultés et thèmes</p>
+              <h2>Les thèmes deviennent plus propres, plus riches et mieux équilibrés.</h2>
+              <p>Cette mise à jour classe chaque mot par difficulté pour préparer des grilles plus justes, des Daily plus variées et de futures récompenses.</p>
             </div>
-            <div class="patch-badge">1.0.1</div>
+            <div class="patch-badge">1.0.2</div>
           </div>
 
           <div class="patch-stats" aria-label="Résumé chiffré">
             <article class="patch-stat">
-              <strong>v1.0.1</strong>
-              <span>daily mode</span>
+              <strong>4</strong>
+              <span>niveaux</span>
             </article>
             <article class="patch-stat">
-              <strong>10</strong>
-              <span>mots daily</span>
+              <strong>Genin</strong>
+              <span>mots accessibles</span>
             </article>
             <article class="patch-stat">
-              <strong>5/5</strong>
-              <span>H/V chaque jour</span>
+              <strong>Sensei</strong>
+              <span>mots experts</span>
             </article>
             <article class="patch-stat">
-              <strong>ELO</strong>
-              <span>daily seulement</span>
+              <strong>Daily</strong>
+              <span>tirage équilibré</span>
             </article>
           </div>
 
           <div class="patch-details">
             <article>
-              <h3><span class="material-symbols-rounded" aria-hidden="true">rocket_launch</span> Release</h3>
+              <h3><span class="material-symbols-rounded" aria-hidden="true">format_list_bulleted</span> Thèmes</h3>
               <ul>
-                <li>Profil enrichi : avatar, date d’inscription, rang, réussite, meilleur temps et streak.</li>
-                <li>Classement daily avec Top 10, position personnelle et score synchronisable Firebase.</li>
+                <li>Refonte complète des thèmes existants avec mots normalisés, descriptions harmonisées et doublons nettoyés.</li>
+                <li>Ajout du champ thème et du champ difficulté dans chaque entrée de la base JSON.</li>
               </ul>
             </article>
             <article>
-              <h3><span class="material-symbols-rounded" aria-hidden="true">today</span> Daily ELO</h3>
+              <h3><span class="material-symbols-rounded" aria-hidden="true">military_tech</span> Difficultés</h3>
               <ul>
-                <li>Une grille officielle par jour : 10 mots, 5 horizontaux et 5 verticaux, identique pour tous.</li>
-                <li>ELO calculé uniquement sur la daily avec poids fort du temps, indices, erreurs et mot mystère.</li>
+                <li>Nouvelle classification : Genin, Chunin, Jonin et Sensei.</li>
+                <li>La création et la Daily savent maintenant sélectionner les mots selon un profil de difficulté.</li>
               </ul>
             </article>
           </div>

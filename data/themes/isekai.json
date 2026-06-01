@@ -3,51 +3,75 @@
   "words": [
     {
       "word": "ISEKAI",
-      "description": "Genre où un personnage arrive dans un autre monde."
+      "description": "Genre où un personnage arrive dans un autre monde.",
+      "theme": "Isekai",
+      "difficulty": "Chunin"
     },
     {
       "word": "LIGHT NOVEL",
-      "description": "Roman illustré japonais souvent adapté en anime."
+      "description": "Roman illustré japonais souvent adapté en anime.",
+      "theme": "Isekai",
+      "difficulty": "Jonin"
     },
     {
       "word": "RE ZERO",
-      "description": "Retour par la mort dans un monde fantasy."
+      "description": "Retour par la mort dans un monde fantasy.",
+      "theme": "Isekai",
+      "difficulty": "Jonin"
     },
     {
       "word": "KONOSUBA",
-      "description": "Réincarnation comique avec une déesse maladroite."
+      "description": "Réincarnation comique avec une déesse maladroite.",
+      "theme": "Isekai",
+      "difficulty": "Chunin"
     },
     {
       "word": "OVERLORD",
-      "description": "Joueur piégé dans la peau d’un seigneur mort-vivant."
+      "description": "Joueur piégé dans la peau d’un seigneur mort-vivant.",
+      "theme": "Isekai",
+      "difficulty": "Chunin"
     },
     {
       "word": "LOG HORIZON",
-      "description": "Joueurs coincés dans un MMORPG devenu réel."
+      "description": "Joueurs coincés dans un MMORPG devenu réel.",
+      "theme": "Isekai",
+      "difficulty": "Jonin"
     },
     {
       "word": "NO GAME NO LIFE",
-      "description": "Frère et sœur transportés dans un monde régi par les jeux."
+      "description": "Frère et sœur transportés dans un monde régi par les jeux.",
+      "theme": "Isekai",
+      "difficulty": "Jonin"
     },
     {
       "word": "SLIME",
-      "description": "Héros réincarné en slime dans un univers fantasy."
+      "description": "Héros réincarné en slime dans un univers fantasy.",
+      "theme": "Isekai",
+      "difficulty": "Genin"
     },
     {
       "word": "SHIELD HERO",
-      "description": "Héros invoqué et accusé à tort dès son arrivée."
+      "description": "Héros invoqué et accusé à tort dès son arrivée.",
+      "theme": "Isekai",
+      "difficulty": "Jonin"
     },
     {
       "word": "GRIMGAR",
-      "description": "Groupe amnésique tente de survivre dans un autre monde."
+      "description": "Groupe amnésique tente de survivre dans un autre monde.",
+      "theme": "Isekai",
+      "difficulty": "Chunin"
     },
     {
       "word": "SAO",
-      "description": "Joueurs enfermés dans un jeu de réalité virtuelle."
+      "description": "Joueurs enfermés dans un jeu de réalité virtuelle.",
+      "theme": "Isekai",
+      "difficulty": "Genin"
     },
     {
       "word": "ASCENDANCE OF A BOOKWORM",
-      "description": "Passionnée de livres réincarnée dans un monde médiéval."
+      "description": "Passionnée de livres réincarnée dans un monde médiéval.",
+      "theme": "Isekai",
+      "difficulty": "Jonin"
     }
   ]
 }

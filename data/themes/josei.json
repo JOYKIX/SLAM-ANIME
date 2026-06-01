@@ -3,51 +3,75 @@
   "words": [
     {
       "word": "JOSEI",
-      "description": "Catégorie visant souvent un public féminin adulte."
+      "description": "Catégorie visant souvent un public féminin adulte.",
+      "theme": "Josei",
+      "difficulty": "Chunin"
     },
     {
       "word": "NANA",
-      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo."
+      "description": "Deux jeunes femmes du même prénom cherchent leur place à Tokyo.",
+      "theme": "Josei",
+      "difficulty": "Genin"
     },
     {
       "word": "CHIHAYAFURU",
-      "description": "Compétition de karuta et parcours de jeunes adultes."
+      "description": "Compétition de karuta et parcours de jeunes adultes.",
+      "theme": "Josei",
+      "difficulty": "Chunin"
     },
     {
       "word": "PARADISE KISS",
-      "description": "Lycéenne entraînée dans le monde de la mode."
+      "description": "Lycéenne entraînée dans le monde de la mode.",
+      "theme": "Josei",
+      "difficulty": "Jonin"
     },
     {
       "word": "HONEY AND CLOVER",
-      "description": "Étudiants en art entre amour et incertitudes."
+      "description": "Étudiants en art entre amour et incertitudes.",
+      "theme": "Josei",
+      "difficulty": "Jonin"
     },
     {
       "word": "NODAME CANTABILE",
-      "description": "Comédie romantique dans le milieu de la musique classique."
+      "description": "Comédie romantique dans le milieu de la musique classique.",
+      "theme": "Josei",
+      "difficulty": "Jonin"
     },
     {
       "word": "KURAGEHIME",
-      "description": "Passionnées de méduses et transformation par la mode."
+      "description": "Passionnées de méduses et transformation par la mode.",
+      "theme": "Josei",
+      "difficulty": "Chunin"
     },
     {
       "word": "SAKAMICHI NO APOLLON",
-      "description": "Amitié et jazz dans les années soixante."
+      "description": "Amitié et jazz dans les années soixante.",
+      "theme": "Josei",
+      "difficulty": "Jonin"
     },
     {
       "word": "USAGI DROP",
-      "description": "Homme célibataire qui élève une petite fille."
+      "description": "Homme célibataire qui élève une petite fille.",
+      "theme": "Josei",
+      "difficulty": "Jonin"
     },
     {
       "word": "WOTAKOI",
-      "description": "Romance adulte entre collègues otaku."
+      "description": "Romance adulte entre collègues otaku.",
+      "theme": "Josei",
+      "difficulty": "Chunin"
     },
     {
       "word": "KIDS ON THE SLOPE",
-      "description": "Titre anglais de Sakamichi no Apollon."
+      "description": "Titre anglais de Sakamichi no Apollon.",
+      "theme": "Josei",
+      "difficulty": "Jonin"
     },
     {
       "word": "TOKYO TARAREBA",
-      "description": "Amies trentenaires questionnant amour et carrière."
+      "description": "Amies trentenaires questionnant amour et carrière.",
+      "theme": "Josei",
+      "difficulty": "Jonin"
     }
   ]
 }

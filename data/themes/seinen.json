@@ -3,91 +3,135 @@
   "words": [
     {
       "word": "AKIRA",
-      "description": "Classique cyberpunk de Katsuhiro Otomo."
+      "description": "Classique cyberpunk de Katsuhiro Otomo.",
+      "theme": "Seinen",
+      "difficulty": "Genin"
     },
     {
       "word": "BERSERK",
-      "description": "Dark fantasy violente autour de Guts et Griffith."
+      "description": "Dark fantasy violente autour de Guts et Griffith.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "GHOST IN THE SHELL",
-      "description": "Cyberpunk sur cyborgs, IA et identité."
+      "description": "Cyberpunk sur cyborgs, IA et identité.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     },
     {
       "word": "GRIFFITH",
-      "description": "Chef charismatique de la Troupe du Faucon."
+      "description": "Chef charismatique de la Troupe du Faucon.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "GUTS",
-      "description": "Guerrier solitaire à l’immense épée."
+      "description": "Guerrier solitaire à l’immense épée.",
+      "theme": "Seinen",
+      "difficulty": "Genin"
     },
     {
       "word": "KANEDA",
-      "description": "Chef de gang à moto dans Akira."
+      "description": "Chef de gang à moto dans Akira.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "MAKIMA",
-      "description": "Manipulatrice mystérieuse de Public Safety."
+      "description": "Manipulatrice mystérieuse de Public Safety.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     },
     {
       "word": "MONSTER",
-      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur."
+      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "MOTOKO",
-      "description": "Major cyborg de la Section 9."
+      "description": "Major cyborg de la Section 9.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "PLUTO",
-      "description": "Relecture seinen d’Astro Boy en enquête robotique."
+      "description": "Relecture seinen d’Astro Boy en enquête robotique.",
+      "theme": "Seinen",
+      "difficulty": "Genin"
     },
     {
       "word": "SEINEN",
-      "description": "Catégorie visant généralement un public adulte ou jeune adulte."
+      "description": "Catégorie visant généralement un public adulte ou jeune adulte.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "THORFINN",
-      "description": "Jeune guerrier viking en quête de sens."
+      "description": "Jeune guerrier viking en quête de sens.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "VINLAND SAGA",
-      "description": "Épopée viking entre vengeance et pacifisme."
+      "description": "Épopée viking entre vengeance et pacifisme.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     },
     {
       "word": "VAGABOND",
-      "description": "Seinen de samouraï au dessin très détaillé."
+      "description": "Seinen de samouraï au dessin très détaillé.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "GOODNIGHT PUNPUN",
-      "description": "Récit sombre sur le passage à l’âge adulte."
+      "description": "Récit sombre sur le passage à l’âge adulte.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     },
     {
-      "word": "20TH CENTURY BOYS",
-      "description": "Mystère générationnel signé Naoki Urasawa."
+      "word": "TH CENTURY BOYS",
+      "description": "Mystère générationnel signé Naoki Urasawa.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     },
     {
       "word": "MARCH COMES IN LIKE A LION",
-      "description": "Joueur de shogi face à la solitude."
+      "description": "Joueur de shogi face à la solitude.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     },
     {
       "word": "REAL",
-      "description": "Basket fauteuil et reconstruction personnelle."
+      "description": "Basket fauteuil et reconstruction personnelle.",
+      "theme": "Seinen",
+      "difficulty": "Genin"
     },
     {
       "word": "INUYASHIKI",
-      "description": "Vieil homme transformé en arme cybernétique."
+      "description": "Vieil homme transformé en arme cybernétique.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "PARASYTE",
-      "description": "Parasites extraterrestres infiltrant les humains."
+      "description": "Parasites extraterrestres infiltrant les humains.",
+      "theme": "Seinen",
+      "difficulty": "Chunin"
     },
     {
       "word": "BLACK LAGOON",
-      "description": "Mercenaires et criminalité en Asie du Sud-Est."
+      "description": "Mercenaires et criminalité en Asie du Sud-Est.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     },
     {
       "word": "BILLY BAT",
-      "description": "Conspiration historique autour d’une chauve-souris dessinée."
+      "description": "Conspiration historique autour d’une chauve-souris dessinée.",
+      "theme": "Seinen",
+      "difficulty": "Jonin"
     }
   ]
 }

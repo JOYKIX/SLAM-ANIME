@@ -3,107 +3,159 @@
   "words": [
     {
       "word": "ANIME",
-      "description": "Animation japonaise, en série ou en film."
+      "description": "Animation japonaise, en série ou en film.",
+      "theme": "Anime",
+      "difficulty": "Genin"
     },
     {
       "word": "CHIHIRO",
-      "description": "Héroïne du Voyage de Chihiro."
+      "description": "Héroïne du Voyage de Chihiro.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "COWBOY BEBOP",
-      "description": "Chasseurs de primes dans l’espace sur fond de jazz."
+      "description": "Chasseurs de primes dans l’espace sur fond de jazz.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "ENDING",
-      "description": "Générique de fin d’un anime."
+      "description": "Générique de fin d’un anime.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "EVANGELION",
-      "description": "Mechas, anges et introspection psychologique."
+      "description": "Mechas, anges et introspection psychologique.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "FILLER",
-      "description": "Épisode ajouté qui n’avance pas toujours l’histoire principale."
+      "description": "Épisode ajouté qui n’avance pas toujours l’histoire principale.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "GHIBLI",
-      "description": "Studio japonais fondé notamment par Miyazaki et Takahata."
+      "description": "Studio japonais fondé notamment par Miyazaki et Takahata.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "GUNDAM",
-      "description": "Franchise culte de robots de guerre."
+      "description": "Franchise culte de robots de guerre.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "MONONOKE",
-      "description": "Princesse élevée par les loups dans un film Ghibli."
+      "description": "Princesse élevée par les loups dans un film Ghibli.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "OPENING",
-      "description": "Générique d’ouverture d’un anime."
+      "description": "Générique d’ouverture d’un anime.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "OVA",
-      "description": "Épisode ou mini-série sortie hors diffusion TV classique."
+      "description": "Épisode ou mini-série sortie hors diffusion TV classique.",
+      "theme": "Anime",
+      "difficulty": "Genin"
     },
     {
       "word": "PONYO",
-      "description": "Petite fille-poisson magique de Ghibli."
+      "description": "Petite fille-poisson magique de Ghibli.",
+      "theme": "Anime",
+      "difficulty": "Genin"
     },
     {
       "word": "STEINS GATE",
-      "description": "Voyage temporel et messages vers le passé."
+      "description": "Voyage temporel et messages vers le passé.",
+      "theme": "Anime",
+      "difficulty": "Sensei"
     },
     {
       "word": "SUZUME",
-      "description": "Film de Shinkai avec portes mystérieuses et ver géant."
+      "description": "Film de Shinkai avec portes mystérieuses et ver géant.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "TOTORO",
-      "description": "Esprit de la forêt doux et iconique de Ghibli."
+      "description": "Esprit de la forêt doux et iconique de Ghibli.",
+      "theme": "Anime",
+      "difficulty": "Genin"
     },
     {
       "word": "YOUR NAME",
-      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin."
+      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin.",
+      "theme": "Anime",
+      "difficulty": "Jonin"
     },
     {
       "word": "FULLMETAL ALCHEMIST",
-      "description": "Deux frères alchimistes cherchent la pierre philosophale."
+      "description": "Deux frères alchimistes cherchent la pierre philosophale.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "DEATH NOTE",
-      "description": "Un carnet surnaturel permet de tuer en écrivant un nom."
+      "description": "Un carnet surnaturel permet de tuer en écrivant un nom.",
+      "theme": "Anime",
+      "difficulty": "Genin"
     },
     {
       "word": "MOB PSYCHO",
-      "description": "Collégien doté de pouvoirs psychiques immenses."
+      "description": "Collégien doté de pouvoirs psychiques immenses.",
+      "theme": "Anime",
+      "difficulty": "Jonin"
     },
     {
       "word": "VINLAND SAGA",
-      "description": "Épopée viking entre vengeance et quête de paix."
+      "description": "Épopée viking entre vengeance et quête de paix.",
+      "theme": "Anime",
+      "difficulty": "Jonin"
     },
     {
       "word": "TRIGUN",
-      "description": "Vash traverse un désert futuriste avec une prime colossale."
+      "description": "Vash traverse un désert futuriste avec une prime colossale.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "SAMURAI CHAMPLOO",
-      "description": "Voyage de samouraïs porté par une ambiance hip-hop."
+      "description": "Voyage de samouraïs porté par une ambiance hip-hop.",
+      "theme": "Anime",
+      "difficulty": "Jonin"
     },
     {
       "word": "PAPRIKA",
-      "description": "Film où les rêves et la réalité se mélangent."
+      "description": "Film où les rêves et la réalité se mélangent.",
+      "theme": "Anime",
+      "difficulty": "Sensei"
     },
     {
       "word": "PERFECT BLUE",
-      "description": "Thriller psychologique sur une idol devenue actrice."
+      "description": "Thriller psychologique sur une idol devenue actrice.",
+      "theme": "Anime",
+      "difficulty": "Sensei"
     },
     {
       "word": "ERASED",
-      "description": "Retour dans le passé pour empêcher une tragédie."
+      "description": "Retour dans le passé pour empêcher une tragédie.",
+      "theme": "Anime",
+      "difficulty": "Chunin"
     },
     {
       "word": "VIOLET EVERGARDEN",
-      "description": "Ancienne soldate qui écrit des lettres pour comprendre les émotions."
+      "description": "Ancienne soldate qui écrit des lettres pour comprendre les émotions.",
+      "theme": "Anime",
+      "difficulty": "Jonin"
     }
   ]
 }

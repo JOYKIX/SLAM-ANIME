@@ -3,63 +3,93 @@
   "words": [
     {
       "word": "DOJO",
-      "description": "Lieu d’entraînement aux arts martiaux."
+      "description": "Lieu d’entraînement aux arts martiaux.",
+      "theme": "Historique",
+      "difficulty": "Genin"
     },
     {
       "word": "KATANA",
-      "description": "Sabre japonais à lame courbe."
+      "description": "Sabre japonais à lame courbe.",
+      "theme": "Historique",
+      "difficulty": "Genin"
     },
     {
       "word": "RONIN",
-      "description": "Samouraï sans maître."
+      "description": "Samouraï sans maître.",
+      "theme": "Historique",
+      "difficulty": "Genin"
     },
     {
       "word": "SAMURAI",
-      "description": "Guerrier japonais associé au sabre et à l’honneur."
+      "description": "Guerrier japonais associé au sabre et à l’honneur.",
+      "theme": "Historique",
+      "difficulty": "Chunin"
     },
     {
       "word": "THORFINN",
-      "description": "Jeune guerrier viking en quête de sens."
+      "description": "Jeune guerrier viking en quête de sens.",
+      "theme": "Historique",
+      "difficulty": "Chunin"
     },
     {
       "word": "VINLAND SAGA",
-      "description": "Épopée viking entre vengeance et pacifisme."
+      "description": "Épopée viking entre vengeance et pacifisme.",
+      "theme": "Historique",
+      "difficulty": "Jonin"
     },
     {
       "word": "RUROUNI KENSHIN",
-      "description": "Ancien assassin devenu vagabond à l’ère Meiji."
+      "description": "Ancien assassin devenu vagabond à l’ère Meiji.",
+      "theme": "Historique",
+      "difficulty": "Jonin"
     },
     {
       "word": "KINGDOM",
-      "description": "Guerres d’unification de la Chine antique."
+      "description": "Guerres d’unification de la Chine antique.",
+      "theme": "Historique",
+      "difficulty": "Chunin"
     },
     {
       "word": "GOLDEN KAMUY",
-      "description": "Aventure historique après la guerre russo-japonaise."
+      "description": "Aventure historique après la guerre russo-japonaise.",
+      "theme": "Historique",
+      "difficulty": "Jonin"
     },
     {
       "word": "VAGABOND",
-      "description": "Réinterprétation de la vie de Miyamoto Musashi."
+      "description": "Réinterprétation de la vie de Miyamoto Musashi.",
+      "theme": "Historique",
+      "difficulty": "Chunin"
     },
     {
       "word": "SAMURAI CHAMPLOO",
-      "description": "Périple de sabreurs dans un Japon anachronique."
+      "description": "Périple de sabreurs dans un Japon anachronique.",
+      "theme": "Historique",
+      "difficulty": "Jonin"
     },
     {
       "word": "ROSE DE VERSAILLES",
-      "description": "Drame historique autour de la cour de France."
+      "description": "Drame historique autour de la cour de France.",
+      "theme": "Historique",
+      "difficulty": "Jonin"
     },
     {
       "word": "HEIKE MONOGATARI",
-      "description": "Chronique poétique de la chute du clan Heike."
+      "description": "Chronique poétique de la chute du clan Heike.",
+      "theme": "Historique",
+      "difficulty": "Jonin"
     },
     {
       "word": "SHOUWA GENROKU",
-      "description": "Histoire du rakugo à travers plusieurs époques."
+      "description": "Histoire du rakugo à travers plusieurs époques.",
+      "theme": "Historique",
+      "difficulty": "Jonin"
     },
     {
       "word": "ONIHEI",
-      "description": "Récits policiers dans le Japon de l’époque Edo."
+      "description": "Récits policiers dans le Japon de l’époque Edo.",
+      "theme": "Historique",
+      "difficulty": "Chunin"
     }
   ]
 }

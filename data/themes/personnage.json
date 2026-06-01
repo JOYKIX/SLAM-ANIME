@@ -3,223 +3,333 @@
   "words": [
     {
       "word": "ALL MIGHT",
-      "description": "Symbole de la paix dans My Hero Academia."
+      "description": "Symbole de la paix dans My Hero Academia.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "ALPHONSE",
-      "description": "Âme liée à une armure après une transmutation ratée."
+      "description": "Âme liée à une armure après une transmutation ratée.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "ANYA",
-      "description": "Petite télépathe qui adore les cacahuètes."
+      "description": "Petite télépathe qui adore les cacahuètes.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "ASUKA",
-      "description": "Pilote énergique de l’Eva 02."
+      "description": "Pilote énergique de l’Eva 02.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "CHIHIRO",
-      "description": "Héroïne du Voyage de Chihiro."
+      "description": "Héroïne du Voyage de Chihiro.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "COSPLAY",
-      "description": "Costume pour incarner un personnage."
+      "description": "Costume pour incarner un personnage.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "DEKU",
-      "description": "Héros en formation héritier du One For All."
+      "description": "Héros en formation héritier du One For All.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "DENJI",
-      "description": "Anti-héros pauvre fusionné avec Pochita."
+      "description": "Anti-héros pauvre fusionné avec Pochita.",
+      "theme": "Personnage",
+      "difficulty": "Jonin"
     },
     {
       "word": "EDWARD",
-      "description": "Alchimiste d’État au bras mécanique."
+      "description": "Alchimiste d’État au bras mécanique.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "GOJO",
-      "description": "Professeur exorciste aux yeux bandés et au pouvoir immense."
+      "description": "Professeur exorciste aux yeux bandés et au pouvoir immense.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "GOKU",
-      "description": "Saiyan optimiste obsédé par l’entraînement."
+      "description": "Saiyan optimiste obsédé par l’entraînement.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "GON",
-      "description": "Jeune Hunter parti retrouver son père."
+      "description": "Jeune Hunter parti retrouver son père.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "GRIFFITH",
-      "description": "Chef charismatique de la Troupe du Faucon."
+      "description": "Chef charismatique de la Troupe du Faucon.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "GUTS",
-      "description": "Guerrier solitaire à l’immense épée."
+      "description": "Guerrier solitaire à l’immense épée.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "HINATA",
-      "description": "Petit attaquant explosif de Haikyu."
+      "description": "Petit attaquant explosif de Haikyu.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "ICHIGO",
-      "description": "Lycéen devenu shinigami remplaçant."
+      "description": "Lycéen devenu shinigami remplaçant.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "ISAGI",
-      "description": "Attaquant qui analyse l’espace dans Blue Lock."
+      "description": "Attaquant qui analyse l’espace dans Blue Lock.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "KAKASHI",
-      "description": "Sensei masqué connu pour son Sharingan."
+      "description": "Sensei masqué connu pour son Sharingan.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "KANEDA",
-      "description": "Chef de gang à moto dans Akira."
+      "description": "Chef de gang à moto dans Akira.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "KILLUA",
-      "description": "Ami de Gon issu d’une famille d’assassins."
+      "description": "Ami de Gon issu d’une famille d’assassins.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "KUROKO",
-      "description": "Joueur fantôme du basket japonais."
+      "description": "Joueur fantôme du basket japonais.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "LOID",
-      "description": "Espion connu sous le nom de Twilight."
+      "description": "Espion connu sous le nom de Twilight.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "LUFFY",
-      "description": "Capitaine au chapeau de paille et au corps élastique."
+      "description": "Capitaine au chapeau de paille et au corps élastique.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "MADOKA",
-      "description": "Héroïne de magical girl au destin bouleversant."
+      "description": "Héroïne de magical girl au destin bouleversant.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "MAKIMA",
-      "description": "Manipulatrice mystérieuse de Public Safety."
+      "description": "Manipulatrice mystérieuse de Public Safety.",
+      "theme": "Personnage",
+      "difficulty": "Jonin"
     },
     {
       "word": "MONONOKE",
-      "description": "Princesse élevée par les loups dans un film Ghibli."
+      "description": "Princesse élevée par les loups dans un film Ghibli.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "MOTOKO",
-      "description": "Major cyborg de la Section 9."
+      "description": "Major cyborg de la Section 9.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "NAMI",
-      "description": "Navigatrice experte et voleuse au grand cœur."
+      "description": "Navigatrice experte et voleuse au grand cœur.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "NARUTO",
-      "description": "Ninja de Konoha qui rêve de devenir Hokage."
+      "description": "Ninja de Konoha qui rêve de devenir Hokage.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "NEZUKO",
-      "description": "Sœur de Tanjiro transformée en démon."
+      "description": "Sœur de Tanjiro transformée en démon.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "OKABE",
-      "description": "Scientifique autoproclamé fou de Steins Gate."
+      "description": "Scientifique autoproclamé fou de Steins Gate.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "ONE PIECE",
-      "description": "Équipage de pirates qui cherche le plus grand trésor des mers."
+      "description": "Équipage de pirates qui cherche le plus grand trésor des mers.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "PONYO",
-      "description": "Petite fille-poisson magique de Ghibli."
+      "description": "Petite fille-poisson magique de Ghibli.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "SAILOR MOON",
-      "description": "Guerrière lunaire emblématique du magical girl."
+      "description": "Guerrière lunaire emblématique du magical girl.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "SAKURA",
-      "description": "Ninja médicale de l’équipe 7."
+      "description": "Ninja médicale de l’équipe 7.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "SASUKE",
-      "description": "Dernier héritier important du clan Uchiha."
+      "description": "Dernier héritier important du clan Uchiha.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "SAWAKO",
-      "description": "Héroïne réservée de Kimi ni Todoke."
+      "description": "Héroïne réservée de Kimi ni Todoke.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "SENSEI",
-      "description": "Professeur, maître ou créateur respecté."
+      "description": "Professeur, maître ou créateur respecté.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "SHINJI",
-      "description": "Pilote de l’Eva 01."
+      "description": "Pilote de l’Eva 01.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "SPIKE",
-      "description": "Chasseur de primes décontracté du Bebop."
+      "description": "Chasseur de primes décontracté du Bebop.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "SPY FAMILY",
-      "description": "Famille factice entre espion, tueuse et télépathe."
+      "description": "Famille factice entre espion, tueuse et télépathe.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "SUKUNA",
-      "description": "Roi des fléaux dans Jujutsu Kaisen."
+      "description": "Roi des fléaux dans Jujutsu Kaisen.",
+      "theme": "Personnage",
+      "difficulty": "Jonin"
     },
     {
       "word": "TANJIRO",
-      "description": "Pourfendeur bienveillant au souffle de l’eau."
+      "description": "Pourfendeur bienveillant au souffle de l’eau.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "THORFINN",
-      "description": "Jeune guerrier viking en quête de sens."
+      "description": "Jeune guerrier viking en quête de sens.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "TOHRU",
-      "description": "Héroïne douce de Fruits Basket."
+      "description": "Héroïne douce de Fruits Basket.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "TOTORO",
-      "description": "Esprit de la forêt doux et iconique de Ghibli."
+      "description": "Esprit de la forêt doux et iconique de Ghibli.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "TSUNDERE",
-      "description": "Personnage dur au départ puis tendre avec le temps."
+      "description": "Personnage dur au départ puis tendre avec le temps.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "USAGI",
-      "description": "Collégienne maladroite devenue Sailor Moon."
+      "description": "Collégienne maladroite devenue Sailor Moon.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "VEGETA",
-      "description": "Prince des Saiyans et rival de Goku."
+      "description": "Prince des Saiyans et rival de Goku.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "YANDERE",
-      "description": "Personnage amoureux jusqu’à l’obsession dangereuse."
+      "description": "Personnage amoureux jusqu’à l’obsession dangereuse.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "YOR",
-      "description": "Tueuse professionnelle surnommée Princesse Ibara."
+      "description": "Tueuse professionnelle surnommée Princesse Ibara.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "ZORO",
-      "description": "Épéiste aux trois sabres dans One Piece."
+      "description": "Épéiste aux trois sabres dans One Piece.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "LEVI",
-      "description": "Soldat d’élite du bataillon d’exploration."
+      "description": "Soldat d’élite du bataillon d’exploration.",
+      "theme": "Personnage",
+      "difficulty": "Chunin"
     },
     {
       "word": "EREN",
-      "description": "Jeune homme lié au pouvoir des Titans."
+      "description": "Jeune homme lié au pouvoir des Titans.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     },
     {
       "word": "MIKASA",
-      "description": "Combattante protectrice au foulard rouge."
+      "description": "Combattante protectrice au foulard rouge.",
+      "theme": "Personnage",
+      "difficulty": "Genin"
     }
   ]
 }
