@@ -23,15 +23,45 @@ const saveBtn = $('#saveBtn');
 const savedList = $('#savedList');
 const clearSavesBtn = $('#clearSavesBtn');
 const themeToggle = $('#themeToggle');
+const dailyGenerateBtn = $('#dailyGenerateBtn');
+const dailySummary = $('#dailySummary');
+const registerForm = $('#registerForm');
+const loginForm = $('#loginForm');
+const logoutBtn = $('#logoutBtn');
+const accountStatus = $('#accountStatus');
+const profileCard = $('#profileCard');
 
-const STORAGE_KEY = 'manga-grid-quest:saves:v1';
-const PROFILE_KEY = 'manga-grid-quest:profile:v1';
-const THEME_KEY = 'manga-grid-quest:theme:v1';
+const STORAGE_KEY = 'otakross:saves:v1';
+const PROFILE_KEY = 'otakross:profile:v1';
+const SESSION_KEY = 'otakross:session:v1';
+const THEME_KEY = 'otakross:theme:v1';
 const BASE_ELO = 1000;
+const DAILY_HORIZONTAL_COUNT = 5;
+const DAILY_VERTICAL_COUNT = 5;
+const DAILY_WORD_COUNT = DAILY_HORIZONTAL_COUNT + DAILY_VERTICAL_COUNT;
 
 
 
 const THEME_INDEX_URL = 'data/themes/index.json';
+const FIREBASE_DATABASE_URL = 'https://otakross-default-rtdb.europe-west1.firebasedatabase.app/';
+const firebaseConfig = {
+  apiKey: 'AIzaSyB8K5X6B0ZCO9yB5-ZE6k71xYrT6HGkXYs',
+  authDomain: 'otakross.firebaseapp.com',
+  projectId: 'otakross',
+  storageBucket: 'otakross.firebasestorage.app',
+  messagingSenderId: '250680991718',
+  appId: '1:250680991718:web:1aefffe71b0a7c61a48027',
+  measurementId: 'G-BN0H2DRXB3',
+  databaseURL: FIREBASE_DATABASE_URL
+};
+let firebaseApp = null;
+let firebaseDatabase = null;
+let firebaseAnalytics = null;
+let firebaseReady = false;
+let firebaseRef = null;
+let firebaseGet = null;
+let firebaseSet = null;
+let firebaseUpdate = null;
 let themeEntries = [];
 
 
@@ -88,6 +118,8 @@ let activeSaveId = null;
 let activeDirection = 'H';
 let activePage = 'create';
 let currentEntries = [];
+let currentSession = null;
+let dailyPuzzleCache = null;
 
 const MISSION_POOL = [
   { id: 'first-wave', target: 2, title: 'Échauffement', text: 'Trouve 2 mots', reward: 1 },
@@ -362,9 +394,15 @@ function getSavedGames() {
   }
 }
 
-function setSavedGames(saves) {
+function setSavedGames(saves, options = {}) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(saves));
+    if (currentSession && !options.skipSync) {
+      const savesPayload = Object.fromEntries(saves.map((save) => [save.id, save]));
+      patchUser(currentSession.id, { saves: savesPayload, updatedAt: new Date().toISOString() }).catch((error) => {
+        console.warn('Synchronisation des grilles impossible.', error);
+      });
+    }
     return true;
   } catch (error) {
     console.warn('Impossible de sauvegarder localement.', error);
@@ -381,19 +419,410 @@ function getPlayerProfile() {
       elo: Number.isFinite(parsed.elo) ? parsed.elo : BASE_ELO,
       points: Number.isFinite(parsed.points) ? parsed.points : 0,
       games: Number.isFinite(parsed.games) ? parsed.games : 0,
-      wins: Number.isFinite(parsed.wins) ? parsed.wins : 0
+      wins: Number.isFinite(parsed.wins) ? parsed.wins : 0,
+      dailyPlayed: parsed.dailyPlayed && typeof parsed.dailyPlayed === 'object' ? parsed.dailyPlayed : {}
     };
   } catch (error) {
     console.warn('Impossible de lire le profil joueur.', error);
-    return { elo: BASE_ELO, points: 0, games: 0, wins: 0 };
+    return buildDefaultProfile();
   }
 }
 
 function setPlayerProfile(profile) {
   try {
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+    localStorage.setItem(PROFILE_KEY, JSON.stringify(buildDefaultProfile(profile)));
   } catch (error) {
     console.warn('Impossible de sauvegarder le profil joueur.', error);
+  }
+  renderAccount();
+}
+
+
+async function initializeFirebaseServices() {
+  try {
+    const [{ initializeApp: initializeFirebaseApp }, { getAnalytics }, databaseSdk] = await Promise.all([
+      import('https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js'),
+      import('https://www.gstatic.com/firebasejs/12.14.0/firebase-database.js')
+    ]);
+    firebaseApp = initializeFirebaseApp(firebaseConfig);
+    firebaseDatabase = databaseSdk.getDatabase(firebaseApp);
+    try {
+      firebaseAnalytics = typeof window !== 'undefined' ? getAnalytics(firebaseApp) : null;
+    } catch (analyticsError) {
+      console.warn('Firebase Analytics indisponible.', analyticsError);
+      firebaseAnalytics = null;
+    }
+    firebaseRef = databaseSdk.ref;
+    firebaseGet = databaseSdk.get;
+    firebaseSet = databaseSdk.set;
+    firebaseUpdate = databaseSdk.update;
+    firebaseReady = true;
+  } catch (error) {
+    console.warn('Firebase indisponible, utilisation locale uniquement.', error);
+    firebaseReady = false;
+  }
+}
+
+function normalizeAccountId(value) {
+  return String(value)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 32);
+}
+
+function userPath(userId, suffix = '') {
+  return `users/${userId}${suffix ? `/${suffix}` : ''}`;
+}
+
+function getStoredSession() {
+  try {
+    return JSON.parse(localStorage.getItem(SESSION_KEY)) || null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function setStoredSession(session) {
+  currentSession = session;
+  try {
+    if (session) localStorage.setItem(SESSION_KEY, JSON.stringify(session));
+    else localStorage.removeItem(SESSION_KEY);
+  } catch (error) {
+    console.warn('Session locale non sauvegardée.', error);
+  }
+}
+
+function randomSalt() {
+  const bytes = new Uint8Array(16);
+  window.crypto.getRandomValues(bytes);
+  return [...bytes].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function sha256Hex(value) {
+  const data = new TextEncoder().encode(value);
+  const digest = await window.crypto.subtle.digest('SHA-256', data);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
+async function hashPassword(password, salt) {
+  return sha256Hex(`${salt}:${password}:otakross`);
+}
+
+function localUserKey(userId) {
+  return `otakross:user:${userId}`;
+}
+
+function getLocalUser(userId) {
+  try {
+    return JSON.parse(localStorage.getItem(localUserKey(userId))) || null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function setLocalUser(userId, user) {
+  try {
+    localStorage.setItem(localUserKey(userId), JSON.stringify(user));
+  } catch (error) {
+    console.warn('Profil local non sauvegardé.', error);
+  }
+}
+
+async function readUser(userId) {
+  if (firebaseReady && firebaseDatabase) {
+    try {
+      const snapshot = await firebaseGet(firebaseRef(firebaseDatabase, userPath(userId)));
+      if (snapshot.exists()) return snapshot.val();
+    } catch (error) {
+      console.warn('Lecture Firebase impossible, fallback local.', error);
+    }
+  }
+  return getLocalUser(userId);
+}
+
+async function writeUser(userId, user) {
+  setLocalUser(userId, user);
+  if (firebaseReady && firebaseDatabase) {
+    await firebaseSet(firebaseRef(firebaseDatabase, userPath(userId)), user);
+  }
+}
+
+async function patchUser(userId, patch) {
+  const current = getLocalUser(userId) || {};
+  setLocalUser(userId, { ...current, ...patch });
+  if (firebaseReady && firebaseDatabase) {
+    await firebaseUpdate(firebaseRef(firebaseDatabase, userPath(userId)), patch);
+  }
+}
+
+function buildDefaultProfile(overrides = {}) {
+  return {
+    elo: BASE_ELO,
+    points: 0,
+    games: 0,
+    wins: 0,
+    dailyPlayed: {},
+    ...overrides
+  };
+}
+
+function renderAccount() {
+  if (!accountStatus || !profileCard) return;
+  const profile = getPlayerProfile();
+  const syncText = firebaseReady ? 'Firebase connecté' : 'Firebase indisponible : sauvegarde locale';
+
+  if (!currentSession) {
+    accountStatus.textContent = `Non connecté · ${syncText}.`;
+    profileCard.innerHTML = `
+      <p>Crée un compte avec un ID unique, un pseudo et un mot de passe. Le mot de passe est stocké sous forme de hash SHA-256 salé.</p>
+      <div class="profile-stats">
+        <span><strong>${profile.elo}</strong>ELO local</span>
+        <span><strong>${profile.points}</strong>points</span>
+      </div>
+    `;
+    logoutBtn.disabled = true;
+    return;
+  }
+
+  accountStatus.textContent = `Connecté : ${currentSession.displayName} (@${currentSession.id}) · ${syncText}.`;
+  profileCard.innerHTML = `
+    <div class="profile-identity"><strong>${escapeHtml(currentSession.displayName)}</strong><span>@${escapeHtml(currentSession.id)}</span></div>
+    <div class="profile-stats">
+      <span><strong>${profile.elo}</strong>ELO</span>
+      <span><strong>${profile.points}</strong>points</span>
+      <span><strong>${profile.wins}/${profile.games}</strong>victoires</span>
+    </div>
+  `;
+  logoutBtn.disabled = false;
+}
+
+async function syncProfileToAccount() {
+  if (!currentSession) return;
+  const profile = getPlayerProfile();
+  try {
+    await patchUser(currentSession.id, { profile, updatedAt: new Date().toISOString() });
+  } catch (error) {
+    console.warn('Synchronisation profil Firebase impossible.', error);
+  }
+  renderAccount();
+}
+
+async function loadAccountSession() {
+  const session = getStoredSession();
+  if (!session?.id) {
+    setStoredSession(null);
+    renderAccount();
+    return;
+  }
+
+  const user = await readUser(session.id);
+  if (!user) {
+    setStoredSession(null);
+    renderAccount();
+    return;
+  }
+
+  setStoredSession({ id: session.id, displayName: user.displayName || session.displayName || session.id });
+  setPlayerProfile(buildDefaultProfile(user.profile || {}));
+  const remoteSaves = user.saves ? Object.values(user.saves).sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)) : [];
+  if (remoteSaves.length) setSavedGames(remoteSaves, { skipSync: true });
+  renderAccount();
+}
+
+async function handleRegister(event) {
+  event.preventDefault();
+  const id = normalizeAccountId($('#registerId')?.value || '');
+  const displayName = ($('#registerPseudo')?.value || '').trim().slice(0, 32);
+  const password = $('#registerPassword')?.value || '';
+
+  if (id.length < 3 || displayName.length < 2 || password.length < 6) {
+    accountStatus.textContent = 'ID (3+), pseudo (2+) et mot de passe (6+) requis.';
+    return;
+  }
+
+  const existing = await readUser(id);
+  if (existing) {
+    accountStatus.textContent = 'Cet ID est déjà pris.';
+    return;
+  }
+
+  const salt = randomSalt();
+  const passwordHash = await hashPassword(password, salt);
+  const profile = buildDefaultProfile(getPlayerProfile());
+  const user = {
+    id,
+    displayName,
+    salt,
+    passwordHash,
+    profile,
+    saves: Object.fromEntries(getSavedGames().map((save) => [save.id, save])),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+
+  await writeUser(id, user);
+  setStoredSession({ id, displayName });
+  setPlayerProfile(profile);
+  registerForm.reset();
+  accountStatus.textContent = 'Compte créé et connecté.';
+  renderAccount();
+}
+
+async function handleLogin(event) {
+  event.preventDefault();
+  const id = normalizeAccountId($('#loginId')?.value || '');
+  const password = $('#loginPassword')?.value || '';
+  const user = await readUser(id);
+
+  if (!user?.salt || !user?.passwordHash) {
+    accountStatus.textContent = 'Compte introuvable.';
+    return;
+  }
+
+  const candidate = await hashPassword(password, user.salt);
+  if (candidate !== user.passwordHash) {
+    accountStatus.textContent = 'Mot de passe incorrect.';
+    return;
+  }
+
+  setStoredSession({ id, displayName: user.displayName || id });
+  setPlayerProfile(buildDefaultProfile(user.profile || {}));
+  const remoteSaves = user.saves ? Object.values(user.saves).sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)) : [];
+  setSavedGames(remoteSaves, { skipSync: true });
+  loginForm.reset();
+  renderSavedList();
+  renderAccount();
+  accountStatus.textContent = 'Connexion réussie.';
+}
+
+function handleLogout() {
+  setStoredSession(null);
+  renderAccount();
+}
+
+function dateSeed(date = new Date()) {
+  return date.toISOString().slice(0, 10);
+}
+
+function seededRandom(seedText) {
+  let seed = 2166136261;
+  for (const char of seedText) {
+    seed ^= char.charCodeAt(0);
+    seed = Math.imul(seed, 16777619);
+  }
+  return () => {
+    seed += 0x6D2B79F5;
+    let value = seed;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function seededShuffle(items, seedText) {
+  const copy = [...items];
+  const random = seededRandom(seedText);
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function buildDailyEntries(seed = dateSeed()) {
+  const seen = new Set();
+  const allEntries = themeEntries
+    .map((entry) => ({
+      word: entry.word,
+      description: `${entry.description || 'Mot à trouver'} [${entry.themes.join(', ')}]`
+    }))
+    .filter((entry) => entry.word && !seen.has(entry.word) && seen.add(entry.word));
+  return seededShuffle(allEntries, `daily-${seed}`).slice(0, DAILY_WORD_COUNT);
+}
+
+function generateDailyGrid() {
+  const seed = dateSeed();
+  if (dailyPuzzleCache?.seed === seed) return dailyPuzzleCache;
+  let dailyEntries = buildDailyEntries(seed);
+  if (dailyEntries.length < DAILY_WORD_COUNT) return null;
+
+  const previousWords = wordsInput.value;
+  const previousHorizontal = horizontalInput.value;
+  const previousVertical = verticalInput.value;
+  const previousRandomize = randomizeInput.checked;
+  const previousHide = hideLettersInput.checked;
+
+  wordsInput.value = serializeWordEntries(dailyEntries);
+  currentEntries = parseWordEntries(wordsInput.value);
+  horizontalInput.value = DAILY_HORIZONTAL_COUNT;
+  verticalInput.value = DAILY_VERTICAL_COUNT;
+  randomizeInput.checked = true;
+  hideLettersInput.checked = true;
+
+  let puzzle = null;
+  for (let attempt = 0; attempt < 12; attempt++) {
+    dailyEntries = buildDailyEntries(`${seed}-${attempt}`);
+    const ordered = seededShuffle(dailyEntries, `${seed}-attempt-${attempt}`);
+    wordsInput.value = serializeWordEntries(ordered);
+    currentEntries = parseWordEntries(wordsInput.value);
+    puzzle = generateCrossword(currentEntries.map((entry) => entry.word), DAILY_HORIZONTAL_COUNT, DAILY_VERTICAL_COUNT, true);
+    if (puzzle?.placed?.length >= DAILY_WORD_COUNT) break;
+  }
+
+  wordsInput.value = previousWords;
+  currentEntries = parseWordEntries(wordsInput.value);
+  horizontalInput.value = previousHorizontal;
+  verticalInput.value = previousVertical;
+  randomizeInput.checked = previousRandomize;
+  hideLettersInput.checked = previousHide;
+
+  if (!puzzle?.placed?.length) return null;
+  puzzle.game = {
+    mode: 'daily',
+    dailyId: seed,
+    missions: chooseGameMissions(puzzle.placed.length),
+    hintTokens: 0,
+    mistakes: 0,
+    abandoned: false,
+    completed: false,
+    awarded: false,
+    score: null
+  };
+  dailyPuzzleCache = { seed, puzzle, entries: dailyEntries, requestedTotal: DAILY_WORD_COUNT };
+  return dailyPuzzleCache;
+}
+
+function playDailyGrid() {
+  const daily = generateDailyGrid();
+  if (!daily) {
+    setStatus('Impossible de préparer la grille journalière : pas assez de mots compatibles.', 'error');
+    return;
+  }
+  activeSaveId = `daily-${daily.seed}`;
+  currentEntries = parseWordEntries(serializeWordEntries(daily.entries));
+  hideLettersInput.checked = true;
+  render(deserializePuzzle(serializePuzzle(daily.puzzle, daily.requestedTotal)), daily.requestedTotal, getDailyPlayerState(daily.seed));
+  if (dailySummary) dailySummary.textContent = `${daily.seed} · ${DAILY_WORD_COUNT} mots · ELO actif`;
+  showPage('play');
+}
+
+function getDailyPlayerState(seed) {
+  try {
+    return JSON.parse(localStorage.getItem(`otakross:daily:${seed}`)) || {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveDailyPlayerState(seed, state) {
+  try {
+    localStorage.setItem(`otakross:daily:${seed}`, JSON.stringify(state));
+  } catch (error) {
+    console.warn('Progression daily non sauvegardée.', error);
   }
 }
 
@@ -421,7 +850,8 @@ function getGameState() {
       abandoned: false,
       completed: false,
       awarded: false,
-      score: null
+      score: null,
+      mode: 'custom'
     };
   }
   return currentPuzzle.game;
@@ -507,7 +937,7 @@ function renderBonusPanel(solved, total) {
       <button class="tiny use-bonus" type="button" ${disabled}>${materialIcon('visibility')}Révéler une lettre</button>
       <button class="tiny danger surrender-game" type="button" ${game.abandoned || game.completed ? 'disabled' : ''}>${materialIcon('flag')}Abandonner</button>
     </div>
-    ${game.score ? `<p class="score-line">Score : ${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo} (${game.score.delta >= 0 ? '+' : ''}${game.score.delta})</p>` : ''}
+    ${game.score ? `<p class="score-line">${game.score.ranked ? `Score daily : ${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo} (${game.score.delta >= 0 ? '+' : ''}${game.score.delta})` : `Score perso : ${game.score.points} pts · ELO inchangé (${game.score.oldElo})`}${game.score.alreadyRanked ? ' · déjà classé aujourd’hui' : ''}</p>` : ''}
     ${missed}
   `;
 }
@@ -551,23 +981,32 @@ function awardEndGame(abandoned = false) {
   const completion = solved / total;
   const basePoints = Math.round(solved * 100 + completion * 300 - game.mistakes * 12 - (abandoned ? 150 : 0));
   const points = Math.max(0, basePoints);
+  const isDaily = game.mode === 'daily';
+  const dailyId = game.dailyId || dateSeed();
+  const profile = getPlayerProfile();
+  const alreadyRanked = isDaily && profile.dailyPlayed?.[dailyId];
   const expected = 0.5;
   const resultScore = abandoned ? Math.min(0.45, completion * 0.65) : completion;
-  const delta = Math.round(32 * (resultScore - expected));
-  const profile = getPlayerProfile();
+  const delta = isDaily && !alreadyRanked ? Math.round(32 * (resultScore - expected)) : 0;
   const oldElo = profile.elo;
   const newElo = Math.max(100, oldElo + delta);
 
-  profile.elo = newElo;
-  profile.points += points;
-  profile.games += 1;
-  if (!abandoned && solved === total) profile.wins += 1;
-  setPlayerProfile(profile);
+  if (!alreadyRanked) {
+    profile.elo = newElo;
+    profile.points += points;
+    profile.games += 1;
+    if (!abandoned && solved === total) profile.wins += 1;
+    if (isDaily) {
+      profile.dailyPlayed = { ...(profile.dailyPlayed || {}), [dailyId]: { points, delta, completedAt: new Date().toISOString() } };
+    }
+    setPlayerProfile(profile);
+    syncProfileToAccount();
+  }
 
   game.awarded = true;
   game.completed = !abandoned && solved === total;
   game.abandoned = abandoned;
-  game.score = { points, oldElo, newElo, delta, totalPoints: profile.points, games: profile.games, wins: profile.wins, missedWords };
+  game.score = { points: alreadyRanked ? 0 : points, oldElo, newElo: alreadyRanked ? oldElo : newElo, delta, totalPoints: profile.points, games: profile.games, wins: profile.wins, missedWords, ranked: isDaily, alreadyRanked };
   savePlayerState();
 }
 
@@ -576,7 +1015,9 @@ function finishGameIfNeeded(solved, total) {
   const game = getGameState();
   if (!game || game.abandoned || game.completed) return;
   awardEndGame(false);
-  setGameStatus(`Partie terminée ! +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`);
+  setGameStatus(game.score.ranked
+    ? `Partie daily terminée ! +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`
+    : `Partie perso terminée ! +${game.score.points} pts · ELO inchangé (${game.score.oldElo}).`);
 }
 
 function surrenderGame() {
@@ -601,7 +1042,9 @@ function surrenderGame() {
   updateProgress(lookup.byWord.size, lookup.byWord.size);
   savePlayerState();
   renderBonusPanel(lookup.byWord.size, lookup.byWord.size);
-  setGameStatus(`Abandon : la grille est révélée. +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`);
+  setGameStatus(game.score.ranked
+    ? `Abandon daily : la grille est révélée. +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`
+    : `Abandon : la grille est révélée. ELO inchangé (${game.score.oldElo}).`);
 }
 
 function collectPlayerState() {
@@ -913,7 +1356,9 @@ function validateWordFromInput(input) {
     const { solved, total } = refreshSolvedWords();
     const game = getGameState();
     setGameStatus(solved === total && game?.score
-      ? `Bravo, tous les mots sont validés ! +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`
+      ? (game.score.ranked
+        ? `Bravo, daily validé ! +${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo}.`
+        : `Bravo, grille perso validée ! ELO inchangé (${game.score.oldElo}).`)
       : `Mot ${word.label} validé. Continue la quête !`);
     return;
   }
@@ -949,6 +1394,10 @@ function validateWordFromInput(input) {
 }
 
 function savePlayerState() {
+  if (currentPuzzle?.game?.mode === 'daily') {
+    saveDailyPlayerState(currentPuzzle.game.dailyId || dateSeed(), collectPlayerState());
+    return;
+  }
   if (!activeSaveId) return;
   const saves = getSavedGames();
   const save = saves.find((item) => item.id === activeSaveId);
@@ -1101,7 +1550,8 @@ function handleGenerate() {
       abandoned: false,
       completed: false,
       awarded: false,
-      score: null
+      score: null,
+      mode: 'custom'
     };
   }
   render(result, requestedTotal);
@@ -1420,6 +1870,10 @@ themeToggle?.addEventListener('click', () => {
   setColorTheme(current === 'light' ? 'dark' : 'light');
 });
 
+dailyGenerateBtn?.addEventListener('click', playDailyGrid);
+registerForm?.addEventListener('submit', handleRegister);
+loginForm?.addEventListener('submit', handleLogin);
+logoutBtn?.addEventListener('click', handleLogout);
 $('#generateBtn').addEventListener('click', handleGenerate);
 $('#printBtn').addEventListener('click', () => window.print());
 $('#exampleBtn').addEventListener('click', () => {
@@ -1557,12 +2011,16 @@ resultBox.addEventListener('input', (event) => {
 
 async function initializeApp() {
   applyColorTheme(getStoredTheme());
+  await initializeFirebaseServices();
+  await loadAccountSession();
   await loadThemeEntries();
+  const daily = generateDailyGrid();
+  if (dailySummary && daily) dailySummary.textContent = `${daily.seed} · ${DAILY_WORD_COUNT} mots · ELO actif`;
   renderThemeLibrary();
   renderWordBank();
   renderSavedList();
   handleGenerate();
-  showPage((window.location.hash || '#create').replace('#', '') || 'create');
+  showPage((window.location.hash || '#daily').replace('#', '') || 'daily');
 }
 
 initializeApp();

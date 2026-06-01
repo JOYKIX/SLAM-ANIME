@@ -1,12 +1,14 @@
-# SLAM-ANIME
+# Otakross
 
-Manga Grid Quest est une application statique (HTML/CSS/JavaScript) pour générer des mots croisés sur le thème anime/manga.
+Otakross est une application statique (HTML/CSS/JavaScript) pour générer des mots croisés sur le thème anime/manga.
 
 ## Fonctionnalités
 
 - Génération de grilles horizontales et verticales depuis une liste de mots.
 - Mode jeu avec lettres masquées, saisie automatique, validation du mot complet et progression.
-- Sauvegardes locales dans le navigateur pour reprendre une partie.
+- Création de compte, connexion, profil et synchronisation Firebase Realtime Database.
+- Grille journalière de 10 mots (5 horizontaux / 5 verticaux) avec ELO réservé à ce mode.
+- Sauvegardes locales et synchronisées dans le navigateur pour reprendre une partie.
 - Mise en page imprimable pour utiliser la grille hors ligne.
 
 ## Développement local
