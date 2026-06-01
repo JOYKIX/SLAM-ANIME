@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#101226" />
-  <title>SLAM ANIME · Grilles manga</title>
+  <title>Otakross · Grilles manga</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500;700;800;900&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <script type="module" src="script.js"></script>
 </head>
 <body>
   <div class="decor decor--sun" aria-hidden="true"></div>
@@ -18,18 +18,20 @@
 
   <div class="site-shell">
     <header class="topbar" aria-label="Navigation principale">
-      <a class="brand" href="#create" aria-label="SLAM ANIME accueil" data-page-link="create">
+      <a class="brand" href="#daily" aria-label="Otakross accueil" data-page-link="daily">
         <span class="brand__mark" aria-hidden="true">斬</span>
         <span class="brand__copy">
-          <strong>SLAM ANIME</strong>
-          <small>Crossword dojo</small>
+          <strong>Otakross</strong>
+          <small>Crossword nexus</small>
         </span>
       </a>
 
       <nav class="quick-nav" aria-label="Menu principal">
-        <a class="nav-link is-active" href="#create" data-page-link="create"><span class="material-symbols-rounded" aria-hidden="true">edit_square</span>Créer</a>
+        <a class="nav-link is-active" href="#daily" data-page-link="daily"><span class="material-symbols-rounded" aria-hidden="true">today</span>Daily</a>
+        <a class="nav-link" href="#create" data-page-link="create"><span class="material-symbols-rounded" aria-hidden="true">edit_square</span>Créer</a>
         <a class="nav-link" href="#saved" data-page-link="saved"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Grilles</a>
         <a class="nav-link" href="#play" data-page-link="play"><span class="material-symbols-rounded" aria-hidden="true">stadia_controller</span>Jouer</a>
+        <a class="nav-link" href="#account" data-page-link="account"><span class="material-symbols-rounded" aria-hidden="true">account_circle</span>Compte</a>
         <a class="nav-link" href="#patch-notes" data-page-link="patch-notes"><span class="material-symbols-rounded" aria-hidden="true">new_releases</span>Patch notes</a>
       </nav>
 
@@ -40,12 +42,40 @@
     </header>
 
     <main class="pages">
-      <section class="page is-active" id="page-create" data-page="create" aria-labelledby="create-title">
+      <section class="page is-active" id="page-daily" data-page="daily" aria-labelledby="daily-title">
+        <div class="hero-card hero-card--daily">
+          <div class="hero-card__content">
+            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>Grille journalière v1.0.0</span>
+            <h1 id="daily-title">Le duel quotidien Otakross.</h1>
+            <p>Chaque jour, une grille de 10 mots est tirée parmi tous les thèmes : 5 horizontaux, 5 verticaux. C’est le seul mode qui fait évoluer ton ELO.</p>
+            <div class="daily-actions">
+              <button class="primary" id="dailyGenerateBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">today</span>Jouer la grille du jour</button>
+              <span id="dailySummary" class="theme-summary">Daily non chargée</span>
+            </div>
+          </div>
+          <div class="hero-card__poster" aria-hidden="true">
+            <span>王</span>
+            <strong>DAILY</strong>
+          </div>
+        </div>
+        <section class="panel account-card daily-elo" aria-label="Règles ELO">
+          <div class="panel__heading">
+            <span class="panel__icon material-symbols-rounded" aria-hidden="true">leaderboard</span>
+            <div>
+              <span class="eyebrow">Classement</span>
+              <h2>ELO réservé au daily</h2>
+            </div>
+          </div>
+          <p>Les grilles personnalisées restent jouables et sauvegardables, mais ne donnent plus d’ELO. Connecte-toi pour synchroniser ton profil dans Firebase.</p>
+        </section>
+      </section>
+
+      <section class="page" id="page-create" data-page="create" aria-labelledby="create-title">
         <div class="hero-card">
           <div class="hero-card__content">
-            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Création v0.0.4</span>
+            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Création v1.0.0</span>
             <h1 id="create-title">Forge ta grille manga comme un vrai arc de tournoi.</h1>
-            <p>Une interface plus cinématique, des couleurs plus nettes, des thèmes anime prêts à mixer et un mode clair/sombre pour passer du néon nocturne au papier manga.</p>
+            <p>Crée tes grilles perso avec les thèmes anime, sauvegarde-les sur ton compte et joue-les sans impact sur ton ELO daily.</p>
           </div>
           <div class="hero-card__poster" aria-hidden="true">
             <span>勝</span>
@@ -176,55 +206,112 @@ ENDING | Générique de fin d'un anime</textarea>
         </section>
       </section>
 
+      <section class="page" id="page-account" data-page="account" aria-labelledby="account-title">
+        <div class="page-head">
+          <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">account_circle</span>Compte Otakross</span>
+          <h1 id="account-title">Connexion et profil</h1>
+        </div>
+
+        <div class="account-layout">
+          <section class="panel account-card" aria-label="Créer un compte">
+            <div class="panel__heading">
+              <span class="panel__icon material-symbols-rounded" aria-hidden="true">person_add</span>
+              <div>
+                <span class="eyebrow">Nouveau joueur</span>
+                <h2>Créer un compte</h2>
+              </div>
+            </div>
+            <form id="registerForm" class="account-form">
+              <label for="registerId">ID unique</label>
+              <input id="registerId" type="text" autocomplete="username" placeholder="ton-id" required />
+              <label for="registerPseudo">Pseudo d’affichage</label>
+              <input id="registerPseudo" type="text" autocomplete="nickname" placeholder="Sensei" required />
+              <label for="registerPassword">Mot de passe</label>
+              <input id="registerPassword" type="password" autocomplete="new-password" minlength="6" placeholder="6 caractères minimum" required />
+              <button class="primary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">how_to_reg</span>Créer</button>
+            </form>
+          </section>
+
+          <section class="panel account-card" aria-label="Connexion">
+            <div class="panel__heading">
+              <span class="panel__icon material-symbols-rounded" aria-hidden="true">login</span>
+              <div>
+                <span class="eyebrow">Retour au dojo</span>
+                <h2>Se connecter</h2>
+              </div>
+            </div>
+            <form id="loginForm" class="account-form">
+              <label for="loginId">ID unique</label>
+              <input id="loginId" type="text" autocomplete="username" placeholder="ton-id" required />
+              <label for="loginPassword">Mot de passe</label>
+              <input id="loginPassword" type="password" autocomplete="current-password" required />
+              <button class="secondary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">login</span>Connexion</button>
+            </form>
+          </section>
+
+          <section class="panel account-card account-card--profile" aria-label="Profil joueur">
+            <div class="panel__heading">
+              <span class="panel__icon material-symbols-rounded" aria-hidden="true">badge</span>
+              <div>
+                <span class="eyebrow">Profil</span>
+                <h2>Stats du compte</h2>
+              </div>
+            </div>
+            <div id="accountStatus" class="account-status">Non connecté.</div>
+            <div id="profileCard" class="profile-card"></div>
+            <button class="tiny danger" id="logoutBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">logout</span>Déconnexion</button>
+          </section>
+        </div>
+      </section>
+
       <section class="page" id="page-patch-notes" data-page="patch-notes" aria-labelledby="patch-notes-title">
         <div class="page-head">
           <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">history_edu</span>Mise à jour</span>
-          <h1 id="patch-notes-title">Patch notes du dojo</h1>
+          <h1 id="patch-notes-title">Patch notes Otakross</h1>
         </div>
 
-        <section class="panel patch-notes" aria-label="Patch notes de la version 0.0.4">
+        <section class="panel patch-notes" aria-label="Patch notes de la version 1.0.0">
           <div class="patch-hero">
             <div>
-              <p class="patch-version">v0.0.4 · Juin 2026</p>
-              <h2>Indices contextuels et saisie plus intelligente dans la grille.</h2>
-              <p>Cette version rend le mode jeu plus fluide : l’indice suit le mot sélectionné, les intersections déjà remplies sont comprises au lieu d’être sautées et les mots validés restent protégés.</p>
+              <p class="patch-version">v1.0.0 · Release</p>
+              <h2>Otakross arrive avec comptes, Firebase et daily ELO.</h2>
+              <p>Release courte : nouveau nom, profils connectés, sauvegardes liées au compte et une vraie grille journalière compétitive.</p>
             </div>
-            <div class="patch-badge">0.0.4</div>
+            <div class="patch-badge">1.0.0</div>
           </div>
 
           <div class="patch-stats" aria-label="Résumé chiffré">
             <article class="patch-stat">
-              <strong>v0.0.4</strong>
-              <span>version du patch</span>
+              <strong>v1.0.0</strong>
+              <span>release</span>
             </article>
             <article class="patch-stat">
-              <strong>4</strong>
-              <span>améliorations de gameplay</span>
+              <strong>10</strong>
+              <span>mots daily</span>
             </article>
             <article class="patch-stat">
-              <strong>1</strong>
-              <span>bulle d’indice contextuelle</span>
+              <strong>5/5</strong>
+              <span>H/V chaque jour</span>
             </article>
             <article class="patch-stat">
-              <strong>100%</strong>
-              <span>lettres validées protégées</span>
+              <strong>ELO</strong>
+              <span>daily seulement</span>
             </article>
           </div>
 
           <div class="patch-details">
             <article>
-              <h3><span class="material-symbols-rounded" aria-hidden="true">tips_and_updates</span> Indices</h3>
+              <h3><span class="material-symbols-rounded" aria-hidden="true">rocket_launch</span> Release</h3>
               <ul>
-                <li>Ajout d’une bulle d’indice contextuelle lors de la sélection d’un mot dans la grille.</li>
-                <li>La bulle affiche le numéro, la direction, la description du mot et son nombre de lettres.</li>
+                <li>Le site devient Otakross.</li>
+                <li>Ajout de la création de compte, connexion, profil et synchro Firebase.</li>
               </ul>
             </article>
             <article>
-              <h3><span class="material-symbols-rounded" aria-hidden="true">keyboard</span> Saisie</h3>
+              <h3><span class="material-symbols-rounded" aria-hidden="true">today</span> Daily ELO</h3>
               <ul>
-                <li>Amélioration de la saisie dans la grille.</li>
-                <li>Correction du comportement de saut des lettres déjà remplies aux intersections.</li>
-                <li>Protection des mots validés contre la suppression accidentelle.</li>
+                <li>Une grille journalière aléatoire de 10 mots : 5 horizontaux et 5 verticaux.</li>
+                <li>L’ELO ne bouge plus sur les grilles personnalisées.</li>
               </ul>
             </article>
           </div>
