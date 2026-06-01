@@ -22,9 +22,11 @@ const resultBox = $('#result');
 const saveBtn = $('#saveBtn');
 const savedList = $('#savedList');
 const clearSavesBtn = $('#clearSavesBtn');
+const themeToggle = $('#themeToggle');
 
 const STORAGE_KEY = 'manga-grid-quest:saves:v1';
 const PROFILE_KEY = 'manga-grid-quest:profile:v1';
+const THEME_KEY = 'manga-grid-quest:theme:v1';
 const BASE_ELO = 1000;
 
 
@@ -141,6 +143,10 @@ function serializeWordEntries(entries) {
 
 function getDescriptionForWord(word) {
   return currentEntries.find((entry) => entry.word === word)?.description || '';
+}
+
+function materialIcon(name) {
+  return `<span class="material-symbols-rounded" aria-hidden="true">${escapeHtml(name)}</span>`;
 }
 
 function escapeHtml(value) {
@@ -439,6 +445,35 @@ function updateMissionRewards(solved) {
   });
 }
 
+function getStoredTheme() {
+  try {
+    return localStorage.getItem(THEME_KEY) === 'light' ? 'light' : 'dark';
+  } catch (error) {
+    return 'dark';
+  }
+}
+
+function applyColorTheme(theme) {
+  const isLight = theme === 'light';
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = isLight ? 'light' : 'dark';
+  themeToggle?.setAttribute('aria-pressed', String(isLight));
+  themeToggle?.setAttribute('aria-label', isLight ? 'Activer le mode sombre' : 'Activer le mode clair');
+  const icon = themeToggle?.querySelector('.theme-toggle__icon');
+  const text = themeToggle?.querySelector('.theme-toggle__text');
+  if (icon) icon.textContent = isLight ? 'dark_mode' : 'light_mode';
+  if (text) text.textContent = isLight ? 'Mode sombre' : 'Mode clair';
+}
+
+function setColorTheme(theme) {
+  applyColorTheme(theme);
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch (error) {
+    console.warn('Impossible de sauvegarder le thème.', error);
+  }
+}
+
 function renderBonusPanel(solved, total) {
   const panel = resultBox.querySelector('.bonus-panel');
   if (!panel || !currentPuzzle) return;
@@ -454,7 +489,7 @@ function renderBonusPanel(solved, total) {
   panel.innerHTML = `
     <div class="bonus-head">
       <div>
-        <h2>Bonus de quête</h2>
+        <h2>${materialIcon('local_fire_department')}Bonus de quête</h2>
         <p>3 missions par partie. Chaque mission donne des révélations de lettre à utiliser sur le mot de ton choix.</p>
       </div>
       <strong>${game.hintTokens} bonus</strong>
@@ -469,8 +504,8 @@ function renderBonusPanel(solved, total) {
     </div>
     <div class="bonus-actions">
       <select class="bonus-word" ${disabled} aria-label="Mot à aider">${options || '<option>Aucun mot disponible</option>'}</select>
-      <button class="tiny use-bonus" type="button" ${disabled}>Révéler une lettre</button>
-      <button class="tiny danger surrender-game" type="button" ${game.abandoned || game.completed ? 'disabled' : ''}>Abandonner</button>
+      <button class="tiny use-bonus" type="button" ${disabled}>${materialIcon('visibility')}Révéler une lettre</button>
+      <button class="tiny danger surrender-game" type="button" ${game.abandoned || game.completed ? 'disabled' : ''}>${materialIcon('flag')}Abandonner</button>
     </div>
     ${game.score ? `<p class="score-line">Score : ${game.score.points} pts · ELO ${game.score.oldElo} → ${game.score.newElo} (${game.score.delta >= 0 ? '+' : ''}${game.score.delta})</p>` : ''}
     ${missed}
@@ -883,18 +918,18 @@ function render(result, requestedTotal, playerState = {}) {
 
   resultBox.innerHTML = `
     <div class="meta">
-      <span class="pill">${placed.length}/${requestedTotal} mots placés</span>
-      <span class="pill">${horizontal.length} horizontaux</span>
-      <span class="pill">${vertical.length} verticaux</span>
-      <span class="pill">${rows} × ${cols} cases</span>
-      <span class="pill">Espaces gris inclus</span>
+      <span class="pill">${materialIcon('extension')}${placed.length}/${requestedTotal} mots placés</span>
+      <span class="pill">${materialIcon('east')}${horizontal.length} horizontaux</span>
+      <span class="pill">${materialIcon('south')}${vertical.length} verticaux</span>
+      <span class="pill">${materialIcon('grid_4x4')}${rows} × ${cols} cases</span>
+      <span class="pill">${materialIcon('texture')}Espaces gris inclus</span>
     </div>
     ${hideLetters ? `
       <section class="play-panel" aria-label="Progression du mode jeu">
         <div>
           <div class="game-status">Tape un mot en entier : il devient vert seulement s’il est juste, sinon il s’efface.</div>
           <div class="play-actions">
-            <button class="tiny reset-game" type="button">Effacer les réponses</button>
+            <button class="tiny reset-game" type="button">${materialIcon('restart_alt')}Effacer les réponses</button>
           </div>
         </div>
         <div class="game-progress" style="--progress: 0%"><span></span><strong>0/${placed.length}</strong></div>
@@ -906,9 +941,9 @@ function render(result, requestedTotal, playerState = {}) {
     </div>
     ${hideLetters ? '<p class="play-hint">Mode jeu : la saisie avance toute seule dans le mot. Double-clique une intersection pour changer de direction.</p>' : ''}
     <div class="word-lists">
-      <article class="word-card"><h2>Horizontaux</h2><ol>${horizontal.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
-      <article class="word-card"><h2>Verticaux</h2><ol>${vertical.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
-      ${missing.length ? `<article class="word-card"><h2>Non placés</h2><ul>${missing.map((item) => `<li>${escapeHtml(getDescriptionForWord(item.word) || item.word)} (${item.orientation === 'H' ? 'H' : 'V'})</li>`).join('')}</ul></article>` : ''}
+      <article class="word-card"><h2>${materialIcon('east')}Horizontaux</h2><ol>${horizontal.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
+      <article class="word-card"><h2>${materialIcon('south')}Verticaux</h2><ol>${vertical.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
+      ${missing.length ? `<article class="word-card"><h2>${materialIcon('warning')}Non placés</h2><ul>${missing.map((item) => `<li>${escapeHtml(getDescriptionForWord(item.word) || item.word)} (${item.orientation === 'H' ? 'H' : 'V'})</li>`).join('')}</ul></article>` : ''}
     </div>
   `;
 
@@ -1053,8 +1088,8 @@ function renderSavedList() {
         <span>${formatDate(save.updatedAt)}</span>
       </div>
       <div class="save-actions">
-        <button class="tiny load-save" data-id="${save.id}">Jouer</button>
-        <button class="tiny danger delete-save" data-id="${save.id}" aria-label="Supprimer ${escapeHtml(save.name)}">×</button>
+        <button class="tiny load-save" data-id="${save.id}">${materialIcon('play_arrow')}Jouer</button>
+        <button class="tiny danger delete-save" data-id="${save.id}" aria-label="Supprimer ${escapeHtml(save.name)}">${materialIcon('close')}</button>
       </div>
     </article>
   `).join('');
@@ -1280,6 +1315,11 @@ wordBank.addEventListener('click', (event) => {
   if (removeButton) removeWordEntry(removeButton.dataset.word);
 });
 
+themeToggle?.addEventListener('click', () => {
+  const current = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+  setColorTheme(current === 'light' ? 'dark' : 'light');
+});
+
 $('#generateBtn').addEventListener('click', handleGenerate);
 $('#printBtn').addEventListener('click', () => window.print());
 $('#exampleBtn').addEventListener('click', () => {
@@ -1365,6 +1405,7 @@ resultBox.addEventListener('input', (event) => {
 });
 
 async function initializeApp() {
+  applyColorTheme(getStoredTheme());
   await loadThemeEntries();
   renderThemeLibrary();
   renderWordBank();
