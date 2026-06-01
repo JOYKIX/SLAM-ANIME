@@ -1,0 +1,89 @@
+{
+  "theme": "Ghibli",
+  "words": [
+    {
+      "word": "TOTORO",
+      "description": "Esprit de la forêt rond et protecteur.",
+      "theme": "Ghibli",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "CHIHIRO",
+      "description": "Enfant piégée dans un monde d’esprits.",
+      "theme": "Ghibli",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "PONYO",
+      "description": "Petite fille-poisson magique.",
+      "theme": "Ghibli",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "MONONOKE",
+      "description": "Princesse élevée par les loups.",
+      "theme": "Ghibli",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "NAUSICAÄ",
+      "description": "Princesse de la vallée du vent.",
+      "theme": "Ghibli",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "PORCO ROSSO",
+      "description": "Pilote transformé en cochon.",
+      "theme": "Ghibli",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "KIKI",
+      "description": "Jeune sorcière livreuse.",
+      "theme": "Ghibli",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "HURLE",
+      "description": "Magicien au château ambulant.",
+      "theme": "Ghibli",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "CALCIFER",
+      "description": "Démon du feu lié au château.",
+      "theme": "Ghibli",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "SANS VISAGE",
+      "description": "Esprit masqué du bain public.",
+      "theme": "Ghibli",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "OHMU",
+      "description": "Créature géante de la forêt toxique.",
+      "theme": "Ghibli",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KODAMA",
+      "description": "Petit esprit de la forêt.",
+      "theme": "Ghibli",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "YUBABA",
+      "description": "Sorcière dirigeant le bain.",
+      "theme": "Ghibli",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "LAPUTA",
+      "description": "Île volante légendaire.",
+      "theme": "Ghibli",
+      "difficulty": "Jonin"
+    }
+  ]
+}

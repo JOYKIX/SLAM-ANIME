@@ -1,0 +1,89 @@
+{
+  "theme": "Cuisine Japon",
+  "words": [
+    {
+      "word": "RAMEN",
+      "description": "Nouilles servies dans un bouillon.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SUSHI",
+      "description": "Riz vinaigré avec poisson ou garniture.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ONIGIRI",
+      "description": "Boule de riz souvent triangulaire.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "BENTO",
+      "description": "Repas compartimenté à emporter.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "TAKOYAKI",
+      "description": "Boules grillées au poulpe.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "OKONOMIYAKI",
+      "description": "Crêpe salée garnie.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MOCHI",
+      "description": "Pâte de riz gluant.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "DANGO",
+      "description": "Brochette de boulettes sucrées.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "TONKATSU",
+      "description": "Porc pané frit.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MISO",
+      "description": "Pâte fermentée pour soupe.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MATCHA",
+      "description": "Thé vert en poudre.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "TAIYAKI",
+      "description": "Gâteau en forme de poisson.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KARAAGE",
+      "description": "Poulet frit japonais.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "OMURICE",
+      "description": "Omelette au riz.",
+      "theme": "Cuisine Japon",
+      "difficulty": "Jonin"
+    }
+  ]
+}

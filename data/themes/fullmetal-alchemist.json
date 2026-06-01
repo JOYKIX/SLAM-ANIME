@@ -1,0 +1,83 @@
+{
+  "theme": "Fullmetal Alchemist",
+  "words": [
+    {
+      "word": "EDWARD",
+      "description": "Alchimiste d’État surnommé Fullmetal.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ALPHONSE",
+      "description": "Âme liée à une armure.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "WINRY",
+      "description": "Mécanicienne d’automails.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ALCHIMIE",
+      "description": "Science de transmutation.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "ÉCHANGE ÉQUIVALENT",
+      "description": "Principe central de l’alchimie.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "ROY MUSTANG",
+      "description": "Colonel utilisant les flammes.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "SCAR",
+      "description": "Vengeur ishval cherchant les alchimistes.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "HOMONCULUS",
+      "description": "Être artificiel lié aux péchés.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "PÈRE",
+      "description": "Créateur des homonculus.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "PIERRE PHILOSOPHALE",
+      "description": "Amplificateur d’alchimie au prix terrible.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "PORTE",
+      "description": "Lieu métaphysique de la vérité.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "XING",
+      "description": "Pays oriental de Ling et May.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "BRADLEY",
+      "description": "Chef militaire redoutable.",
+      "theme": "Fullmetal Alchemist",
+      "difficulty": "Jonin"
+    }
+  ]
+}

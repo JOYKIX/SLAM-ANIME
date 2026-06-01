@@ -74,9 +74,11 @@ let firebaseGet = null;
 let firebaseSet = null;
 let firebaseUpdate = null;
 let themeEntries = [];
+let themeCategories = [];
+let themeMetadata = new Map();
 
 
-let selectedThemes = new Set(['Manga', 'Personnage', 'Shonen']);
+let selectedThemes = new Set(['Naruto', 'One Piece', 'Shonen']);
 
 const examples = [
   [
@@ -2016,22 +2018,56 @@ function resolveThemeFileUrl(fileName) {
   return new URL(fileName, new URL(THEME_INDEX_URL, window.location.href)).toString();
 }
 
+function normalizeThemeInfo(themeInfo, fallbackCategory = 'Autres thèmes') {
+  const name = typeof themeInfo === 'string' ? themeInfo : themeInfo.name;
+  const file = typeof themeInfo === 'string' ? `${themeInfo}.json` : themeInfo.file;
+  const category = typeof themeInfo === 'object' && themeInfo.category ? themeInfo.category : fallbackCategory;
+  return { name, file, category };
+}
+
+function flattenThemeIndex(index) {
+  if (Array.isArray(index.categories) && index.categories.length) {
+    return index.categories.map((category) => ({
+      name: category.name || 'Autres thèmes',
+      description: category.description || '',
+      themes: (Array.isArray(category.themes) ? category.themes : [])
+        .map((themeInfo) => normalizeThemeInfo(themeInfo, category.name || 'Autres thèmes'))
+        .filter((themeInfo) => themeInfo.name && themeInfo.file)
+    })).filter((category) => category.themes.length);
+  }
+
+  return [{
+    name: 'Tous les thèmes',
+    description: '',
+    themes: (Array.isArray(index.themes) ? index.themes : [])
+      .map((themeInfo) => normalizeThemeInfo(themeInfo))
+      .filter((themeInfo) => themeInfo.name && themeInfo.file)
+  }];
+}
+
 async function loadThemeEntries() {
   try {
     const index = await fetchJson(THEME_INDEX_URL);
-    const themes = Array.isArray(index.themes) ? index.themes : [];
+    themeCategories = flattenThemeIndex(index);
+    themeMetadata = new Map(themeCategories.flatMap((category) => category.themes.map((themeInfo) => [themeInfo.name, {
+      category: category.name,
+      description: category.description || ''
+    }])));
+    const themes = themeCategories.flatMap((category) => category.themes);
     const themeFiles = await Promise.all(themes.map(async (themeInfo) => {
-      const themeName = typeof themeInfo === 'string' ? themeInfo : themeInfo.name;
-      const fileName = typeof themeInfo === 'string' ? `${themeInfo}.json` : themeInfo.file;
-      const data = await fetchJson(resolveThemeFileUrl(fileName));
+      const data = await fetchJson(resolveThemeFileUrl(themeInfo.file));
       return {
-        theme: data.theme || themeName,
+        theme: data.theme || themeInfo.name,
+        category: themeInfo.category,
         words: Array.isArray(data.words) ? data.words : []
       };
     }));
 
     const byWord = new Map();
-    themeFiles.forEach(({ theme, words }) => {
+    themeFiles.forEach(({ theme, category, words }) => {
+      if (!themeMetadata.has(theme)) {
+        themeMetadata.set(theme, { category: category || 'Autres thèmes', description: '' });
+      }
       words.forEach((entry) => {
         const normalized = normalizeWord(entry.word);
         if (normalized.replace(/\s/g, '').length < 2) return;
@@ -2052,12 +2088,32 @@ async function loadThemeEntries() {
   } catch (error) {
     console.warn('Impossible de charger les thèmes.', error);
     themeEntries = [];
+    themeCategories = [];
+    themeMetadata = new Map();
     setStatus('La bibliothèque de thèmes est indisponible. Lance un serveur local pour charger les fichiers JSON.', 'error');
   }
 }
 
 function getThemeNames() {
-  return [...new Set(themeEntries.flatMap((entry) => entry.themes))].sort((a, b) => a.localeCompare(b, 'fr'));
+  const indexedNames = themeCategories.flatMap((category) => category.themes.map((themeInfo) => themeInfo.name));
+  const loadedNames = [...new Set(themeEntries.flatMap((entry) => entry.themes))];
+  return [...new Set([...indexedNames, ...loadedNames])].sort((a, b) => a.localeCompare(b, 'fr'));
+}
+
+function getThemeGroups() {
+  const loadedNames = new Set(themeEntries.flatMap((entry) => entry.themes));
+  if (themeCategories.length) {
+    const groups = themeCategories.map((category) => ({
+      name: category.name,
+      description: category.description,
+      themes: category.themes.map((themeInfo) => themeInfo.name).filter((theme) => loadedNames.has(theme))
+    })).filter((category) => category.themes.length);
+    const groupedNames = new Set(groups.flatMap((category) => category.themes));
+    const orphans = [...loadedNames].filter((theme) => !groupedNames.has(theme)).sort((a, b) => a.localeCompare(b, 'fr'));
+    if (orphans.length) groups.push({ name: 'Autres thèmes', description: '', themes: orphans });
+    return groups;
+  }
+  return [{ name: 'Tous les thèmes', description: '', themes: getThemeNames() }];
 }
 
 function getEntriesForThemes(themes) {
@@ -2109,28 +2165,41 @@ function updateThemeSummary() {
 }
 
 function renderThemeLibrary() {
-  const names = getThemeNames();
-  if (!names.length) {
+  const groups = getThemeGroups();
+  if (!groups.length) {
     themeLibrary.innerHTML = '<p class="empty-save">Aucun thème chargé.</p>';
     updateThemeSummary();
     return;
   }
 
-  themeLibrary.innerHTML = names.map((theme) => {
-    const themeWords = themeEntries.filter((entry) => entry.themes.includes(theme));
-    const count = themeWords.length;
-    const difficultySummary = summarizeDifficulties(themeWords);
-    const checked = selectedThemes.has(theme) ? ' checked' : '';
-    return `
-      <label class="theme-card">
-        <input type="checkbox" value="${escapeHtml(theme)}"${checked} />
-        <span>
-          <strong>${escapeHtml(theme)}</strong>
-          <small>${count} mot${count > 1 ? 's' : ''}${difficultySummary ? ` · ${difficultySummary}` : ''}</small>
-        </span>
-      </label>
-    `;
-  }).join('');
+  themeLibrary.innerHTML = groups.map((group) => `
+    <section class="theme-category" aria-label="Catégorie ${escapeHtml(group.name)}">
+      <div class="theme-category__head">
+        <div>
+          <strong>${escapeHtml(group.name)}</strong>
+          ${group.description ? `<small>${escapeHtml(group.description)}</small>` : ''}
+        </div>
+        <span>${group.themes.length} thème${group.themes.length > 1 ? 's' : ''}</span>
+      </div>
+      <div class="theme-category__grid">
+        ${group.themes.map((theme) => {
+          const themeWords = themeEntries.filter((entry) => entry.themes.includes(theme));
+          const count = themeWords.length;
+          const difficultySummary = summarizeDifficulties(themeWords);
+          const checked = selectedThemes.has(theme) ? ' checked' : '';
+          return `
+            <label class="theme-card">
+              <input type="checkbox" value="${escapeHtml(theme)}"${checked} />
+              <span>
+                <strong>${escapeHtml(theme)}</strong>
+                <small>${count} mot${count > 1 ? 's' : ''}${difficultySummary ? ` · ${difficultySummary}` : ''}</small>
+              </span>
+            </label>
+          `;
+        }).join('')}
+      </div>
+    </section>
+  `).join('');
   updateThemeSummary();
 }
 

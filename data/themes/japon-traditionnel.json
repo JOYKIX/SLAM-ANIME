@@ -1,0 +1,89 @@
+{
+  "theme": "Japon Traditionnel",
+  "words": [
+    {
+      "word": "SAMOURAI",
+      "description": "Guerrier de la noblesse militaire.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KATANA",
+      "description": "Sabre courbe japonais.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KIMONO",
+      "description": "Vêtement traditionnel.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SHINTO",
+      "description": "Religion des kami.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "TORII",
+      "description": "Portail de sanctuaire.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "KITSUNE",
+      "description": "Renard souvent associé aux esprits.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "TANUKI",
+      "description": "Animal folklorique farceur.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "YOKAI",
+      "description": "Créature surnaturelle du folklore.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "ONI",
+      "description": "Démon ou ogre japonais.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KAPPA",
+      "description": "Créature aquatique à carapace.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KARUTA",
+      "description": "Jeu de cartes poétiques.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "NÔ",
+      "description": "Théâtre masqué traditionnel.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "KABUKI",
+      "description": "Théâtre populaire très stylisé.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "BONSAI",
+      "description": "Arbre miniaturisé cultivé.",
+      "theme": "Japon Traditionnel",
+      "difficulty": "Chunin"
+    }
+  ]
+}

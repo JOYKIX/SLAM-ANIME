@@ -1,0 +1,83 @@
+{
+  "theme": "Chainsaw Man",
+  "words": [
+    {
+      "word": "DENJI",
+      "description": "Chasseur de démons fusionné à Pochita.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "POCHITA",
+      "description": "Démon tronçonneuse en forme de chien.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "POWER",
+      "description": "Fiend du sang turbulente.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "AKI",
+      "description": "Chasseur marqué par la vengeance.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "MAKIMA",
+      "description": "Supérieure mystérieuse et manipulatrice.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "KOBENI",
+      "description": "Chasseuse très nerveuse mais douée.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "HIMENO",
+      "description": "Partenaire d’Aki au démon fantôme.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "KATANA MAN",
+      "description": "Hybride ennemi armé de lames.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "REZE",
+      "description": "Jeune femme liée au démon bombe.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "DÉMON FUTUR",
+      "description": "Démon qui voit l’avenir.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "DÉMON TÉNÈBRES",
+      "description": "Terreur primordiale.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "ASA",
+      "description": "Lycéenne liée au démon guerre.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "YORU",
+      "description": "Démon guerre partageant un corps.",
+      "theme": "Chainsaw Man",
+      "difficulty": "Sensei"
+    }
+  ]
+}

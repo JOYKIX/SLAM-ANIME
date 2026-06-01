@@ -1,0 +1,89 @@
+{
+  "theme": "Tropes Anime",
+  "words": [
+    {
+      "word": "TSUNDERE",
+      "description": "Froid en surface puis tendre.",
+      "theme": "Tropes Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "YANDERE",
+      "description": "Amour obsessionnel et dangereux.",
+      "theme": "Tropes Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "KUUDERE",
+      "description": "Calme presque glacial.",
+      "theme": "Tropes Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "DANDERE",
+      "description": "Timide qui s’ouvre peu à peu.",
+      "theme": "Tropes Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "TOURNOI",
+      "description": "Arc de combats successifs.",
+      "theme": "Tropes Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "RIVAL",
+      "description": "Personnage qui pousse le héros.",
+      "theme": "Tropes Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SENSEI",
+      "description": "Mentor ou professeur.",
+      "theme": "Tropes Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "POWER UP",
+      "description": "Montée brutale de puissance.",
+      "theme": "Tropes Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "FILLER",
+      "description": "Épisode hors progression principale.",
+      "theme": "Tropes Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "TRAINING ARC",
+      "description": "Phase d’entraînement avant un défi.",
+      "theme": "Tropes Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "TIME SKIP",
+      "description": "Saut temporel dans le récit.",
+      "theme": "Tropes Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BEACH EPISODE",
+      "description": "Épisode détente à la plage.",
+      "theme": "Tropes Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "NAKAMA",
+      "description": "Ami ou compagnon très cher.",
+      "theme": "Tropes Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "PLOT ARMOR",
+      "description": "Protection scénaristique implicite.",
+      "theme": "Tropes Anime",
+      "difficulty": "Jonin"
+    }
+  ]
+}

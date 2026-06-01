@@ -1,0 +1,89 @@
+{
+  "theme": "Films Anime",
+  "words": [
+    {
+      "word": "YOUR NAME",
+      "description": "Film d’échange de corps et de comète.",
+      "theme": "Films Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "SUZUME",
+      "description": "Voyage à travers des portes mystérieuses.",
+      "theme": "Films Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "AKIRA",
+      "description": "Classique cyberpunk de Neo Tokyo.",
+      "theme": "Films Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BELLE",
+      "description": "Conte numérique autour d’une chanteuse virtuelle.",
+      "theme": "Films Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "PAPRIKA",
+      "description": "Rêves partagés et identité fracturée.",
+      "theme": "Films Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "PERFECT BLUE",
+      "description": "Thriller psychologique sur une idole.",
+      "theme": "Films Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "REDLINE",
+      "description": "Course futuriste ultra stylisée.",
+      "theme": "Films Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "WOLF CHILDREN",
+      "description": "Mère élevant deux enfants-loups.",
+      "theme": "Films Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "PROMARE",
+      "description": "Film d’action flamboyant du studio Trigger.",
+      "theme": "Films Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "MIRAI",
+      "description": "Voyage familial à travers le temps.",
+      "theme": "Films Anime",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "WEATHERING WITH YOU",
+      "description": "Romance entre pluie et soleil.",
+      "theme": "Films Anime",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "GHOST IN THE SHELL",
+      "description": "Cyberpunk sur corps artificiel et conscience.",
+      "theme": "Films Anime",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "MILLENNIUM ACTRESS",
+      "description": "Mémoire d’actrice et histoire du cinéma.",
+      "theme": "Films Anime",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "MAQUIA",
+      "description": "Fantasy mélancolique sur maternité et immortalité.",
+      "theme": "Films Anime",
+      "difficulty": "Sensei"
+    }
+  ]
+}

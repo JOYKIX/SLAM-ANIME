@@ -1,0 +1,89 @@
+{
+  "theme": "Hunter x Hunter",
+  "words": [
+    {
+      "word": "GON",
+      "description": "Garçon cherchant son père hunter.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KILLUA",
+      "description": "Héritier assassin aux yoyos.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "KURAPIKA",
+      "description": "Survivant du clan Kurta.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "LEORIO",
+      "description": "Ami qui veut devenir médecin.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Genin"
+    },
+    {
+      "word": "NEN",
+      "description": "Système d’aura et de techniques.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "HISOKA",
+      "description": "Magicien combattant imprévisible.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "KURORO",
+      "description": "Chef de la Brigade fantôme.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "BRIGADE FANTÔME",
+      "description": "Groupe criminel de Meteor City.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "GREED ISLAND",
+      "description": "Jeu aux cartes très réel.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "MERUEM",
+      "description": "Roi des fourmis chimères.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "KOMUGI",
+      "description": "Championne de gungi.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Jonin"
+    },
+    {
+      "word": "ZOLDYCK",
+      "description": "Famille d’assassins de Killua.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Chunin"
+    },
+    {
+      "word": "EMPEROR TIME",
+      "description": "État spécial de Kurapika.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Sensei"
+    },
+    {
+      "word": "NANIKA",
+      "description": "Entité liée à Alluka.",
+      "theme": "Hunter x Hunter",
+      "difficulty": "Sensei"
+    }
+  ]
+}
