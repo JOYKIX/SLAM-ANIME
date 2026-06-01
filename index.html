@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
@@ -155,25 +156,25 @@ ENDING | Générique de fin d'un anime</textarea>
         <section class="panel patch-notes" aria-label="Patch notes de la mise à jour des mots">
           <div class="patch-hero">
             <div>
-              <p class="patch-version">Version contenu · Juin 2026</p>
-              <h2>Plus de mots, mêmes thèmes.</h2>
-              <p>Cette mise à jour enrichit tous les thèmes existants pour générer des grilles plus variées, sans ajouter de nouveau thème à la bibliothèque.</p>
+              <p class="patch-version">v0.0.2 · Juin 2026</p>
+              <h2>Bibliothèque de thèmes chargée partout.</h2>
+              <p>Cette mise à jour corrige le déploiement de la bibliothèque JSON, ajoute une icône de site et conserve l'enrichissement de tous les thèmes existants.</p>
             </div>
-            <div class="patch-badge">+232</div>
+            <div class="patch-badge">Fix 404</div>
           </div>
 
           <div class="patch-stats" aria-label="Résumé chiffré">
             <article class="patch-stat">
-              <strong>0</strong>
-              <span>nouveau thème</span>
+              <strong>v0.0.2</strong>
+              <span>version du patch</span>
             </article>
             <article class="patch-stat">
-              <strong>232</strong>
-              <span>nouveaux mots ajoutés</span>
+              <strong>404</strong>
+              <span>corrigée sur les thèmes</span>
             </article>
             <article class="patch-stat">
               <strong>26</strong>
-              <span>thèmes enrichis</span>
+              <span>thèmes déployés</span>
             </article>
             <article class="patch-stat">
               <strong>550</strong>
@@ -185,10 +186,10 @@ ENDING | Générique de fin d'un anime</textarea>
             <article>
               <h3>Modifications apportées</h3>
               <ul>
-                <li>Ajout de nombreux mots dans chaque thème déjà présent.</li>
-                <li>Aucun nouveau thème créé : la navigation et les catégories restent identiques.</li>
-                <li>Plus de personnages, studios, genres, pouvoirs, séries, films et termes de vocabulaire anime/manga.</li>
-                <li>Les indices ont été ajoutés avec chaque mot pour garder les grilles jouables directement.</li>
+                <li>Correction du déploiement GitHub Pages : le dossier <code>data/themes/</code> est maintenant inclus dans l'artifact publié.</li>
+                <li>Correction de l'erreur 404 du favicon grâce à une icône SVG dédiée.</li>
+                <li>Ajout de nombreux mots dans chaque thème déjà présent, sans créer de nouvelle catégorie.</li>
+                <li>Les indices restent fournis avec chaque mot pour garder les grilles jouables directement.</li>
               </ul>
             </article>
             <article>
