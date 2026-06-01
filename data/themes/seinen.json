@@ -1,0 +1,57 @@
+{
+  "theme": "Seinen",
+  "words": [
+    {
+      "word": "AKIRA",
+      "description": "Classique cyberpunk de Katsuhiro Otomo."
+    },
+    {
+      "word": "BERSERK",
+      "description": "Dark fantasy violente autour de Guts et Griffith."
+    },
+    {
+      "word": "GHOST IN THE SHELL",
+      "description": "Cyberpunk sur cyborgs, IA et identité."
+    },
+    {
+      "word": "GRIFFITH",
+      "description": "Chef charismatique de la Troupe du Faucon."
+    },
+    {
+      "word": "GUTS",
+      "description": "Guerrier solitaire à l’immense épée."
+    },
+    {
+      "word": "KANEDA",
+      "description": "Chef de gang à moto dans Akira."
+    },
+    {
+      "word": "MAKIMA",
+      "description": "Manipulatrice mystérieuse de Public Safety."
+    },
+    {
+      "word": "MONSTER",
+      "description": "Thriller psychologique autour d’un chirurgien et d’un tueur."
+    },
+    {
+      "word": "MOTOKO",
+      "description": "Major cyborg de la Section 9."
+    },
+    {
+      "word": "PLUTO",
+      "description": "Relecture seinen d’Astro Boy en enquête robotique."
+    },
+    {
+      "word": "SEINEN",
+      "description": "Catégorie visant généralement un public adulte ou jeune adulte."
+    },
+    {
+      "word": "THORFINN",
+      "description": "Jeune guerrier viking en quête de sens."
+    },
+    {
+      "word": "VINLAND SAGA",
+      "description": "Épopée viking entre vengeance et pacifisme."
+    }
+  ]
+}

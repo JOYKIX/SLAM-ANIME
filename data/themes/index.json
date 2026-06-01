@@ -1,0 +1,108 @@
+{
+  "themes": [
+    {
+      "name": "Anime",
+      "file": "anime.json"
+    },
+    {
+      "name": "Aventure",
+      "file": "aventure.json"
+    },
+    {
+      "name": "Comedie",
+      "file": "comedie.json"
+    },
+    {
+      "name": "Dark Fantasy",
+      "file": "dark-fantasy.json"
+    },
+    {
+      "name": "Film",
+      "file": "film.json"
+    },
+    {
+      "name": "Historique",
+      "file": "historique.json"
+    },
+    {
+      "name": "Isekai",
+      "file": "isekai.json"
+    },
+    {
+      "name": "Josei",
+      "file": "josei.json"
+    },
+    {
+      "name": "Kodomo",
+      "file": "kodomo.json"
+    },
+    {
+      "name": "Magical Girl",
+      "file": "magical-girl.json"
+    },
+    {
+      "name": "Manga",
+      "file": "manga.json"
+    },
+    {
+      "name": "Mecha",
+      "file": "mecha.json"
+    },
+    {
+      "name": "Ninja",
+      "file": "ninja.json"
+    },
+    {
+      "name": "Personnage",
+      "file": "personnage.json"
+    },
+    {
+      "name": "Pouvoirs",
+      "file": "pouvoirs.json"
+    },
+    {
+      "name": "Romance",
+      "file": "romance.json"
+    },
+    {
+      "name": "School Life",
+      "file": "school-life.json"
+    },
+    {
+      "name": "Science Fiction",
+      "file": "science-fiction.json"
+    },
+    {
+      "name": "Seinen",
+      "file": "seinen.json"
+    },
+    {
+      "name": "Shojo",
+      "file": "shojo.json"
+    },
+    {
+      "name": "Shonen",
+      "file": "shonen.json"
+    },
+    {
+      "name": "Sport",
+      "file": "sport.json"
+    },
+    {
+      "name": "Studio",
+      "file": "studio.json"
+    },
+    {
+      "name": "Surnaturel",
+      "file": "surnaturel.json"
+    },
+    {
+      "name": "Thriller",
+      "file": "thriller.json"
+    },
+    {
+      "name": "Vocabulaire",
+      "file": "vocabulaire.json"
+    }
+  ]
+}

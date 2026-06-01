@@ -1,0 +1,133 @@
+{
+  "theme": "Vocabulaire",
+  "words": [
+    {
+      "word": "ANIME",
+      "description": "Animation japonaise, en série ou en film."
+    },
+    {
+      "word": "CHIBI",
+      "description": "Style super-déformé avec petite taille et grosse tête."
+    },
+    {
+      "word": "COSPLAY",
+      "description": "Costume pour incarner un personnage."
+    },
+    {
+      "word": "DOJO",
+      "description": "Lieu d’entraînement aux arts martiaux."
+    },
+    {
+      "word": "DOUJINSHI",
+      "description": "Manga amateur ou fan-made, souvent vendu en convention."
+    },
+    {
+      "word": "ENDING",
+      "description": "Générique de fin d’un anime."
+    },
+    {
+      "word": "FILLER",
+      "description": "Épisode ajouté qui n’avance pas toujours l’histoire principale."
+    },
+    {
+      "word": "ISEKAI",
+      "description": "Genre où un personnage arrive dans un autre monde."
+    },
+    {
+      "word": "JOSEI",
+      "description": "Catégorie visant souvent un public féminin adulte."
+    },
+    {
+      "word": "KATANA",
+      "description": "Sabre japonais à lame courbe."
+    },
+    {
+      "word": "KAWAII",
+      "description": "Mot japonais pour dire mignon."
+    },
+    {
+      "word": "KITSUNE",
+      "description": "Renard mythique souvent doté de pouvoirs."
+    },
+    {
+      "word": "KODOMO",
+      "description": "Manga ou anime pensé pour les enfants."
+    },
+    {
+      "word": "KOUHAI",
+      "description": "Cadet ou personne moins expérimentée."
+    },
+    {
+      "word": "LIGHT NOVEL",
+      "description": "Roman illustré japonais souvent adapté en anime."
+    },
+    {
+      "word": "MANGA",
+      "description": "Bande dessinée japonaise."
+    },
+    {
+      "word": "MANGAKA",
+      "description": "Auteur ou autrice qui dessine et écrit des mangas."
+    },
+    {
+      "word": "MECHA",
+      "description": "Genre centré sur des robots géants."
+    },
+    {
+      "word": "ONI",
+      "description": "Démon ou ogre du folklore japonais."
+    },
+    {
+      "word": "OPENING",
+      "description": "Générique d’ouverture d’un anime."
+    },
+    {
+      "word": "OTAKU",
+      "description": "Fan très investi de manga, anime ou pop culture."
+    },
+    {
+      "word": "OVA",
+      "description": "Épisode ou mini-série sortie hors diffusion TV classique."
+    },
+    {
+      "word": "RONIN",
+      "description": "Samouraï sans maître."
+    },
+    {
+      "word": "SAMURAI",
+      "description": "Guerrier japonais associé au sabre et à l’honneur."
+    },
+    {
+      "word": "SEINEN",
+      "description": "Catégorie visant généralement un public adulte ou jeune adulte."
+    },
+    {
+      "word": "SENPAI",
+      "description": "Aîné ou personne plus expérimentée."
+    },
+    {
+      "word": "SENSEI",
+      "description": "Professeur, maître ou créateur respecté."
+    },
+    {
+      "word": "SHOJO",
+      "description": "Catégorie souvent associée aux émotions, à la romance et au relationnel."
+    },
+    {
+      "word": "SHONEN",
+      "description": "Catégorie souvent associée à l’action et aux jeunes lecteurs."
+    },
+    {
+      "word": "TSUNDERE",
+      "description": "Personnage dur au départ puis tendre avec le temps."
+    },
+    {
+      "word": "YANDERE",
+      "description": "Personnage amoureux jusqu’à l’obsession dangereuse."
+    },
+    {
+      "word": "YOKAI",
+      "description": "Créature surnaturelle du folklore japonais."
+    }
+  ]
+}

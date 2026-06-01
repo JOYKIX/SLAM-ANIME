@@ -1,0 +1,33 @@
+{
+  "theme": "Film",
+  "words": [
+    {
+      "word": "CHIHIRO",
+      "description": "Héroïne du Voyage de Chihiro."
+    },
+    {
+      "word": "GHIBLI",
+      "description": "Studio japonais fondé notamment par Miyazaki et Takahata."
+    },
+    {
+      "word": "MONONOKE",
+      "description": "Princesse élevée par les loups dans un film Ghibli."
+    },
+    {
+      "word": "PONYO",
+      "description": "Petite fille-poisson magique de Ghibli."
+    },
+    {
+      "word": "SUZUME",
+      "description": "Film de Shinkai avec portes mystérieuses et ver géant."
+    },
+    {
+      "word": "TOTORO",
+      "description": "Esprit de la forêt doux et iconique de Ghibli."
+    },
+    {
+      "word": "YOUR NAME",
+      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin."
+    }
+  ]
+}

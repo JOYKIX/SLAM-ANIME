@@ -1,0 +1,69 @@
+{
+  "theme": "Anime",
+  "words": [
+    {
+      "word": "ANIME",
+      "description": "Animation japonaise, en série ou en film."
+    },
+    {
+      "word": "CHIHIRO",
+      "description": "Héroïne du Voyage de Chihiro."
+    },
+    {
+      "word": "COWBOY BEBOP",
+      "description": "Chasseurs de primes dans l’espace sur fond de jazz."
+    },
+    {
+      "word": "ENDING",
+      "description": "Générique de fin d’un anime."
+    },
+    {
+      "word": "EVANGELION",
+      "description": "Mechas, anges et introspection psychologique."
+    },
+    {
+      "word": "FILLER",
+      "description": "Épisode ajouté qui n’avance pas toujours l’histoire principale."
+    },
+    {
+      "word": "GHIBLI",
+      "description": "Studio japonais fondé notamment par Miyazaki et Takahata."
+    },
+    {
+      "word": "GUNDAM",
+      "description": "Franchise culte de robots de guerre."
+    },
+    {
+      "word": "MONONOKE",
+      "description": "Princesse élevée par les loups dans un film Ghibli."
+    },
+    {
+      "word": "OPENING",
+      "description": "Générique d’ouverture d’un anime."
+    },
+    {
+      "word": "OVA",
+      "description": "Épisode ou mini-série sortie hors diffusion TV classique."
+    },
+    {
+      "word": "PONYO",
+      "description": "Petite fille-poisson magique de Ghibli."
+    },
+    {
+      "word": "STEINS GATE",
+      "description": "Voyage temporel et messages vers le passé."
+    },
+    {
+      "word": "SUZUME",
+      "description": "Film de Shinkai avec portes mystérieuses et ver géant."
+    },
+    {
+      "word": "TOTORO",
+      "description": "Esprit de la forêt doux et iconique de Ghibli."
+    },
+    {
+      "word": "YOUR NAME",
+      "description": "Film de Makoto Shinkai sur l’échange de corps et le destin."
+    }
+  ]
+}

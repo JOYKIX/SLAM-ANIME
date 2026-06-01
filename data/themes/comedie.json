@@ -1,0 +1,41 @@
+{
+  "theme": "Comedie",
+  "words": [
+    {
+      "word": "ANYA",
+      "description": "Petite télépathe qui adore les cacahuètes."
+    },
+    {
+      "word": "CHIBI",
+      "description": "Style super-déformé avec petite taille et grosse tête."
+    },
+    {
+      "word": "KAWAII",
+      "description": "Mot japonais pour dire mignon."
+    },
+    {
+      "word": "LOID",
+      "description": "Espion connu sous le nom de Twilight."
+    },
+    {
+      "word": "OKABE",
+      "description": "Scientifique autoproclamé fou de Steins Gate."
+    },
+    {
+      "word": "OURAN",
+      "description": "Club d’hôtes comique dans un lycée prestigieux."
+    },
+    {
+      "word": "SPY FAMILY",
+      "description": "Famille factice entre espion, tueuse et télépathe."
+    },
+    {
+      "word": "TSUNDERE",
+      "description": "Personnage dur au départ puis tendre avec le temps."
+    },
+    {
+      "word": "YOR",
+      "description": "Tueuse professionnelle surnommée Princesse Ibara."
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "theme": "Personnage",
+  "words": [
+    {
+      "word": "ALL MIGHT",
+      "description": "Symbole de la paix dans My Hero Academia."
+    },
+    {
+      "word": "ALPHONSE",
+      "description": "Âme liée à une armure après une transmutation ratée."
+    },
+    {
+      "word": "ANYA",
+      "description": "Petite télépathe qui adore les cacahuètes."
+    },
+    {
+      "word": "ASUKA",
+      "description": "Pilote énergique de l’Eva 02."
+    },
+    {
+      "word": "CHIHIRO",
+      "description": "Héroïne du Voyage de Chihiro."
+    },
+    {
+      "word": "COSPLAY",
+      "description": "Costume pour incarner un personnage."
+    },
+    {
+      "word": "DEKU",
+      "description": "Héros en formation héritier du One For All."
+    },
+    {
+      "word": "DENJI",
+      "description": "Anti-héros pauvre fusionné avec Pochita."
+    },
+    {
+      "word": "EDWARD",
+      "description": "Alchimiste d’État au bras mécanique."
+    },
+    {
+      "word": "GOJO",
+      "description": "Professeur exorciste aux yeux bandés et au pouvoir immense."
+    },
+    {
+      "word": "GOKU",
+      "description": "Saiyan optimiste obsédé par l’entraînement."
+    },
+    {
+      "word": "GON",
+      "description": "Jeune Hunter parti retrouver son père."
+    },
+    {
+      "word": "GRIFFITH",
+      "description": "Chef charismatique de la Troupe du Faucon."
+    },
+    {
+      "word": "GUTS",
+      "description": "Guerrier solitaire à l’immense épée."
+    },
+    {
+      "word": "HINATA",
+      "description": "Petit attaquant explosif de Haikyu."
+    },
+    {
+      "word": "ICHIGO",
+      "description": "Lycéen devenu shinigami remplaçant."
+    },
+    {
+      "word": "ISAGI",
+      "description": "Attaquant qui analyse l’espace dans Blue Lock."
+    },
+    {
+      "word": "KAKASHI",
+      "description": "Sensei masqué connu pour son Sharingan."
+    },
+    {
+      "word": "KANEDA",
+      "description": "Chef de gang à moto dans Akira."
+    },
+    {
+      "word": "KILLUA",
+      "description": "Ami de Gon issu d’une famille d’assassins."
+    },
+    {
+      "word": "KUROKO",
+      "description": "Joueur fantôme du basket japonais."
+    },
+    {
+      "word": "LOID",
+      "description": "Espion connu sous le nom de Twilight."
+    },
+    {
+      "word": "LUFFY",
+      "description": "Capitaine au chapeau de paille et au corps élastique."
+    },
+    {
+      "word": "MADOKA",
+      "description": "Héroïne de magical girl au destin bouleversant."
+    },
+    {
+      "word": "MAKIMA",
+      "description": "Manipulatrice mystérieuse de Public Safety."
+    },
+    {
+      "word": "MONONOKE",
+      "description": "Princesse élevée par les loups dans un film Ghibli."
+    },
+    {
+      "word": "MOTOKO",
+      "description": "Major cyborg de la Section 9."
+    },
+    {
+      "word": "NAMI",
+      "description": "Navigatrice experte et voleuse au grand cœur."
+    },
+    {
+      "word": "NARUTO",
+      "description": "Ninja de Konoha qui rêve de devenir Hokage."
+    },
+    {
+      "word": "NEZUKO",
+      "description": "Sœur de Tanjiro transformée en démon."
+    },
+    {
+      "word": "OKABE",
+      "description": "Scientifique autoproclamé fou de Steins Gate."
+    },
+    {
+      "word": "ONE PIECE",
+      "description": "Équipage de pirates qui cherche le plus grand trésor des mers."
+    },
+    {
+      "word": "PONYO",
+      "description": "Petite fille-poisson magique de Ghibli."
+    },
+    {
+      "word": "SAILOR MOON",
+      "description": "Guerrière lunaire emblématique du magical girl."
+    },
+    {
+      "word": "SAKURA",
+      "description": "Ninja médicale de l’équipe 7."
+    },
+    {
+      "word": "SASUKE",
+      "description": "Dernier héritier important du clan Uchiha."
+    },
+    {
+      "word": "SAWAKO",
+      "description": "Héroïne réservée de Kimi ni Todoke."
+    },
+    {
+      "word": "SENSEI",
+      "description": "Professeur, maître ou créateur respecté."
+    },
+    {
+      "word": "SHINJI",
+      "description": "Pilote de l’Eva 01."
+    },
+    {
+      "word": "SPIKE",
+      "description": "Chasseur de primes décontracté du Bebop."
+    },
+    {
+      "word": "SPY FAMILY",
+      "description": "Famille factice entre espion, tueuse et télépathe."
+    },
+    {
+      "word": "SUKUNA",
+      "description": "Roi des fléaux dans Jujutsu Kaisen."
+    },
+    {
+      "word": "TANJIRO",
+      "description": "Pourfendeur bienveillant au souffle de l’eau."
+    },
+    {
+      "word": "THORFINN",
+      "description": "Jeune guerrier viking en quête de sens."
+    },
+    {
+      "word": "TOHRU",
+      "description": "Héroïne douce de Fruits Basket."
+    },
+    {
+      "word": "TOTORO",
+      "description": "Esprit de la forêt doux et iconique de Ghibli."
+    },
+    {
+      "word": "TSUNDERE",
+      "description": "Personnage dur au départ puis tendre avec le temps."
+    },
+    {
+      "word": "USAGI",
+      "description": "Collégienne maladroite devenue Sailor Moon."
+    },
+    {
+      "word": "VEGETA",
+      "description": "Prince des Saiyans et rival de Goku."
+    },
+    {
+      "word": "YANDERE",
+      "description": "Personnage amoureux jusqu’à l’obsession dangereuse."
+    },
+    {
+      "word": "YOR",
+      "description": "Tueuse professionnelle surnommée Princesse Ibara."
+    },
+    {
+      "word": "ZORO",
+      "description": "Épéiste aux trois sabres dans One Piece."
+    }
+  ]
+}

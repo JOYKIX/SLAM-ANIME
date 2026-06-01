@@ -1,0 +1,29 @@
+{
+  "theme": "Historique",
+  "words": [
+    {
+      "word": "DOJO",
+      "description": "Lieu d’entraînement aux arts martiaux."
+    },
+    {
+      "word": "KATANA",
+      "description": "Sabre japonais à lame courbe."
+    },
+    {
+      "word": "RONIN",
+      "description": "Samouraï sans maître."
+    },
+    {
+      "word": "SAMURAI",
+      "description": "Guerrier japonais associé au sabre et à l’honneur."
+    },
+    {
+      "word": "THORFINN",
+      "description": "Jeune guerrier viking en quête de sens."
+    },
+    {
+      "word": "VINLAND SAGA",
+      "description": "Épopée viking entre vengeance et pacifisme."
+    }
+  ]
+}
