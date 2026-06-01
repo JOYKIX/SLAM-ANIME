@@ -28,6 +28,42 @@
     {
       "word": "YOUR NAME",
       "description": "Film de Makoto Shinkai sur l’échange de corps et le destin."
+    },
+    {
+      "word": "AKIRA",
+      "description": "Film cyberpunk majeur réalisé par Katsuhiro Otomo."
+    },
+    {
+      "word": "PAPRIKA",
+      "description": "Film de Satoshi Kon sur les rêves partagés."
+    },
+    {
+      "word": "PERFECT BLUE",
+      "description": "Film psychologique autour de célébrité et d’identité."
+    },
+    {
+      "word": "WEATHERING WITH YOU",
+      "description": "Romance urbaine liée à une fille qui contrôle la pluie."
+    },
+    {
+      "word": "BELLE",
+      "description": "Conte numérique entre musique et monde virtuel."
+    },
+    {
+      "word": "REDLINE",
+      "description": "Course automobile explosive au style visuel intense."
+    },
+    {
+      "word": "PROMARE",
+      "description": "Pompiers futuristes face à des flammes mutantes."
+    },
+    {
+      "word": "LE CHATEAU AMBULANT",
+      "description": "Film Ghibli avec Sophie, Hauru et un château mobile."
+    },
+    {
+      "word": "LE TOMBEAU DES LUCIOLES",
+      "description": "Drame animé sur deux enfants pendant la guerre."
     }
   ]
 }

@@ -8,6 +8,46 @@
     {
       "word": "SENPAI",
       "description": "Aîné ou personne plus expérimentée."
+    },
+    {
+      "word": "CLASSROOM",
+      "description": "Salle de classe au cœur de nombreuses histoires scolaires."
+    },
+    {
+      "word": "BUNKASAI",
+      "description": "Festival culturel organisé par les élèves."
+    },
+    {
+      "word": "SEITOKAI",
+      "description": "Conseil des élèves dans les séries scolaires."
+    },
+    {
+      "word": "CLUB",
+      "description": "Activité extrascolaire centrale dans beaucoup d’anime."
+    },
+    {
+      "word": "UNIFORME",
+      "description": "Tenue scolaire emblématique."
+    },
+    {
+      "word": "TRANSFER STUDENT",
+      "description": "Nouvel élève souvent moteur de l’intrigue."
+    },
+    {
+      "word": "KOKUHAKU",
+      "description": "Déclaration amoureuse très fréquente en milieu scolaire."
+    },
+    {
+      "word": "BENTO",
+      "description": "Repas préparé souvent partagé à l’école."
+    },
+    {
+      "word": "HOMEROOM",
+      "description": "Moment de vie de classe avec le professeur principal."
+    },
+    {
+      "word": "EXAMEN",
+      "description": "Épreuve scolaire source de tension ou de gag."
     }
   ]
 }

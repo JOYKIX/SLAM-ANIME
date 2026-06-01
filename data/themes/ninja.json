@@ -24,6 +24,42 @@
     {
       "word": "SHARINGAN",
       "description": "Technique oculaire du clan Uchiha."
+    },
+    {
+      "word": "ITACHI",
+      "description": "Ninja prodige au destin tragique."
+    },
+    {
+      "word": "JIRAIYA",
+      "description": "Sannin écrivain et mentor de Naruto."
+    },
+    {
+      "word": "TSUNADE",
+      "description": "Sannin médecin devenue Hokage."
+    },
+    {
+      "word": "GAARA",
+      "description": "Ninja du sable portant un démon en lui."
+    },
+    {
+      "word": "SHIKAMARU",
+      "description": "Stratège paresseux mais brillant de Konoha."
+    },
+    {
+      "word": "HINATA",
+      "description": "Héritière Hyuga au Byakugan."
+    },
+    {
+      "word": "ROCK LEE",
+      "description": "Ninja spécialisé dans le taijutsu."
+    },
+    {
+      "word": "OROCHIMARU",
+      "description": "Sannin obsédé par l’immortalité."
+    },
+    {
+      "word": "KURAMA",
+      "description": "Renard à neuf queues scellé dans Naruto."
     }
   ]
 }

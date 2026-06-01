@@ -4,6 +4,46 @@
     {
       "word": "KODOMO",
       "description": "Manga ou anime pensé pour les enfants."
+    },
+    {
+      "word": "DORAEMON",
+      "description": "Robot-chat venu du futur pour aider Nobita."
+    },
+    {
+      "word": "POKEMON",
+      "description": "Dresseurs capturant des créatures pour les combats."
+    },
+    {
+      "word": "DIGIMON",
+      "description": "Enfants liés à des monstres numériques."
+    },
+    {
+      "word": "HAMTARO",
+      "description": "Petit hamster vivant de grandes aventures."
+    },
+    {
+      "word": "ANPANMAN",
+      "description": "Super-héros à tête de pain fourré."
+    },
+    {
+      "word": "YO KAI WATCH",
+      "description": "Montre permettant de voir les yokai."
+    },
+    {
+      "word": "BEYBLADE",
+      "description": "Combats de toupies personnalisées."
+    },
+    {
+      "word": "INAZUMA ELEVEN",
+      "description": "Football enfantin avec techniques spectaculaires."
+    },
+    {
+      "word": "TAMAGOTCHI",
+      "description": "Créatures virtuelles adaptées en anime pour enfants."
+    },
+    {
+      "word": "KERORO",
+      "description": "Grenouille extraterrestre qui veut envahir la Terre."
     }
   ]
 }

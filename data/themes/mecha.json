@@ -24,6 +24,46 @@
     {
       "word": "SHINJI",
       "description": "Pilote de l’Eva 01."
+    },
+    {
+      "word": "MACROSS",
+      "description": "Robots transformables, musique et guerre spatiale."
+    },
+    {
+      "word": "CODE GEASS",
+      "description": "Rébellion menée avec des Knightmare Frames."
+    },
+    {
+      "word": "PATLABOR",
+      "description": "Police utilisant des robots de travail géants."
+    },
+    {
+      "word": "EUREKA SEVEN",
+      "description": "Mechas surfant dans le ciel et romance adolescente."
+    },
+    {
+      "word": "RAHXEPHON",
+      "description": "Robot mystique lié à la musique et aux dimensions."
+    },
+    {
+      "word": "GURREN LAGANN",
+      "description": "Mecha survolté qui perce les cieux."
+    },
+    {
+      "word": "ARMORED TROOPER VOTOMS",
+      "description": "Mechas militaires réalistes appelés Armored Troopers."
+    },
+    {
+      "word": "DARLING IN THE FRANXX",
+      "description": "Adolescents pilotant des mechas contre des monstres."
+    },
+    {
+      "word": "GRIDMAN",
+      "description": "Héros géant numérique face à des kaiju."
+    },
+    {
+      "word": "MAZINGER Z",
+      "description": "Robot géant pionnier piloté depuis sa tête."
     }
   ]
 }

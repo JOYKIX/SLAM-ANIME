@@ -28,6 +28,42 @@
     {
       "word": "SLAM DUNK",
       "description": "Classique du basket lycéen."
+    },
+    {
+      "word": "KUROKO NO BASKET",
+      "description": "Basket aux techniques spectaculaires."
+    },
+    {
+      "word": "YURI ON ICE",
+      "description": "Patinage artistique et rivalités internationales."
+    },
+    {
+      "word": "FREE",
+      "description": "Club de natation lycéen."
+    },
+    {
+      "word": "PRINCE OF TENNIS",
+      "description": "Tennis scolaire aux coups surhumains."
+    },
+    {
+      "word": "EYESHIELD",
+      "description": "Football américain avec un coureur masqué."
+    },
+    {
+      "word": "RUN WITH THE WIND",
+      "description": "Étudiants visant une grande course de relais."
+    },
+    {
+      "word": "MEGALOBX",
+      "description": "Boxe futuriste avec exosquelettes."
+    },
+    {
+      "word": "PING PONG",
+      "description": "Duel de pongistes au style graphique unique."
+    },
+    {
+      "word": "CAPTAIN TSUBASA",
+      "description": "Football culte et tirs légendaires."
     }
   ]
 }
