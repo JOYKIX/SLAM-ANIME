@@ -32,6 +32,9 @@ const loginForm = $('#loginForm');
 const logoutBtn = $('#logoutBtn');
 const accountStatus = $('#accountStatus');
 const profileCard = $('#profileCard');
+const appShell = $('#appShell');
+const mobileMenuBtn = $('#mobileMenuBtn');
+const mobileScrim = $('#mobileScrim');
 
 const STORAGE_KEY = 'otakross:saves:v1';
 const PROFILE_KEY = 'otakross:profile:v1';
@@ -129,7 +132,7 @@ let currentPuzzle = null;
 let currentRequestedTotal = 0;
 let activeSaveId = null;
 let activeDirection = 'H';
-let activePage = 'create';
+let activePage = 'home';
 let currentEntries = [];
 let currentSession = null;
 let dailyPuzzleCache = null;
@@ -1466,33 +1469,24 @@ function getDirectionLabel(orientation) {
 }
 
 function renderActiveHint(word) {
+  if (!word) return;
+
+  const description = getDescriptionForWord(word.word) || 'Mot à trouver';
+  const activeCard = resultBox.querySelector('.active-clue-card');
+  if (activeCard) {
+    activeCard.innerHTML = `
+      <span class="eyebrow">Active clue</span>
+      <strong>${escapeHtml(word.number)} ${getDirectionLabel(word.orientation)}</strong>
+      <span>${escapeHtml(description)}</span>
+      <small>${word.cells.length} lettre${word.cells.length > 1 ? 's' : ''}</small>
+    `;
+  }
+
   const crossword = resultBox.querySelector('.crossword');
-  if (!crossword || !word) return;
+  if (!crossword) return;
 
   const previousHint = crossword.querySelector('.word-hint-bubble');
   previousHint?.remove();
-
-  const anchorInput = getInputByCell(word.cells[0]);
-  const anchorCell = anchorInput?.closest('.cell') || resultBox.querySelector(`.cell[data-cell="${escapeSelectorValue(word.cells[0])}"]`);
-  if (!anchorCell) return;
-
-  const description = getDescriptionForWord(word.word) || 'Mot à trouver';
-  const bubble = document.createElement('aside');
-  bubble.className = 'word-hint-bubble';
-  bubble.setAttribute('aria-live', 'polite');
-  bubble.innerHTML = `
-    <strong>${escapeHtml(word.number)} ${getDirectionLabel(word.orientation)}</strong>
-    <span>${escapeHtml(description)}</span>
-    <small>${word.cells.length} lettre${word.cells.length > 1 ? 's' : ''}</small>
-  `;
-  crossword.appendChild(bubble);
-
-  const left = anchorCell.offsetLeft;
-  const top = anchorCell.offsetTop;
-  const preferAbove = top > bubble.offsetHeight + 16;
-  bubble.classList.toggle('is-below', !preferAbove);
-  bubble.style.left = `${left}px`;
-  bubble.style.top = preferAbove ? `${top - bubble.offsetHeight - 12}px` : `${top + anchorCell.offsetHeight + 12}px`;
 }
 
 function clearActiveHint() {
@@ -1808,6 +1802,10 @@ function render(result, requestedTotal, playerState = {}) {
     return `<li><strong>${item.number}.</strong> ${escapeHtml(label)}</li>`;
   };
 
+  const firstWord = placed[0];
+  const activeLabel = firstWord ? `${firstWord.number} ${getDirectionLabel(firstWord.orientation)}` : 'Aucun mot';
+  const activeDescription = firstWord ? (getDescriptionForWord(firstWord.word) || 'Mot à trouver') : 'Génère une grille pour commencer.';
+
   resultBox.innerHTML = `
     <div class="meta">
       <span class="pill">${materialIcon('extension')}${placed.length}/${requestedTotal} mots placés</span>
@@ -1816,27 +1814,43 @@ function render(result, requestedTotal, playerState = {}) {
       <span class="pill">${materialIcon('grid_4x4')}${rows} × ${cols} cases</span>
       <span class="pill">${materialIcon('texture')}Espaces gris inclus</span>
     </div>
-    ${hideLetters ? `
-      <section class="play-panel" aria-label="Progression du mode jeu">
-        <div>
-          <div class="game-status">Tape un mot en entier : il devient vert seulement s’il est juste, sinon il s’efface.</div>
-          <div class="play-actions">
-            <button class="tiny reset-game" type="button">${materialIcon('restart_alt')}Effacer les réponses</button>
-          </div>
+    <div class="game-layout">
+      <section class="game-stage" aria-label="Grille de mots croisés">
+        <div class="active-clue-card" aria-live="polite">
+          <span class="eyebrow">Active clue</span>
+          <strong>${escapeHtml(activeLabel)}</strong>
+          <span>${escapeHtml(activeDescription)}</span>
         </div>
-        <div class="game-progress" style="--progress: 0%"><span></span><strong>0/${placed.length}</strong></div>
+        ${hideLetters ? `
+          <section class="play-panel" aria-label="Progression du mode jeu">
+            <div>
+              <div class="game-status">Tape un mot en entier : il devient vert seulement s’il est juste, sinon il s’efface.</div>
+              <div class="play-actions">
+                <button class="tiny reset-game" type="button">${materialIcon('restart_alt')}Effacer les réponses</button>
+              </div>
+            </div>
+            <div class="game-progress" style="--progress: 0%"><span></span><strong>0/${placed.length}</strong></div>
+          </section>
+        ` : ''}
+        ${hideLetters && game?.mode === 'daily' ? renderMysteryPanelMarkup(game) : ''}
+        <div class="board-wrap">
+          <div class="crossword" style="grid-template-columns: repeat(${cols}, var(--cell-size));">${cells}</div>
+        </div>
+        ${hideLetters ? '<p class="play-hint">Mode jeu : la saisie avance toute seule dans le mot. Double-clique une intersection pour changer de direction.</p>' : ''}
       </section>
-    ` : ''}
-    ${hideLetters ? '<section class="bonus-panel" aria-label="Missions et bonus"></section>' : ''}
-    ${hideLetters && game?.mode === 'daily' ? renderMysteryPanelMarkup(game) : ''}
-    <div class="board-wrap">
-      <div class="crossword" style="grid-template-columns: repeat(${cols}, var(--cell-size));">${cells}</div>
-    </div>
-    ${hideLetters ? '<p class="play-hint">Mode jeu : la saisie avance toute seule dans le mot. Double-clique une intersection pour changer de direction.</p>' : ''}
-    <div class="word-lists">
-      <article class="word-card"><h2>${materialIcon('east')}Horizontaux</h2><ol>${horizontal.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
-      <article class="word-card"><h2>${materialIcon('south')}Verticaux</h2><ol>${vertical.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
-      ${missing.length ? `<article class="word-card"><h2>${materialIcon('warning')}Non placés</h2><ul>${missing.map((item) => `<li>${escapeHtml(getDescriptionForWord(item.word) || item.word)} (${item.orientation === 'H' ? 'H' : 'V'})</li>`).join('')}</ul></article>` : ''}
+      <aside class="game-sidebar" aria-label="Informations de partie">
+        ${hideLetters ? '<section class="bonus-panel" aria-label="Missions et bonus"></section>' : ''}
+        <section class="word-info-card">
+          <span class="eyebrow">Word information</span>
+          <h2>Objectifs visibles</h2>
+          <p>Sélectionne une case pour garder l’indice actif en haut du plateau. Les mots validés restent protégés et les erreurs sont signalées immédiatement.</p>
+        </section>
+        <div class="word-lists">
+          <article class="word-card"><h2>${materialIcon('east')}Horizontaux</h2><ol>${horizontal.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
+          <article class="word-card"><h2>${materialIcon('south')}Verticaux</h2><ol>${vertical.map(listItem).join('') || '<li>Aucun</li>'}</ol></article>
+          ${missing.length ? `<article class="word-card"><h2>${materialIcon('warning')}Non placés</h2><ul>${missing.map((item) => `<li>${escapeHtml(getDescriptionForWord(item.word) || item.word)} (${item.orientation === 'H' ? 'H' : 'V'})</li>`).join('')}</ul></article>` : ''}
+        </div>
+      </aside>
     </div>
   `;
 
@@ -2004,6 +2018,8 @@ function showPage(page) {
   document.querySelectorAll('[data-page-link]').forEach((link) => {
     link.classList.toggle('is-active', link.dataset.pageLink === page);
   });
+  appShell?.classList.remove('is-nav-open');
+  mobileMenuBtn?.setAttribute('aria-expanded', 'false');
   if (window.location.hash !== `#${page}`) window.history.replaceState(null, '', `#${page}`);
 }
 
@@ -2266,6 +2282,17 @@ document.querySelectorAll('[data-page-link]').forEach((link) => {
   });
 });
 
+mobileMenuBtn?.addEventListener('click', () => {
+  const isOpen = !appShell?.classList.contains('is-nav-open');
+  appShell?.classList.toggle('is-nav-open', isOpen);
+  mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+});
+
+mobileScrim?.addEventListener('click', () => {
+  appShell?.classList.remove('is-nav-open');
+  mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+});
+
 wordForm.addEventListener('submit', (event) => {
   event.preventDefault();
   addWordEntry(wordNameInput.value, wordDescriptionInput.value);
@@ -2452,8 +2479,9 @@ async function initializeApp() {
   renderThemeLibrary();
   renderWordBank();
   renderSavedList();
+  const requestedPage = (window.location.hash || '#home').replace('#', '') || 'home';
   handleGenerate();
-  showPage((window.location.hash || '#daily').replace('#', '') || 'daily');
+  showPage(document.querySelector(`[data-page=\"${escapeSelectorValue(requestedPage)}\"]`) ? requestedPage : 'home');
 }
 
 initializeApp();
