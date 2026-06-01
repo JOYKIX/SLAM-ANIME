@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#101226" />
-  <title>Otakross · Grilles manga</title>
+  <meta name="theme-color" content="#0a0b18" />
+  <title>Otakross v1.1.0 · Anime crossword arena</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@500;700;800;900&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0&display=swap" rel="stylesheet" />
@@ -16,127 +16,186 @@
   <div class="decor decor--sun" aria-hidden="true"></div>
   <div class="decor decor--katana" aria-hidden="true"></div>
 
-  <div class="site-shell">
-    <header class="topbar" aria-label="Navigation principale">
-      <a class="brand" href="#daily" aria-label="Otakross accueil" data-page-link="daily">
+  <div class="app-shell" id="appShell">
+    <button class="mobile-menu" id="mobileMenuBtn" type="button" aria-label="Ouvrir la navigation" aria-expanded="false">
+      <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+      <span>Menu</span>
+    </button>
+    <button class="mobile-scrim" id="mobileScrim" type="button" aria-label="Fermer la navigation"></button>
+
+    <aside class="sidebar" aria-label="Navigation principale">
+      <a class="brand" href="#home" aria-label="Otakross accueil" data-page-link="home">
         <span class="brand__mark" aria-hidden="true">斬</span>
         <span class="brand__copy">
           <strong>Otakross</strong>
-          <small>Crossword nexus</small>
+          <small>v1.1 Anime arena</small>
         </span>
       </a>
 
+      <div class="sidebar-player" aria-label="Résumé joueur">
+        <div class="avatar" aria-hidden="true">忍</div>
+        <div>
+          <strong>Sensei</strong>
+          <span>Gold III · 1240 ELO</span>
+        </div>
+      </div>
+
       <nav class="quick-nav" aria-label="Menu principal">
-        <a class="nav-link is-active" href="#daily" data-page-link="daily"><span class="material-symbols-rounded" aria-hidden="true">today</span>Daily</a>
-        <a class="nav-link" href="#create" data-page-link="create"><span class="material-symbols-rounded" aria-hidden="true">edit_square</span>Créer</a>
-        <a class="nav-link" href="#saved" data-page-link="saved"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Grilles</a>
-        <a class="nav-link" href="#play" data-page-link="play"><span class="material-symbols-rounded" aria-hidden="true">stadia_controller</span>Jouer</a>
-        <a class="nav-link" href="#account" data-page-link="account"><span class="material-symbols-rounded" aria-hidden="true">account_circle</span>Compte</a>
-        <a class="nav-link" href="#patch-notes" data-page-link="patch-notes"><span class="material-symbols-rounded" aria-hidden="true">new_releases</span>Patch notes</a>
+        <a class="nav-link is-active" href="#home" data-page-link="home"><span class="material-symbols-rounded" aria-hidden="true">home</span>Home</a>
+        <a class="nav-link" href="#daily" data-page-link="daily"><span class="material-symbols-rounded" aria-hidden="true">target</span>Daily Challenge</a>
+        <a class="nav-link" href="#play" data-page-link="play"><span class="material-symbols-rounded" aria-hidden="true">extension</span>Free Play</a>
+        <a class="nav-link" href="#leaderboard" data-page-link="leaderboard"><span class="material-symbols-rounded" aria-hidden="true">emoji_events</span>Leaderboard</a>
+        <a class="nav-link" href="#profile" data-page-link="profile"><span class="material-symbols-rounded" aria-hidden="true">person</span>Profile</a>
+        <a class="nav-link" href="#achievements" data-page-link="achievements"><span class="material-symbols-rounded" aria-hidden="true">stars</span>Achievements</a>
+        <a class="nav-link" href="#statistics" data-page-link="statistics"><span class="material-symbols-rounded" aria-hidden="true">monitoring</span>Statistics</a>
+        <a class="nav-link" href="#create" data-page-link="create"><span class="material-symbols-rounded" aria-hidden="true">edit_square</span>Grid Studio</a>
+        <a class="nav-link" href="#saved" data-page-link="saved"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span>Library</a>
+        <a class="nav-link" href="#settings" data-page-link="settings"><span class="material-symbols-rounded" aria-hidden="true">settings</span>Settings</a>
       </nav>
 
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activer le mode clair" aria-pressed="false">
-        <span class="material-symbols-rounded theme-toggle__icon" aria-hidden="true">light_mode</span>
-        <span class="theme-toggle__text">Mode clair</span>
-      </button>
-    </header>
+      <div class="sidebar-footer">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activer le mode clair" aria-pressed="false">
+          <span class="material-symbols-rounded theme-toggle__icon" aria-hidden="true">light_mode</span>
+          <span class="theme-toggle__text">Mode clair</span>
+        </button>
+        <a class="patch-link" href="#patch-notes" data-page-link="patch-notes">Patch notes 1.1.0</a>
+      </div>
+    </aside>
 
-    <main class="pages">
-      <section class="page is-active" id="page-daily" data-page="daily" aria-labelledby="daily-title">
-        <div class="hero-card hero-card--daily">
-          <div class="hero-card__content">
-            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>Grille journalière v1.0.4</span>
-            <h1 id="daily-title">Le duel quotidien Otakross.</h1>
-            <p>Chaque jour, une grille officielle équilibrée de 10 mots est tirée parmi tous les thèmes : 5 horizontaux, 5 verticaux. Une seule tentative classée impacte ton ELO, avec un mot mystère bonus à déduire grâce aux lettres rouges.</p>
-            <div class="daily-actions">
-              <button class="primary" id="dailyGenerateBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">today</span>Jouer la grille du jour</button>
-              <span id="dailySummary" class="theme-summary">Daily non chargée</span>
+    <main class="pages" id="mainContent">
+      <section class="page is-active" id="page-home" data-page="home" aria-labelledby="home-title">
+        <div class="home-hero dashboard-hero">
+          <div>
+            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Anime crossword platform</span>
+            <h1 id="home-title">Bienvenue, Sensei. Ton prochain duel t’attend.</h1>
+            <p>Otakross combine mots croisés, progression ELO, objectifs quotidiens et collection anime dans une interface pensée pour les prochains profils, saisons, succès et classements.</p>
+            <div class="hero-actions">
+              <button class="primary" type="button" data-page-link="daily"><span class="material-symbols-rounded" aria-hidden="true">today</span>Lancer la Daily</button>
+              <button class="secondary" type="button" data-page-link="play"><span class="material-symbols-rounded" aria-hidden="true">extension</span>Free Play</button>
             </div>
           </div>
-          <div class="hero-card__poster" aria-hidden="true">
-            <span>王</span>
-            <strong>DAILY</strong>
+          <div class="rank-card" aria-label="Progression joueur">
+            <span class="rank-card__label">Gold III</span>
+            <strong>1240</strong>
+            <small>ELO actuel</small>
+            <div class="streak"><span class="material-symbols-rounded" aria-hidden="true">local_fire_department</span>7 jours de streak</div>
           </div>
         </div>
-        <section class="panel account-card daily-elo" aria-label="Règles ELO">
-          <div class="panel__heading">
-            <span class="panel__icon material-symbols-rounded" aria-hidden="true">leaderboard</span>
-            <div>
-              <span class="eyebrow">Classement</span>
-              <h2>ELO réservé au daily</h2>
+
+        <div class="home-grid">
+          <section class="panel daily-card" aria-label="Défi quotidien">
+            <div class="panel__heading">
+              <span class="panel__icon material-symbols-rounded" aria-hidden="true">workspace_premium</span>
+              <div><span class="eyebrow">Priorité du jour</span><h2>Daily Challenge classée</h2></div>
             </div>
-          </div>
-          <p>Les grilles personnalisées restent jouables et sauvegardables, mais ne donnent plus d’ELO. Connecte-toi pour synchroniser ton profil dans Firebase.</p>
-          <ul class="daily-rules">
-            <li>Score basé sur mots trouvés, temps, erreurs, indices utilisés et mot mystère.</li>
-            <li>10/10 très rapide rapporte beaucoup ; 10/10 lent rapporte peu.</li>
-            <li>Le classement affiche le Top 10 du jour et ta position si tu es connecté.</li>
-          </ul>
+            <p>Une grille officielle de 10 mots, un mot mystère et une seule tentative ELO.</p>
+            <div class="reward-row"><span>Reset dans 12h 42m</span><strong>+35 ELO potentiel</strong></div>
+            <button class="primary" type="button" data-page-link="daily"><span class="material-symbols-rounded" aria-hidden="true">play_arrow</span>Jouer maintenant</button>
+          </section>
+
+          <section class="panel progress-card" aria-label="Progression joueur">
+            <div class="panel__heading">
+              <span class="panel__icon material-symbols-rounded" aria-hidden="true">query_stats</span>
+              <div><span class="eyebrow">Player progress</span><h2>Performance</h2></div>
+            </div>
+            <div class="stat-grid">
+              <article><span>ELO</span><strong>1240</strong></article>
+              <article><span>Parties</span><strong>38</strong></article>
+              <article><span>Mots trouvés</span><strong>412</strong></article>
+              <article><span>Réussite</span><strong>86%</strong></article>
+            </div>
+          </section>
+        </div>
+
+        <section class="quick-access" aria-label="Accès rapide">
+          <article class="access-card" data-page-link="play"><span class="material-symbols-rounded" aria-hidden="true">extension</span><strong>Free grid</strong><small>Entraîne-toi sans impact ELO</small></article>
+          <article class="access-card" data-page-link="leaderboard"><span class="material-symbols-rounded" aria-hidden="true">leaderboard</span><strong>Leaderboard</strong><small>Compare ton rang global</small></article>
+          <article class="access-card" data-page-link="profile"><span class="material-symbols-rounded" aria-hidden="true">badge</span><strong>Profile</strong><small>Stats, historique et identité</small></article>
+          <article class="access-card" data-page-link="achievements"><span class="material-symbols-rounded" aria-hidden="true">military_tech</span><strong>Achievements</strong><small>Objectifs et récompenses</small></article>
         </section>
-        <section class="panel daily-leaderboard" aria-label="Classement quotidien">
-          <div class="panel__heading">
-            <span class="panel__icon material-symbols-rounded" aria-hidden="true">emoji_events</span>
+      </section>
+
+      <section class="page" id="page-daily" data-page="daily" aria-labelledby="daily-title">
+        <div class="page-head page-head--inline">
+          <div><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">workspace_premium</span>Daily challenge</span><h1 id="daily-title">L’épreuve classée du jour.</h1></div>
+          <span id="dailySummary" class="theme-summary">Daily non chargée</span>
+        </div>
+        <div class="daily-layout">
+          <section class="panel daily-arena">
+            <div class="daily-arena__poster" aria-hidden="true">王</div>
             <div>
-              <span class="eyebrow">Daily leaderboard</span>
-              <h2>Top 10 du jour</h2>
+              <span class="eyebrow">Arc officiel · Reset quotidien</span>
+              <h2>10 mots équilibrés + mot mystère</h2>
+              <p>Score basé sur mots trouvés, temps, erreurs, indices utilisés et objectif secret. Une seule tentative classée impacte ton ELO.</p>
+              <div class="daily-metrics"><span>Reset 00:00 UTC</span><span>Récompense +35 ELO</span><span>Progression 0/10</span></div>
+              <button class="primary" id="dailyGenerateBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">today</span>Jouer la grille du jour</button>
             </div>
-          </div>
+          </section>
+          <aside class="panel mystery-preview" aria-label="Mot mystère">
+            <span class="eyebrow">Objectif caché</span>
+            <h2>Mystery word</h2>
+            <div class="mystery-slots" aria-label="Aperçu du mot mystère"><span>_</span><span>K</span><span>_</span><span>T</span><span>_</span><span>U</span><span>_</span><span>I</span></div>
+            <p>Collecte les lettres rouges sur la grille, complète les slots et débloque le bonus.</p>
+            <strong>Bonus reward · +10 ELO</strong>
+          </aside>
+        </div>
+        <section class="panel daily-leaderboard" aria-label="Classement quotidien">
+          <div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">emoji_events</span><div><span class="eyebrow">Daily leaderboard</span><h2>Top 10 du jour</h2></div></div>
           <div id="dailyLeaderboard" class="leaderboard"><p class="empty-save">Classement non chargé.</p></div>
         </section>
       </section>
 
-      <section class="page" id="page-create" data-page="create" aria-labelledby="create-title">
-        <div class="hero-card">
-          <div class="hero-card__content">
-            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Création v1.0.4</span>
-            <h1 id="create-title">Forge ta grille manga comme un vrai arc de tournoi.</h1>
-            <p>Crée tes grilles perso avec les thèmes anime, sauvegarde-les sur ton compte et joue-les sans impact sur ton ELO daily.</p>
+      <section class="page" id="page-play" data-page="play" aria-labelledby="play-title">
+        <section class="panel output game-shell" aria-live="polite">
+          <div class="output__topline">
+            <div><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">sports_esports</span>Free Play</span><h1 id="play-title">Plateau de duel</h1></div>
+            <div class="status" id="status"><div class="message">Prêt.</div></div>
           </div>
-          <div class="hero-card__poster" aria-hidden="true">
-            <span>勝</span>
-            <strong>DOJO</strong>
-          </div>
-        </div>
+          <div id="result"></div>
+        </section>
+      </section>
 
+      <section class="page" id="page-leaderboard" data-page="leaderboard" aria-labelledby="leaderboard-title">
+        <div class="page-head"><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">emoji_events</span>Competitive hub</span><h1 id="leaderboard-title">Leaderboards</h1></div>
+        <section class="panel leaderboard-board">
+          <div class="tabs" aria-label="Périodes de classement"><button class="is-active">Global</button><button>Daily</button><button>Weekly</button><button>Monthly</button></div>
+          <ol class="ranking-list">
+            <li><span>#1</span><strong>AkiraRush</strong><em>1512 ELO</em></li>
+            <li><span>#2</span><strong>Mugiwarax</strong><em>1460 ELO</em></li>
+            <li class="is-you"><span>#3</span><strong>Sensei</strong><em>1240 ELO</em></li>
+            <li><span>#4</span><strong>BankaiBee</strong><em>1198 ELO</em></li>
+          </ol>
+        </section>
+      </section>
+
+      <section class="page" id="page-profile" data-page="profile" aria-labelledby="profile-title">
+        <div class="profile-hero panel">
+          <div class="profile-avatar-large">忍</div>
+          <div><span class="eyebrow">Player profile</span><h1 id="profile-title">Sensei</h1><p>Gold III · 1240 ELO · Membre depuis janvier 2026</p></div>
+        </div>
+        <div class="profile-layout">
+          <section class="panel"><div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">bar_chart</span><div><span class="eyebrow">Statistiques</span><h2>Résumé compétitif</h2></div></div><div class="stat-grid"><article><span>Streak</span><strong>7</strong></article><article><span>Parties</span><strong>38</strong></article><article><span>Mots</span><strong>412</strong></article><article><span>Best time</span><strong>02:48</strong></article><article><span>Daily wins</span><strong>12</strong></article><article><span>Rank</span><strong>#3</strong></article></div></section>
+          <section class="panel activity-card"><div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">timeline</span><div><span class="eyebrow">Recent activity</span><h2>Derniers résultats</h2></div></div><ul><li>Daily terminée · +24 ELO</li><li>Mot mystère trouvé · bonus débloqué</li><li>Nouvelle meilleure série · 7 jours</li></ul></section>
+        </div>
+      </section>
+
+      <section class="page" id="page-achievements" data-page="achievements" aria-labelledby="achievements-title">
+        <div class="page-head"><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">stars</span>Collection</span><h1 id="achievements-title">Achievements</h1></div>
+        <div class="achievement-grid"><article class="panel achievement is-unlocked"><span>🔥</span><strong>Streak 7</strong><small>Jouer 7 daily de suite</small></article><article class="panel achievement is-unlocked"><span>🧠</span><strong>Mystery hunter</strong><small>Trouver un mot mystère</small></article><article class="panel achievement"><span>🏆</span><strong>Top 1%</strong><small>Atteindre le top global</small></article></div>
+      </section>
+
+      <section class="page" id="page-statistics" data-page="statistics" aria-labelledby="statistics-title">
+        <div class="page-head"><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">monitoring</span>Analytics</span><h1 id="statistics-title">Statistics</h1></div>
+        <section class="panel stats-dashboard"><div class="stat-grid"><article><span>Success rate</span><strong>86%</strong></article><article><span>Average time</span><strong>04:18</strong></article><article><span>Hints used</span><strong>9</strong></article><article><span>Mystery solved</span><strong>72%</strong></article></div><div class="elo-chart" aria-label="Historique ELO"><span style="height:42%"></span><span style="height:54%"></span><span style="height:48%"></span><span style="height:72%"></span><span style="height:66%"></span><span style="height:86%"></span></div></section>
+      </section>
+
+      <section class="page" id="page-create" data-page="create" aria-labelledby="create-title">
+        <div class="page-head"><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span>Grid Studio</span><h1 id="create-title">Construis des grilles anime personnalisées.</h1></div>
         <div class="creator-grid">
           <section class="panel word-builder" aria-label="Ajouter des mots">
-            <div class="panel__heading">
-              <span class="panel__icon material-symbols-rounded" aria-hidden="true">draw</span>
-              <div>
-                <span class="eyebrow">Deck de mots</span>
-                <h2>Mots + indices</h2>
-              </div>
-            </div>
-
-            <form class="add-word" id="wordForm">
-              <div>
-                <label for="wordName">Mot</label>
-                <input id="wordName" type="text" autocomplete="off" placeholder="Naruto" />
-              </div>
-              <div>
-                <label for="wordDescription">Description</label>
-                <input id="wordDescription" type="text" autocomplete="off" placeholder="Ninja de Konoha" />
-              </div>
-              <button class="primary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">add_circle</span>Ajouter</button>
-            </form>
-
-            <section class="theme-picker" aria-labelledby="theme-picker-title">
-              <div class="theme-picker__head">
-                <div>
-                  <span class="eyebrow">Bibliothèque</span>
-                  <h3 id="theme-picker-title">Thèmes par catégorie</h3>
-                  <p>Choisis des thèmes précis ou larges : anime, arcs, personnages, genres, vocabulaire, Japon et pop culture.</p>
-                </div>
-                <span id="themeSummary" class="theme-summary">0 thème</span>
-              </div>
-              <div id="themeLibrary" class="theme-library" aria-live="polite"></div>
-              <div class="theme-actions">
-                <button class="secondary" id="addThemesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">playlist_add</span>Ajouter les thèmes</button>
-                <button class="secondary" id="replaceThemesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">sync_alt</span>Remplacer par thèmes</button>
-                <button class="tiny" id="clearThemesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">backspace</span>Tout décocher</button>
-              </div>
-            </section>
-
+            <div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">draw</span><div><span class="eyebrow">Deck de mots</span><h2>Mots + indices</h2></div></div>
+            <form class="add-word" id="wordForm"><div><label for="wordName">Mot</label><input id="wordName" type="text" autocomplete="off" placeholder="Naruto" /></div><div><label for="wordDescription">Description</label><input id="wordDescription" type="text" autocomplete="off" placeholder="Ninja de Konoha" /></div><button class="primary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">add_circle</span>Ajouter</button></form>
+            <section class="theme-picker" aria-labelledby="theme-picker-title"><div class="theme-picker__head"><div><span class="eyebrow">Bibliothèque</span><h3 id="theme-picker-title">Thèmes par catégorie</h3><p>Choisis des thèmes précis ou larges : anime, arcs, personnages, genres, vocabulaire, Japon et pop culture.</p></div><span id="themeSummary" class="theme-summary">0 thème</span></div><div id="themeLibrary" class="theme-library" aria-live="polite"></div><div class="theme-actions"><button class="secondary" id="addThemesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">playlist_add</span>Ajouter</button><button class="secondary" id="replaceThemesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">sync_alt</span>Remplacer</button><button class="tiny" id="clearThemesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">backspace</span>Tout décocher</button></div></section>
             <div id="wordBank" class="word-bank" aria-live="polite"></div>
             <textarea id="words" class="raw-words" spellcheck="false" aria-label="Source des mots">ONE PIECE | Équipage au chapeau de paille
 DEMON SLAYER | Pourfendeurs de démons
@@ -159,189 +218,22 @@ MECHA | Robot géant piloté ou autonome
 OPENING | Générique d'ouverture d'un anime
 ENDING | Générique de fin d'un anime</textarea>
           </section>
-
-          <aside class="panel settings" aria-label="Paramètres de grille">
-            <div class="panel__heading">
-              <span class="panel__icon material-symbols-rounded" aria-hidden="true">tune</span>
-              <div>
-                <span class="eyebrow">Réglages</span>
-                <h2>Board control</h2>
-              </div>
-            </div>
-
-            <div class="grid-inputs">
-              <div>
-                <label for="horizontalCount">Horizontaux</label>
-                <input id="horizontalCount" type="number" min="0" max="50" value="5" />
-              </div>
-              <div>
-                <label for="verticalCount">Verticaux</label>
-                <input id="verticalCount" type="number" min="0" max="50" value="5" />
-              </div>
-            </div>
-
-            <label class="selectline" for="gridDifficulty">
-              <span>Difficulté de grille</span>
-              <select id="gridDifficulty">
-                <option value="easy">Facile · 6 Genin / 3 Chunin / 1 Jonin</option>
-                <option value="medium" selected>Moyenne · 4 Genin / 4 Chunin / 2 Jonin</option>
-                <option value="hard">Difficile · 2 Genin / 4 Chunin / 3 Jonin / 1 Sensei</option>
-                <option value="custom">Libre · ordre de la liste</option>
-              </select>
-            </label>
-
-            <div class="switches">
-              <label class="checkline"><input id="hideLetters" type="checkbox" checked /><span>Mode jeu</span></label>
-              <label class="checkline"><input id="randomize" type="checkbox" checked /><span>Mélanger</span></label>
-            </div>
-
-            <div class="actions">
-              <button class="primary" id="generateBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">bolt</span>Générer</button>
-              <button class="secondary" id="saveBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">bookmark_add</span>Sauver</button>
-              <button class="secondary" id="exampleBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">casino</span>Exemple</button>
-              <button class="secondary" id="printBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">print</span>Imprimer</button>
-            </div>
-          </aside>
+          <aside class="panel settings" aria-label="Paramètres de grille"><div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">tune</span><div><span class="eyebrow">Réglages</span><h2>Board control</h2></div></div><div class="grid-inputs"><div><label for="horizontalCount">Horizontaux</label><input id="horizontalCount" type="number" min="0" max="50" value="5" /></div><div><label for="verticalCount">Verticaux</label><input id="verticalCount" type="number" min="0" max="50" value="5" /></div></div><label class="selectline" for="gridDifficulty"><span>Difficulté de grille</span><select id="gridDifficulty"><option value="easy">Facile</option><option value="medium" selected>Moyenne</option><option value="hard">Difficile</option><option value="custom">Libre</option></select></label><div class="switches"><label class="checkline"><input id="hideLetters" type="checkbox" checked /><span>Mode jeu</span></label><label class="checkline"><input id="randomize" type="checkbox" checked /><span>Mélanger</span></label></div><div class="actions"><button class="primary" id="generateBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">bolt</span>Générer</button><button class="secondary" id="saveBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">bookmark_add</span>Sauver</button><button class="secondary" id="exampleBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">casino</span>Exemple</button><button class="secondary" id="printBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">print</span>Imprimer</button></div></aside>
         </div>
       </section>
 
-      <section class="page" id="page-saved" data-page="saved" aria-labelledby="saved-title">
-        <div class="page-head page-head--inline">
-          <div>
-            <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">collections_bookmark</span>Bibliothèque</span>
-            <h1 id="saved-title">Grilles sauvegardées</h1>
-          </div>
-          <button class="tiny danger" id="clearSavesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">delete_sweep</span>Vider</button>
-        </div>
-        <div id="savedList" class="saved-list saved-list--page"></div>
-      </section>
+      <section class="page" id="page-saved" data-page="saved" aria-labelledby="saved-title"><div class="page-head page-head--inline"><div><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">collections_bookmark</span>Bibliothèque</span><h1 id="saved-title">Grilles sauvegardées</h1></div><button class="tiny danger" id="clearSavesBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">delete_sweep</span>Vider</button></div><div id="savedList" class="saved-list saved-list--page"></div></section>
 
-      <section class="page" id="page-play" data-page="play" aria-labelledby="play-title">
-        <section class="panel output" aria-live="polite">
-          <div class="output__topline">
-            <div>
-              <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">sports_esports</span>Jeu</span>
-              <h1 id="play-title">Plateau de duel</h1>
-            </div>
-            <div class="status" id="status">
-              <div class="message">Prêt.</div>
-            </div>
-          </div>
-          <div id="result"></div>
-        </section>
-      </section>
-
-      <section class="page" id="page-account" data-page="account" aria-labelledby="account-title">
-        <div class="page-head">
-          <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">account_circle</span>Compte Otakross</span>
-          <h1 id="account-title">Connexion et profil</h1>
-        </div>
-
+      <section class="page" id="page-settings" data-page="settings" aria-labelledby="settings-title">
+        <div class="page-head"><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">settings</span>Settings & account</span><h1 id="settings-title">Compte, thème et synchronisation</h1></div>
         <div class="account-layout">
-          <section class="panel account-card" aria-label="Créer un compte">
-            <div class="panel__heading">
-              <span class="panel__icon material-symbols-rounded" aria-hidden="true">person_add</span>
-              <div>
-                <span class="eyebrow">Nouveau joueur</span>
-                <h2>Créer un compte</h2>
-              </div>
-            </div>
-            <form id="registerForm" class="account-form">
-              <label for="registerId">ID unique</label>
-              <input id="registerId" type="text" autocomplete="username" placeholder="ton-id" required />
-              <label for="registerPseudo">Pseudo d’affichage</label>
-              <input id="registerPseudo" type="text" autocomplete="nickname" placeholder="Sensei" required />
-              <label for="registerPassword">Mot de passe</label>
-              <input id="registerPassword" type="password" autocomplete="new-password" minlength="6" placeholder="6 caractères minimum" required />
-              <button class="primary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">how_to_reg</span>Créer</button>
-            </form>
-          </section>
-
-          <section class="panel account-card" aria-label="Connexion">
-            <div class="panel__heading">
-              <span class="panel__icon material-symbols-rounded" aria-hidden="true">login</span>
-              <div>
-                <span class="eyebrow">Retour au dojo</span>
-                <h2>Se connecter</h2>
-              </div>
-            </div>
-            <form id="loginForm" class="account-form">
-              <label for="loginId">ID unique</label>
-              <input id="loginId" type="text" autocomplete="username" placeholder="ton-id" required />
-              <label for="loginPassword">Mot de passe</label>
-              <input id="loginPassword" type="password" autocomplete="current-password" required />
-              <button class="secondary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">login</span>Connexion</button>
-            </form>
-          </section>
-
-          <section class="panel account-card account-card--profile" aria-label="Profil joueur">
-            <div class="panel__heading">
-              <span class="panel__icon material-symbols-rounded" aria-hidden="true">badge</span>
-              <div>
-                <span class="eyebrow">Profil</span>
-                <h2>Stats du compte</h2>
-              </div>
-            </div>
-            <div id="accountStatus" class="account-status">Non connecté.</div>
-            <div id="profileCard" class="profile-card"></div>
-            <button class="tiny danger" id="logoutBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">logout</span>Déconnexion</button>
-          </section>
+          <section class="panel account-card" aria-label="Créer un compte"><div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">person_add</span><div><span class="eyebrow">Nouveau joueur</span><h2>Créer un compte</h2></div></div><form id="registerForm" class="account-form"><label for="registerId">ID unique</label><input id="registerId" type="text" autocomplete="username" placeholder="ton-id" required /><label for="registerPseudo">Pseudo d’affichage</label><input id="registerPseudo" type="text" autocomplete="nickname" placeholder="Sensei" required /><label for="registerPassword">Mot de passe</label><input id="registerPassword" type="password" autocomplete="new-password" minlength="6" placeholder="6 caractères minimum" required /><button class="primary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">how_to_reg</span>Créer</button></form></section>
+          <section class="panel account-card" aria-label="Connexion"><div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">login</span><div><span class="eyebrow">Retour au dojo</span><h2>Se connecter</h2></div></div><form id="loginForm" class="account-form"><label for="loginId">ID unique</label><input id="loginId" type="text" autocomplete="username" placeholder="ton-id" required /><label for="loginPassword">Mot de passe</label><input id="loginPassword" type="password" autocomplete="current-password" required /><button class="secondary" type="submit"><span class="material-symbols-rounded" aria-hidden="true">login</span>Connexion</button></form></section>
+          <section class="panel account-card account-card--profile" aria-label="Profil joueur"><div class="panel__heading"><span class="panel__icon material-symbols-rounded" aria-hidden="true">badge</span><div><span class="eyebrow">Profil connecté</span><h2>Firebase sync</h2></div></div><div id="accountStatus" class="account-status">Non connecté.</div><div id="profileCard" class="profile-card"></div><button class="tiny danger" id="logoutBtn" type="button"><span class="material-symbols-rounded" aria-hidden="true">logout</span>Déconnexion</button></section>
         </div>
       </section>
 
-      <section class="page" id="page-patch-notes" data-page="patch-notes" aria-labelledby="patch-notes-title">
-        <div class="page-head">
-          <span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">history_edu</span>Mise à jour</span>
-          <h1 id="patch-notes-title">Patch notes Otakross</h1>
-        </div>
-
-        <section class="panel patch-notes" aria-label="Patch notes de la version 1.0.4">
-          <div class="patch-hero">
-            <div>
-              <p class="patch-version">v1.0.4 · Bibliothèque massive</p>
-              <h2>Plus de thèmes, plus de mots, et une bibliothèque rangée par catégories.</h2>
-              <p>Cette mise à jour ajoute des thèmes dédiés à des anime précis comme Naruto, One Piece, Dragon Ball ou Jujutsu Kaisen, tout en gardant des thèmes larges pour doser la difficulté.</p>
-            </div>
-            <div class="patch-badge">1.0.4</div>
-          </div>
-
-          <div class="patch-stats" aria-label="Résumé chiffré">
-            <article class="patch-stat">
-              <strong>5</strong>
-              <span>catégories</span>
-            </article>
-            <article class="patch-stat">
-              <strong>46</strong>
-              <span>thèmes</span>
-            </article>
-            <article class="patch-stat">
-              <strong>800+</strong>
-              <span>mots</span>
-            </article>
-            <article class="patch-stat">
-              <strong>Daily</strong>
-              <span>tirage équilibré</span>
-            </article>
-          </div>
-
-          <div class="patch-details">
-            <article>
-              <h3><span class="material-symbols-rounded" aria-hidden="true">format_list_bulleted</span> Thèmes</h3>
-              <ul>
-                <li>Bibliothèque divisée en catégories : anime précis, genres, personnages/combat, culture manga et Japon/pop culture.</li>
-                <li>Ajout de nombreux thèmes dédiés : Naruto, One Piece, Dragon Ball, Jujutsu Kaisen, Demon Slayer, Ghibli, jeux vidéo japonais et plus encore.</li>
-              </ul>
-            </article>
-            <article>
-              <h3><span class="material-symbols-rounded" aria-hidden="true">military_tech</span> Difficultés</h3>
-              <ul>
-                <li>Chaque thème mélange des mots Genin, Chunin, Jonin et Sensei pour créer des grilles plus ou moins compliquées.</li>
-                <li>La Daily et le générateur continuent de tirer des mots équilibrés, même avec la base élargie.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-      </section>
+      <section class="page" id="page-patch-notes" data-page="patch-notes" aria-labelledby="patch-notes-title"><div class="page-head"><span class="eyebrow"><span class="material-symbols-rounded" aria-hidden="true">history_edu</span>Mise à jour</span><h1 id="patch-notes-title">Patch notes Otakross</h1></div><section class="panel patch-notes" aria-label="Patch notes de la version 1.1.0"><div class="patch-hero"><div><p class="patch-version">v1.1.0 · Complete UI/UX overhaul</p><h2>Dashboard gaming, sidebar permanente, pages profil/classement/statistiques et expérience Daily dédiée.</h2><p>Cette version transforme Otakross en plateforme anime évolutive prête pour comptes, saisons, ELO, succès et outils d’administration.</p></div><div class="patch-badge">1.1</div></div></section></section>
     </main>
   </div>
 </body>
