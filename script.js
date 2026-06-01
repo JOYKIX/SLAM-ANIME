@@ -8,6 +8,11 @@ const wordForm = $('#wordForm');
 const wordNameInput = $('#wordName');
 const wordDescriptionInput = $('#wordDescription');
 const wordBank = $('#wordBank');
+const themeLibrary = $('#themeLibrary');
+const themeSummary = $('#themeSummary');
+const addThemesBtn = $('#addThemesBtn');
+const replaceThemesBtn = $('#replaceThemesBtn');
+const clearThemesBtn = $('#clearThemesBtn');
 const horizontalInput = $('#horizontalCount');
 const verticalInput = $('#verticalCount');
 const hideLettersInput = $('#hideLetters');
@@ -19,6 +24,129 @@ const savedList = $('#savedList');
 const clearSavesBtn = $('#clearSavesBtn');
 
 const STORAGE_KEY = 'manga-grid-quest:saves:v1';
+
+
+const themeEntries = [
+  { word: 'ONE PIECE', description: 'Équipage de pirates qui cherche le plus grand trésor des mers.', themes: ['Manga', 'Shonen', 'Aventure', 'Personnage'] },
+  { word: 'LUFFY', description: 'Capitaine au chapeau de paille et au corps élastique.', themes: ['Personnage', 'Shonen', 'Aventure'] },
+  { word: 'ZORO', description: 'Épéiste aux trois sabres dans One Piece.', themes: ['Personnage', 'Shonen'] },
+  { word: 'NAMI', description: 'Navigatrice experte et voleuse au grand cœur.', themes: ['Personnage', 'Shonen', 'Aventure'] },
+  { word: 'NARUTO', description: 'Ninja de Konoha qui rêve de devenir Hokage.', themes: ['Manga', 'Shonen', 'Ninja', 'Personnage'] },
+  { word: 'SASUKE', description: 'Dernier héritier important du clan Uchiha.', themes: ['Personnage', 'Shonen', 'Ninja'] },
+  { word: 'SAKURA', description: 'Ninja médicale de l’équipe 7.', themes: ['Personnage', 'Shonen', 'Ninja'] },
+  { word: 'KAKASHI', description: 'Sensei masqué connu pour son Sharingan.', themes: ['Personnage', 'Shonen', 'Ninja'] },
+  { word: 'HOKAGE', description: 'Titre du chef du village caché de Konoha.', themes: ['Ninja', 'Shonen'] },
+  { word: 'SHARINGAN', description: 'Technique oculaire du clan Uchiha.', themes: ['Ninja', 'Pouvoirs', 'Shonen'] },
+  { word: 'DRAGON BALL', description: 'Saga de combats et de boules de cristal.', themes: ['Manga', 'Shonen', 'Pouvoirs'] },
+  { word: 'GOKU', description: 'Saiyan optimiste obsédé par l’entraînement.', themes: ['Personnage', 'Shonen', 'Pouvoirs'] },
+  { word: 'VEGETA', description: 'Prince des Saiyans et rival de Goku.', themes: ['Personnage', 'Shonen', 'Pouvoirs'] },
+  { word: 'KAMEHAMEHA', description: 'Vague d’énergie iconique de Dragon Ball.', themes: ['Pouvoirs', 'Shonen'] },
+  { word: 'DEMON SLAYER', description: 'Pourfendeurs qui combattent des démons la nuit.', themes: ['Manga', 'Shonen', 'Surnaturel'] },
+  { word: 'TANJIRO', description: 'Pourfendeur bienveillant au souffle de l’eau.', themes: ['Personnage', 'Shonen', 'Surnaturel'] },
+  { word: 'NEZUKO', description: 'Sœur de Tanjiro transformée en démon.', themes: ['Personnage', 'Shonen', 'Surnaturel'] },
+  { word: 'HASHIRA', description: 'Pilier d’élite chez les pourfendeurs de démons.', themes: ['Surnaturel', 'Shonen'] },
+  { word: 'JUJUTSU KAISEN', description: 'Exorcistes modernes face aux fléaux.', themes: ['Manga', 'Shonen', 'Surnaturel'] },
+  { word: 'GOJO', description: 'Professeur exorciste aux yeux bandés et au pouvoir immense.', themes: ['Personnage', 'Shonen', 'Surnaturel'] },
+  { word: 'SUKUNA', description: 'Roi des fléaux dans Jujutsu Kaisen.', themes: ['Personnage', 'Surnaturel', 'Shonen'] },
+  { word: 'BLEACH', description: 'Shinigami, hollows et sabres spirituels.', themes: ['Manga', 'Shonen', 'Surnaturel'] },
+  { word: 'ICHIGO', description: 'Lycéen devenu shinigami remplaçant.', themes: ['Personnage', 'Shonen', 'Surnaturel'] },
+  { word: 'BANKAI', description: 'Libération ultime d’un zanpakuto.', themes: ['Pouvoirs', 'Surnaturel', 'Shonen'] },
+  { word: 'HUNTER HUNTER', description: 'Aventure autour du permis de Hunter et du Nen.', themes: ['Manga', 'Shonen', 'Aventure'] },
+  { word: 'GON', description: 'Jeune Hunter parti retrouver son père.', themes: ['Personnage', 'Shonen', 'Aventure'] },
+  { word: 'KILLUA', description: 'Ami de Gon issu d’une famille d’assassins.', themes: ['Personnage', 'Shonen', 'Aventure'] },
+  { word: 'NEN', description: 'Énergie vitale maîtrisée par les Hunters.', themes: ['Pouvoirs', 'Shonen'] },
+  { word: 'MY HERO ACADEMIA', description: 'Académie formant des super-héros.', themes: ['Manga', 'Shonen', 'Pouvoirs'] },
+  { word: 'DEKU', description: 'Héros en formation héritier du One For All.', themes: ['Personnage', 'Shonen', 'Pouvoirs'] },
+  { word: 'ALL MIGHT', description: 'Symbole de la paix dans My Hero Academia.', themes: ['Personnage', 'Shonen', 'Pouvoirs'] },
+  { word: 'ALTER', description: 'Pouvoir individuel dans My Hero Academia.', themes: ['Pouvoirs', 'Shonen'] },
+  { word: 'CHAINSAW MAN', description: 'Chasseur de démons lié au démon-tronçonneuse.', themes: ['Manga', 'Shonen', 'Surnaturel'] },
+  { word: 'DENJI', description: 'Anti-héros pauvre fusionné avec Pochita.', themes: ['Personnage', 'Shonen', 'Surnaturel'] },
+  { word: 'MAKIMA', description: 'Manipulatrice mystérieuse de Public Safety.', themes: ['Personnage', 'Seinen', 'Surnaturel'] },
+  { word: 'SPY FAMILY', description: 'Famille factice entre espion, tueuse et télépathe.', themes: ['Manga', 'Comedie', 'Personnage'] },
+  { word: 'ANYA', description: 'Petite télépathe qui adore les cacahuètes.', themes: ['Personnage', 'Comedie'] },
+  { word: 'LOID', description: 'Espion connu sous le nom de Twilight.', themes: ['Personnage', 'Comedie'] },
+  { word: 'YOR', description: 'Tueuse professionnelle surnommée Princesse Ibara.', themes: ['Personnage', 'Comedie'] },
+  { word: 'SAILOR MOON', description: 'Guerrière lunaire emblématique du magical girl.', themes: ['Manga', 'Shojo', 'Magical Girl', 'Personnage'] },
+  { word: 'USAGI', description: 'Collégienne maladroite devenue Sailor Moon.', themes: ['Personnage', 'Shojo', 'Magical Girl'] },
+  { word: 'CARD CAPTOR SAKURA', description: 'Sakura capture des cartes magiques échappées.', themes: ['Manga', 'Shojo', 'Magical Girl'] },
+  { word: 'MADOKA', description: 'Héroïne de magical girl au destin bouleversant.', themes: ['Personnage', 'Magical Girl', 'Surnaturel'] },
+  { word: 'FRUITS BASKET', description: 'Romance et malédiction autour des signes du zodiaque.', themes: ['Manga', 'Shojo', 'Romance', 'Surnaturel'] },
+  { word: 'TOHRU', description: 'Héroïne douce de Fruits Basket.', themes: ['Personnage', 'Shojo', 'Romance'] },
+  { word: 'NANA', description: 'Deux jeunes femmes du même prénom cherchent leur place à Tokyo.', themes: ['Manga', 'Shojo', 'Josei', 'Romance'] },
+  { word: 'KIMI NI TODOKE', description: 'Romance scolaire portée par une héroïne timide.', themes: ['Manga', 'Shojo', 'Romance'] },
+  { word: 'SAWAKO', description: 'Héroïne réservée de Kimi ni Todoke.', themes: ['Personnage', 'Shojo', 'Romance'] },
+  { word: 'OURAN', description: 'Club d’hôtes comique dans un lycée prestigieux.', themes: ['Manga', 'Shojo', 'Comedie'] },
+  { word: 'BERSERK', description: 'Dark fantasy violente autour de Guts et Griffith.', themes: ['Manga', 'Seinen', 'Dark Fantasy'] },
+  { word: 'GUTS', description: 'Guerrier solitaire à l’immense épée.', themes: ['Personnage', 'Seinen', 'Dark Fantasy'] },
+  { word: 'GRIFFITH', description: 'Chef charismatique de la Troupe du Faucon.', themes: ['Personnage', 'Seinen', 'Dark Fantasy'] },
+  { word: 'VINLAND SAGA', description: 'Épopée viking entre vengeance et pacifisme.', themes: ['Manga', 'Seinen', 'Historique'] },
+  { word: 'THORFINN', description: 'Jeune guerrier viking en quête de sens.', themes: ['Personnage', 'Seinen', 'Historique'] },
+  { word: 'MONSTER', description: 'Thriller psychologique autour d’un chirurgien et d’un tueur.', themes: ['Manga', 'Seinen', 'Thriller'] },
+  { word: 'PLUTO', description: 'Relecture seinen d’Astro Boy en enquête robotique.', themes: ['Manga', 'Seinen', 'Science Fiction'] },
+  { word: 'AKIRA', description: 'Classique cyberpunk de Katsuhiro Otomo.', themes: ['Manga', 'Seinen', 'Science Fiction'] },
+  { word: 'KANEDA', description: 'Chef de gang à moto dans Akira.', themes: ['Personnage', 'Seinen', 'Science Fiction'] },
+  { word: 'GHOST IN THE SHELL', description: 'Cyberpunk sur cyborgs, IA et identité.', themes: ['Manga', 'Seinen', 'Science Fiction'] },
+  { word: 'MOTOKO', description: 'Major cyborg de la Section 9.', themes: ['Personnage', 'Seinen', 'Science Fiction'] },
+  { word: 'EVANGELION', description: 'Mechas, anges et introspection psychologique.', themes: ['Anime', 'Mecha', 'Science Fiction'] },
+  { word: 'SHINJI', description: 'Pilote de l’Eva 01.', themes: ['Personnage', 'Mecha', 'Science Fiction'] },
+  { word: 'ASUKA', description: 'Pilote énergique de l’Eva 02.', themes: ['Personnage', 'Mecha', 'Science Fiction'] },
+  { word: 'GUNDAM', description: 'Franchise culte de robots de guerre.', themes: ['Anime', 'Mecha', 'Science Fiction'] },
+  { word: 'MOBILE SUIT', description: 'Armure robotique pilotée dans Gundam.', themes: ['Mecha', 'Science Fiction'] },
+  { word: 'COWBOY BEBOP', description: 'Chasseurs de primes dans l’espace sur fond de jazz.', themes: ['Anime', 'Science Fiction', 'Aventure'] },
+  { word: 'SPIKE', description: 'Chasseur de primes décontracté du Bebop.', themes: ['Personnage', 'Science Fiction', 'Aventure'] },
+  { word: 'STEINS GATE', description: 'Voyage temporel et messages vers le passé.', themes: ['Anime', 'Science Fiction', 'Thriller'] },
+  { word: 'OKABE', description: 'Scientifique autoproclamé fou de Steins Gate.', themes: ['Personnage', 'Science Fiction', 'Comedie'] },
+  { word: 'FULLMETAL ALCHEMIST', description: 'Deux frères alchimistes cherchent la pierre philosophale.', themes: ['Manga', 'Shonen', 'Aventure'] },
+  { word: 'EDWARD', description: 'Alchimiste d’État au bras mécanique.', themes: ['Personnage', 'Shonen', 'Aventure'] },
+  { word: 'ALPHONSE', description: 'Âme liée à une armure après une transmutation ratée.', themes: ['Personnage', 'Shonen', 'Aventure'] },
+  { word: 'HAIKYU', description: 'Manga de volley-ball centré sur Karasuno.', themes: ['Manga', 'Sport', 'Shonen'] },
+  { word: 'HINATA', description: 'Petit attaquant explosif de Haikyu.', themes: ['Personnage', 'Sport', 'Shonen'] },
+  { word: 'KUROKO', description: 'Joueur fantôme du basket japonais.', themes: ['Personnage', 'Sport', 'Shonen'] },
+  { word: 'SLAM DUNK', description: 'Classique du basket lycéen.', themes: ['Manga', 'Sport', 'Shonen'] },
+  { word: 'BLUE LOCK', description: 'Programme extrême pour créer un attaquant egoïste.', themes: ['Manga', 'Sport', 'Shonen'] },
+  { word: 'ISAGI', description: 'Attaquant qui analyse l’espace dans Blue Lock.', themes: ['Personnage', 'Sport', 'Shonen'] },
+  { word: 'YOUR NAME', description: 'Film de Makoto Shinkai sur l’échange de corps et le destin.', themes: ['Anime', 'Romance', 'Film'] },
+  { word: 'SUZUME', description: 'Film de Shinkai avec portes mystérieuses et ver géant.', themes: ['Anime', 'Film', 'Surnaturel'] },
+  { word: 'GHIBLI', description: 'Studio japonais fondé notamment par Miyazaki et Takahata.', themes: ['Anime', 'Film', 'Studio'] },
+  { word: 'TOTORO', description: 'Esprit de la forêt doux et iconique de Ghibli.', themes: ['Personnage', 'Anime', 'Film'] },
+  { word: 'CHIHIRO', description: 'Héroïne du Voyage de Chihiro.', themes: ['Personnage', 'Anime', 'Film'] },
+  { word: 'MONONOKE', description: 'Princesse élevée par les loups dans un film Ghibli.', themes: ['Personnage', 'Anime', 'Film'] },
+  { word: 'PONYO', description: 'Petite fille-poisson magique de Ghibli.', themes: ['Personnage', 'Anime', 'Film'] },
+  { word: 'MANGAKA', description: 'Auteur ou autrice qui dessine et écrit des mangas.', themes: ['Manga', 'Vocabulaire'] },
+  { word: 'ANIME', description: 'Animation japonaise, en série ou en film.', themes: ['Anime', 'Vocabulaire'] },
+  { word: 'MANGA', description: 'Bande dessinée japonaise.', themes: ['Manga', 'Vocabulaire'] },
+  { word: 'SHONEN', description: 'Catégorie souvent associée à l’action et aux jeunes lecteurs.', themes: ['Shonen', 'Vocabulaire'] },
+  { word: 'SHOJO', description: 'Catégorie souvent associée aux émotions, à la romance et au relationnel.', themes: ['Shojo', 'Vocabulaire'] },
+  { word: 'SEINEN', description: 'Catégorie visant généralement un public adulte ou jeune adulte.', themes: ['Seinen', 'Vocabulaire'] },
+  { word: 'JOSEI', description: 'Catégorie visant souvent un public féminin adulte.', themes: ['Josei', 'Vocabulaire'] },
+  { word: 'KODOMO', description: 'Manga ou anime pensé pour les enfants.', themes: ['Kodomo', 'Vocabulaire'] },
+  { word: 'ISEKAI', description: 'Genre où un personnage arrive dans un autre monde.', themes: ['Isekai', 'Vocabulaire', 'Aventure'] },
+  { word: 'TSUNDERE', description: 'Personnage dur au départ puis tendre avec le temps.', themes: ['Personnage', 'Vocabulaire', 'Comedie'] },
+  { word: 'YANDERE', description: 'Personnage amoureux jusqu’à l’obsession dangereuse.', themes: ['Personnage', 'Vocabulaire', 'Thriller'] },
+  { word: 'SENSEI', description: 'Professeur, maître ou créateur respecté.', themes: ['Vocabulaire', 'Personnage'] },
+  { word: 'SENPAI', description: 'Aîné ou personne plus expérimentée.', themes: ['Vocabulaire', 'School Life'] },
+  { word: 'KOUHAI', description: 'Cadet ou personne moins expérimentée.', themes: ['Vocabulaire', 'School Life'] },
+  { word: 'KAWAII', description: 'Mot japonais pour dire mignon.', themes: ['Vocabulaire', 'Comedie'] },
+  { word: 'OTAKU', description: 'Fan très investi de manga, anime ou pop culture.', themes: ['Vocabulaire'] },
+  { word: 'COSPLAY', description: 'Costume pour incarner un personnage.', themes: ['Vocabulaire', 'Personnage'] },
+  { word: 'OPENING', description: 'Générique d’ouverture d’un anime.', themes: ['Anime', 'Vocabulaire'] },
+  { word: 'ENDING', description: 'Générique de fin d’un anime.', themes: ['Anime', 'Vocabulaire'] },
+  { word: 'FILLER', description: 'Épisode ajouté qui n’avance pas toujours l’histoire principale.', themes: ['Anime', 'Vocabulaire'] },
+  { word: 'OVA', description: 'Épisode ou mini-série sortie hors diffusion TV classique.', themes: ['Anime', 'Vocabulaire'] },
+  { word: 'DOUJINSHI', description: 'Manga amateur ou fan-made, souvent vendu en convention.', themes: ['Manga', 'Vocabulaire'] },
+  { word: 'LIGHT NOVEL', description: 'Roman illustré japonais souvent adapté en anime.', themes: ['Vocabulaire', 'Isekai'] },
+  { word: 'MECHA', description: 'Genre centré sur des robots géants.', themes: ['Mecha', 'Vocabulaire'] },
+  { word: 'CHIBI', description: 'Style super-déformé avec petite taille et grosse tête.', themes: ['Vocabulaire', 'Comedie'] },
+  { word: 'YOKAI', description: 'Créature surnaturelle du folklore japonais.', themes: ['Surnaturel', 'Vocabulaire'] },
+  { word: 'KITSUNE', description: 'Renard mythique souvent doté de pouvoirs.', themes: ['Surnaturel', 'Vocabulaire'] },
+  { word: 'ONI', description: 'Démon ou ogre du folklore japonais.', themes: ['Surnaturel', 'Vocabulaire'] },
+  { word: 'KATANA', description: 'Sabre japonais à lame courbe.', themes: ['Historique', 'Vocabulaire', 'Shonen'] },
+  { word: 'SAMURAI', description: 'Guerrier japonais associé au sabre et à l’honneur.', themes: ['Historique', 'Vocabulaire'] },
+  { word: 'RONIN', description: 'Samouraï sans maître.', themes: ['Historique', 'Vocabulaire'] },
+  { word: 'DOJO', description: 'Lieu d’entraînement aux arts martiaux.', themes: ['Historique', 'Sport', 'Vocabulaire'] }
+];
+
+let selectedThemes = new Set(['Manga', 'Personnage', 'Shonen']);
 
 const examples = [
   [
@@ -727,6 +855,7 @@ function saveCurrentGrid() {
     updatedAt: now,
     words: wordsInput.value,
     entries: currentEntries,
+    selectedThemes: [...selectedThemes],
     horizontalCount: Number(horizontalInput.value),
     verticalCount: Number(verticalInput.value),
     hideLetters: hideLettersInput.checked,
@@ -749,6 +878,8 @@ function loadSavedGrid(id) {
   activeSaveId = save.id;
   wordsInput.value = save.words || serializeWordEntries(save.entries || []);
   currentEntries = parseWordEntries(wordsInput.value);
+  if (Array.isArray(save.selectedThemes)) selectedThemes = new Set(save.selectedThemes);
+  renderThemeLibrary();
   renderWordBank();
   horizontalInput.value = save.horizontalCount ?? 0;
   verticalInput.value = save.verticalCount ?? 0;
@@ -806,6 +937,87 @@ function showPage(page) {
   if (window.location.hash !== `#${page}`) window.history.replaceState(null, '', `#${page}`);
 }
 
+
+function getThemeNames() {
+  return [...new Set(themeEntries.flatMap((entry) => entry.themes))].sort((a, b) => a.localeCompare(b, 'fr'));
+}
+
+function getEntriesForThemes(themes) {
+  const selected = new Set(themes);
+  const byWord = new Map();
+
+  themeEntries.forEach((entry) => {
+    if (!entry.themes.some((theme) => selected.has(theme))) return;
+    const normalized = normalizeWord(entry.word);
+    const previous = byWord.get(normalized);
+    const themeList = entry.themes.filter((theme) => selected.has(theme));
+    const description = `${entry.description} [${themeList.join(', ')}]`;
+
+    byWord.set(normalized, {
+      word: normalized,
+      description: previous ? previous.description : description
+    });
+  });
+
+  return [...byWord.values()].sort((a, b) => a.word.localeCompare(b.word, 'fr'));
+}
+
+function mergeWordEntries(existingEntries, incomingEntries) {
+  const byWord = new Map(existingEntries.map((entry) => [entry.word, entry]));
+
+  incomingEntries.forEach((entry) => {
+    const normalized = normalizeWord(entry.word);
+    const existing = byWord.get(normalized);
+    byWord.set(normalized, {
+      word: normalized,
+      description: existing?.description || entry.description
+    });
+  });
+
+  return [...byWord.values()].sort((a, b) => a.word.localeCompare(b.word, 'fr'));
+}
+
+function updateThemeSummary() {
+  const entries = getEntriesForThemes(selectedThemes);
+  const themeLabel = selectedThemes.size > 1 ? 'thèmes' : 'thème';
+  const wordLabel = entries.length > 1 ? 'mots uniques' : 'mot unique';
+  themeSummary.textContent = `${selectedThemes.size} ${themeLabel} · ${entries.length} ${wordLabel}`;
+  addThemesBtn.disabled = selectedThemes.size === 0;
+  replaceThemesBtn.disabled = selectedThemes.size === 0;
+  clearThemesBtn.disabled = selectedThemes.size === 0;
+}
+
+function renderThemeLibrary() {
+  const names = getThemeNames();
+  themeLibrary.innerHTML = names.map((theme) => {
+    const count = themeEntries.filter((entry) => entry.themes.includes(theme)).length;
+    const checked = selectedThemes.has(theme) ? ' checked' : '';
+    return `
+      <label class="theme-card">
+        <input type="checkbox" value="${escapeHtml(theme)}"${checked} />
+        <span>
+          <strong>${escapeHtml(theme)}</strong>
+          <small>${count} mot${count > 1 ? 's' : ''}</small>
+        </span>
+      </label>
+    `;
+  }).join('');
+  updateThemeSummary();
+}
+
+function applySelectedThemes({ replace = false } = {}) {
+  const incoming = getEntriesForThemes(selectedThemes);
+  if (!incoming.length) {
+    setStatus('Choisis au moins un thème à ajouter.', 'error');
+    return;
+  }
+
+  const entries = replace ? incoming : mergeWordEntries(parseWordEntries(wordsInput.value), incoming);
+  wordsInput.value = serializeWordEntries(entries);
+  renderWordBank();
+  setStatus(`${incoming.length} mots de thème ${replace ? 'chargés' : 'ajoutés'} dans la grille.`, 'success');
+}
+
 function renderWordBank() {
   currentEntries = parseWordEntries(wordsInput.value);
   wordsInput.value = serializeWordEntries(currentEntries);
@@ -858,6 +1070,20 @@ document.querySelectorAll('[data-page-link]').forEach((link) => {
 wordForm.addEventListener('submit', (event) => {
   event.preventDefault();
   addWordEntry(wordNameInput.value, wordDescriptionInput.value);
+});
+
+themeLibrary.addEventListener('change', (event) => {
+  if (!event.target.matches('input[type="checkbox"]')) return;
+  if (event.target.checked) selectedThemes.add(event.target.value);
+  else selectedThemes.delete(event.target.value);
+  updateThemeSummary();
+});
+
+addThemesBtn.addEventListener('click', () => applySelectedThemes());
+replaceThemesBtn.addEventListener('click', () => applySelectedThemes({ replace: true }));
+clearThemesBtn.addEventListener('click', () => {
+  selectedThemes.clear();
+  renderThemeLibrary();
 });
 
 wordBank.addEventListener('click', (event) => {
@@ -944,6 +1170,7 @@ resultBox.addEventListener('input', (event) => {
   savePlayerState();
 });
 
+renderThemeLibrary();
 renderWordBank();
 renderSavedList();
 handleGenerate();

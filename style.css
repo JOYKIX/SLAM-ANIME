@@ -235,6 +235,116 @@ textarea:focus {
   align-items: end;
 }
 
+
+.theme-picker {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.theme-picker__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.theme-picker h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.theme-picker p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.theme-summary {
+  white-space: nowrap;
+  padding: 8px 11px;
+  border: 1px solid rgba(6, 182, 212, 0.28);
+  border-radius: 999px;
+  background: rgba(6, 182, 212, 0.1);
+  color: #a5f3fc;
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.theme-library {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 10px;
+  max-height: 290px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.theme-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  min-height: 58px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(2, 6, 23, 0.46);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border 0.16s, background 0.16s, transform 0.16s;
+}
+
+.theme-card:hover {
+  border-color: rgba(6, 182, 212, 0.38);
+  background: rgba(6, 182, 212, 0.08);
+  transform: translateY(-1px);
+}
+
+.theme-card input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-2);
+}
+
+.theme-card span,
+.theme-card strong,
+.theme-card small { display: block; }
+
+.theme-card strong {
+  overflow: hidden;
+  font-size: 0.9rem;
+  font-weight: 950;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme-card small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 850;
+}
+
+.theme-card:has(input:checked) {
+  border-color: rgba(124, 58, 237, 0.62);
+  background: rgba(124, 58, 237, 0.16);
+}
+
+.theme-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+  margin-top: 12px;
+}
+
 .word-bank,
 .saved-list {
   display: grid;
@@ -569,6 +679,8 @@ ul {
   .play-panel,
   .save-card { grid-template-columns: 1fr; }
   .page-head--inline { align-items: start; flex-direction: column; }
+  .theme-picker__head,
+  .theme-actions { grid-template-columns: 1fr; }
   .panel { border-radius: 22px; }
   .word-builder,
   .settings,

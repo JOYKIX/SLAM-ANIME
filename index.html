@@ -49,6 +49,22 @@
               <button class="primary" type="submit">Ajouter</button>
             </form>
 
+            <section class="theme-picker" aria-labelledby="theme-picker-title">
+              <div class="theme-picker__head">
+                <div>
+                  <h3 id="theme-picker-title">Bibliothèque de thèmes</h3>
+                  <p>Choisis un ou plusieurs thèmes : un même mot peut appartenir à plusieurs thèmes.</p>
+                </div>
+                <span id="themeSummary" class="theme-summary">0 thème</span>
+              </div>
+              <div id="themeLibrary" class="theme-library" aria-live="polite"></div>
+              <div class="theme-actions">
+                <button class="secondary" id="addThemesBtn" type="button">Ajouter les thèmes</button>
+                <button class="secondary" id="replaceThemesBtn" type="button">Remplacer par thèmes</button>
+                <button class="tiny" id="clearThemesBtn" type="button">Tout décocher</button>
+              </div>
+            </section>
+
             <div id="wordBank" class="word-bank" aria-live="polite"></div>
             <textarea id="words" class="raw-words" spellcheck="false" aria-label="Source des mots">ONE PIECE | Équipage au chapeau de paille
 DEMON SLAYER | Pourfendeurs de démons
@@ -61,7 +77,15 @@ OTAKU | Fan très investi
 COSPLAY | Costume de personnage
 STUDIO GHIBLI | Studio de Miyazaki
 HERO | Personnage principal
-SHONEN | Manga pour jeunes lecteurs</textarea>
+SHONEN | Manga pour jeunes lecteurs
+SHOJO | Manga souvent centré sur les émotions, la romance et les relations
+SEINEN | Manga pensé pour un public adulte ou jeune adulte
+JOSEI | Manga destiné plutôt aux jeunes femmes adultes
+ISEKAI | Personnage transporté dans un autre monde
+MANGAKA | Auteur ou autrice de manga
+MECHA | Robot géant piloté ou autonome
+OPENING | Générique d'ouverture d'un anime
+ENDING | Générique de fin d'un anime</textarea>
           </section>
 
           <section class="panel settings" aria-label="Paramètres de grille">
